@@ -118,7 +118,7 @@
     .hero {
       min-height: 82vh;
 
-      padding: 80px 20px;
+      padding: 70px 20px 80px;
 
       display: flex;
       justify-content: center;
@@ -136,6 +136,8 @@
 
     .hero-content {
       max-width: 850px;
+
+      width: 100%;
     }
 
     .hero h1 {
@@ -163,6 +165,40 @@
       color: #625d50;
 
       font-size: 18px;
+
+      margin-bottom: 28px;
+    }
+
+
+    /* =========================
+       HERO VIDEO
+    ========================= */
+
+    .hero-video {
+      width: 100%;
+
+      max-width: 430px;
+
+      margin: 0 auto;
+
+      border-radius: 22px;
+
+      overflow: hidden;
+
+      background: #203b26;
+
+      box-shadow:
+        0 12px 35px rgba(0,0,0,0.15);
+    }
+
+    .hero-video video {
+      width: 100%;
+
+      height: auto;
+
+      display: block;
+
+      object-fit: cover;
     }
 
 
@@ -364,44 +400,6 @@
 
 
     /* =========================
-       BRAND STORY VIDEO
-    ========================= */
-
-    .brand-video {
-      background: #f1ead8;
-
-      text-align: center;
-
-      padding: 80px 7%;
-    }
-
-    .video-container {
-      max-width: 1000px;
-
-      margin: auto;
-
-      border-radius: 22px;
-
-      overflow: hidden;
-
-      box-shadow:
-        0 10px 35px rgba(0,0,0,0.12);
-
-      background: #203b26;
-    }
-
-    .video-container video {
-      width: 100%;
-
-      height: auto;
-
-      display: block;
-
-      object-fit: cover;
-    }
-
-
-    /* =========================
        CONTACT
     ========================= */
 
@@ -592,9 +590,9 @@
       }
 
       .hero {
-        min-height: 75vh;
+        min-height: auto;
 
-        padding: 60px 20px;
+        padding: 60px 20px 70px;
       }
 
       .hero h1 {
@@ -607,6 +605,14 @@
 
       .hero p {
         font-size: 16px;
+
+        margin-bottom: 25px;
+      }
+
+      .hero-video {
+        max-width: 100%;
+
+        border-radius: 18px;
       }
 
       .section-title {
@@ -637,14 +643,6 @@
       .social-link svg {
         width: 40px;
         height: 40px;
-      }
-
-      .brand-video {
-        padding: 65px 5%;
-      }
-
-      .video-container {
-        border-radius: 16px;
       }
 
     }
@@ -703,7 +701,7 @@
 
 
   <!-- =========================
-       HOME
+       HOME / HERO
   ========================= -->
 
   <section class="hero" id="home">
@@ -722,6 +720,25 @@
         আমাদের গ্রামের প্রকৃতি, ঐতিহ্য ও ভালোবাসা
         থেকে বেছে নেওয়া পণ্য পৌঁছে যাবে আপনার ঘরে।
       </p>
+
+
+      <!-- =========================
+           HERO VIDEO
+      ========================= -->
+
+      <div class="hero-video">
+
+        <video
+          src="video-output-B0BA3A30-A641-4947-B97B-2AC591D5D93F-1.mov"
+          autoplay
+          muted
+          loop
+          playsinline
+          controls
+        ></video>
+
+      </div>
+
 
       <a
         href="#products"
@@ -935,33 +952,6 @@
 
       </div>
 
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       BRAND STORY VIDEO
-  ========================= -->
-
-  <section class="brand-video">
-
-    <h2 class="section-title">
-      গ্রাম থেকে — আমাদের গল্প
-    </h2>
-
-    <div class="video-container">
-
-      <video
-        src="video-output-B0BA3A30-A641-4947-B97B-2AC591D5D93F-1.mov"
-        autoplay
-        muted
-        loop
-        playsinline
-        controls
-      ></video>
 
     </div>
 
