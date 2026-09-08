@@ -28,11 +28,13 @@
       line-height: 1.7;
     }
 
-    /* ================= HEADER ================= */
+    /* =========================
+       HEADER
+    ========================= */
 
     header {
       background: #fffdf7;
-      padding: 14px 7%;
+      padding: 12px 5%;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -40,11 +42,17 @@
     }
 
     .header-inner {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: auto;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      gap: 8px;
+    }
+
+    .logo-link {
+      display: block;
+      text-decoration: none;
     }
 
     .brand-logo {
@@ -55,7 +63,41 @@
       display: block;
     }
 
-    /* ================= HERO ================= */
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      padding: 7px 12px;
+      color: #29452d;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 20px;
+      transition: 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      background: #f1ead8;
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       min-height: 82vh;
@@ -65,12 +107,11 @@
       align-items: center;
       text-align: center;
 
-      background:
-        radial-gradient(
-          circle at top,
-          #fff9e9,
-          #efe2c4
-        );
+      background: radial-gradient(
+        circle at top,
+        #fff9e9,
+        #efe2c4
+      );
     }
 
     .hero-content {
@@ -97,7 +138,9 @@
       font-size: 18px;
     }
 
-    /* ================= BUTTON ================= */
+    /* =========================
+       BUTTON
+    ========================= */
 
     .button {
       display: inline-block;
@@ -116,7 +159,9 @@
       background: #23472a;
     }
 
-    /* ================= COMMON ================= */
+    /* =========================
+       COMMON SECTION
+    ========================= */
 
     section {
       padding: 80px 7%;
@@ -129,7 +174,9 @@
       margin-bottom: 45px;
     }
 
-    /* ================= ABOUT ================= */
+    /* =========================
+       ABOUT
+    ========================= */
 
     .about {
       background: #fffdf7;
@@ -143,7 +190,9 @@
       font-size: 18px;
     }
 
-    /* ================= PRODUCTS ================= */
+    /* =========================
+       PRODUCTS
+    ========================= */
 
     .products {
       background: #f1ead8;
@@ -152,7 +201,6 @@
     .product-grid {
       max-width: 1100px;
       margin: auto;
-
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 25px;
@@ -163,9 +211,7 @@
       border-radius: 20px;
       padding: 22px;
       text-align: center;
-
       box-shadow: 0 8px 28px rgba(0,0,0,0.09);
-
       transition: 0.3s;
     }
 
@@ -176,7 +222,6 @@
     .product-image {
       height: 250px;
       border-radius: 17px;
-
       background: #ead9b5;
 
       display: flex;
@@ -200,7 +245,9 @@
       color: #6b665a;
     }
 
-    /* ================= WHY US ================= */
+    /* =========================
+       WHY GRAAM THEKE
+    ========================= */
 
     .why-us {
       background: #fffdf7;
@@ -211,29 +258,38 @@
       margin: auto;
 
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
     }
 
     .why-card {
       background: #f5f0e2;
-      padding: 30px 18px;
-
+      padding: 35px 20px;
       text-align: center;
       border-radius: 20px;
     }
 
+    .why-icon {
+      font-size: 62px;
+      line-height: 1;
+      margin-bottom: 28px;
+      display: block;
+    }
+
     .why-card h3 {
       color: #315d38;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
+      font-size: 28px;
     }
 
     .why-card p {
       color: #6b665a;
-      font-size: 15px;
+      font-size: 17px;
     }
 
-    /* ================= CONTACT ================= */
+    /* =========================
+       CONTACT
+    ========================= */
 
     .contact {
       background: #315d38;
@@ -257,17 +313,12 @@
       margin-bottom: 15px;
     }
 
-    /* ================= PHONE ================= */
-
     .phone-number {
       display: inline-block;
-
       color: white;
       text-decoration: none;
-
       font-size: 22px;
       font-weight: bold;
-
       margin-bottom: 28px;
     }
 
@@ -275,16 +326,15 @@
       text-decoration: underline;
     }
 
-    /* ================= SOCIAL ICONS ================= */
+    /* =========================
+       SOCIAL LINKS
+    ========================= */
 
     .social-links {
       display: flex;
-
       justify-content: center;
       align-items: center;
-
       gap: 28px;
-
       margin: 0 auto 28px;
     }
 
@@ -297,11 +347,9 @@
       align-items: center;
 
       background: transparent;
-
       border-radius: 0;
 
       text-decoration: none;
-
       transition: transform 0.25s ease;
     }
 
@@ -312,38 +360,30 @@
     .social-link svg {
       width: 44px;
       height: 44px;
-
       display: block;
     }
-
-    /* ================= FACEBOOK ================= */
 
     .facebook svg {
       fill: #1877F2;
     }
 
-    /* ================= INSTAGRAM ================= */
-
     .instagram svg {
       fill: #E4405F;
     }
-
-    /* ================= WHATSAPP ================= */
 
     .whatsapp svg {
       fill: #25D366;
     }
 
-    /* ================= ORDER BUTTON ================= */
+    /* =========================
+       ORDER BUTTON
+    ========================= */
 
     .order-button {
       background: #f3c66b;
       color: #29452d;
-
       margin-top: 0;
-
       padding: 14px 38px;
-
       font-size: 17px;
     }
 
@@ -351,20 +391,21 @@
       background: #e8b957;
     }
 
-    /* ================= FOOTER ================= */
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       background: #203b26;
       color: #dddddd;
-
       text-align: center;
-
       padding: 25px 15px;
-
       font-size: 14px;
     }
 
-    /* ================= MOBILE ================= */
+    /* =========================
+       TABLET
+    ========================= */
 
     @media (max-width: 800px) {
 
@@ -373,7 +414,8 @@
       }
 
       .why-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+        max-width: 600px;
       }
 
       section {
@@ -382,10 +424,28 @@
 
     }
 
+    /* =========================
+       MOBILE
+    ========================= */
+
     @media (max-width: 500px) {
+
+      header {
+        padding: 10px 3%;
+      }
 
       .brand-logo {
         width: 105px;
+      }
+
+      .nav-links {
+        gap: 4px;
+        width: 100%;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+        padding: 6px 8px;
       }
 
       .hero {
@@ -413,6 +473,14 @@
         grid-template-columns: 1fr;
       }
 
+      .why-icon {
+        font-size: 58px;
+      }
+
+      .why-card h3 {
+        font-size: 26px;
+      }
+
       .social-links {
         gap: 22px;
       }
@@ -434,36 +502,56 @@
 
 <body>
 
-  <!-- ================= HEADER ================= -->
+  <!-- =========================
+       HEADER
+  ========================= -->
 
   <header>
 
     <div class="header-inner">
 
-      <a href="#home">
-
+      <a href="#home" class="logo-link">
         <img
           src="99927B00-BDEF-45EB-9A5C-AC1CEFE3E77A.png"
           alt="গ্রাম থেকে"
           class="brand-logo"
         >
-
       </a>
+
+      <nav class="nav-links">
+
+        <a href="#home">
+          🏠 Home
+        </a>
+
+        <a href="#new-product">
+          🛍️ New Product
+        </a>
+
+        <a href="#upcoming-product">
+          🌾 Upcoming Product
+        </a>
+
+        <a href="#contact">
+          📞 Contact
+        </a>
+
+      </nav>
 
     </div>
 
   </header>
 
 
-  <!-- ================= HERO ================= -->
+  <!-- =========================
+       HOME / HERO
+  ========================= -->
 
   <section class="hero" id="home">
 
     <div class="hero-content">
 
-      <h1>
-        গ্রাম থেকে
-      </h1>
+      <h1>গ্রাম থেকে</h1>
 
       <h2>
         প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য
@@ -474,10 +562,7 @@
         থেকে বেছে নেওয়া পণ্য পৌঁছে যাবে আপনার ঘরে।
       </p>
 
-      <a
-        href="#products"
-        class="button"
-      >
+      <a href="#products" class="button">
         আমাদের পণ্য দেখুন
       </a>
 
@@ -486,12 +571,11 @@
   </section>
 
 
-  <!-- ================= ABOUT ================= -->
+  <!-- =========================
+       ABOUT
+  ========================= -->
 
-  <section
-    class="about"
-    id="about"
-  >
+  <section class="about" id="about">
 
     <h2 class="section-title">
       আমাদের গল্প
@@ -518,12 +602,11 @@
   </section>
 
 
-  <!-- ================= PRODUCTS ================= -->
+  <!-- =========================
+       PRODUCTS
+  ========================= -->
 
-  <section
-    class="products"
-    id="products"
-  >
+  <section class="products" id="products">
 
     <h2 class="section-title">
       আমাদের পণ্য
@@ -531,32 +614,12 @@
 
     <div class="product-grid">
 
-      <!-- PRODUCT 1 -->
+      <!-- NEW PRODUCT -->
 
-      <div class="product-card">
+      <div class="product-card" id="new-product">
 
         <div class="product-image">
           পণ্যের ছবি এখানে
-        </div>
-
-        <h3>
-          প্রথম পণ্য
-        </h3>
-
-        <p>
-          প্রাকৃতিকভাবে তৈরি
-          ঐতিহ্যবাহী গ্রামীণ পণ্য।
-        </p>
-
-      </div>
-
-
-      <!-- PRODUCT 2 -->
-
-      <div class="product-card">
-
-        <div class="product-image">
-          শীঘ্রই আসছে
         </div>
 
         <h3>
@@ -564,14 +627,32 @@
         </h3>
 
         <p>
-          আমাদের নতুন পণ্য
-          খুব শিগগিরই যুক্ত হবে।
+          প্রাকৃতিকভাবে তৈরি ঐতিহ্যবাহী গ্রামীণ পণ্য।
         </p>
 
       </div>
 
 
-      <!-- PRODUCT 3 -->
+      <!-- UPCOMING PRODUCT -->
+
+      <div class="product-card" id="upcoming-product">
+
+        <div class="product-image">
+          শীঘ্রই আসছে
+        </div>
+
+        <h3>
+          Upcoming Product
+        </h3>
+
+        <p>
+          আমাদের নতুন পণ্য খুব শিগগিরই যুক্ত হবে।
+        </p>
+
+      </div>
+
+
+      <!-- MORE PRODUCTS -->
 
       <div class="product-card">
 
@@ -584,8 +665,7 @@
         </h3>
 
         <p>
-          গ্রাম থেকে আরও নতুন
-          পণ্য নিয়ে আসছে।
+          গ্রাম থেকে আরও নতুন পণ্য নিয়ে আসছে।
         </p>
 
       </div>
@@ -595,7 +675,9 @@
   </section>
 
 
-  <!-- ================= WHY US ================= -->
+  <!-- =========================
+       WHY GRAAM THEKE
+  ========================= -->
 
   <section class="why-us">
 
@@ -605,93 +687,90 @@
 
     <div class="why-grid">
 
+
+      <!-- NATURAL -->
+
       <div class="why-card">
 
+        <div class="why-icon">
+          🌿
+        </div>
+
         <h3>
-          প্রাকৃতিকতা
+          প্রাকৃতিক
         </h3>
 
         <p>
-          প্রকৃতির স্বাভাবিক স্বাদ ও
-          গুণমানকে গুরুত্ব দেওয়া হয়।
+          প্রকৃতির কাছাকাছি থাকা পণ্য ও
+          উপাদানকে গুরুত্ব দেওয়া হয়।
         </p>
 
       </div>
 
 
+      <!-- TRADITION -->
+
       <div class="why-card">
 
+        <div class="why-icon">
+          🏡
+        </div>
+
         <h3>
-          গ্রামের শিকড়
+          গ্রামবাংলার ঐতিহ্য
         </h3>
 
         <p>
           আমাদের পণ্যের সঙ্গে জড়িয়ে আছে
-          গ্রামবাংলার ঐতিহ্য।
+          বাংলার মাটি ও মানুষের ঐতিহ্য।
         </p>
 
       </div>
 
+
+      <!-- CARE & QUALITY -->
 
       <div class="why-card">
 
+        <div class="why-icon">
+          ❤️
+        </div>
+
         <h3>
-          মানসম্মত
+          যত্ন ও মান
         </h3>
 
         <p>
-          প্রতিটি পণ্যের মানের প্রতি
-          আমরা গুরুত্ব দিই।
+          ভালো মানের পণ্য মানুষের কাছে
+          পৌঁছে দেওয়াই আমাদের লক্ষ্য।
         </p>
 
       </div>
 
-
-      <div class="why-card">
-
-        <h3>
-          ভালোবাসা
-        </h3>
-
-        <p>
-          প্রতিটি পণ্যের সঙ্গে থাকে
-          আমাদের যত্ন ও আন্তরিকতা।
-        </p>
-
-      </div>
 
     </div>
 
   </section>
 
 
-  <!-- ================= CONTACT ================= -->
+  <!-- =========================
+       CONTACT
+  ========================= -->
 
-  <section
-    class="contact"
-    id="contact"
-  >
+  <section class="contact" id="contact">
 
     <h2 class="section-title">
       যোগাযোগ করুন
     </h2>
 
-
-    <!-- LOCATION -->
-
     <p class="location">
       যোগাযোগ: কাপাসিয়া, গাজীপুর
     </p>
 
-
-    <!-- DESCRIPTION -->
-
     <p class="contact-description">
-      অর্ডার বা যেকোনো তথ্যের জন্য আমাদের সঙ্গে যোগাযোগ করুন।
+      অর্ডার বা যেকোনো তথ্যের জন্য
+      আমাদের সঙ্গে যোগাযোগ করুন।
     </p>
-
-
-    <!-- PHONE -->
 
     <a
       href="tel:+8801601601998"
@@ -701,7 +780,7 @@
     </a>
 
 
-    <!-- ================= SOCIAL ICONS ================= -->
+    <!-- SOCIAL LINKS -->
 
     <div class="social-links">
 
@@ -786,7 +865,7 @@
     </div>
 
 
-    <!-- ORDER BUTTON -->
+    <!-- ORDER -->
 
     <a
       href="https://wa.me/message/PSDZUZ6DPBKDL1"
@@ -800,7 +879,9 @@
   </section>
 
 
-  <!-- ================= FOOTER ================= -->
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer>
 
@@ -813,6 +894,7 @@
     </p>
 
   </footer>
+
 
 </body>
 </html>
