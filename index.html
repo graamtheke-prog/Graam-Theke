@@ -7,9 +7,10 @@
   <title>গ্রাম থেকে | প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য</title>
 
   <meta name="description"
-    content="গ্রাম থেকে — প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য।">
+    content="গ্রাম থেকে — প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য। খাঁটি ও মানসম্মত দেশীয় পণ্যের ঠিকানা।">
 
   <style>
+
     * {
       margin: 0;
       padding: 0;
@@ -22,21 +23,23 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: #f7f0df;
+      background: #f8f5ed;
       color: #29452d;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
+    /* HEADER */
+
     header {
-      background: #f7f0df;
-      padding: 12px 7%;
+      background: #fffdf7;
+      padding: 15px 7%;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     }
 
     .brand-logo {
@@ -47,58 +50,64 @@
       display: block;
     }
 
-    .tagline-small {
-      font-size: 11px;
-      color: #75451f;
-      letter-spacing: 1px;
-      margin-top: 3px;
+    nav {
+      display: flex;
+      gap: 22px;
     }
 
     nav a {
       text-decoration: none;
-      color: #315d38;
-      margin-left: 22px;
+      color: #29452d;
       font-weight: bold;
+      font-size: 16px;
     }
 
+    nav a:hover {
+      color: #b77b25;
+    }
+
+    /* HERO */
+
     .hero {
-      min-height: 88vh;
+      min-height: 80vh;
+      padding: 80px 7%;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 70px 7%;
-      background: radial-gradient(circle at top, #fff9e9, #efe2c4);
+      background:
+        linear-gradient(
+          rgba(247,242,226,0.92),
+          rgba(247,242,226,0.92)
+        );
     }
 
     .hero-content {
-      max-width: 850px;
+      max-width: 800px;
     }
 
     .hero h1 {
-      font-size: clamp(52px, 12vw, 100px);
+      font-size: 52px;
+      margin-bottom: 15px;
       color: #315d38;
-      margin-bottom: 5px;
     }
 
-    .hero .tagline {
-      font-size: clamp(21px, 5vw, 38px);
-      color: #75451f;
-      font-weight: bold;
+    .hero h2 {
+      font-size: 25px;
+      color: #9a6825;
       margin-bottom: 20px;
     }
 
     .hero p {
-      max-width: 650px;
-      margin: auto;
-      font-size: 18px;
-      color: #625d50;
+      font-size: 19px;
+      margin-bottom: 30px;
     }
+
+    /* BUTTON */
 
     .button {
       display: inline-block;
-      margin-top: 30px;
-      padding: 14px 32px;
+      padding: 13px 28px;
       background: #315d38;
       color: white;
       text-decoration: none;
@@ -109,30 +118,42 @@
 
     .button:hover {
       transform: translateY(-3px);
+      background: #23472a;
     }
 
+    /* SECTIONS */
+
     section {
-      padding: 80px 7%;
+      padding: 70px 7%;
     }
 
     .section-title {
       text-align: center;
-      font-size: 36px;
+      font-size: 34px;
+      margin-bottom: 35px;
       color: #315d38;
-      margin-bottom: 45px;
     }
 
+    /* ABOUT */
+
     .about {
+      background: #fffdf7;
+      text-align: center;
+    }
+
+    .about-content {
       max-width: 850px;
       margin: auto;
-      text-align: center;
       font-size: 18px;
-      color: #625d50;
     }
 
     /* PRODUCTS */
 
     .products {
+      background: #f1ead8;
+    }
+
+    .product-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 25px;
@@ -141,11 +162,11 @@
     }
 
     .product-card {
-      background: #fffaf0;
-      border-radius: 22px;
-      padding: 22px;
+      background: white;
+      padding: 30px 20px;
+      border-radius: 15px;
       text-align: center;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.09);
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
       transition: 0.3s;
     }
 
@@ -154,64 +175,55 @@
     }
 
     .product-image {
-      height: 280px;
-      border-radius: 17px;
-      background: #ead9b5;
+      width: 100%;
+      height: 220px;
+      background: #eee7d6;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #75451f;
-      font-size: 18px;
-      font-weight: bold;
       margin-bottom: 20px;
+      color: #777;
     }
 
     .product-card h3 {
-      font-size: 25px;
+      font-size: 23px;
+      margin-bottom: 10px;
       color: #315d38;
-      margin-bottom: 8px;
     }
 
     .product-card p {
-      color: #6b665a;
+      color: #666;
     }
 
-    .price {
-      font-size: 22px;
-      color: #75451f;
-      font-weight: bold;
-      margin-top: 15px;
+    /* WHY US */
+
+    .why-us {
+      background: #fffdf7;
     }
 
-    /* FEATURES */
-
-    .features {
+    .why-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-      max-width: 1050px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1100px;
       margin: auto;
     }
 
-    .feature {
-      background: #fffaf0;
-      padding: 35px 22px;
+    .why-card {
       text-align: center;
-      border-radius: 20px;
+      padding: 25px 15px;
+      background: #f5f0e2;
+      border-radius: 15px;
     }
 
-    .feature-icon {
-      font-size: 42px;
-      margin-bottom: 12px;
+    .why-icon {
+      font-size: 40px;
+      margin-bottom: 10px;
     }
 
-    .feature h3 {
-      color: #315d38;
+    .why-card h3 {
       margin-bottom: 8px;
-    }
-
-    .feature p {
-      color: #6b665a;
     }
 
     /* CONTACT */
@@ -274,41 +286,26 @@
       margin-top: 30px;
     }
 
+    .whatsapp-button:hover {
+      background: #e9b84f;
+    }
+
+    /* FOOTER */
+
     footer {
-      background: #203b26;
-      color: #ddd;
+      background: #203c25;
+      color: white;
       text-align: center;
-      padding: 25px;
+      padding: 25px 15px;
       font-size: 14px;
     }
 
     /* MOBILE */
 
-    @media (max-width: 800px) {
+    @media (max-width: 768px) {
 
       header {
-        padding: 10px 5%;
-      }
-
-      nav {
-        display: none;
-      }
-
-      .products,
-      .features {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 65px 5%;
-      }
-
-      .hero {
-        min-height: 80vh;
-      }
-
-      .product-image {
-        height: 320px;
+        padding: 12px 5%;
       }
 
       .brand-logo {
@@ -316,16 +313,74 @@
         max-height: 65px;
       }
 
+      nav {
+        gap: 10px;
+      }
+
+      nav a {
+        font-size: 13px;
+      }
+
+      .hero {
+        min-height: 70vh;
+        padding: 60px 5%;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .hero h2 {
+        font-size: 21px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 55px 5%;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
       .contact-links {
-        gap: 12px;
+        flex-direction: column;
       }
 
       .contact-link {
-        min-width: 55px;
-        height: 52px;
-        padding: 0 15px;
+        width: 100%;
+        max-width: 300px;
       }
+
     }
+
+    @media (max-width: 450px) {
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+    }
+
   </style>
 </head>
 
@@ -335,17 +390,13 @@
 
   <header>
 
-    <div>
+    <a href="#home">
       <img
         src="48529A9D-3294-4FBF-9AE1-171B61813205.jpeg"
         alt="গ্রাম থেকে"
         class="brand-logo"
       >
-
-      <div class="tagline-small">
-        প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য
-      </div>
-    </div>
+    </a>
 
     <nav>
       <a href="#home">হোম</a>
@@ -365,13 +416,13 @@
 
       <h1>গ্রাম থেকে</h1>
 
-      <div class="tagline">
+      <h2>
         প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য
-      </div>
+      </h2>
 
       <p>
-        আমাদের গ্রামের প্রকৃতি, ঐতিহ্য ও ভালোবাসা
-        থেকে বেছে নেওয়া পণ্য পৌঁছে যাবে আপনার ঘরে।
+        গ্রামের মাটি, মানুষের ভালোবাসা আর প্রাকৃতিক স্বাদের
+        গল্প নিয়ে আমাদের পথচলা।
       </p>
 
       <a href="#products" class="button">
@@ -385,26 +436,32 @@
 
   <!-- ABOUT -->
 
-  <section id="about">
+  <section class="about" id="about">
 
     <h2 class="section-title">
       আমাদের গল্প
     </h2>
 
-    <div class="about">
+    <div class="about-content">
 
       <p>
-        <strong>গ্রাম থেকে</strong> একটি পণ্য নয়,
-        এটি আমাদের গ্রামবাংলার জীবন, প্রকৃতি,
-        ঐতিহ্য ও মানুষের ভালোবাসার গল্প।
+        <strong>গ্রাম থেকে</strong> শুধু একটি ব্র্যান্ড নয়,
+        এটি আমাদের শেকড় ও ঐতিহ্যের গল্প।
       </p>
 
       <br>
 
       <p>
-        গ্রামের প্রাকৃতিক স্বাদ ও ঐতিহ্যকে
-        আধুনিকভাবে মানুষের কাছে পৌঁছে দেওয়াই
-        আমাদের লক্ষ্য।
+        গ্রামবাংলার প্রকৃতি, ঐতিহ্য ও মানুষের ভালোবাসা
+        থেকে অনুপ্রেরণা নিয়ে আমরা আপনাদের কাছে
+        পৌঁছে দিতে চাই মানসম্মত দেশীয় পণ্য।
+      </p>
+
+      <br>
+
+      <p>
+        আমাদের লক্ষ্য হলো গ্রামের খাঁটি স্বাদ ও ঐতিহ্যকে
+        আধুনিকভাবে সবার কাছে পৌঁছে দেওয়া।
       </p>
 
     </div>
@@ -414,36 +471,27 @@
 
   <!-- PRODUCTS -->
 
-  <section id="products">
+  <section class="products" id="products">
 
     <h2 class="section-title">
       আমাদের পণ্য
     </h2>
 
-    <div class="products">
+    <div class="product-grid">
 
       <div class="product-card">
 
         <div class="product-image">
-          Product Image
+          পণ্যের ছবি এখানে
         </div>
 
         <h3>
-          আমাদের প্রথম পণ্য
+          খাঁটি আখের গুড়
         </h3>
 
         <p>
-          প্রাকৃতিকভাবে তৈরি ঐতিহ্যবাহী
-          গ্রামীণ পণ্য।
+          প্রাকৃতিকভাবে তৈরি সুস্বাদু ও মানসম্মত দেশীয় পণ্য।
         </p>
-
-        <div class="price">
-          মূল্য শীঘ্রই জানানো হবে
-        </div>
-
-        <a href="#contact" class="button">
-          অর্ডার করুন
-        </a>
 
       </div>
 
@@ -451,7 +499,7 @@
       <div class="product-card">
 
         <div class="product-image">
-          Coming Soon
+          শীঘ্রই আসছে
         </div>
 
         <h3>
@@ -459,8 +507,7 @@
         </h3>
 
         <p>
-          আমাদের নতুন পণ্য খুব শিগগিরই
-          যুক্ত হবে।
+          গ্রাম থেকে আরও নতুন নতুন পণ্য নিয়ে আসছে।
         </p>
 
       </div>
@@ -469,16 +516,15 @@
       <div class="product-card">
 
         <div class="product-image">
-          Coming Soon
+          শীঘ্রই আসছে
         </div>
 
         <h3>
-          আরও আসছে
+          আরও পণ্য
         </h3>
 
         <p>
-          গ্রাম থেকে আরও নতুন
-          পণ্য নিয়ে আসছে।
+          আমাদের পরবর্তী পণ্যের জন্য অপেক্ষা করুন।
         </p>
 
       </div>
@@ -490,57 +536,69 @@
 
   <!-- WHY US -->
 
-  <section>
+  <section class="why-us">
 
     <h2 class="section-title">
       কেন গ্রাম থেকে?
     </h2>
 
-    <div class="features">
+    <div class="why-grid">
 
-      <div class="feature">
+      <div class="why-card">
 
-        <div class="feature-icon">🌾</div>
+        <div class="why-icon">🌿</div>
 
         <h3>
-          গ্রামের শিকড়
+          প্রাকৃতিক
         </h3>
 
         <p>
-          আমাদের পণ্যের সঙ্গে জড়িয়ে আছে
-          গ্রামবাংলার ঐতিহ্য।
+          প্রকৃতির কাছাকাছি স্বাদের প্রতি আমাদের অঙ্গীকার।
         </p>
 
       </div>
 
 
-      <div class="feature">
+      <div class="why-card">
 
-        <div class="feature-icon">🌿</div>
+        <div class="why-icon">🏡</div>
 
         <h3>
-          প্রাকৃতিকতা
+          গ্রামবাংলার ঐতিহ্য
         </h3>
 
         <p>
-          প্রকৃতির স্বাভাবিক স্বাদ ও
-          গুণমানকে গুরুত্ব দেওয়া হয়।
+          আমাদের পণ্যে ফুটে ওঠে বাংলার ঐতিহ্য।
         </p>
 
       </div>
 
 
-      <div class="feature">
+      <div class="why-card">
 
-        <div class="feature-icon">❤️</div>
+        <div class="why-icon">⭐</div>
+
+        <h3>
+          মানসম্মত
+        </h3>
+
+        <p>
+          মানের ব্যাপারে আমরা আপসহীন।
+        </p>
+
+      </div>
+
+
+      <div class="why-card">
+
+        <div class="why-icon">❤️</div>
 
         <h3>
           ভালোবাসা
         </h3>
 
         <p>
-          প্রতিটি পণ্যের সঙ্গে থাকে
-          আমাদের যত্ন ও আন্তরিকতা।
+          প্রতিটি পণ্যের সঙ্গে থাকে আমাদের যত্ন ও ভালোবাসা।
         </p>
 
       </div>
@@ -620,7 +678,7 @@
     </div>
 
 
-    <!-- WHATSAPP ORDER -->
+    <!-- ORDER BUTTON -->
 
     <a
       href="https://wa.me/message/PSDZUZ6DPBKDL1"
@@ -638,11 +696,16 @@
 
   <footer>
 
-    © 2026 গ্রাম থেকে
-    <br>
-    প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য
+    <p>
+      © 2026 গ্রাম থেকে — সর্বস্বত্ব সংরক্ষিত।
+    </p>
+
+    <p>
+      প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য
+    </p>
 
   </footer>
+
 
 </body>
 </html>
