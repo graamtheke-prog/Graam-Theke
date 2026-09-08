@@ -364,6 +364,44 @@
 
 
     /* =========================
+       BRAND STORY VIDEO
+    ========================= */
+
+    .brand-video {
+      background: #f1ead8;
+
+      text-align: center;
+
+      padding: 80px 7%;
+    }
+
+    .video-container {
+      max-width: 1000px;
+
+      margin: auto;
+
+      border-radius: 22px;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 10px 35px rgba(0,0,0,0.12);
+
+      background: #203b26;
+    }
+
+    .video-container video {
+      width: 100%;
+
+      height: auto;
+
+      display: block;
+
+      object-fit: cover;
+    }
+
+
+    /* =========================
        CONTACT
     ========================= */
 
@@ -599,6 +637,14 @@
       .social-link svg {
         width: 40px;
         height: 40px;
+      }
+
+      .brand-video {
+        padding: 65px 5%;
+      }
+
+      .video-container {
+        border-radius: 16px;
       }
 
     }
@@ -889,6 +935,33 @@
 
       </div>
 
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       BRAND STORY VIDEO
+  ========================= -->
+
+  <section class="brand-video">
+
+    <h2 class="section-title">
+      গ্রাম থেকে — আমাদের গল্প
+    </h2>
+
+    <div class="video-container">
+
+      <video
+        src="video-output-B0BA3A30-A641-4947-B97B-2AC591D5D93F-1.mov"
+        autoplay
+        muted
+        loop
+        playsinline
+        controls
+      ></video>
 
     </div>
 
