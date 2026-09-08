@@ -6,9 +6,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>গ্রাম থেকে | প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য</title>
+  <title id="pageTitle">গ্রাম থেকে | প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য</title>
 
   <meta
+    id="pageDescription"
     name="description"
     content="গ্রাম থেকে — প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য।"
   >
@@ -50,11 +51,8 @@
       margin: auto;
 
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-
-      gap: 10px;
     }
 
     .logo-link {
@@ -71,41 +69,213 @@
     }
 
     /* =========================
-       NAVIGATION
+       MENU
     ========================= */
 
-    .nav-links {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      flex-wrap: wrap;
-      gap: 6px;
+    .menu-area {
+      position: relative;
     }
 
-    .nav-links a {
-      display: inline-flex;
+    .menu-button {
+      border: none;
+      background: #315d38;
+      color: white;
+
+      padding: 11px 18px;
+
+      border-radius: 30px;
+
+      display: flex;
       align-items: center;
-      justify-content: center;
+      gap: 10px;
 
-      gap: 5px;
-
-      padding: 7px 12px;
-
-      color: #29452d;
-      text-decoration: none;
-
-      font-size: 14px;
+      font-family: inherit;
+      font-size: 15px;
       font-weight: bold;
 
-      border-radius: 20px;
+      cursor: pointer;
 
       transition: 0.3s;
     }
 
-    .nav-links a:hover {
-      background: #f1ead8;
+    .menu-button:hover {
+      background: #23472a;
       transform: translateY(-2px);
+    }
+
+    .menu-icon {
+      width: 22px;
+      height: 16px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .menu-icon span {
+      width: 100%;
+      height: 2px;
+      background: white;
+      border-radius: 5px;
+
+      transition: 0.3s;
+    }
+
+    .menu-button.active .menu-icon span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-button.active .menu-icon span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-button.active .menu-icon span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* =========================
+       DROPDOWN
+    ========================= */
+
+    .dropdown-menu {
+      position: absolute;
+
+      top: calc(100% + 12px);
+      right: 0;
+
+      width: 245px;
+
+      background: rgba(255, 253, 247, 0.98);
+
+      border-radius: 20px;
+
+      padding: 10px;
+
+      box-shadow:
+        0 15px 40px rgba(0,0,0,0.15);
+
+      opacity: 0;
+      visibility: hidden;
+
+      transform:
+        translateY(-10px)
+        scale(0.97);
+
+      transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+    }
+
+    .dropdown-menu.show {
+      opacity: 1;
+      visibility: visible;
+
+      transform:
+        translateY(0)
+        scale(1);
+    }
+
+    .dropdown-menu a,
+    .language-toggle {
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+
+      padding: 13px 15px;
+
+      border-radius: 12px;
+
+      color: #29452d;
+
+      text-decoration: none;
+
+      font-size: 15px;
+      font-weight: bold;
+
+      background: transparent;
+
+      border: none;
+
+      font-family: inherit;
+
+      cursor: pointer;
+
+      transition: 0.25s;
+
+      text-align: left;
+    }
+
+    .dropdown-menu a:hover,
+    .language-toggle:hover {
+      background: #f1ead8;
+      transform: translateX(3px);
+    }
+
+    .dropdown-menu a.active {
+      background: #e9efdf;
+    }
+
+    /* =========================
+       LANGUAGE
+    ========================= */
+
+    .language-section {
+      margin-top: 5px;
+      padding-top: 8px;
+
+      border-top: 1px solid #e5dfd0;
+    }
+
+    .language-title {
+      display: block;
+
+      padding: 6px 15px 4px;
+
+      color: #7a7468;
+
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .language-options {
+      display: flex;
+      gap: 6px;
+
+      padding: 0 5px 5px;
+    }
+
+    .language-option {
+      flex: 1;
+
+      border: none;
+
+      padding: 8px 5px;
+
+      border-radius: 10px;
+
+      background: transparent;
+
+      color: #29452d;
+
+      font-family: inherit;
+
+      font-size: 13px;
+      font-weight: bold;
+
+      cursor: pointer;
+
+      transition: 0.25s;
+    }
+
+    .language-option:hover {
+      background: #f1ead8;
+    }
+
+    .language-option.selected {
+      background: #315d38;
+      color: white;
     }
 
     /* =========================
@@ -133,7 +303,6 @@
 
     .hero-content {
       max-width: 850px;
-
       width: 100%;
     }
 
@@ -172,7 +341,6 @@
 
     .hero-video {
       width: 100%;
-
       max-width: 430px;
 
       margin: 0 auto;
@@ -189,7 +357,6 @@
 
     .hero-video video {
       width: 100%;
-
       height: auto;
 
       display: block;
@@ -560,18 +727,27 @@
 
     @media (max-width: 500px) {
 
+      header {
+        padding: 11px 5%;
+      }
+
       .brand-logo {
         width: 105px;
       }
 
-      .nav-links {
-        gap: 3px;
+      .menu-button {
+        padding: 10px 15px;
+        font-size: 14px;
       }
 
-      .nav-links a {
-        font-size: 12px;
+      .dropdown-menu {
+        width: 220px;
+        right: 0;
+      }
 
-        padding: 6px 8px;
+      .dropdown-menu a,
+      .language-toggle {
+        font-size: 14px;
       }
 
       .hero {
@@ -620,11 +796,6 @@
         gap: 22px;
       }
 
-      .social-link {
-        width: auto;
-        height: auto;
-      }
-
       .social-link svg {
         width: 40px;
         height: 40px;
@@ -656,29 +827,110 @@
 
       </a>
 
-      <nav class="nav-links">
+      <div class="menu-area">
 
-        <a href="#home">
-          🏠 Home
-        </a>
+        <button
+          class="menu-button"
+          id="menuButton"
+          type="button"
+          aria-label="মেনু"
+          aria-expanded="false"
+        >
 
-        <a href="#new-product">
-          🛍️ New Product
-        </a>
+          <span id="menuText">মেনু</span>
 
-        <a href="#upcoming-product">
-          🌾 Upcoming Product
-        </a>
+          <span class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
 
-        <a href="#contact">
-          📞 Contact
-        </a>
+        </button>
 
-      </nav>
+
+        <div
+          class="dropdown-menu"
+          id="dropdownMenu"
+        >
+
+          <a
+            href="#home"
+            class="menu-link active"
+            data-bn="হোম"
+            data-en="Home"
+          >
+            হোম
+          </a>
+
+          <a
+            href="#new-product"
+            class="menu-link"
+            data-bn="নতুন পণ্য"
+            data-en="New Product"
+          >
+            নতুন পণ্য
+          </a>
+
+          <a
+            href="#upcoming-product"
+            class="menu-link"
+            data-bn="আসন্ন প্রজেক্ট"
+            data-en="Upcoming Project"
+          >
+            আসন্ন প্রজেক্ট
+          </a>
+
+          <a
+            href="#contact"
+            class="menu-link"
+            data-bn="যোগাযোগ"
+            data-en="Contact"
+          >
+            যোগাযোগ
+          </a>
+
+
+          <!-- LANGUAGE -->
+
+          <div class="language-section">
+
+            <span
+              class="language-title"
+              id="languageTitle"
+            >
+              ভাষা
+            </span>
+
+            <div class="language-options">
+
+              <button
+                class="language-option selected"
+                id="bnButton"
+                type="button"
+              >
+                বাংলা
+              </button>
+
+              <button
+                class="language-option"
+                id="enButton"
+                type="button"
+              >
+                English
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
 
   </header>
+
 
   <!-- =========================
        HOME / HERO
@@ -688,22 +940,21 @@
 
     <div class="hero-content">
 
-      <h1>
+      <h1 id="heroTitle">
         গ্রাম থেকে
       </h1>
 
-      <h2>
+      <h2 id="heroSubtitle">
         প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য
       </h2>
 
-      <p>
+      <p id="heroDescription">
         আমাদের গ্রামের প্রকৃতি, ঐতিহ্য ও ভালোবাসা
         থেকে বেছে নেওয়া পণ্য পৌঁছে যাবে আপনার ঘরে।
       </p>
 
-      <!-- =========================
-           HERO VIDEO
-      ========================= -->
+
+      <!-- HERO VIDEO -->
 
       <div class="hero-video">
 
@@ -719,9 +970,11 @@
 
       </div>
 
+
       <a
         href="#products"
         class="button"
+        id="productButton"
       >
         আমাদের পণ্য দেখুন
       </a>
@@ -729,6 +982,7 @@
     </div>
 
   </section>
+
 
   <!-- =========================
        ABOUT
@@ -739,13 +993,16 @@
     id="about"
   >
 
-    <h2 class="section-title">
+    <h2
+      class="section-title"
+      id="aboutTitle"
+    >
       আমাদের গল্প
     </h2>
 
     <div class="about-content">
 
-      <p>
+      <p id="aboutTextOne">
 
         <strong>গ্রাম থেকে</strong> একটি পণ্য নয়,
         এটি আমাদের গ্রামবাংলার জীবন, প্রকৃতি,
@@ -755,10 +1012,10 @@
 
       <br>
 
-      <p>
+      <p id="aboutTextTwo">
 
         গ্রামের প্রাকৃতিক স্বাদ ও ঐতিহ্যকে
-       মানুষের কাছে পৌঁছে দেওয়াই
+        মানুষের কাছে পৌঁছে দেওয়াই
         আমাদের লক্ষ্য।
 
       </p>
@@ -766,6 +1023,7 @@
     </div>
 
   </section>
+
 
   <!-- =========================
        PRODUCTS
@@ -776,11 +1034,15 @@
     id="products"
   >
 
-    <h2 class="section-title">
+    <h2
+      class="section-title"
+      id="productsTitle"
+    >
       আমাদের পণ্য
     </h2>
 
     <div class="product-grid">
+
 
       <!-- NEW PRODUCT -->
 
@@ -794,6 +1056,7 @@
           <img
             src="DDEFE989-0077-4992-8E6F-AC19B734DF8B.png"
             alt="খাঁটি আখের গুড়"
+            id="productImage"
             style="
               width:100%;
               height:100%;
@@ -804,15 +1067,16 @@
 
         </div>
 
-        <h3>
+        <h3 id="jaggeryTitle">
           খাঁটি আখের গুড়
         </h3>
 
-        <p>
+        <p id="jaggeryWeight">
           ওজন: 500 gm
         </p>
 
       </div>
+
 
       <!-- UPCOMING PRODUCT -->
 
@@ -821,33 +1085,40 @@
         id="upcoming-product"
       >
 
-        <div class="product-image">
+        <div
+          class="product-image"
+          id="comingSoonOne"
+        >
           শীঘ্রই আসছে
         </div>
 
-        <h3>
+        <h3 id="newProductTitle">
           নতুন পণ্য
         </h3>
 
-        <p>
+        <p id="newProductDescription">
           আমাদের নতুন পণ্য খুব শিগগিরই যুক্ত হবে।
         </p>
 
       </div>
 
+
       <!-- MORE PRODUCT -->
 
       <div class="product-card">
 
-        <div class="product-image">
+        <div
+          class="product-image"
+          id="comingSoonTwo"
+        >
           শীঘ্রই আসছে
         </div>
 
-        <h3>
+        <h3 id="moreProductTitle">
           আরও পণ্য
         </h3>
 
-        <p>
+        <p id="moreProductDescription">
           গ্রাম থেকে আরও নতুন পণ্য নিয়ে আসছে।
         </p>
 
@@ -857,19 +1128,22 @@
 
   </section>
 
+
   <!-- =========================
        WHY GRAAM THEKE
   ========================= -->
 
   <section class="why-us">
 
-    <h2 class="section-title">
+    <h2
+      class="section-title"
+      id="whyTitle"
+    >
       কেন গ্রাম থেকে?
     </h2>
 
     <div class="why-grid">
 
-      <!-- 🌿 -->
 
       <div class="why-card">
 
@@ -877,17 +1151,16 @@
           🌿
         </div>
 
-        <h3>
+        <h3 id="naturalTitle">
           প্রাকৃতিক
         </h3>
 
-        <p>
+        <p id="naturalDescription">
           প্রকৃতির কাছাকাছি থাকা পণ্য ও উপাদানকে গুরুত্ব দেওয়া হয়।
         </p>
 
       </div>
 
-      <!-- 🏡 -->
 
       <div class="why-card">
 
@@ -895,17 +1168,16 @@
           🏡
         </div>
 
-        <h3>
+        <h3 id="traditionTitle">
           গ্রামবাংলার ঐতিহ্য
         </h3>
 
-        <p>
+        <p id="traditionDescription">
           আমাদের পণ্যের সঙ্গে জড়িয়ে আছে বাংলার মাটি ও মানুষের ঐতিহ্য।
         </p>
 
       </div>
 
-      <!-- ❤️ -->
 
       <div class="why-card">
 
@@ -913,11 +1185,11 @@
           ❤️
         </div>
 
-        <h3>
+        <h3 id="loveTitle">
           ভালোবাসা
         </h3>
 
-        <p>
+        <p id="loveDescription">
           প্রতিটি পণ্যের সঙ্গে থাকে আমাদের যত্ন ও আন্তরিকতা।
         </p>
 
@@ -926,6 +1198,7 @@
     </div>
 
   </section>
+
 
   <!-- =========================
        CONTACT
@@ -936,15 +1209,24 @@
     id="contact"
   >
 
-    <h2 class="section-title">
+    <h2
+      class="section-title"
+      id="contactTitle"
+    >
       যোগাযোগ করুন
     </h2>
 
-    <p class="location">
+    <p
+      class="location"
+      id="locationText"
+    >
       যোগাযোগ: কাপাসিয়া, গাজীপুর
     </p>
 
-    <p class="contact-description">
+    <p
+      class="contact-description"
+      id="contactDescription"
+    >
       অর্ডার বা যেকোনো তথ্যের জন্য আমাদের সঙ্গে যোগাযোগ করুন।
     </p>
 
@@ -955,9 +1237,11 @@
       +8801601601998
     </a>
 
+
     <!-- SOCIAL LINKS -->
 
     <div class="social-links">
+
 
       <!-- FACEBOOK -->
 
@@ -984,6 +1268,7 @@
 
       </a>
 
+
       <!-- INSTAGRAM -->
 
       <a
@@ -1008,6 +1293,7 @@
         </svg>
 
       </a>
+
 
       <!-- WHATSAPP -->
 
@@ -1036,6 +1322,7 @@
 
     </div>
 
+
     <!-- ORDER BUTTON -->
 
     <a
@@ -1043,11 +1330,13 @@
       target="_blank"
       rel="noopener noreferrer"
       class="button order-button"
+      id="orderButton"
     >
       অর্ডার করুন
     </a>
 
   </section>
+
 
   <!-- =========================
        FOOTER
@@ -1055,11 +1344,11 @@
 
   <footer>
 
-    <p>
+    <p id="footerCopyright">
       © 2026 গ্রাম থেকে
     </p>
 
-    <p>
+    <p id="footerMotto">
       প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য
     </p>
 
@@ -1067,53 +1356,598 @@
 
 
   <!-- =========================
-       FORCE VIDEO AUTOPLAY
+       JAVASCRIPT
   ========================= -->
 
   <script>
 
-    document.addEventListener("DOMContentLoaded", function () {
+    /* =========================
+       MENU
+    ========================= */
 
-      const video = document.getElementById("heroVideo");
+    const menuButton = document.getElementById("menuButton");
+    const dropdownMenu = document.getElementById("dropdownMenu");
 
-      if (video) {
+    menuButton.addEventListener("click", function () {
 
-        video.muted = true;
-        video.setAttribute("muted", "");
-        video.setAttribute("autoplay", "");
-        video.setAttribute("playsinline", "");
-        video.setAttribute("webkit-playsinline", "");
-        video.setAttribute("loop", "");
+      const isOpen =
+        dropdownMenu.classList.toggle("show");
 
-        video.play().catch(function () {
+      menuButton.classList.toggle("active", isOpen);
 
-          // Browser autoplay policy blocked playback.
-          // Try again when the page becomes visible.
-          
-          document.addEventListener("visibilitychange", function () {
+      menuButton.setAttribute(
+        "aria-expanded",
+        isOpen
+      );
 
-            if (!document.hidden) {
-              video.play().catch(function () {});
+    });
+
+
+    /* CLOSE MENU AFTER CLICKING LINK */
+
+    document.querySelectorAll(".menu-link").forEach(function(link) {
+
+      link.addEventListener("click", function() {
+
+        dropdownMenu.classList.remove("show");
+        menuButton.classList.remove("active");
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      });
+
+    });
+
+
+    /* CLOSE MENU WHEN CLICKING OUTSIDE */
+
+    document.addEventListener("click", function(event) {
+
+      if (
+        !event.target.closest(".menu-area")
+      ) {
+
+        dropdownMenu.classList.remove("show");
+        menuButton.classList.remove("active");
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      }
+
+    });
+
+
+    /* =========================
+       LANGUAGE DATA
+    ========================= */
+
+    const translations = {
+
+      bn: {
+
+        menu: "মেনু",
+        language: "ভাষা",
+
+        title:
+          "গ্রাম থেকে | প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য",
+
+        description:
+          "গ্রাম থেকে — প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য।",
+
+        heroTitle:
+          "গ্রাম থেকে",
+
+        heroSubtitle:
+          "প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য",
+
+        heroDescription:
+          "আমাদের গ্রামের প্রকৃতি, ঐতিহ্য ও ভালোবাসা থেকে বেছে নেওয়া পণ্য পৌঁছে যাবে আপনার ঘরে।",
+
+        productButton:
+          "আমাদের পণ্য দেখুন",
+
+        aboutTitle:
+          "আমাদের গল্প",
+
+        aboutTextOne:
+          "<strong>গ্রাম থেকে</strong> একটি পণ্য নয়, এটি আমাদের গ্রামবাংলার জীবন, প্রকৃতি, ঐতিহ্য ও মানুষের ভালোবাসার গল্প।",
+
+        aboutTextTwo:
+          "গ্রামের প্রাকৃতিক স্বাদ ও ঐতিহ্যকে মানুষের কাছে পৌঁছে দেওয়াই আমাদের লক্ষ্য।",
+
+        productsTitle:
+          "আমাদের পণ্য",
+
+        jaggeryTitle:
+          "খাঁটি আখের গুড়",
+
+        jaggeryWeight:
+          "ওজন: 500 gm",
+
+        comingSoon:
+          "শীঘ্রই আসছে",
+
+        newProductTitle:
+          "নতুন পণ্য",
+
+        newProductDescription:
+          "আমাদের নতুন পণ্য খুব শিগগিরই যুক্ত হবে।",
+
+        moreProductTitle:
+          "আরও পণ্য",
+
+        moreProductDescription:
+          "গ্রাম থেকে আরও নতুন পণ্য নিয়ে আসছে।",
+
+        whyTitle:
+          "কেন গ্রাম থেকে?",
+
+        naturalTitle:
+          "প্রাকৃতিক",
+
+        naturalDescription:
+          "প্রকৃতির কাছাকাছি থাকা পণ্য ও উপাদানকে গুরুত্ব দেওয়া হয়।",
+
+        traditionTitle:
+          "গ্রামবাংলার ঐতিহ্য",
+
+        traditionDescription:
+          "আমাদের পণ্যের সঙ্গে জড়িয়ে আছে বাংলার মাটি ও মানুষের ঐতিহ্য।",
+
+        loveTitle:
+          "ভালোবাসা",
+
+        loveDescription:
+          "প্রতিটি পণ্যের সঙ্গে থাকে আমাদের যত্ন ও আন্তরিকতা।",
+
+        contactTitle:
+          "যোগাযোগ করুন",
+
+        location:
+          "যোগাযোগ: কাপাসিয়া, গাজীপুর",
+
+        contactDescription:
+          "অর্ডার বা যেকোনো তথ্যের জন্য আমাদের সঙ্গে যোগাযোগ করুন।",
+
+        orderButton:
+          "অর্ডার করুন",
+
+        footerCopyright:
+          "© 2026 গ্রাম থেকে",
+
+        footerMotto:
+          "প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য"
+
+      },
+
+
+      en: {
+
+        menu:
+          "Menu",
+
+        language:
+          "Language",
+
+        title:
+          "Graam Theke | Natural Sweetness, Rural Bengal Heritage",
+
+        description:
+          "Graam Theke — Natural Sweetness, Rural Bengal Heritage.",
+
+        heroTitle:
+          "Graam Theke",
+
+        heroSubtitle:
+          "Natural Sweetness, Rural Bengal Heritage",
+
+        heroDescription:
+          "Carefully selected products inspired by the nature, heritage and love of our village, delivered to your home.",
+
+        productButton:
+          "Explore Our Products",
+
+        aboutTitle:
+          "Our Story",
+
+        aboutTextOne:
+          "<strong>Graam Theke</strong> is more than a product; it is a story of rural Bengal's life, nature, heritage and people's love.",
+
+        aboutTextTwo:
+          "Our goal is to bring the natural taste and heritage of the village closer to you.",
+
+        productsTitle:
+          "Our Products",
+
+        jaggeryTitle:
+          "Pure Sugarcane Jaggery",
+
+        jaggeryWeight:
+          "Weight: 500 gm",
+
+        comingSoon:
+          "Coming Soon",
+
+        newProductTitle:
+          "New Product",
+
+        newProductDescription:
+          "Our new product will be added very soon.",
+
+        moreProductTitle:
+          "More Products",
+
+        moreProductDescription:
+          "Graam Theke is bringing more new products for you.",
+
+        whyTitle:
+          "Why Graam Theke?",
+
+        naturalTitle:
+          "Natural",
+
+        naturalDescription:
+          "We value products and ingredients that stay close to nature.",
+
+        traditionTitle:
+          "Rural Bengal Heritage",
+
+        traditionDescription:
+          "Our products carry the heritage of Bengal's land and people.",
+
+        loveTitle:
+          "Care & Love",
+
+        loveDescription:
+          "Every product comes with our care, dedication and sincerity.",
+
+        contactTitle:
+          "Contact Us",
+
+        location:
+          "Location: Kapasia, Gazipur",
+
+        contactDescription:
+          "For orders or any information, feel free to contact us.",
+
+        orderButton:
+          "Order Now",
+
+        footerCopyright:
+          "© 2026 Graam Theke",
+
+        footerMotto:
+          "Natural Sweetness, Rural Bengal Heritage"
+
+      }
+
+    };
+
+
+    /* =========================
+       CHANGE LANGUAGE
+    ========================= */
+
+    function changeLanguage(language) {
+
+      const t = translations[language];
+
+      document.documentElement.lang =
+        language === "bn" ? "bn" : "en";
+
+
+      /* PAGE */
+
+      document.title = t.title;
+
+      document
+        .getElementById("pageDescription")
+        .setAttribute(
+          "content",
+          t.description
+        );
+
+
+      /* HEADER */
+
+      document.getElementById("menuText").textContent =
+        t.menu;
+
+      document.getElementById("languageTitle").textContent =
+        t.language;
+
+
+      /* NAV */
+
+      document.querySelectorAll(".menu-link").forEach(function(link) {
+
+        link.textContent =
+          link.getAttribute(
+            language === "bn"
+              ? "data-bn"
+              : "data-en"
+          );
+
+      });
+
+
+      /* HERO */
+
+      document.getElementById("heroTitle").textContent =
+        t.heroTitle;
+
+      document.getElementById("heroSubtitle").textContent =
+        t.heroSubtitle;
+
+      document.getElementById("heroDescription").textContent =
+        t.heroDescription;
+
+      document.getElementById("productButton").textContent =
+        t.productButton;
+
+
+      /* ABOUT */
+
+      document.getElementById("aboutTitle").textContent =
+        t.aboutTitle;
+
+      document.getElementById("aboutTextOne").innerHTML =
+        t.aboutTextOne;
+
+      document.getElementById("aboutTextTwo").textContent =
+        t.aboutTextTwo;
+
+
+      /* PRODUCTS */
+
+      document.getElementById("productsTitle").textContent =
+        t.productsTitle;
+
+      document.getElementById("jaggeryTitle").textContent =
+        t.jaggeryTitle;
+
+      document.getElementById("jaggeryWeight").textContent =
+        t.jaggeryWeight;
+
+      document.getElementById("comingSoonOne").textContent =
+        t.comingSoon;
+
+      document.getElementById("comingSoonTwo").textContent =
+        t.comingSoon;
+
+      document.getElementById("newProductTitle").textContent =
+        t.newProductTitle;
+
+      document.getElementById("newProductDescription").textContent =
+        t.newProductDescription;
+
+      document.getElementById("moreProductTitle").textContent =
+        t.moreProductTitle;
+
+      document.getElementById("moreProductDescription").textContent =
+        t.moreProductDescription;
+
+
+      /* WHY */
+
+      document.getElementById("whyTitle").textContent =
+        t.whyTitle;
+
+      document.getElementById("naturalTitle").textContent =
+        t.naturalTitle;
+
+      document.getElementById("naturalDescription").textContent =
+        t.naturalDescription;
+
+      document.getElementById("traditionTitle").textContent =
+        t.traditionTitle;
+
+      document.getElementById("traditionDescription").textContent =
+        t.traditionDescription;
+
+      document.getElementById("loveTitle").textContent =
+        t.loveTitle;
+
+      document.getElementById("loveDescription").textContent =
+        t.loveDescription;
+
+
+      /* CONTACT */
+
+      document.getElementById("contactTitle").textContent =
+        t.contactTitle;
+
+      document.getElementById("locationText").textContent =
+        t.location;
+
+      document.getElementById("contactDescription").textContent =
+        t.contactDescription;
+
+      document.getElementById("orderButton").textContent =
+        t.orderButton;
+
+
+      /* FOOTER */
+
+      document.getElementById("footerCopyright").textContent =
+        t.footerCopyright;
+
+      document.getElementById("footerMotto").textContent =
+        t.footerMotto;
+
+
+      /* LANGUAGE BUTTON */
+
+      document.getElementById("bnButton")
+        .classList.toggle(
+          "selected",
+          language === "bn"
+        );
+
+      document.getElementById("enButton")
+        .classList.toggle(
+          "selected",
+          language === "en"
+        );
+
+
+      /* SAVE LANGUAGE */
+
+      localStorage.setItem(
+        "graamThekeLanguage",
+        language
+      );
+
+    }
+
+
+    /* =========================
+       LANGUAGE BUTTONS
+    ========================= */
+
+    document
+      .getElementById("bnButton")
+      .addEventListener(
+        "click",
+        function() {
+
+          changeLanguage("bn");
+
+        }
+      );
+
+
+    document
+      .getElementById("enButton")
+      .addEventListener(
+        "click",
+        function() {
+
+          changeLanguage("en");
+
+        }
+      );
+
+
+    /* =========================
+       LOAD SAVED LANGUAGE
+    ========================= */
+
+    const savedLanguage =
+      localStorage.getItem(
+        "graamThekeLanguage"
+      );
+
+    if (
+      savedLanguage === "en"
+    ) {
+
+      changeLanguage("en");
+
+    } else {
+
+      changeLanguage("bn");
+
+    }
+
+
+    /* =========================
+       FORCE VIDEO AUTOPLAY
+    ========================= */
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      function() {
+
+        const video =
+          document.getElementById(
+            "heroVideo"
+          );
+
+        if (video) {
+
+          video.muted = true;
+
+          video.setAttribute(
+            "muted",
+            ""
+          );
+
+          video.setAttribute(
+            "autoplay",
+            ""
+          );
+
+          video.setAttribute(
+            "playsinline",
+            ""
+          );
+
+          video.setAttribute(
+            "webkit-playsinline",
+            ""
+          );
+
+          video.setAttribute(
+            "loop",
+            ""
+          );
+
+
+          video.play().catch(
+            function() {
+
+              document.addEventListener(
+                "visibilitychange",
+                function() {
+
+                  if (!document.hidden) {
+
+                    video.play().catch(
+                      function() {}
+                    );
+
+                  }
+
+                }
+              );
+
             }
+          );
 
-          });
-
-        });
+        }
 
       }
+    );
 
-    });
 
-    window.addEventListener("load", function () {
+    window.addEventListener(
+      "load",
+      function() {
 
-      const video = document.getElementById("heroVideo");
+        const video =
+          document.getElementById(
+            "heroVideo"
+          );
 
-      if (video) {
-        video.muted = true;
-        video.play().catch(function () {});
+        if (video) {
+
+          video.muted = true;
+
+          video.play().catch(
+            function() {}
+          );
+
+        }
+
       }
-
-    });
+    );
 
   </script>
 
