@@ -6,7 +6,11 @@
 
   <title>গ্রাম থেকে | প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য</title>
 
+  <meta name="description"
+        content="গ্রাম থেকে — প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য।">
+
   <style>
+
     * {
       margin: 0;
       padding: 0;
@@ -20,102 +24,148 @@
     body {
       font-family: Arial, "Noto Sans Bengali", sans-serif;
       background: #f8f5ed;
-      color: #333;
+      color: #29452d;
       line-height: 1.7;
     }
 
+    /* ================= HEADER ================= */
+
     header {
-      background: #ffffff;
-      padding: 15px 20px;
-      text-align: center;
+      background: #fffdf7;
+      padding: 14px 7%;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     }
 
-    .logo {
-      max-width: 130px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
+    .header-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
+
+    .brand-logo {
+      width: 120px;
+      height: auto;
+      max-height: 75px;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* ================= HERO ================= */
 
     .hero {
-      background: linear-gradient(
-        rgba(36, 77, 40, 0.75),
-        rgba(36, 77, 40, 0.75)
-      );
-      color: white;
+      min-height: 82vh;
+      padding: 80px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 90px 20px;
+
+      background:
+        radial-gradient(
+          circle at top,
+          #fff9e9,
+          #efe2c4
+        );
+    }
+
+    .hero-content {
+      max-width: 850px;
     }
 
     .hero h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
+      font-size: clamp(48px, 10vw, 90px);
+      line-height: 1.2;
+      color: #315d38;
+      margin-bottom: 12px;
     }
 
     .hero h2 {
-      font-size: 22px;
-      font-weight: normal;
+      font-size: clamp(20px, 4vw, 34px);
+      color: #75451f;
       margin-bottom: 20px;
     }
 
     .hero p {
-      max-width: 700px;
-      margin: 0 auto 30px;
-      font-size: 17px;
+      max-width: 650px;
+      margin: auto;
+      color: #625d50;
+      font-size: 18px;
     }
 
-    .btn {
+    /* ================= BUTTON ================= */
+
+    .button {
       display: inline-block;
-      background: #d69b2d;
-      color: white;
-      padding: 12px 28px;
-      border-radius: 30px;
+      margin-top: 30px;
+      padding: 14px 32px;
+      background: #315d38;
+      color: #ffffff;
       text-decoration: none;
+      border-radius: 30px;
       font-weight: bold;
       transition: 0.3s;
     }
 
-    .btn:hover {
-      background: #b97e18;
-      transform: translateY(-2px);
+    .button:hover {
+      transform: translateY(-3px);
+      background: #23472a;
     }
 
+    /* ================= COMMON ================= */
+
     section {
-      padding: 70px 20px;
-      max-width: 1100px;
-      margin: auto;
+      padding: 80px 7%;
     }
 
     .section-title {
       text-align: center;
-      font-size: 32px;
-      color: #285c32;
-      margin-bottom: 35px;
+      font-size: 36px;
+      color: #315d38;
+      margin-bottom: 45px;
     }
+
+    /* ================= ABOUT ================= */
 
     .about {
-      text-align: center;
-      max-width: 800px;
-      margin: auto;
-      font-size: 17px;
+      background: #fffdf7;
     }
 
+    .about-content {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      color: #625d50;
+      font-size: 18px;
+    }
+
+    /* ================= PRODUCTS ================= */
+
     .products {
+      background: #f1ead8;
+    }
+
+    .product-grid {
+      max-width: 1100px;
+      margin: auto;
+
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 25px;
     }
 
     .product-card {
-      background: white;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      background: #fffaf0;
+      border-radius: 20px;
+      padding: 22px;
       text-align: center;
+
+      box-shadow: 0 8px 28px rgba(0,0,0,0.09);
+
       transition: 0.3s;
     }
 
@@ -124,86 +174,134 @@
     }
 
     .product-image {
-      height: 220px;
-      background: #e9e2d2;
+      height: 250px;
+      border-radius: 17px;
+
+      background: #ead9b5;
+
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #777;
+
+      color: #75451f;
       font-size: 18px;
+      font-weight: bold;
+
+      margin-bottom: 20px;
     }
 
     .product-card h3 {
-      color: #285c32;
-      margin: 20px 10px 8px;
+      font-size: 24px;
+      color: #315d38;
+      margin-bottom: 8px;
     }
 
     .product-card p {
-      padding: 0 20px 25px;
-      color: #666;
+      color: #6b665a;
     }
 
+    /* ================= WHY US ================= */
+
     .why-us {
+      background: #fffdf7;
+    }
+
+    .why-grid {
+      max-width: 1050px;
+      margin: auto;
+
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
     }
 
     .why-card {
-      background: white;
-      padding: 30px 20px;
+      background: #f5f0e2;
+      padding: 30px 18px;
+
       text-align: center;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+      border-radius: 20px;
     }
 
     .why-card h3 {
-      color: #285c32;
-      margin-bottom: 10px;
+      color: #315d38;
+      margin-bottom: 8px;
     }
+
+    .why-card p {
+      color: #6b665a;
+      font-size: 15px;
+    }
+
+    /* ================= CONTACT ================= */
 
     .contact {
+      background: #315d38;
+      color: white;
       text-align: center;
-      background: #eee9dc;
-      border-radius: 20px;
-      padding: 50px 20px;
     }
 
-    .contact h2 {
-      color: #285c32;
+    .contact .section-title {
+      color: white;
       margin-bottom: 20px;
     }
 
-    .contact p {
-      margin-bottom: 10px;
-    }
-
-    .phone {
-      display: inline-block;
-      color: #285c32;
+    .location {
       font-size: 20px;
       font-weight: bold;
-      text-decoration: none;
-      margin: 10px 0 25px;
+      margin-bottom: 12px;
     }
+
+    .contact-description {
+      font-size: 17px;
+      margin-bottom: 15px;
+    }
+
+    /* PHONE */
+
+    .phone-number {
+      display: inline-block;
+
+      color: white;
+      text-decoration: none;
+
+      font-size: 22px;
+      font-weight: bold;
+
+      margin-bottom: 28px;
+    }
+
+    .phone-number:hover {
+      text-decoration: underline;
+    }
+
+    /* ================= SOCIAL ICONS ================= */
 
     .social-links {
       display: flex;
+
       justify-content: center;
       align-items: center;
+
       gap: 28px;
+
       margin: 0 auto 28px;
     }
 
     .social-link {
       width: auto;
       height: auto;
+
       display: flex;
       justify-content: center;
       align-items: center;
+
       background: transparent;
+
       border-radius: 0;
+
       text-decoration: none;
+
       transition: transform 0.25s ease;
     }
 
@@ -214,52 +312,105 @@
     .social-link svg {
       width: 44px;
       height: 44px;
+
       display: block;
     }
+
+    /* FACEBOOK */
 
     .facebook svg {
       fill: #1877F2;
     }
 
+    /* INSTAGRAM */
+
     .instagram svg {
       fill: #E4405F;
     }
+
+    /* WHATSAPP */
 
     .whatsapp svg {
       fill: #25D366;
     }
 
+    /* ================= ORDER BUTTON ================= */
+
+    .order-button {
+      background: #f3c66b;
+      color: #29452d;
+
+      margin-top: 0;
+
+      padding: 14px 38px;
+
+      font-size: 17px;
+    }
+
+    .order-button:hover {
+      background: #e8b957;
+    }
+
+    /* ================= FOOTER ================= */
+
     footer {
-      background: #285c32;
-      color: white;
+      background: #203b26;
+      color: #dddddd;
+
       text-align: center;
-      padding: 25px 20px;
+
+      padding: 25px 15px;
+
+      font-size: 14px;
     }
 
-    footer p {
-      margin: 4px 0;
-    }
+    /* ================= MOBILE ================= */
 
-    @media (max-width: 768px) {
+    @media (max-width: 800px) {
 
-      .hero {
-        padding: 70px 20px;
-      }
-
-      .hero h1 {
-        font-size: 34px;
-      }
-
-      .hero h2 {
-        font-size: 19px;
-      }
-
-      .products {
+      .product-grid {
         grid-template-columns: 1fr;
       }
 
-      .why-us {
-        grid-template-columns: 1fr 1fr;
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      section {
+        padding: 65px 5%;
+      }
+
+    }
+
+    @media (max-width: 500px) {
+
+      .brand-logo {
+        width: 105px;
+      }
+
+      .hero {
+        min-height: 75vh;
+        padding: 60px 20px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero h2 {
+        font-size: 20px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .section-title {
+        font-size: 30px;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
       }
 
       .social-links {
@@ -275,69 +426,93 @@
         width: 40px;
         height: 40px;
       }
+
     }
 
-    @media (max-width: 480px) {
-
-      .why-us {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 30px;
-      }
-    }
   </style>
 </head>
 
+
 <body>
 
-  <!-- Header -->
+
+  <!-- ================= HEADER ================= -->
+
   <header>
-    <img
-      src="48529A9D-3294-4FBF-9AE1-171B61813205.jpeg"
-      alt="গ্রাম থেকে Logo"
-      class="logo"
-    >
+
+    <div class="header-inner">
+
+      <a href="#home">
+
+        <img
+          src="48529A9D-3294-4FBF-9AE1-171B61813205.jpeg"
+          alt="গ্রাম থেকে"
+          class="brand-logo"
+        >
+
+      </a>
+
+    </div>
+
   </header>
 
 
-  <!-- Hero Section -->
-  <section class="hero">
+  <!-- ================= HERO ================= -->
 
-    <h1>গ্রাম থেকে</h1>
+  <section class="hero" id="home">
 
-    <h2>প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য</h2>
+    <div class="hero-content">
 
-    <p>
-      আমাদের গ্রামের প্রকৃতি, ঐতিহ্য ও ভালোবাসা থেকে বেছে নেওয়া
-      পণ্য পৌঁছে যাবে আপনার ঘরে।
-    </p>
+      <h1>
+        গ্রাম থেকে
+      </h1>
 
-    <a href="#products" class="btn">
-      আমাদের পণ্য দেখুন
-    </a>
+      <h2>
+        প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য
+      </h2>
+
+      <p>
+        আমাদের গ্রামের প্রকৃতি, ঐতিহ্য ও ভালোবাসা
+        থেকে বেছে নেওয়া পণ্য পৌঁছে যাবে আপনার ঘরে।
+      </p>
+
+      <a
+        href="#products"
+        class="button"
+      >
+        আমাদের পণ্য দেখুন
+      </a>
+
+    </div>
 
   </section>
 
 
-  <!-- About Section -->
-  <section>
+  <!-- ================= ABOUT ================= -->
+
+  <section
+    class="about"
+    id="about"
+  >
 
     <h2 class="section-title">
       আমাদের গল্প
     </h2>
 
-    <div class="about">
+    <div class="about-content">
 
       <p>
-        <strong>গ্রাম থেকে</strong> একটি পণ্য নয়, এটি আমাদের
-        গ্রামবাংলার জীবন, প্রকৃতি, ঐতিহ্য ও মানুষের ভালোবাসার গল্প।
+        <strong>গ্রাম থেকে</strong> একটি পণ্য নয়,
+        এটি আমাদের গ্রামবাংলার জীবন, প্রকৃতি,
+        ঐতিহ্য ও মানুষের ভালোবাসার গল্প।
       </p>
 
+      <br>
+
       <p>
-        গ্রামের প্রাকৃতিক স্বাদ ও ঐতিহ্যকে আধুনিকভাবে মানুষের কাছে
-        পৌঁছে দেওয়াই আমাদের লক্ষ্য।
+        গ্রামের প্রাকৃতিক স্বাদ ও ঐতিহ্যকে
+        আধুনিকভাবে মানুষের কাছে পৌঁছে দেওয়াই
+        আমাদের লক্ষ্য।
       </p>
 
     </div>
@@ -345,14 +520,21 @@
   </section>
 
 
-  <!-- Products Section -->
-  <section id="products">
+  <!-- ================= PRODUCTS ================= -->
+
+  <section
+    class="products"
+    id="products"
+  >
 
     <h2 class="section-title">
       আমাদের পণ্য
     </h2>
 
-    <div class="products">
+    <div class="product-grid">
+
+
+      <!-- PRODUCT 1 -->
 
       <div class="product-card">
 
@@ -360,14 +542,19 @@
           পণ্যের ছবি এখানে
         </div>
 
-        <h3>প্রথম পণ্য</h3>
+        <h3>
+          প্রথম পণ্য
+        </h3>
 
         <p>
-          প্রাকৃতিকভাবে তৈরি ঐতিহ্যবাহী গ্রামীণ পণ্য।
+          প্রাকৃতিকভাবে তৈরি
+          ঐতিহ্যবাহী গ্রামীণ পণ্য।
         </p>
 
       </div>
 
+
+      <!-- PRODUCT 2 -->
 
       <div class="product-card">
 
@@ -375,14 +562,19 @@
           শীঘ্রই আসছে
         </div>
 
-        <h3>নতুন পণ্য</h3>
+        <h3>
+          নতুন পণ্য
+        </h3>
 
         <p>
-          আমাদের নতুন পণ্য খুব শিগগিরই যুক্ত হবে।
+          আমাদের নতুন পণ্য
+          খুব শিগগিরই যুক্ত হবে।
         </p>
 
       </div>
 
+
+      <!-- PRODUCT 3 -->
 
       <div class="product-card">
 
@@ -390,10 +582,13 @@
           শীঘ্রই আসছে
         </div>
 
-        <h3>আরও পণ্য</h3>
+        <h3>
+          আরও পণ্য
+        </h3>
 
         <p>
-          গ্রাম থেকে আরও নতুন পণ্য নিয়ে আসছে।
+          গ্রাম থেকে আরও নতুন
+          পণ্য নিয়ে আসছে।
         </p>
 
       </div>
@@ -403,155 +598,209 @@
   </section>
 
 
-  <!-- Why Us Section -->
-  <section>
+  <!-- ================= WHY US ================= -->
+
+  <section class="why-us">
 
     <h2 class="section-title">
       কেন গ্রাম থেকে?
     </h2>
 
-    <div class="why-us">
+    <div class="why-grid">
+
 
       <div class="why-card">
+
         <h3>🌿 প্রাকৃতিকতা</h3>
+
         <p>
-          প্রকৃতির স্বাভাবিক স্বাদ ও গুণমানকে গুরুত্ব দেওয়া হয়।
+          প্রকৃতির স্বাভাবিক স্বাদ ও
+          গুণমানকে গুরুত্ব দেওয়া হয়।
         </p>
+
       </div>
 
 
       <div class="why-card">
+
         <h3>🌾 গ্রামের শিকড়</h3>
+
         <p>
-          আমাদের পণ্যের সঙ্গে জড়িয়ে আছে গ্রামবাংলার ঐতিহ্য।
+          আমাদের পণ্যের সঙ্গে জড়িয়ে আছে
+          গ্রামবাংলার ঐতিহ্য।
         </p>
+
       </div>
 
 
       <div class="why-card">
-        <h3>🍯 খাঁটি গুড়</h3>
-        <p>
-          মানসম্মত ও প্রাকৃতিক পণ্যের প্রতি আমরা গুরুত্ব দিই।
-        </p>
-      </div>
 
-
-      <div class="why-card">
         <h3>⭐ মানসম্মত</h3>
+
         <p>
-          প্রতিটি পণ্যের মানের প্রতি আমরা গুরুত্ব দিই।
+          প্রতিটি পণ্যের মানের প্রতি
+          আমরা গুরুত্ব দিই।
         </p>
+
       </div>
 
 
       <div class="why-card">
+
         <h3>❤️ ভালোবাসা</h3>
+
         <p>
-          প্রতিটি পণ্যের সঙ্গে থাকে আমাদের যত্ন ও আন্তরিকতা।
+          প্রতিটি পণ্যের সঙ্গে থাকে
+          আমাদের যত্ন ও আন্তরিকতা।
         </p>
+
       </div>
+
 
     </div>
 
   </section>
 
 
-  <!-- Contact Section -->
-  <section>
+  <!-- ================= CONTACT ================= -->
 
-    <div class="contact">
+  <section
+    class="contact"
+    id="contact"
+  >
 
-      <h2>
-        যোগাযোগ করুন
-      </h2>
+    <h2 class="section-title">
+      যোগাযোগ করুন
+    </h2>
 
-      <p>
-        যোগাযোগ: কাপাসিয়া, গাজীপুর
-      </p>
 
-      <p>
-        অর্ডার বা যেকোনো তথ্যের জন্য আমাদের সঙ্গে যোগাযোগ করুন।
-      </p>
+    <!-- LOCATION -->
+
+    <p class="location">
+      যোগাযোগ: কাপাসিয়া, গাজীপুর
+    </p>
+
+
+    <!-- DESCRIPTION -->
+
+    <p class="contact-description">
+      অর্ডার বা যেকোনো তথ্যের জন্য আমাদের সঙ্গে যোগাযোগ করুন।
+    </p>
+
+
+    <!-- PHONE -->
+
+    <a
+      href="tel:+8801601601998"
+      class="phone-number"
+    >
+      +8801601601998
+    </a>
+
+
+    <!-- ================= SOCIAL ICONS ================= -->
+
+    <div class="social-links">
+
+
+      <!-- FACEBOOK ICON -->
 
       <a
-        href="tel:+8801601601998"
-        class="phone"
+        href="https://www.facebook.com/share/18F1J2ej6V/?mibextid=wwXIfr"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-link facebook"
+        aria-label="Facebook"
+        title="Facebook"
       >
-        +8801601601998
+
+        <svg
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+
+          <path
+            d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.095 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.025 1.792-4.696 4.533-4.696 1.312 0 2.686.235 2.686.235v2.973h-1.514c-1.491 0-1.956.93-1.956 1.885v2.263h3.328l-.532 3.49h-2.796V24C19.612 23.095 24 18.1 24 12.073z"
+          />
+
+        </svg>
+
       </a>
 
 
-      <!-- Social Icons -->
-      <div class="social-links">
+      <!-- INSTAGRAM ICON -->
 
-        <!-- Facebook -->
-        <a
-          href="https://www.facebook.com/share/18F1J2ej6V/?mibextid=wwXIfr"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="social-link facebook"
-          aria-label="Facebook"
+      <a
+        href="https://www.instagram.com/graam_theke/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-link instagram"
+        aria-label="Instagram"
+        title="Instagram"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
         >
-          <svg
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.099 4.388 23.09 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.022 1.792-4.694 4.533-4.694 1.313 0 2.686.236 2.686.236v2.965h-1.514c-1.491 0-1.956.93-1.956 1.887v2.266h3.328l-.532 3.49h-2.796V24C19.612 23.09 24 18.099 24 12.073z"/>
-          </svg>
-        </a>
+
+          <path
+            d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5a4.25 4.25 0 0 0 4.25 4.25h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5a4.25 4.25 0 0 0-4.25-4.25h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.25-2.75a1.125 1.125 0 1 1 0 2.25 1.125 1.125 0 0 1 0-2.25z"
+          />
+
+        </svg>
+
+      </a>
 
 
-        <!-- Instagram -->
-        <a
-          href="https://www.instagram.com/graam_theke/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="social-link instagram"
-          aria-label="Instagram"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6zm9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
-          </svg>
-        </a>
-
-
-        <!-- WhatsApp -->
-        <a
-          href="https://wa.me/message/PSDZUZ6DPBKDL1"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="social-link whatsapp"
-          aria-label="WhatsApp"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M20.52 3.48A11.86 11.86 0 0 0 12.04 0C5.48 0 .13 5.35.13 11.91c0 2.1.55 4.15 1.59 5.96L.03 24l6.27-1.64a11.9 11.9 0 0 0 5.74 1.46h.01c6.56 0 11.91-5.35 11.91-11.91 0-3.18-1.24-6.17-3.44-8.43zM12.05 21.82h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.72.97.99-3.63-.23-.37a9.86 9.86 0 0 1-1.52-5.29c0-5.47 4.45-9.92 9.93-9.92 2.65 0 5.14 1.03 7.01 2.91a9.86 9.86 0 0 1 2.91 7.02c0 5.47-4.45 9.9-9.97 9.9zm5.44-7.42c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.48-.88-.78-1.48-1.74-1.65-2.04-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.03-1.05 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.21 5.08 4.5.71.31 1.26.49 1.69.63.71.23 1.35.2 1.86.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/>
-          </svg>
-        </a>
-
-      </div>
-
+      <!-- WHATSAPP ICON -->
 
       <a
         href="https://wa.me/message/PSDZUZ6DPBKDL1"
         target="_blank"
         rel="noopener noreferrer"
-        class="btn"
+        class="social-link whatsapp"
+        aria-label="WhatsApp"
+        title="WhatsApp"
       >
-        অর্ডার করুন
+
+        <svg
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+
+          <path
+            d="M20.52 3.48A11.86 11.86 0 0 0 12.08 0C5.52 0 .18 5.34.18 11.9c0 2.1.55 4.15 1.6 5.96L.08 24l6.28-1.65a11.9 11.9 0 0 0 5.72 1.46h.01c6.55 0 11.88-5.34 11.88-11.9 0-3.18-1.24-6.16-3.45-8.43zM12.09 21.83h-.01a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.73.98.99-3.64-.23-.37a9.85 9.85 0 0 1-1.51-5.31c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.12 1.03 6.98 2.9a9.82 9.82 0 0 1 2.89 7c0 5.45-4.44 9.89-9.87 9.89zm5.42-7.4c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.09 4.5.71.31 1.27.49 1.7.63.71.23 1.35.2 1.86.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35z"
+          />
+
+        </svg>
+
       </a>
 
+
     </div>
+
+
+    <!-- ORDER BUTTON -->
+
+    <a
+      href="https://wa.me/message/PSDZUZ6DPBKDL1"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="button order-button"
+    >
+      অর্ডার করুন
+    </a>
+
 
   </section>
 
 
-  <!-- Footer -->
+  <!-- ================= FOOTER ================= -->
+
   <footer>
 
     <p>
@@ -563,6 +812,7 @@
     </p>
 
   </footer>
+
 
 </body>
 </html>
