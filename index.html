@@ -59,7 +59,7 @@ header{
     display:block;
 }
 
-/* MENU */
+/* MENU BUTTON */
 
 .menu-btn{
     border:1px solid #466b49;
@@ -84,6 +84,8 @@ header{
 .menu-icon{
     font-size:19px;
 }
+
+/* DROPDOWN */
 
 .menu-box{
     position:absolute;
@@ -341,7 +343,7 @@ section{
     display:none;
     max-width:900px;
     margin:auto;
-    padding:50px 20px 70px;
+    padding:70px 20px;
 }
 
 .product-details.show{
@@ -392,6 +394,108 @@ section{
     font-weight:bold;
     cursor:pointer;
     margin-bottom:20px;
+}
+
+/* ================= WHY US ================= */
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.why-card{
+    background:#fffaf0;
+    padding:28px 20px;
+    text-align:center;
+    border-radius:16px;
+    border:1px solid rgba(55,86,54,.12);
+}
+
+.why-card .icon{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.why-card h3{
+    margin-bottom:7px;
+    color:#29452f;
+}
+
+.why-card p{
+    color:#687263;
+    font-size:15px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    text-align:center;
+}
+
+.contact-text{
+    color:#687263;
+    margin-bottom:20px;
+}
+
+.contact-location{
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:8px;
+    color:#29452f;
+}
+
+.phone{
+    display:inline-block;
+    color:#29452f;
+    text-decoration:none;
+    font-size:19px;
+    font-weight:700;
+    margin:8px 0 20px;
+}
+
+/* SOCIAL ICONS */
+
+.social-icons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+    margin:10px 0 25px;
+}
+
+.social-icons a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+}
+
+.social-icons img{
+    width:44px;
+    height:44px;
+    object-fit:contain;
+    transition:.25s;
+}
+
+.social-icons img:hover{
+    transform:scale(1.12);
+}
+
+.order-btn{
+    display:inline-block;
+    text-decoration:none;
+    background:#29452f;
+    color:#fffaf0;
+    padding:12px 27px;
+    border-radius:10px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.order-btn:hover{
+    background:#456b48;
+    transform:translateY(-2px);
 }
 
 /* ================= CART ================= */
@@ -539,7 +643,8 @@ section{
 }
 
 .form-group input,
-.form-group textarea{
+.form-group textarea,
+.form-group select{
     width:100%;
     border:1px solid #c8cdbf;
     background:#fffdf7;
@@ -553,8 +658,6 @@ section{
     min-height:100px;
     resize:vertical;
 }
-
-/* DELIVERY */
 
 .delivery-options{
     display:grid;
@@ -580,82 +683,6 @@ section{
 .delivery-option input{
     margin-right:5px;
 }
-
-/* ================= PAYMENT ================= */
-
-.payment-title{
-    font-weight:bold;
-    color:#29452f;
-    margin-bottom:10px;
-}
-
-.payment-options{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-    margin-bottom:15px;
-}
-
-.payment-option{
-    border:1px solid #bdc8b8;
-    border-radius:12px;
-    padding:15px;
-    background:#f8f1df;
-    cursor:pointer;
-    text-align:center;
-    transition:.2s;
-}
-
-.payment-option.selected{
-    background:#e2ead7;
-    border-color:#29452f;
-}
-
-.payment-option input{
-    margin-right:7px;
-}
-
-.payment-icon{
-    height:32px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin-bottom:6px;
-}
-
-.bkash-logo{
-    height:30px;
-    width:auto;
-    object-fit:contain;
-}
-
-.payment-name{
-    font-weight:bold;
-    color:#29452f;
-}
-
-.bkash-info{
-    display:none;
-    background:#f4ead0;
-    border-radius:10px;
-    padding:12px;
-    margin-bottom:18px;
-    text-align:center;
-    color:#5f613f;
-}
-
-.bkash-info.show{
-    display:block;
-}
-
-.bkash-number{
-    font-size:20px;
-    font-weight:bold;
-    color:#29452f;
-    margin-top:4px;
-}
-
-/* SUMMARY */
 
 .order-summary{
     background:#f1ead8;
@@ -688,25 +715,98 @@ section{
     margin-bottom:18px;
 }
 
-/* ================= SUCCESS ================= */
+/* ================= PAYMENT METHODS ================= */
 
-.success-section{
-    display:none;
-    max-width:650px;
-    margin:auto;
-    padding:80px 20px;
+.payment-title{
+    font-weight:bold;
+    color:#29452f;
+    margin-bottom:8px;
 }
 
-.success-section.show{
+.payment-options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-bottom:20px;
+}
+
+.payment-option{
+    position:relative;
+    border:1px solid #bdc8b8;
+    border-radius:12px;
+    padding:15px 10px;
+    cursor:pointer;
+    background:#f8f1df;
+    text-align:center;
+    transition:.25s;
+    min-height:85px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.payment-option:hover{
+    border-color:#29452f;
+    transform:translateY(-2px);
+}
+
+.payment-option.selected{
+    background:#e2ead7;
+    border:2px solid #29452f;
+}
+
+.payment-option input{
+    position:absolute;
+    opacity:0;
+    pointer-events:none;
+}
+
+.payment-content{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    font-weight:700;
+    color:#29452f;
+}
+
+.cod-icon{
+    font-size:29px;
+}
+
+.bkash-logo{
+    width:70px;
+    height:32px;
+    object-fit:contain;
+}
+
+.payment-help{
+    text-align:center;
+    font-size:13px;
+    color:#777;
+    margin-top:-10px;
+    margin-bottom:18px;
+}
+
+/* ================= ORDER CONFIRMATION ================= */
+
+.order-success{
+    display:none;
+    max-width:700px;
+    margin:auto;
+    padding:70px 20px;
+}
+
+.order-success.show{
     display:block;
 }
 
 .success-box{
     background:#fffaf0;
-    border-radius:22px;
+    border-radius:20px;
     padding:35px 25px;
     text-align:center;
-    box-shadow:0 10px 35px rgba(42,65,43,.12);
+    box-shadow:0 10px 30px rgba(42,65,43,.1);
 }
 
 .success-icon{
@@ -714,12 +814,11 @@ section{
     height:75px;
     border-radius:50%;
     background:#e2ead7;
-    color:#29452f;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:40px;
     margin:0 auto 20px;
+    font-size:38px;
 }
 
 .success-box h2{
@@ -729,109 +828,7 @@ section{
 
 .success-box p{
     color:#687263;
-    margin-bottom:22px;
-}
-
-/* ================= WHY US ================= */
-
-.why-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-}
-
-.why-card{
-    background:#fffaf0;
-    padding:28px 20px;
-    text-align:center;
-    border-radius:16px;
-    border:1px solid rgba(55,86,54,.12);
-}
-
-.why-card .icon{
-    font-size:35px;
-    margin-bottom:10px;
-}
-
-.why-card h3{
-    margin-bottom:7px;
-    color:#29452f;
-}
-
-.why-card p{
-    color:#687263;
-    font-size:15px;
-}
-
-/* ================= CONTACT ================= */
-
-.contact{
-    text-align:center;
-}
-
-.contact-text{
-    color:#687263;
     margin-bottom:20px;
-}
-
-.contact-location{
-    font-size:18px;
-    font-weight:700;
-    margin-bottom:8px;
-    color:#29452f;
-}
-
-.phone{
-    display:inline-block;
-    color:#29452f;
-    text-decoration:none;
-    font-size:19px;
-    font-weight:700;
-    margin:8px 0 20px;
-}
-
-/* SOCIAL */
-
-.social-icons{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:25px;
-    margin:10px 0 25px;
-}
-
-.social-icons a{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-decoration:none;
-}
-
-.social-icons img{
-    width:44px;
-    height:44px;
-    object-fit:contain;
-    transition:.25s;
-}
-
-.social-icons img:hover{
-    transform:scale(1.12);
-}
-
-.order-btn{
-    display:inline-block;
-    text-decoration:none;
-    background:#29452f;
-    color:#fffaf0;
-    padding:12px 27px;
-    border-radius:10px;
-    font-weight:700;
-    transition:.3s;
-}
-
-.order-btn:hover{
-    background:#456b48;
-    transform:translateY(-2px);
 }
 
 /* ================= FOOTER ================= */
@@ -1024,7 +1021,7 @@ English
 </header>
 
 
-<!-- ================= MAIN ================= -->
+<!-- ================= HOME ================= -->
 
 <main id="mainContent">
 
@@ -1038,13 +1035,17 @@ alt="গ্রাম থেকে">
 <h1
 data-bn="প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য"
 data-en="Natural Sweetness, Heritage of Rural Bengal">
+
 প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য
+
 </h1>
 
 <p
 data-bn="গ্রামের খাঁটি স্বাদ আপনার ঘরে"
 data-en="Pure village taste, delivered to your home">
+
 গ্রামের খাঁটি স্বাদ আপনার ঘরে
+
 </p>
 
 <div class="hero-video">
@@ -1062,7 +1063,7 @@ type="video/mp4">
 </section>
 
 
-<!-- ABOUT -->
+<!-- ================= ABOUT ================= -->
 
 <section class="about">
 
@@ -1070,19 +1071,23 @@ type="video/mp4">
 class="section-title"
 data-bn="আমাদের সম্পর্কে"
 data-en="About Us">
+
 আমাদের সম্পর্কে
+
 </h2>
 
 <p
 data-bn="গ্রাম থেকে—গ্রামবাংলার প্রকৃতি, ঐতিহ্য ও খাঁটি স্বাদকে আপনাদের কাছে পৌঁছে দেওয়ার একটি ছোট্ট প্রয়াস।"
 data-en="Graam Theke is a small initiative to bring the nature, heritage and authentic taste of rural Bengal to your home.">
+
 গ্রাম থেকে—গ্রামবাংলার প্রকৃতি, ঐতিহ্য ও খাঁটি স্বাদকে আপনাদের কাছে পৌঁছে দেওয়ার একটি ছোট্ট প্রয়াস।
+
 </p>
 
 </section>
 
 
-<!-- PRODUCTS -->
+<!-- ================= PRODUCTS ================= -->
 
 <section id="products">
 
@@ -1090,13 +1095,15 @@ data-en="Graam Theke is a small initiative to bring the nature, heritage and aut
 class="section-title"
 data-bn="আমাদের পণ্য"
 data-en="Our Product">
+
 আমাদের পণ্য
+
 </h2>
 
 <div class="products-grid">
 
 
-<!-- PRODUCT -->
+<!-- CURRENT PRODUCT -->
 
 <div
 class="product-card"
@@ -1107,7 +1114,9 @@ onclick="openProductDetails()">
 class="product-label"
 data-bn="নতুন পণ্য"
 data-en="New Product">
+
 নতুন পণ্য
+
 </div>
 
 <div class="product-image">
@@ -1121,21 +1130,25 @@ alt="খাঁটি আখের গুড়">
 <h3
 data-bn="খাঁটি আখের গুড়"
 data-en="Pure Sugarcane Jaggery">
+
 খাঁটি আখের গুড়
+
 </h3>
 
 <p
 data-bn="ওজন: 500 gm"
 data-en="Weight: 500 gm">
-ওজন: 500 gm
-</p>
 
-<!-- ONLY CART STICKER -->
+ওজন: 500 gm
+
+</p>
 
 <div
 class="cart-sticker"
 onclick="event.stopPropagation(); addToCart();">
+
 🛒
+
 </div>
 
 </div>
@@ -1145,26 +1158,31 @@ onclick="event.stopPropagation(); addToCart();">
 
 <div
 class="product-card"
-id="upcoming-product"
-onclick="return false;">
+id="upcoming-product">
 
 <div
 class="coming-soon"
 data-bn="শীঘ্রই আসছে"
 data-en="Coming Soon">
+
 শীঘ্রই আসছে
+
 </div>
 
 <h3
 data-bn="শীঘ্রই আসছে"
 data-en="Coming Soon">
+
 শীঘ্রই আসছে
+
 </h3>
 
 <p
 data-bn="আমাদের নতুন পণ্য খুব শিগগিরই যুক্ত হবে।"
 data-en="Our next product will be added very soon.">
+
 আমাদের নতুন পণ্য খুব শিগগিরই যুক্ত হবে।
+
 </p>
 
 </div>
@@ -1172,26 +1190,31 @@ data-en="Our next product will be added very soon.">
 
 <!-- MORE PRODUCTS -->
 
-<div class="product-card"
-onclick="return false;">
+<div class="product-card">
 
 <div
 class="coming-soon"
 data-bn="শীঘ্রই আসছে"
 data-en="Coming Soon">
+
 শীঘ্রই আসছে
+
 </div>
 
 <h3
 data-bn="আরও পণ্য"
 data-en="More Products">
+
 আরও পণ্য
+
 </h3>
 
 <p
 data-bn="ভবিষ্যতে আরও পণ্য যুক্ত করা হবে।"
 data-en="More products will be added in the future.">
+
 ভবিষ্যতে আরও পণ্য যুক্ত করা হবে।
+
 </p>
 
 </div>
@@ -1213,8 +1236,7 @@ class="product-details">
 class="back-btn"
 onclick="backToProducts()">
 
-←
-<span
+← <span
 data-bn="পণ্যে ফিরে যান"
 data-en="Back to Products">
 পণ্যে ফিরে যান
@@ -1233,21 +1255,27 @@ alt="খাঁটি আখের গুড়">
 <h2
 data-bn="খাঁটি আখের গুড়"
 data-en="Pure Sugarcane Jaggery">
+
 খাঁটি আখের গুড়
+
 </h2>
 
 <p
 class="product-details-info"
 data-bn="ওজন: 500 gm"
 data-en="Weight: 500 gm">
+
 ওজন: 500 gm
+
 </p>
 
 <div
 class="announced-price"
 data-bn="দাম শীঘ্রই ঘোষণা করা হবে"
 data-en="Price will be announced soon">
+
 দাম শীঘ্রই ঘোষণা করা হবে
+
 </div>
 
 <button
@@ -1255,7 +1283,9 @@ class="primary-btn"
 onclick="addToCart()"
 data-bn="🛒 কার্টে যোগ করুন"
 data-en="🛒 Add to Cart">
+
 🛒 কার্টে যোগ করুন
+
 </button>
 
 </div>
@@ -1275,7 +1305,9 @@ class="cart-section">
 class="section-title"
 data-bn="আপনার কার্ট"
 data-en="Your Cart">
+
 আপনার কার্ট
+
 </h2>
 
 <div class="cart-product">
@@ -1289,20 +1321,26 @@ alt="খাঁটি আখের গুড়">
 <h3
 data-bn="খাঁটি আখের গুড়"
 data-en="Pure Sugarcane Jaggery">
+
 খাঁটি আখের গুড়
+
 </h3>
 
 <p
 data-bn="500 gm"
 data-en="500 gm">
+
 500 gm
+
 </p>
 
 <p
 class="price-note"
 data-bn="দাম শীঘ্রই ঘোষণা করা হবে"
 data-en="Price will be announced soon">
+
 দাম শীঘ্রই ঘোষণা করা হবে
+
 </p>
 
 <div class="quantity-control">
@@ -1311,7 +1349,9 @@ data-en="Price will be announced soon">
 −
 </button>
 
-<span id="cartQuantity">1</span>
+<span id="cartQuantity">
+1
+</span>
 
 <button onclick="changeQuantity(1)">
 +
@@ -1328,7 +1368,9 @@ data-en="Price will be announced soon">
 <span
 data-bn="পণ্যের পরিমাণ:"
 data-en="Quantity:">
+
 পণ্যের পরিমাণ:
+
 </span>
 
 <span id="cartTotalQuantity">
@@ -1342,15 +1384,19 @@ class="primary-btn"
 onclick="openOrderForm()"
 data-bn="Order Now"
 data-en="Order Now">
+
 Order Now
+
 </button>
 
 <button
 class="secondary-btn"
-onclick="backFromCart()"
-data-bn="← পণ্যে ফিরে যান"
-data-en="← Back to Product">
-← পণ্যে ফিরে যান
+onclick="backToProducts()"
+data-bn="আরও পণ্য দেখুন"
+data-en="Continue Shopping">
+
+আরও পণ্য দেখুন
+
 </button>
 
 </div>
@@ -1369,18 +1415,20 @@ class="order-section">
 <h2
 data-bn="অর্ডার সম্পন্ন করুন"
 data-en="Complete Your Order">
+
 অর্ডার সম্পন্ন করুন
+
 </h2>
 
-
-<!-- NAME -->
 
 <div class="form-group">
 
 <label
 data-bn="নাম"
 data-en="Name">
+
 নাম
+
 </label>
 
 <input
@@ -1392,14 +1440,14 @@ required>
 </div>
 
 
-<!-- PHONE -->
-
 <div class="form-group">
 
 <label
 data-bn="মোবাইল নম্বর"
 data-en="Mobile Number">
+
 মোবাইল নম্বর
+
 </label>
 
 <input
@@ -1411,32 +1459,35 @@ required>
 </div>
 
 
-<!-- ADDRESS -->
-
 <div class="form-group">
 
 <label
 data-bn="সম্পূর্ণ ঠিকানা"
 data-en="Full Address">
+
 সম্পূর্ণ ঠিকানা
+
 </label>
 
 <textarea
 id="customerAddress"
 placeholder="আপনার সম্পূর্ণ ঠিকানা"
-required></textarea>
+required>
+</textarea>
 
 </div>
 
 
-<!-- DELIVERY -->
+<!-- ================= DELIVERY ================= -->
 
 <div class="form-group">
 
 <label
 data-bn="ডেলিভারি এলাকা"
 data-en="Delivery Area">
+
 ডেলিভারি এলাকা
+
 </label>
 
 <div class="delivery-options">
@@ -1455,7 +1506,9 @@ onchange="setDelivery(60)">
 <span
 data-bn="ঢাকার ভিতরে — ৳60"
 data-en="Inside Dhaka — ৳60">
+
 ঢাকার ভিতরে — ৳60
+
 </span>
 
 </label>
@@ -1474,7 +1527,9 @@ onchange="setDelivery(120)">
 <span
 data-bn="ঢাকার বাইরে — ৳120"
 data-en="Outside Dhaka — ৳120">
+
 ঢাকার বাইরে — ৳120
+
 </span>
 
 </label>
@@ -1486,96 +1541,95 @@ data-en="Outside Dhaka — ৳120">
 
 <!-- ================= PAYMENT ================= -->
 
-<div class="payment-title"
+<div class="form-group">
+
+<div
+class="payment-title"
 data-bn="পেমেন্ট পদ্ধতি"
 data-en="Payment Method">
+
 পেমেন্ট পদ্ধতি
+
 </div>
 
 <div class="payment-options">
 
-<label
-class="payment-option selected"
-id="codOption">
 
-<div class="payment-icon">
-<span style="font-size:28px;">💵</span>
-</div>
+<!-- CASH ON DELIVERY -->
+
+<label
+class="payment-option"
+id="codOption"
+onclick="selectPayment('Cash on Delivery')">
 
 <input
 type="radio"
 name="payment"
-value="Cash on Delivery"
-checked
-onchange="setPayment('cod')">
+value="cod">
+
+<div class="payment-content">
+
+<span class="cod-icon">💵</span>
 
 <span
-class="payment-name"
 data-bn="Cash on Delivery"
 data-en="Cash on Delivery">
+
 Cash on Delivery
+
 </span>
+
+</div>
 
 </label>
 
 
+<!-- BKASH -->
+
 <label
 class="payment-option"
-id="bkashOption">
+id="bkashOption"
+onclick="selectPayment('bKash Payment')">
 
-<div class="payment-icon">
+<input
+type="radio"
+name="payment"
+value="bkash">
+
+<div class="payment-content">
 
 <img
 class="bkash-logo"
 src="https://cdn.simpleicons.org/bkash"
 alt="bKash">
 
-</div>
-
-<input
-type="radio"
-name="payment"
-value="bKash Payment"
-onchange="setPayment('bkash')">
-
 <span
-class="payment-name"
 data-bn="bKash Payment"
 data-en="bKash Payment">
+
 bKash Payment
+
 </span>
+
+</div>
 
 </label>
 
 </div>
 
+<p
+class="payment-help"
+data-bn="অর্ডার কনফার্ম করার আগে একটি পেমেন্ট পদ্ধতি নির্বাচন করুন।"
+data-en="Please select a payment method before confirming your order.">
 
-<!-- BKASH INFORMATION -->
+অর্ডার কনফার্ম করার আগে একটি পেমেন্ট পদ্ধতি নির্বাচন করুন।
 
-<div
-class="bkash-info"
-id="bkashInfo">
-
-<div
-data-bn="bKash-এ Send Money করুন"
-data-en="Send Money via bKash">
-bKash-এ Send Money করুন
-</div>
-
-<div class="bkash-number">
-01601601998
-</div>
-
-<div
-data-bn="পেমেন্ট করার পর অর্ডার কনফার্ম করুন।"
-data-en="Complete the payment and then confirm your order.">
-পেমেন্ট করার পর অর্ডার কনফার্ম করুন।
-</div>
+</p>
 
 </div>
 
 
-<!-- SUMMARY -->
+<!-- ================= ORDER SUMMARY ================= -->
 
 <div class="order-summary">
 
@@ -1584,7 +1638,9 @@ data-en="Complete the payment and then confirm your order.">
 <span
 data-bn="পণ্য"
 data-en="Product">
+
 পণ্য
+
 </span>
 
 <span>
@@ -1593,13 +1649,14 @@ data-en="Product">
 
 </div>
 
-
 <div class="summary-row">
 
 <span
 data-bn="পরিমাণ"
 data-en="Quantity">
+
 পরিমাণ
+
 </span>
 
 <span id="summaryQuantity">
@@ -1608,30 +1665,34 @@ data-en="Quantity">
 
 </div>
 
-
 <div class="summary-row">
 
 <span
 data-bn="পণ্যের দাম"
 data-en="Product Price">
+
 পণ্যের দাম
+
 </span>
 
 <span
 data-bn="ঘোষণা করা হবে"
 data-en="To be announced">
+
 ঘোষণা করা হবে
+
 </span>
 
 </div>
-
 
 <div class="summary-row">
 
 <span
 data-bn="ডেলিভারি চার্জ"
 data-en="Delivery Charge">
+
 ডেলিভারি চার্জ
+
 </span>
 
 <span id="deliveryCharge">
@@ -1640,19 +1701,38 @@ data-en="Delivery Charge">
 
 </div>
 
+<div class="summary-row">
+
+<span
+data-bn="পেমেন্ট"
+data-en="Payment">
+
+পেমেন্ট
+
+</span>
+
+<span id="summaryPayment">
+নির্বাচন করুন
+</span>
+
+</div>
 
 <div class="summary-row summary-total">
 
 <span
 data-bn="মোট দাম"
 data-en="Total Price">
+
 মোট দাম
+
 </span>
 
 <span
-data-bn="ঘোষণা করা হবে"
-data-en="To be announced">
-ঘোষণা করা হবে
+data-bn="দাম শীঘ্রই ঘোষণা করা হবে"
+data-en="Price will be announced soon">
+
+দাম শীঘ্রই ঘোষণা করা হবে
+
 </span>
 
 </div>
@@ -1662,9 +1742,11 @@ data-en="To be announced">
 
 <div
 class="announced-price"
-data-bn="পণ্যের দাম আপাতত ঘোষণা করা হয়নি। অর্ডার পাঠানোর সময় WhatsApp-এ পণ্যের দাম ও অন্যান্য তথ্য থাকবে।"
-data-en="Product price has not been announced yet. The WhatsApp order will contain the product price and other information.">
-পণ্যের দাম আপাতত ঘোষণা করা হয়নি। অর্ডার পাঠানোর সময় WhatsApp-এ পণ্যের দাম ও অন্যান্য তথ্য থাকবে।
+data-bn="পণ্যের দাম শীঘ্রই ঘোষণা করা হবে। অর্ডার পাঠানোর সময় WhatsApp-এ এই তথ্যও থাকবে।"
+data-en="Product price will be announced soon. This information will also appear in the WhatsApp order.">
+
+পণ্যের দাম শীঘ্রই ঘোষণা করা হবে। অর্ডার পাঠানোর সময় WhatsApp-এ এই তথ্যও থাকবে।
+
 </div>
 
 
@@ -1673,16 +1755,20 @@ class="primary-btn"
 onclick="confirmOrder()"
 data-bn="অর্ডার কনফার্ম করুন"
 data-en="Confirm Order">
+
 অর্ডার কনফার্ম করুন
+
 </button>
 
 
 <button
 class="secondary-btn"
 onclick="openCart()"
-data-bn="← কার্টে ফিরে যান"
-data-en="← Back to Cart">
-← কার্টে ফিরে যান
+data-bn="কার্টে ফিরে যান"
+data-en="Back to Cart">
+
+কার্টে ফিরে যান
+
 </button>
 
 </div>
@@ -1693,8 +1779,8 @@ data-en="← Back to Cart">
 <!-- ================= SUCCESS ================= -->
 
 <section
-id="successSection"
-class="success-section">
+id="orderSuccess"
+class="order-success">
 
 <div class="success-box">
 
@@ -1703,23 +1789,29 @@ class="success-section">
 </div>
 
 <h2
-data-bn="অর্ডার কনফার্ম হয়েছে!"
-data-en="Order Confirmed!">
-অর্ডার কনফার্ম হয়েছে!
+data-bn="অর্ডার প্রস্তুত!"
+data-en="Order Ready!">
+
+অর্ডার প্রস্তুত!
+
 </h2>
 
 <p
-data-bn="আপনার অর্ডারের তথ্য WhatsApp-এ পাঠানোর জন্য প্রস্তুত করা হয়েছে।"
-data-en="Your order information has been prepared to be sent via WhatsApp.">
-আপনার অর্ডারের তথ্য WhatsApp-এ পাঠানোর জন্য প্রস্তুত করা হয়েছে।
+data-bn="আপনার অর্ডারের তথ্য WhatsApp-এ পাঠানো হয়েছে।"
+data-en="Your order information has been sent to WhatsApp.">
+
+আপনার অর্ডারের তথ্য WhatsApp-এ পাঠানো হয়েছে।
+
 </p>
 
 <button
 class="primary-btn"
-onclick="goHome()"
-data-bn="ওয়েবসাইটে ফিরে যান"
-data-en="Back to Website">
-ওয়েবসাইটে ফিরে যান
+onclick="backToProducts()"
+data-bn="কেনাকাটায় ফিরে যান"
+data-en="Continue Shopping">
+
+কেনাকাটায় ফিরে যান
+
 </button>
 
 </div>
@@ -1735,7 +1827,9 @@ data-en="Back to Website">
 class="section-title"
 data-bn="কেন গ্রাম থেকে?"
 data-en="Why Graam Theke?">
+
 কেন গ্রাম থেকে?
+
 </h2>
 
 <div class="why-grid">
@@ -1747,13 +1841,17 @@ data-en="Why Graam Theke?">
 <h3
 data-bn="খাঁটি ও প্রাকৃতিক"
 data-en="Pure & Natural">
+
 খাঁটি ও প্রাকৃতিক
+
 </h3>
 
 <p
 data-bn="প্রাকৃতিক উপায়ে তৈরি খাঁটি পণ্য।"
 data-en="Authentic products made naturally.">
+
 প্রাকৃতিক উপায়ে তৈরি খাঁটি পণ্য।
+
 </p>
 
 </div>
@@ -1766,13 +1864,17 @@ data-en="Authentic products made naturally.">
 <h3
 data-bn="বাংলার স্বাদ"
 data-en="Taste of Bangladesh">
+
 বাংলার স্বাদ
+
 </h3>
 
 <p
 data-bn="গ্রামবাংলার ঐতিহ্যবাহী স্বাদকে আপনার ঘরে পৌঁছে দিই।"
 data-en="We bring the traditional taste of rural Bengal to your home.">
+
 গ্রামবাংলার ঐতিহ্যবাহী স্বাদকে আপনার ঘরে পৌঁছে দিই।
+
 </p>
 
 </div>
@@ -1785,13 +1887,17 @@ data-en="We bring the traditional taste of rural Bengal to your home.">
 <h3
 data-bn="ভালোবাসা"
 data-en="Love">
+
 ভালোবাসা
+
 </h3>
 
 <p
 data-bn="প্রতিটি পণ্যে থাকে আমাদের যত্ন ও আন্তরিকতা।"
 data-en="Every product carries our care and sincerity.">
+
 প্রতিটি পণ্যে থাকে আমাদের যত্ন ও আন্তরিকতা।
+
 </p>
 
 </div>
@@ -1811,27 +1917,35 @@ class="contact">
 class="section-title"
 data-bn="যোগাযোগ করুন"
 data-en="Contact Us">
+
 যোগাযোগ করুন
+
 </h2>
 
 <div
 class="contact-location"
 data-bn="যোগাযোগ: কাপাসিয়া, গাজীপুর"
 data-en="Location: Kapasia, Gazipur">
+
 যোগাযোগ: কাপাসিয়া, গাজীপুর
+
 </div>
 
 <p
 class="contact-text"
 data-bn="অর্ডার বা যেকোনো তথ্যের জন্য আমাদের সঙ্গে যোগাযোগ করুন।"
 data-en="Contact us for orders or any information.">
+
 অর্ডার বা যেকোনো তথ্যের জন্য আমাদের সঙ্গে যোগাযোগ করুন।
+
 </p>
 
 <a
 class="phone"
 href="tel:+8801601601998">
+
 +8801601601998
+
 </a>
 
 
@@ -1882,7 +1996,9 @@ target="_blank"
 rel="noopener noreferrer"
 data-bn="WhatsApp-এ যোগাযোগ করুন"
 data-en="Contact on WhatsApp">
+
 WhatsApp-এ যোগাযোগ করুন
+
 </a>
 
 </section>
@@ -1897,17 +2013,23 @@ WhatsApp-এ যোগাযোগ করুন
 <p
 data-bn="© 2026 গ্রাম থেকে"
 data-en="© 2026 Graam Theke">
+
 © 2026 গ্রাম থেকে
+
 </p>
 
 <p
 data-bn="প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য"
 data-en="Natural Sweetness, Heritage of Rural Bengal">
+
 প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য
+
 </p>
 
 </footer>
 
+
+<!-- ================= JAVASCRIPT ================= -->
 
 <script>
 
@@ -1915,98 +2037,78 @@ data-en="Natural Sweetness, Heritage of Rural Bengal">
 
 function toggleMenu(){
 
-    document
-    .getElementById("menuBox")
-    .classList.toggle("show");
+    const menu =
+        document.getElementById("menuBox");
 
+    menu.classList.toggle("show");
 }
+
 
 function closeMenu(){
 
     document
-    .getElementById("menuBox")
-    .classList.remove("show");
-
+        .getElementById("menuBox")
+        .classList.remove("show");
 }
 
-document.addEventListener("click",function(event){
 
-    const menu=document.getElementById("menuBox");
-    const button=document.querySelector(".menu-btn");
+document.addEventListener(
+    "click",
+    function(event){
 
-    if(
-        !menu.contains(event.target) &&
-        !button.contains(event.target)
-    ){
+        const menu =
+            document.getElementById("menuBox");
 
-        menu.classList.remove("show");
+        const button =
+            document.querySelector(".menu-btn");
+
+        if(
+            !menu.contains(event.target) &&
+            !button.contains(event.target)
+        ){
+
+            menu.classList.remove("show");
+
+        }
 
     }
-
-});
+);
 
 
 /* ================= CART ================= */
 
-let quantity=1;
+let quantity = 1;
 
-let deliveryCharge=60;
+let deliveryCharge = 60;
 
-let selectedPayment="cod";
-
-/*
-Tracks where the customer came from.
-This fixes the Back button issue.
-*/
-
-let cartPreviousPage="product";
+let selectedPayment = "";
 
 
 function addToCart(){
 
-    quantity=1;
+    quantity = 1;
 
     updateCart();
 
-    /*
-    If customer added from Product Details,
-    Cart back button returns to Product Details.
-    */
+    document
+        .getElementById("mainContent")
+        .style.display = "none";
 
-    if(
-        document
+    document
+        .getElementById("cartSection")
+        .classList.add("show");
+
+    document
+        .getElementById("orderSection")
+        .classList.remove("show");
+
+    document
         .getElementById("productDetails")
-        .classList.contains("show")
-    ){
-
-        cartPreviousPage="product";
-
-    }
-    else{
-
-        cartPreviousPage="products";
-
-    }
+        .classList.remove("show");
 
     document
-    .getElementById("mainContent")
-    .style.display="none";
-
-    document
-    .getElementById("productDetails")
-    .classList.remove("show");
-
-    document
-    .getElementById("orderSection")
-    .classList.remove("show");
-
-    document
-    .getElementById("successSection")
-    .classList.remove("show");
-
-    document
-    .getElementById("cartSection")
-    .classList.add("show");
+        .getElementById("orderSuccess")
+        .classList.remove("show");
 
     window.scrollTo({
         top:0,
@@ -2020,10 +2122,8 @@ function changeQuantity(amount){
 
     quantity += amount;
 
-    if(quantity<1){
-
-        quantity=1;
-
+    if(quantity < 1){
+        quantity = 1;
     }
 
     updateCart();
@@ -2034,16 +2134,16 @@ function changeQuantity(amount){
 function updateCart(){
 
     document
-    .getElementById("cartQuantity")
-    .textContent=quantity;
+        .getElementById("cartQuantity")
+        .textContent = quantity;
 
     document
-    .getElementById("cartTotalQuantity")
-    .textContent=quantity;
+        .getElementById("cartTotalQuantity")
+        .textContent = quantity;
 
     document
-    .getElementById("summaryQuantity")
-    .textContent=quantity;
+        .getElementById("summaryQuantity")
+        .textContent = quantity;
 
 }
 
@@ -2052,27 +2152,25 @@ function updateCart(){
 
 function openProductDetails(){
 
-    cartPreviousPage="product";
+    document
+        .getElementById("mainContent")
+        .style.display = "none";
 
     document
-    .getElementById("mainContent")
-    .style.display="none";
+        .getElementById("productDetails")
+        .classList.add("show");
 
     document
-    .getElementById("productDetails")
-    .classList.add("show");
+        .getElementById("cartSection")
+        .classList.remove("show");
 
     document
-    .getElementById("cartSection")
-    .classList.remove("show");
+        .getElementById("orderSection")
+        .classList.remove("show");
 
     document
-    .getElementById("orderSection")
-    .classList.remove("show");
-
-    document
-    .getElementById("successSection")
-    .classList.remove("show");
+        .getElementById("orderSuccess")
+        .classList.remove("show");
 
     window.scrollTo({
         top:0,
@@ -2085,63 +2183,24 @@ function openProductDetails(){
 function backToProducts(){
 
     document
-    .getElementById("mainContent")
-    .style.display="block";
-
-    document
-    .getElementById("productDetails")
-    .classList.remove("show");
-
-    document
-    .getElementById("cartSection")
-    .classList.remove("show");
-
-    document
-    .getElementById("orderSection")
-    .classList.remove("show");
-
-    document
-    .getElementById("successSection")
-    .classList.remove("show");
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
-}
-
-
-/* ================= CART BACK ================= */
-
-function backFromCart(){
-
-    document
-    .getElementById("cartSection")
-    .classList.remove("show");
-
-    document
-    .getElementById("orderSection")
-    .classList.remove("show");
-
-    if(cartPreviousPage==="product"){
-
-        document
         .getElementById("mainContent")
-        .style.display="none";
+        .style.display = "block";
 
-        document
+    document
         .getElementById("productDetails")
-        .classList.add("show");
+        .classList.remove("show");
 
-    }
-    else{
+    document
+        .getElementById("cartSection")
+        .classList.remove("show");
 
-        document
-        .getElementById("mainContent")
-        .style.display="block";
+    document
+        .getElementById("orderSection")
+        .classList.remove("show");
 
-    }
+    document
+        .getElementById("orderSuccess")
+        .classList.remove("show");
 
     window.scrollTo({
         top:0,
@@ -2156,24 +2215,24 @@ function backFromCart(){
 function openCart(){
 
     document
-    .getElementById("mainContent")
-    .style.display="none";
+        .getElementById("mainContent")
+        .style.display = "none";
 
     document
-    .getElementById("productDetails")
-    .classList.remove("show");
+        .getElementById("productDetails")
+        .classList.remove("show");
 
     document
-    .getElementById("orderSection")
-    .classList.remove("show");
+        .getElementById("orderSection")
+        .classList.remove("show");
 
     document
-    .getElementById("successSection")
-    .classList.remove("show");
+        .getElementById("orderSuccess")
+        .classList.remove("show");
 
     document
-    .getElementById("cartSection")
-    .classList.add("show");
+        .getElementById("cartSection")
+        .classList.add("show");
 
     updateCart();
 
@@ -2192,24 +2251,24 @@ function openOrderForm(){
     updateCart();
 
     document
-    .getElementById("mainContent")
-    .style.display="none";
+        .getElementById("mainContent")
+        .style.display = "none";
 
     document
-    .getElementById("productDetails")
-    .classList.remove("show");
+        .getElementById("productDetails")
+        .classList.remove("show");
 
     document
-    .getElementById("cartSection")
-    .classList.remove("show");
+        .getElementById("cartSection")
+        .classList.remove("show");
 
     document
-    .getElementById("successSection")
-    .classList.remove("show");
+        .getElementById("orderSuccess")
+        .classList.remove("show");
 
     document
-    .getElementById("orderSection")
-    .classList.add("show");
+        .getElementById("orderSection")
+        .classList.add("show");
 
     window.scrollTo({
         top:0,
@@ -2223,76 +2282,90 @@ function openOrderForm(){
 
 function setDelivery(charge){
 
-    deliveryCharge=charge;
+    deliveryCharge = charge;
 
     document
-    .getElementById("deliveryCharge")
-    .textContent="৳"+charge;
+        .getElementById("deliveryCharge")
+        .textContent =
+            "৳" + charge;
+
 
     document
-    .getElementById("insideDhakaOption")
-    .classList.toggle(
-        "selected",
-        charge===60
-    );
+        .getElementById("insideDhakaOption")
+        .classList.toggle(
+            "selected",
+            charge === 60
+        );
+
 
     document
-    .getElementById("outsideDhakaOption")
-    .classList.toggle(
-        "selected",
-        charge===120
-    );
+        .getElementById("outsideDhakaOption")
+        .classList.toggle(
+            "selected",
+            charge === 120
+        );
 
 }
 
 
 /* ================= PAYMENT ================= */
 
-function setPayment(payment){
+function selectPayment(payment){
 
-    selectedPayment=payment;
+    selectedPayment = payment;
+
+    const cod =
+        document.getElementById("codOption");
+
+    const bkash =
+        document.getElementById("bkashOption");
+
+    cod.classList.remove("selected");
+    bkash.classList.remove("selected");
+
+
+    if(payment === "Cash on Delivery"){
+
+        cod.classList.add("selected");
+
+        cod.querySelector("input").checked = true;
+
+    }
+
+
+    if(payment === "bKash Payment"){
+
+        bkash.classList.add("selected");
+
+        bkash.querySelector("input").checked = true;
+
+    }
+
 
     document
-    .getElementById("codOption")
-    .classList.toggle(
-        "selected",
-        payment==="cod"
-    );
-
-    document
-    .getElementById("bkashOption")
-    .classList.toggle(
-        "selected",
-        payment==="bkash"
-    );
-
-    document
-    .getElementById("bkashInfo")
-    .classList.toggle(
-        "show",
-        payment==="bkash"
-    );
+        .getElementById("summaryPayment")
+        .textContent = payment;
 
 }
 
 
-/* ================= CONFIRM ORDER ================= */
+/* ================= WHATSAPP ORDER ================= */
 
 function confirmOrder(){
 
-    const name=
+    const name =
         document
         .getElementById("customerName")
         .value
         .trim();
 
-    const phone=
+    const phone =
         document
         .getElementById("customerPhone")
         .value
         .trim();
 
-    const address=
+    const address =
         document
         .getElementById("customerAddress")
         .value
@@ -2323,19 +2396,21 @@ function confirmOrder(){
     }
 
 
-    const deliveryText=
-        deliveryCharge===60
+    if(!selectedPayment){
+
+        alert("দয়া করে একটি Payment Method নির্বাচন করুন।");
+        return;
+
+    }
+
+
+    const deliveryText =
+        deliveryCharge === 60
         ? "ঢাকার ভিতরে — ৳60"
         : "ঢাকার বাইরে — ৳120";
 
 
-    const paymentText=
-        selectedPayment==="bkash"
-        ? "bKash Payment — 01601601998"
-        : "Cash on Delivery";
-
-
-    const message=
+    const message =
 
 `🌿 গ্রাম থেকে — নতুন অর্ডার
 
@@ -2352,94 +2427,61 @@ ${address}
 
 📦 পণ্যের পরিমাণ: ${quantity}
 
-💰 পণ্যের দাম: ঘোষণা করা হবে
+💰 পণ্যের দাম: শীঘ্রই ঘোষণা করা হবে
 
 🚚 Delivery: ${deliveryText}
 
-💳 Payment Method: ${paymentText}
+💳 Payment Method: ${selectedPayment}
 
-💵 মোট দাম: পণ্যের দাম ঘোষণা করা হবে + ${deliveryCharge} টাকা Delivery Charge
+💵 মোট দাম: পণ্যের দাম শীঘ্রই ঘোষণা করা হবে + ${deliveryCharge} টাকা Delivery Charge
 
-✅ Customer website থেকে অর্ডার কনফার্ম করেছে।`;
+✅ Customer website থেকে অর্ডার করেছে।`;
+
+
+    const whatsappURL =
+        "https://wa.me/8801601601998?text=" +
+        encodeURIComponent(message);
 
 
     /*
-    Show confirmation on website first.
+       WhatsApp-এ যাওয়ার আগে success screen দেখানো হচ্ছে।
+       তারপর নতুন WhatsApp tab/window খোলার চেষ্টা করবে।
     */
 
     document
-    .getElementById("mainContent")
-    .style.display="none";
+        .getElementById("mainContent")
+        .style.display = "none";
 
     document
-    .getElementById("productDetails")
-    .classList.remove("show");
+        .getElementById("productDetails")
+        .classList.remove("show");
 
     document
-    .getElementById("cartSection")
-    .classList.remove("show");
+        .getElementById("cartSection")
+        .classList.remove("show");
 
     document
-    .getElementById("orderSection")
-    .classList.remove("show");
+        .getElementById("orderSection")
+        .classList.remove("show");
 
     document
-    .getElementById("successSection")
-    .classList.add("show");
-
+        .getElementById("orderSuccess")
+        .classList.add("show");
 
     window.scrollTo({
         top:0,
         behavior:"smooth"
     });
-
-
-    /*
-    Then open WhatsApp with order details.
-    */
-
-    const whatsappURL=
-        "https://wa.me/8801601601998?text="+
-        encodeURIComponent(message);
 
 
     setTimeout(function(){
 
-        window.location.href=whatsappURL;
+        window.open(
+            whatsappURL,
+            "_blank"
+        );
 
-    },900);
-
-}
-
-
-/* ================= HOME ================= */
-
-function goHome(){
-
-    document
-    .getElementById("mainContent")
-    .style.display="block";
-
-    document
-    .getElementById("productDetails")
-    .classList.remove("show");
-
-    document
-    .getElementById("cartSection")
-    .classList.remove("show");
-
-    document
-    .getElementById("orderSection")
-    .classList.remove("show");
-
-    document
-    .getElementById("successSection")
-    .classList.remove("show");
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+    },500);
 
 }
 
@@ -2448,38 +2490,41 @@ function goHome(){
 
 function setLanguage(lang){
 
-    document.documentElement.lang=lang;
+    document.documentElement.lang = lang;
 
-    const elements=
+
+    const elements =
         document.querySelectorAll(
             "[data-bn][data-en]"
         );
 
 
-    elements.forEach(function(element){
+    elements.forEach(
+        function(element){
 
-        element.textContent=
-            lang==="bn"
-            ? element.getAttribute("data-bn")
-            : element.getAttribute("data-en");
+            element.textContent =
+                lang === "bn"
+                ? element.getAttribute("data-bn")
+                : element.getAttribute("data-en");
 
-    });
-
-
-    document
-    .getElementById("bnBtn")
-    .classList.toggle(
-        "active",
-        lang==="bn"
+        }
     );
 
 
     document
-    .getElementById("enBtn")
-    .classList.toggle(
-        "active",
-        lang==="en"
-    );
+        .getElementById("bnBtn")
+        .classList.toggle(
+            "active",
+            lang === "bn"
+        );
+
+
+    document
+        .getElementById("enBtn")
+        .classList.toggle(
+            "active",
+            lang === "en"
+        );
 
 
     localStorage.setItem(
@@ -2492,10 +2537,11 @@ function setLanguage(lang){
 
 /* ================= LOAD LANGUAGE ================= */
 
-const savedLanguage=
+const savedLanguage =
     localStorage.getItem(
         "graamThekeLanguage"
     ) || "bn";
+
 
 setLanguage(savedLanguage);
 
@@ -2506,14 +2552,12 @@ document.addEventListener(
     "DOMContentLoaded",
     function(){
 
-        const video=
-            document.querySelector(
-                ".hero-video video"
-            );
+        const video =
+            document.querySelector(".hero-video video");
 
         if(video){
 
-            video.muted=true;
+            video.muted = true;
 
             video.play().catch(
                 function(){}
