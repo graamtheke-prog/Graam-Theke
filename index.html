@@ -130,6 +130,8 @@
       color: #625d50;
     }
 
+    /* PRODUCTS */
+
     .products {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -181,6 +183,8 @@
       margin-top: 15px;
     }
 
+    /* FEATURES */
+
     .features {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -210,6 +214,8 @@
       color: #6b665a;
     }
 
+    /* CONTACT */
+
     .contact {
       text-align: center;
       background: #315d38;
@@ -222,11 +228,50 @@
 
     .contact p {
       font-size: 18px;
+      margin-bottom: 25px;
     }
 
-    .contact .button {
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 60px;
+      height: 55px;
+      padding: 0 18px;
+      border-radius: 30px;
+      background: white;
+      color: #29452d;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 17px;
+      transition: 0.3s;
+    }
+
+    .contact-link:hover {
+      transform: translateY(-4px);
+    }
+
+    .social-icon {
+      font-size: 25px;
+    }
+
+    .call-link {
+      min-width: auto;
+    }
+
+    .whatsapp-button {
       background: #f3c66b;
       color: #29452d;
+      margin-top: 30px;
     }
 
     footer {
@@ -236,6 +281,8 @@
       padding: 25px;
       font-size: 14px;
     }
+
+    /* MOBILE */
 
     @media (max-width: 800px) {
 
@@ -268,11 +315,23 @@
         width: 105px;
         max-height: 65px;
       }
+
+      .contact-links {
+        gap: 12px;
+      }
+
+      .contact-link {
+        min-width: 55px;
+        height: 52px;
+        padding: 0 15px;
+      }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- HEADER -->
 
   <header>
 
@@ -298,6 +357,8 @@
   </header>
 
 
+  <!-- HERO -->
+
   <section class="hero" id="home">
 
     <div class="hero-content">
@@ -321,6 +382,8 @@
 
   </section>
 
+
+  <!-- ABOUT -->
 
   <section id="about">
 
@@ -348,6 +411,8 @@
 
   </section>
 
+
+  <!-- PRODUCTS -->
 
   <section id="products">
 
@@ -423,6 +488,8 @@
   </section>
 
 
+  <!-- WHY US -->
+
   <section>
 
     <h2 class="section-title">
@@ -435,7 +502,9 @@
 
         <div class="feature-icon">🌾</div>
 
-        <h3>গ্রামের শিকড়</h3>
+        <h3>
+          গ্রামের শিকড়
+        </h3>
 
         <p>
           আমাদের পণ্যের সঙ্গে জড়িয়ে আছে
@@ -449,7 +518,9 @@
 
         <div class="feature-icon">🌿</div>
 
-        <h3>প্রাকৃতিকতা</h3>
+        <h3>
+          প্রাকৃতিকতা
+        </h3>
 
         <p>
           প্রকৃতির স্বাভাবিক স্বাদ ও
@@ -463,7 +534,9 @@
 
         <div class="feature-icon">❤️</div>
 
-        <h3>ভালোবাসা</h3>
+        <h3>
+          ভালোবাসা
+        </h3>
 
         <p>
           প্রতিটি পণ্যের সঙ্গে থাকে
@@ -477,6 +550,8 @@
   </section>
 
 
+  <!-- CONTACT -->
+
   <section class="contact" id="contact">
 
     <h2 class="section-title">
@@ -487,12 +562,79 @@
       অর্ডার বা যেকোনো তথ্যের জন্য আমাদের সঙ্গে যোগাযোগ করুন।
     </p>
 
-    <a href="#" class="button">
-      WhatsApp-এ যোগাযোগ করুন
+
+    <div class="contact-links">
+
+      <!-- CALL -->
+
+      <a
+        href="tel:+8801632227007"
+        class="contact-link call-link"
+        aria-label="Call"
+      >
+        📞 +8801632227007
+      </a>
+
+
+      <!-- FACEBOOK -->
+
+      <a
+        href="https://www.facebook.com/share/18F1J2ej6V/?mibextid=wwXIfr"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-link"
+        aria-label="Facebook"
+      >
+        <span class="social-icon">🔵</span>
+        &nbsp;Facebook
+      </a>
+
+
+      <!-- INSTAGRAM -->
+
+      <a
+        href="https://www.instagram.com/graam_theke/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-link"
+        aria-label="Instagram"
+      >
+        <span class="social-icon">📷</span>
+        &nbsp;Instagram
+      </a>
+
+
+      <!-- WHATSAPP -->
+
+      <a
+        href="https://wa.me/message/PSDZUZ6DPBKDL1"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-link"
+        aria-label="WhatsApp"
+      >
+        <span class="social-icon">🟢</span>
+        &nbsp;WhatsApp
+      </a>
+
+    </div>
+
+
+    <!-- WHATSAPP ORDER -->
+
+    <a
+      href="https://wa.me/message/PSDZUZ6DPBKDL1"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="button whatsapp-button"
+    >
+      WhatsApp-এ অর্ডার করুন
     </a>
 
   </section>
 
+
+  <!-- FOOTER -->
 
   <footer>
 
