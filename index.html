@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="bn">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>গ্রাম থেকে | প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য</title>
 
-  <meta name="description"
-        content="গ্রাম থেকে — প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য।">
+  <meta
+    name="description"
+    content="গ্রাম থেকে — প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য।"
+  >
 
   <style>
 
@@ -28,13 +32,14 @@
       line-height: 1.7;
     }
 
+
     /* =========================
        HEADER
     ========================= */
 
     header {
       background: #fffdf7;
-      padding: 12px 5%;
+      padding: 14px 5%;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -42,12 +47,15 @@
     }
 
     .header-inner {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: auto;
+
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
-      gap: 8px;
+
+      gap: 10px;
     }
 
     .logo-link {
@@ -63,6 +71,7 @@
       display: block;
     }
 
+
     /* =========================
        NAVIGATION
     ========================= */
@@ -71,23 +80,29 @@
       display: flex;
       justify-content: center;
       align-items: center;
+
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 6px;
     }
 
     .nav-links a {
       display: inline-flex;
       align-items: center;
       justify-content: center;
+
       gap: 5px;
+
       padding: 7px 12px;
+
       color: #29452d;
       text-decoration: none;
+
       font-size: 14px;
       font-weight: bold;
+
       border-radius: 20px;
-      transition: 0.25s ease;
-      white-space: nowrap;
+
+      transition: 0.3s;
     }
 
     .nav-links a:hover {
@@ -95,23 +110,28 @@
       transform: translateY(-2px);
     }
 
+
     /* =========================
        HERO
     ========================= */
 
     .hero {
       min-height: 82vh;
+
       padding: 80px 20px;
+
       display: flex;
       justify-content: center;
       align-items: center;
+
       text-align: center;
 
-      background: radial-gradient(
-        circle at top,
-        #fff9e9,
-        #efe2c4
-      );
+      background:
+        radial-gradient(
+          circle at top,
+          #fff9e9,
+          #efe2c4
+        );
     }
 
     .hero-content {
@@ -121,22 +141,30 @@
     .hero h1 {
       font-size: clamp(48px, 10vw, 90px);
       line-height: 1.2;
+
       color: #315d38;
+
       margin-bottom: 12px;
     }
 
     .hero h2 {
       font-size: clamp(20px, 4vw, 34px);
+
       color: #75451f;
+
       margin-bottom: 20px;
     }
 
     .hero p {
       max-width: 650px;
+
       margin: auto;
+
       color: #625d50;
+
       font-size: 18px;
     }
+
 
     /* =========================
        BUTTON
@@ -144,13 +172,20 @@
 
     .button {
       display: inline-block;
+
       margin-top: 30px;
+
       padding: 14px 32px;
+
       background: #315d38;
       color: #ffffff;
+
       text-decoration: none;
+
       border-radius: 30px;
+
       font-weight: bold;
+
       transition: 0.3s;
     }
 
@@ -158,6 +193,7 @@
       transform: translateY(-3px);
       background: #23472a;
     }
+
 
     /* =========================
        COMMON SECTION
@@ -169,10 +205,14 @@
 
     .section-title {
       text-align: center;
+
       font-size: 36px;
+
       color: #315d38;
+
       margin-bottom: 45px;
     }
+
 
     /* =========================
        ABOUT
@@ -184,11 +224,16 @@
 
     .about-content {
       max-width: 850px;
+
       margin: auto;
+
       text-align: center;
+
       color: #625d50;
+
       font-size: 18px;
     }
+
 
     /* =========================
        PRODUCTS
@@ -200,18 +245,28 @@
 
     .product-grid {
       max-width: 1100px;
+
       margin: auto;
+
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
+
       gap: 25px;
     }
 
     .product-card {
       background: #fffaf0;
+
       border-radius: 20px;
+
       padding: 22px;
+
       text-align: center;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.09);
+
+      box-shadow:
+        0 8px 28px rgba(0,0,0,0.09);
+
       transition: 0.3s;
     }
 
@@ -221,15 +276,20 @@
 
     .product-image {
       height: 250px;
+
       border-radius: 17px;
+
       background: #ead9b5;
 
       display: flex;
+
       justify-content: center;
       align-items: center;
 
       color: #75451f;
+
       font-size: 18px;
+
       font-weight: bold;
 
       margin-bottom: 20px;
@@ -237,13 +297,16 @@
 
     .product-card h3 {
       font-size: 24px;
+
       color: #315d38;
+
       margin-bottom: 8px;
     }
 
     .product-card p {
       color: #6b665a;
     }
+
 
     /* =========================
        WHY GRAAM THEKE
@@ -255,37 +318,50 @@
 
     .why-grid {
       max-width: 1050px;
+
       margin: auto;
 
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
-      gap: 35px;
+
+      gap: 25px;
     }
 
     .why-card {
       background: #f5f0e2;
-      padding: 35px 20px;
+
+      padding: 30px 18px;
+
       text-align: center;
+
       border-radius: 20px;
     }
 
     .why-icon {
       font-size: 62px;
+
       line-height: 1;
+
       margin-bottom: 28px;
+
       display: block;
     }
 
     .why-card h3 {
       color: #315d38;
-      margin-bottom: 12px;
+
+      margin-bottom: 8px;
+
       font-size: 28px;
     }
 
     .why-card p {
       color: #6b665a;
+
       font-size: 17px;
     }
+
 
     /* =========================
        CONTACT
@@ -293,32 +369,43 @@
 
     .contact {
       background: #315d38;
+
       color: white;
+
       text-align: center;
     }
 
     .contact .section-title {
       color: white;
+
       margin-bottom: 20px;
     }
 
     .location {
       font-size: 20px;
+
       font-weight: bold;
+
       margin-bottom: 12px;
     }
 
     .contact-description {
       font-size: 17px;
+
       margin-bottom: 15px;
     }
 
     .phone-number {
       display: inline-block;
+
       color: white;
+
       text-decoration: none;
+
       font-size: 22px;
+
       font-weight: bold;
+
       margin-bottom: 28px;
     }
 
@@ -326,15 +413,19 @@
       text-decoration: underline;
     }
 
+
     /* =========================
        SOCIAL LINKS
     ========================= */
 
     .social-links {
       display: flex;
+
       justify-content: center;
       align-items: center;
+
       gap: 28px;
+
       margin: 0 auto 28px;
     }
 
@@ -343,23 +434,29 @@
       height: auto;
 
       display: flex;
+
       justify-content: center;
       align-items: center;
 
       background: transparent;
+
       border-radius: 0;
 
       text-decoration: none;
+
       transition: transform 0.25s ease;
     }
 
     .social-link:hover {
-      transform: translateY(-4px) scale(1.10);
+      transform:
+        translateY(-4px)
+        scale(1.10);
     }
 
     .social-link svg {
       width: 44px;
       height: 44px;
+
       display: block;
     }
 
@@ -375,15 +472,20 @@
       fill: #25D366;
     }
 
+
     /* =========================
        ORDER BUTTON
     ========================= */
 
     .order-button {
       background: #f3c66b;
+
       color: #29452d;
+
       margin-top: 0;
+
       padding: 14px 38px;
+
       font-size: 17px;
     }
 
@@ -391,17 +493,23 @@
       background: #e8b957;
     }
 
+
     /* =========================
        FOOTER
     ========================= */
 
     footer {
       background: #203b26;
+
       color: #dddddd;
+
       text-align: center;
+
       padding: 25px 15px;
+
       font-size: 14px;
     }
+
 
     /* =========================
        TABLET
@@ -424,32 +532,30 @@
 
     }
 
+
     /* =========================
        MOBILE
     ========================= */
 
     @media (max-width: 500px) {
 
-      header {
-        padding: 10px 3%;
-      }
-
       .brand-logo {
         width: 105px;
       }
 
       .nav-links {
-        gap: 4px;
-        width: 100%;
+        gap: 3px;
       }
 
       .nav-links a {
         font-size: 12px;
+
         padding: 6px 8px;
       }
 
       .hero {
         min-height: 75vh;
+
         padding: 60px 20px;
       }
 
@@ -498,9 +604,12 @@
     }
 
   </style>
+
 </head>
 
+
 <body>
+
 
   <!-- =========================
        HEADER
@@ -511,12 +620,15 @@
     <div class="header-inner">
 
       <a href="#home" class="logo-link">
+
         <img
           src="99927B00-BDEF-45EB-9A5C-AC1CEFE3E77A.png"
           alt="গ্রাম থেকে"
           class="brand-logo"
         >
+
       </a>
+
 
       <nav class="nav-links">
 
@@ -543,15 +655,18 @@
   </header>
 
 
+
   <!-- =========================
-       HOME / HERO
+       HOME
   ========================= -->
 
   <section class="hero" id="home">
 
     <div class="hero-content">
 
-      <h1>গ্রাম থেকে</h1>
+      <h1>
+        গ্রাম থেকে
+      </h1>
 
       <h2>
         প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য
@@ -562,7 +677,10 @@
         থেকে বেছে নেওয়া পণ্য পৌঁছে যাবে আপনার ঘরে।
       </p>
 
-      <a href="#products" class="button">
+      <a
+        href="#products"
+        class="button"
+      >
         আমাদের পণ্য দেখুন
       </a>
 
@@ -571,11 +689,15 @@
   </section>
 
 
+
   <!-- =========================
        ABOUT
   ========================= -->
 
-  <section class="about" id="about">
+  <section
+    class="about"
+    id="about"
+  >
 
     <h2 class="section-title">
       আমাদের গল্প
@@ -584,17 +706,21 @@
     <div class="about-content">
 
       <p>
+
         <strong>গ্রাম থেকে</strong> একটি পণ্য নয়,
         এটি আমাদের গ্রামবাংলার জীবন, প্রকৃতি,
         ঐতিহ্য ও মানুষের ভালোবাসার গল্প।
+
       </p>
 
       <br>
 
       <p>
+
         গ্রামের প্রাকৃতিক স্বাদ ও ঐতিহ্যকে
         আধুনিকভাবে মানুষের কাছে পৌঁছে দেওয়াই
         আমাদের লক্ষ্য।
+
       </p>
 
     </div>
@@ -602,28 +728,37 @@
   </section>
 
 
+
   <!-- =========================
        PRODUCTS
   ========================= -->
 
-  <section class="products" id="products">
+  <section
+    class="products"
+    id="products"
+  >
 
     <h2 class="section-title">
       আমাদের পণ্য
     </h2>
 
+
     <div class="product-grid">
+
 
       <!-- NEW PRODUCT -->
 
-      <div class="product-card" id="new-product">
+      <div
+        class="product-card"
+        id="new-product"
+      >
 
         <div class="product-image">
           পণ্যের ছবি এখানে
         </div>
 
         <h3>
-          নতুন পণ্য
+          প্রথম পণ্য
         </h3>
 
         <p>
@@ -633,16 +768,20 @@
       </div>
 
 
+
       <!-- UPCOMING PRODUCT -->
 
-      <div class="product-card" id="upcoming-product">
+      <div
+        class="product-card"
+        id="upcoming-product"
+      >
 
         <div class="product-image">
           শীঘ্রই আসছে
         </div>
 
         <h3>
-          Upcoming Product
+          নতুন পণ্য
         </h3>
 
         <p>
@@ -652,7 +791,8 @@
       </div>
 
 
-      <!-- MORE PRODUCTS -->
+
+      <!-- MORE PRODUCT -->
 
       <div class="product-card">
 
@@ -670,9 +810,11 @@
 
       </div>
 
+
     </div>
 
   </section>
+
 
 
   <!-- =========================
@@ -685,10 +827,11 @@
       কেন গ্রাম থেকে?
     </h2>
 
+
     <div class="why-grid">
 
 
-      <!-- NATURAL -->
+      <!-- 🌿 -->
 
       <div class="why-card">
 
@@ -701,14 +844,14 @@
         </h3>
 
         <p>
-          প্রকৃতির কাছাকাছি থাকা পণ্য ও
-          উপাদানকে গুরুত্ব দেওয়া হয়।
+          প্রকৃতির কাছাকাছি থাকা পণ্য ও উপাদানকে গুরুত্ব দেওয়া হয়।
         </p>
 
       </div>
 
 
-      <!-- TRADITION -->
+
+      <!-- 🏡 -->
 
       <div class="why-card">
 
@@ -721,14 +864,14 @@
         </h3>
 
         <p>
-          আমাদের পণ্যের সঙ্গে জড়িয়ে আছে
-          বাংলার মাটি ও মানুষের ঐতিহ্য।
+          আমাদের পণ্যের সঙ্গে জড়িয়ে আছে বাংলার মাটি ও মানুষের ঐতিহ্য।
         </p>
 
       </div>
 
 
-      <!-- CARE & QUALITY -->
+
+      <!-- ❤️ -->
 
       <div class="why-card">
 
@@ -737,12 +880,11 @@
         </div>
 
         <h3>
-          যত্ন ও মান
+          ভালোবাসা
         </h3>
 
         <p>
-          ভালো মানের পণ্য মানুষের কাছে
-          পৌঁছে দেওয়াই আমাদের লক্ষ্য।
+          প্রতিটি পণ্যের সঙ্গে থাকে আমাদের যত্ন ও আন্তরিকতা।
         </p>
 
       </div>
@@ -753,24 +895,30 @@
   </section>
 
 
+
   <!-- =========================
        CONTACT
   ========================= -->
 
-  <section class="contact" id="contact">
+  <section
+    class="contact"
+    id="contact"
+  >
 
     <h2 class="section-title">
       যোগাযোগ করুন
     </h2>
 
+
     <p class="location">
       যোগাযোগ: কাপাসিয়া, গাজীপুর
     </p>
 
+
     <p class="contact-description">
-      অর্ডার বা যেকোনো তথ্যের জন্য
-      আমাদের সঙ্গে যোগাযোগ করুন।
+      অর্ডার বা যেকোনো তথ্যের জন্য আমাদের সঙ্গে যোগাযোগ করুন।
     </p>
+
 
     <a
       href="tel:+8801601601998"
@@ -778,6 +926,7 @@
     >
       +8801601601998
     </a>
+
 
 
     <!-- SOCIAL LINKS -->
@@ -811,6 +960,7 @@
       </a>
 
 
+
       <!-- INSTAGRAM -->
 
       <a
@@ -835,6 +985,7 @@
         </svg>
 
       </a>
+
 
 
       <!-- WHATSAPP -->
@@ -862,10 +1013,12 @@
 
       </a>
 
+
     </div>
 
 
-    <!-- ORDER -->
+
+    <!-- ORDER BUTTON -->
 
     <a
       href="https://wa.me/message/PSDZUZ6DPBKDL1"
@@ -876,7 +1029,9 @@
       অর্ডার করুন
     </a>
 
+
   </section>
+
 
 
   <!-- =========================
@@ -897,4 +1052,5 @@
 
 
 </body>
+
 </html>
