@@ -49,7 +49,6 @@
     .header-inner {
       max-width: 1100px;
       margin: auto;
-
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -80,21 +79,15 @@
       border: none;
       background: #315d38;
       color: white;
-
       padding: 11px 18px;
-
       border-radius: 30px;
-
       display: flex;
       align-items: center;
       gap: 10px;
-
       font-family: inherit;
       font-size: 15px;
       font-weight: bold;
-
       cursor: pointer;
-
       transition: 0.3s;
     }
 
@@ -106,7 +99,6 @@
     .menu-icon {
       width: 22px;
       height: 16px;
-
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -117,7 +109,6 @@
       height: 2px;
       background: white;
       border-radius: 5px;
-
       transition: 0.3s;
     }
 
@@ -139,28 +130,16 @@
 
     .dropdown-menu {
       position: absolute;
-
       top: calc(100% + 12px);
       right: 0;
-
       width: 245px;
-
       background: rgba(255, 253, 247, 0.98);
-
       border-radius: 20px;
-
       padding: 10px;
-
-      box-shadow:
-        0 15px 40px rgba(0,0,0,0.15);
-
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
       opacity: 0;
       visibility: hidden;
-
-      transform:
-        translateY(-10px)
-        scale(0.97);
-
+      transform: translateY(-10px) scale(0.97);
       transition:
         opacity 0.25s ease,
         transform 0.25s ease,
@@ -170,45 +149,28 @@
     .dropdown-menu.show {
       opacity: 1;
       visibility: visible;
-
-      transform:
-        translateY(0)
-        scale(1);
+      transform: translateY(0) scale(1);
     }
 
-    .dropdown-menu a,
-    .language-toggle {
+    .dropdown-menu a {
       width: 100%;
-
       display: flex;
       align-items: center;
-
       padding: 13px 15px;
-
       border-radius: 12px;
-
       color: #29452d;
-
       text-decoration: none;
-
       font-size: 15px;
       font-weight: bold;
-
       background: transparent;
-
       border: none;
-
       font-family: inherit;
-
       cursor: pointer;
-
       transition: 0.25s;
-
       text-align: left;
     }
 
-    .dropdown-menu a:hover,
-    .language-toggle:hover {
+    .dropdown-menu a:hover {
       background: #f1ead8;
       transform: translateX(3px);
     }
@@ -224,17 +186,13 @@
     .language-section {
       margin-top: 5px;
       padding-top: 8px;
-
       border-top: 1px solid #e5dfd0;
     }
 
     .language-title {
       display: block;
-
       padding: 6px 15px 4px;
-
       color: #7a7468;
-
       font-size: 12px;
       font-weight: bold;
     }
@@ -242,30 +200,20 @@
     .language-options {
       display: flex;
       gap: 6px;
-
       padding: 0 5px 5px;
     }
 
     .language-option {
       flex: 1;
-
       border: none;
-
       padding: 8px 5px;
-
       border-radius: 10px;
-
       background: transparent;
-
       color: #29452d;
-
       font-family: inherit;
-
       font-size: 13px;
       font-weight: bold;
-
       cursor: pointer;
-
       transition: 0.25s;
     }
 
@@ -284,13 +232,10 @@
 
     .hero {
       min-height: 82vh;
-
       padding: 70px 20px 80px;
-
       display: flex;
       justify-content: center;
       align-items: center;
-
       text-align: center;
 
       background:
@@ -309,29 +254,21 @@
     .hero h1 {
       font-size: clamp(48px, 10vw, 90px);
       line-height: 1.2;
-
       color: #315d38;
-
       margin-bottom: 12px;
     }
 
     .hero h2 {
       font-size: clamp(20px, 4vw, 34px);
-
       color: #75451f;
-
       margin-bottom: 20px;
     }
 
     .hero p {
       max-width: 650px;
-
       margin: auto;
-
       color: #625d50;
-
       font-size: 18px;
-
       margin-bottom: 28px;
     }
 
@@ -342,25 +279,17 @@
     .hero-video {
       width: 100%;
       max-width: 430px;
-
       margin: 0 auto;
-
       border-radius: 22px;
-
       overflow: hidden;
-
       background: #203b26;
-
-      box-shadow:
-        0 12px 35px rgba(0,0,0,0.15);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.15);
     }
 
     .hero-video video {
       width: 100%;
       height: auto;
-
       display: block;
-
       object-fit: cover;
     }
 
@@ -370,20 +299,13 @@
 
     .button {
       display: inline-block;
-
       margin-top: 30px;
-
       padding: 14px 32px;
-
       background: #315d38;
       color: #ffffff;
-
       text-decoration: none;
-
       border-radius: 30px;
-
       font-weight: bold;
-
       transition: 0.3s;
     }
 
@@ -402,11 +324,8 @@
 
     .section-title {
       text-align: center;
-
       font-size: 36px;
-
       color: #315d38;
-
       margin-bottom: 45px;
     }
 
@@ -420,13 +339,9 @@
 
     .about-content {
       max-width: 850px;
-
       margin: auto;
-
       text-align: center;
-
       color: #625d50;
-
       font-size: 18px;
     }
 
@@ -440,28 +355,18 @@
 
     .product-grid {
       max-width: 1100px;
-
       margin: auto;
-
       display: grid;
-
       grid-template-columns: repeat(3, 1fr);
-
       gap: 25px;
     }
 
     .product-card {
       background: #fffaf0;
-
       border-radius: 20px;
-
       padding: 22px;
-
       text-align: center;
-
-      box-shadow:
-        0 8px 28px rgba(0,0,0,0.09);
-
+      box-shadow: 0 8px 28px rgba(0,0,0,0.09);
       transition: 0.3s;
     }
 
@@ -471,30 +376,29 @@
 
     .product-image {
       height: 250px;
-
       border-radius: 17px;
-
       background: #ead9b5;
-
       display: flex;
-
       justify-content: center;
       align-items: center;
-
       color: #75451f;
-
       font-size: 18px;
-
       font-weight: bold;
-
       margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 17px;
+      display: block;
     }
 
     .product-card h3 {
       font-size: 24px;
-
       color: #315d38;
-
       margin-bottom: 8px;
     }
 
@@ -512,47 +416,34 @@
 
     .why-grid {
       max-width: 1050px;
-
       margin: auto;
-
       display: grid;
-
       grid-template-columns: repeat(3, 1fr);
-
       gap: 25px;
     }
 
     .why-card {
       background: #f5f0e2;
-
       padding: 30px 18px;
-
       text-align: center;
-
       border-radius: 20px;
     }
 
     .why-icon {
       font-size: 62px;
-
       line-height: 1;
-
       margin-bottom: 28px;
-
       display: block;
     }
 
     .why-card h3 {
       color: #315d38;
-
       margin-bottom: 8px;
-
       font-size: 28px;
     }
 
     .why-card p {
       color: #6b665a;
-
       font-size: 17px;
     }
 
@@ -562,43 +453,32 @@
 
     .contact {
       background: #315d38;
-
       color: white;
-
       text-align: center;
     }
 
     .contact .section-title {
       color: white;
-
       margin-bottom: 20px;
     }
 
     .location {
       font-size: 20px;
-
       font-weight: bold;
-
       margin-bottom: 12px;
     }
 
     .contact-description {
       font-size: 17px;
-
       margin-bottom: 15px;
     }
 
     .phone-number {
       display: inline-block;
-
       color: white;
-
       text-decoration: none;
-
       font-size: 22px;
-
       font-weight: bold;
-
       margin-bottom: 28px;
     }
 
@@ -612,43 +492,31 @@
 
     .social-links {
       display: flex;
-
       justify-content: center;
       align-items: center;
-
       gap: 28px;
-
       margin: 0 auto 28px;
     }
 
     .social-link {
       width: auto;
       height: auto;
-
       display: flex;
-
       justify-content: center;
       align-items: center;
-
       background: transparent;
-
       border-radius: 0;
-
       text-decoration: none;
-
       transition: transform 0.25s ease;
     }
 
     .social-link:hover {
-      transform:
-        translateY(-4px)
-        scale(1.10);
+      transform: translateY(-4px) scale(1.10);
     }
 
     .social-link svg {
       width: 44px;
       height: 44px;
-
       display: block;
     }
 
@@ -670,13 +538,9 @@
 
     .order-button {
       background: #f3c66b;
-
       color: #29452d;
-
       margin-top: 0;
-
       padding: 14px 38px;
-
       font-size: 17px;
     }
 
@@ -690,13 +554,9 @@
 
     footer {
       background: #203b26;
-
       color: #dddddd;
-
       text-align: center;
-
       padding: 25px 15px;
-
       font-size: 14px;
     }
 
@@ -745,14 +605,12 @@
         right: 0;
       }
 
-      .dropdown-menu a,
-      .language-toggle {
+      .dropdown-menu a {
         font-size: 14px;
       }
 
       .hero {
         min-height: auto;
-
         padding: 60px 20px 70px;
       }
 
@@ -766,13 +624,11 @@
 
       .hero p {
         font-size: 16px;
-
         margin-bottom: 25px;
       }
 
       .hero-video {
         max-width: 100%;
-
         border-radius: 18px;
       }
 
@@ -847,7 +703,6 @@
 
         </button>
 
-
         <div
           class="dropdown-menu"
           id="dropdownMenu"
@@ -874,10 +729,10 @@
           <a
             href="#upcoming-product"
             class="menu-link"
-            data-bn="আসন্ন প্রজেক্ট"
-            data-en="Upcoming Project"
+            data-bn="শীঘ্রই আসছে"
+            data-en="Coming Soon"
           >
-            আসন্ন প্রজেক্ট
+            শীঘ্রই আসছে
           </a>
 
           <a
@@ -888,7 +743,6 @@
           >
             যোগাযোগ
           </a>
-
 
           <!-- LANGUAGE -->
 
@@ -953,7 +807,6 @@
         থেকে বেছে নেওয়া পণ্য পৌঁছে যাবে আপনার ঘরে।
       </p>
 
-
       <!-- HERO VIDEO -->
 
       <div class="hero-video">
@@ -969,7 +822,6 @@
         ></video>
 
       </div>
-
 
       <a
         href="#products"
@@ -1044,7 +896,9 @@
     <div class="product-grid">
 
 
-      <!-- NEW PRODUCT -->
+      <!-- NEW PRODUCT
+           CURRENT PRODUCT IMAGE
+      -->
 
       <div
         class="product-card"
@@ -1057,12 +911,6 @@
             src="DDEFE989-0077-4992-8E6F-AC19B734DF8B.png"
             alt="খাঁটি আখের গুড়"
             id="productImage"
-            style="
-              width:100%;
-              height:100%;
-              object-fit:contain;
-              border-radius:17px;
-            "
           >
 
         </div>
@@ -1078,7 +926,7 @@
       </div>
 
 
-      <!-- UPCOMING PRODUCT -->
+      <!-- COMING SOON -->
 
       <div
         class="product-card"
@@ -1093,7 +941,7 @@
         </div>
 
         <h3 id="newProductTitle">
-          নতুন পণ্য
+          শীঘ্রই আসছে
         </h3>
 
         <p id="newProductDescription">
@@ -1143,7 +991,6 @@
     </h2>
 
     <div class="why-grid">
-
 
       <div class="why-card">
 
@@ -1241,7 +1088,6 @@
     <!-- SOCIAL LINKS -->
 
     <div class="social-links">
-
 
       <!-- FACEBOOK -->
 
@@ -1365,62 +1211,82 @@
        MENU
     ========================= */
 
-    const menuButton = document.getElementById("menuButton");
-    const dropdownMenu = document.getElementById("dropdownMenu");
+    const menuButton =
+      document.getElementById("menuButton");
 
-    menuButton.addEventListener("click", function () {
+    const dropdownMenu =
+      document.getElementById("dropdownMenu");
 
-      const isOpen =
-        dropdownMenu.classList.toggle("show");
 
-      menuButton.classList.toggle("active", isOpen);
+    menuButton.addEventListener(
+      "click",
+      function () {
 
-      menuButton.setAttribute(
-        "aria-expanded",
-        isOpen
-      );
+        const isOpen =
+          dropdownMenu.classList.toggle("show");
 
-    });
+        menuButton.classList.toggle(
+          "active",
+          isOpen
+        );
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          isOpen
+        );
+
+      }
+    );
 
 
     /* CLOSE MENU AFTER CLICKING LINK */
 
-    document.querySelectorAll(".menu-link").forEach(function(link) {
+    document
+      .querySelectorAll(".menu-link")
+      .forEach(function (link) {
 
-      link.addEventListener("click", function() {
+        link.addEventListener(
+          "click",
+          function () {
 
-        dropdownMenu.classList.remove("show");
-        menuButton.classList.remove("active");
+            dropdownMenu.classList.remove("show");
 
-        menuButton.setAttribute(
-          "aria-expanded",
-          "false"
+            menuButton.classList.remove("active");
+
+            menuButton.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+          }
         );
 
       });
 
-    });
-
 
     /* CLOSE MENU WHEN CLICKING OUTSIDE */
 
-    document.addEventListener("click", function(event) {
+    document.addEventListener(
+      "click",
+      function (event) {
 
-      if (
-        !event.target.closest(".menu-area")
-      ) {
+        if (
+          !event.target.closest(".menu-area")
+        ) {
 
-        dropdownMenu.classList.remove("show");
-        menuButton.classList.remove("active");
+          dropdownMenu.classList.remove("show");
 
-        menuButton.setAttribute(
-          "aria-expanded",
-          "false"
-        );
+          menuButton.classList.remove("active");
+
+          menuButton.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        }
 
       }
-
-    });
+    );
 
 
     /* =========================
@@ -1432,6 +1298,7 @@
       bn: {
 
         menu: "মেনু",
+
         language: "ভাষা",
 
         title:
@@ -1474,7 +1341,7 @@
           "শীঘ্রই আসছে",
 
         newProductTitle:
-          "নতুন পণ্য",
+          "শীঘ্রই আসছে",
 
         newProductDescription:
           "আমাদের নতুন পণ্য খুব শিগগিরই যুক্ত হবে।",
@@ -1575,7 +1442,7 @@
           "Coming Soon",
 
         newProductTitle:
-          "New Product",
+          "Coming Soon",
 
         newProductDescription:
           "Our new product will be added very soon.",
@@ -1636,15 +1503,19 @@
 
     function changeLanguage(language) {
 
-      const t = translations[language];
+      const t =
+        translations[language];
 
       document.documentElement.lang =
-        language === "bn" ? "bn" : "en";
+        language === "bn"
+          ? "bn"
+          : "en";
 
 
       /* PAGE */
 
-      document.title = t.title;
+      document.title =
+        t.title;
 
       document
         .getElementById("pageDescription")
@@ -1656,141 +1527,207 @@
 
       /* HEADER */
 
-      document.getElementById("menuText").textContent =
+      document
+        .getElementById("menuText")
+        .textContent =
         t.menu;
 
-      document.getElementById("languageTitle").textContent =
+      document
+        .getElementById("languageTitle")
+        .textContent =
         t.language;
 
 
       /* NAV */
 
-      document.querySelectorAll(".menu-link").forEach(function(link) {
+      document
+        .querySelectorAll(".menu-link")
+        .forEach(function (link) {
 
-        link.textContent =
-          link.getAttribute(
-            language === "bn"
-              ? "data-bn"
-              : "data-en"
-          );
+          link.textContent =
+            link.getAttribute(
+              language === "bn"
+                ? "data-bn"
+                : "data-en"
+            );
 
-      });
+        });
 
 
       /* HERO */
 
-      document.getElementById("heroTitle").textContent =
+      document
+        .getElementById("heroTitle")
+        .textContent =
         t.heroTitle;
 
-      document.getElementById("heroSubtitle").textContent =
+      document
+        .getElementById("heroSubtitle")
+        .textContent =
         t.heroSubtitle;
 
-      document.getElementById("heroDescription").textContent =
+      document
+        .getElementById("heroDescription")
+        .textContent =
         t.heroDescription;
 
-      document.getElementById("productButton").textContent =
+      document
+        .getElementById("productButton")
+        .textContent =
         t.productButton;
 
 
       /* ABOUT */
 
-      document.getElementById("aboutTitle").textContent =
+      document
+        .getElementById("aboutTitle")
+        .textContent =
         t.aboutTitle;
 
-      document.getElementById("aboutTextOne").innerHTML =
+      document
+        .getElementById("aboutTextOne")
+        .innerHTML =
         t.aboutTextOne;
 
-      document.getElementById("aboutTextTwo").textContent =
+      document
+        .getElementById("aboutTextTwo")
+        .textContent =
         t.aboutTextTwo;
 
 
       /* PRODUCTS */
 
-      document.getElementById("productsTitle").textContent =
+      document
+        .getElementById("productsTitle")
+        .textContent =
         t.productsTitle;
 
-      document.getElementById("jaggeryTitle").textContent =
+      document
+        .getElementById("jaggeryTitle")
+        .textContent =
         t.jaggeryTitle;
 
-      document.getElementById("jaggeryWeight").textContent =
+      document
+        .getElementById("jaggeryWeight")
+        .textContent =
         t.jaggeryWeight;
 
-      document.getElementById("comingSoonOne").textContent =
+      document
+        .getElementById("comingSoonOne")
+        .textContent =
         t.comingSoon;
 
-      document.getElementById("comingSoonTwo").textContent =
+      document
+        .getElementById("comingSoonTwo")
+        .textContent =
         t.comingSoon;
 
-      document.getElementById("newProductTitle").textContent =
+      document
+        .getElementById("newProductTitle")
+        .textContent =
         t.newProductTitle;
 
-      document.getElementById("newProductDescription").textContent =
+      document
+        .getElementById("newProductDescription")
+        .textContent =
         t.newProductDescription;
 
-      document.getElementById("moreProductTitle").textContent =
+      document
+        .getElementById("moreProductTitle")
+        .textContent =
         t.moreProductTitle;
 
-      document.getElementById("moreProductDescription").textContent =
+      document
+        .getElementById("moreProductDescription")
+        .textContent =
         t.moreProductDescription;
 
 
       /* WHY */
 
-      document.getElementById("whyTitle").textContent =
+      document
+        .getElementById("whyTitle")
+        .textContent =
         t.whyTitle;
 
-      document.getElementById("naturalTitle").textContent =
+      document
+        .getElementById("naturalTitle")
+        .textContent =
         t.naturalTitle;
 
-      document.getElementById("naturalDescription").textContent =
+      document
+        .getElementById("naturalDescription")
+        .textContent =
         t.naturalDescription;
 
-      document.getElementById("traditionTitle").textContent =
+      document
+        .getElementById("traditionTitle")
+        .textContent =
         t.traditionTitle;
 
-      document.getElementById("traditionDescription").textContent =
+      document
+        .getElementById("traditionDescription")
+        .textContent =
         t.traditionDescription;
 
-      document.getElementById("loveTitle").textContent =
+      document
+        .getElementById("loveTitle")
+        .textContent =
         t.loveTitle;
 
-      document.getElementById("loveDescription").textContent =
+      document
+        .getElementById("loveDescription")
+        .textContent =
         t.loveDescription;
 
 
       /* CONTACT */
 
-      document.getElementById("contactTitle").textContent =
+      document
+        .getElementById("contactTitle")
+        .textContent =
         t.contactTitle;
 
-      document.getElementById("locationText").textContent =
+      document
+        .getElementById("locationText")
+        .textContent =
         t.location;
 
-      document.getElementById("contactDescription").textContent =
+      document
+        .getElementById("contactDescription")
+        .textContent =
         t.contactDescription;
 
-      document.getElementById("orderButton").textContent =
+      document
+        .getElementById("orderButton")
+        .textContent =
         t.orderButton;
 
 
       /* FOOTER */
 
-      document.getElementById("footerCopyright").textContent =
+      document
+        .getElementById("footerCopyright")
+        .textContent =
         t.footerCopyright;
 
-      document.getElementById("footerMotto").textContent =
+      document
+        .getElementById("footerMotto")
+        .textContent =
         t.footerMotto;
 
 
       /* LANGUAGE BUTTON */
 
-      document.getElementById("bnButton")
+      document
+        .getElementById("bnButton")
         .classList.toggle(
           "selected",
           language === "bn"
         );
 
-      document.getElementById("enButton")
+      document
+        .getElementById("enButton")
         .classList.toggle(
           "selected",
           language === "en"
@@ -1815,7 +1752,7 @@
       .getElementById("bnButton")
       .addEventListener(
         "click",
-        function() {
+        function () {
 
           changeLanguage("bn");
 
@@ -1827,7 +1764,7 @@
       .getElementById("enButton")
       .addEventListener(
         "click",
-        function() {
+        function () {
 
           changeLanguage("en");
 
@@ -1863,7 +1800,7 @@
 
     document.addEventListener(
       "DOMContentLoaded",
-      function() {
+      function () {
 
         const video =
           document.getElementById(
@@ -1901,16 +1838,16 @@
 
 
           video.play().catch(
-            function() {
+            function () {
 
               document.addEventListener(
                 "visibilitychange",
-                function() {
+                function () {
 
                   if (!document.hidden) {
 
                     video.play().catch(
-                      function() {}
+                      function () {}
                     );
 
                   }
@@ -1929,7 +1866,7 @@
 
     window.addEventListener(
       "load",
-      function() {
+      function () {
 
         const video =
           document.getElementById(
@@ -1941,7 +1878,7 @@
           video.muted = true;
 
           video.play().catch(
-            function() {}
+            function () {}
           );
 
         }
