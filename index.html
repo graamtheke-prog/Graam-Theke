@@ -29,7 +29,7 @@
 
     header {
       background: #f7f0df;
-      padding: 18px 7%;
+      padding: 12px 7%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -39,16 +39,19 @@
       box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     }
 
-    .logo {
-      font-size: 30px;
-      font-weight: bold;
-      color: #315d38;
+    .brand-logo {
+      width: 120px;
+      height: auto;
+      max-height: 75px;
+      object-fit: contain;
+      display: block;
     }
 
     .tagline-small {
       font-size: 11px;
       color: #75451f;
       letter-spacing: 1px;
+      margin-top: 3px;
     }
 
     nav a {
@@ -127,8 +130,6 @@
       color: #625d50;
     }
 
-    /* PRODUCTS */
-
     .products {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -180,8 +181,6 @@
       margin-top: 15px;
     }
 
-    /* FEATURES */
-
     .features {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -210,8 +209,6 @@
     .feature p {
       color: #6b665a;
     }
-
-    /* CONTACT */
 
     .contact {
       text-align: center;
@@ -242,6 +239,10 @@
 
     @media (max-width: 800px) {
 
+      header {
+        padding: 10px 5%;
+      }
+
       nav {
         display: none;
       }
@@ -262,20 +263,26 @@
       .product-image {
         height: 320px;
       }
+
+      .brand-logo {
+        width: 105px;
+        max-height: 65px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-
   <header>
 
     <div>
-      <img src="48529A9D-3294-4FBF-9AE1-171B61813205.jpeg"
-     alt="গ্রাম থেকে"
-     class="brand-logo">
+      <img
+        src="48529A9D-3294-4FBF-9AE1-171B61813205.jpeg"
+        alt="গ্রাম থেকে"
+        class="brand-logo"
+      >
+
       <div class="tagline-small">
         প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য
       </div>
@@ -290,8 +297,6 @@
 
   </header>
 
-
-  <!-- HERO -->
 
   <section class="hero" id="home">
 
@@ -316,8 +321,6 @@
 
   </section>
 
-
-  <!-- ABOUT -->
 
   <section id="about">
 
@@ -346,8 +349,6 @@
   </section>
 
 
-  <!-- PRODUCTS -->
-
   <section id="products">
 
     <h2 class="section-title">
@@ -355,8 +356,6 @@
     </h2>
 
     <div class="products">
-
-      <!-- PRODUCT 1 -->
 
       <div class="product-card">
 
@@ -384,8 +383,6 @@
       </div>
 
 
-      <!-- FUTURE PRODUCT -->
-
       <div class="product-card">
 
         <div class="product-image">
@@ -403,8 +400,6 @@
 
       </div>
 
-
-      <!-- FUTURE PRODUCT -->
 
       <div class="product-card">
 
@@ -428,8 +423,6 @@
   </section>
 
 
-  <!-- WHY US -->
-
   <section>
 
     <h2 class="section-title">
@@ -442,9 +435,7 @@
 
         <div class="feature-icon">🌾</div>
 
-        <h3>
-          গ্রামের শিকড়
-        </h3>
+        <h3>গ্রামের শিকড়</h3>
 
         <p>
           আমাদের পণ্যের সঙ্গে জড়িয়ে আছে
@@ -458,9 +449,7 @@
 
         <div class="feature-icon">🌿</div>
 
-        <h3>
-          প্রাকৃতিকতা
-        </h3>
+        <h3>প্রাকৃতিকতা</h3>
 
         <p>
           প্রকৃতির স্বাভাবিক স্বাদ ও
@@ -474,9 +463,7 @@
 
         <div class="feature-icon">❤️</div>
 
-        <h3>
-          ভালোবাসা
-        </h3>
+        <h3>ভালোবাসা</h3>
 
         <p>
           প্রতিটি পণ্যের সঙ্গে থাকে
@@ -489,8 +476,6 @@
 
   </section>
 
-
-  <!-- CONTACT -->
 
   <section class="contact" id="contact">
 
@@ -509,16 +494,13 @@
   </section>
 
 
-  <!-- FOOTER -->
-
   <footer>
 
-    © 2026 গ্রাম থেকে  
+    © 2026 গ্রাম থেকে
     <br>
     প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য
 
   </footer>
-
 
 </body>
 </html>
