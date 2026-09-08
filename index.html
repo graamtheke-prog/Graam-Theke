@@ -1,1893 +1,940 @@
 <!DOCTYPE html>
 <html lang="bn">
-
 <head>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title id="pageTitle">গ্রাম থেকে | প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য</title>
-
-  <meta
-    id="pageDescription"
-    name="description"
-    content="গ্রাম থেকে — প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য।"
-  >
-
-  <style>
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, "Noto Sans Bengali", sans-serif;
-      background: #f8f5ed;
-      color: #29452d;
-      line-height: 1.7;
-    }
-
-    /* =========================
-       HEADER
-    ========================= */
-
-    header {
-      background: #fffdf7;
-      padding: 14px 5%;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    }
-
-    .header-inner {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo-link {
-      display: block;
-      text-decoration: none;
-    }
-
-    .brand-logo {
-      width: 120px;
-      height: auto;
-      max-height: 75px;
-      object-fit: contain;
-      display: block;
-    }
-
-    /* =========================
-       MENU
-    ========================= */
-
-    .menu-area {
-      position: relative;
-    }
-
-    .menu-button {
-      border: none;
-      background: #315d38;
-      color: white;
-      padding: 11px 18px;
-      border-radius: 30px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-family: inherit;
-      font-size: 15px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .menu-button:hover {
-      background: #23472a;
-      transform: translateY(-2px);
-    }
-
-    .menu-icon {
-      width: 22px;
-      height: 16px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .menu-icon span {
-      width: 100%;
-      height: 2px;
-      background: white;
-      border-radius: 5px;
-      transition: 0.3s;
-    }
-
-    .menu-button.active .menu-icon span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-
-    .menu-button.active .menu-icon span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .menu-button.active .menu-icon span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
-    }
-
-    /* =========================
-       DROPDOWN
-    ========================= */
-
-    .dropdown-menu {
-      position: absolute;
-      top: calc(100% + 12px);
-      right: 0;
-      width: 245px;
-      background: rgba(255, 253, 247, 0.98);
-      border-radius: 20px;
-      padding: 10px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(-10px) scale(0.97);
-      transition:
-        opacity 0.25s ease,
-        transform 0.25s ease,
-        visibility 0.25s ease;
-    }
-
-    .dropdown-menu.show {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0) scale(1);
-    }
-
-    .dropdown-menu a {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      padding: 13px 15px;
-      border-radius: 12px;
-      color: #29452d;
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: bold;
-      background: transparent;
-      border: none;
-      font-family: inherit;
-      cursor: pointer;
-      transition: 0.25s;
-      text-align: left;
-    }
-
-    .dropdown-menu a:hover {
-      background: #f1ead8;
-      transform: translateX(3px);
-    }
-
-    .dropdown-menu a.active {
-      background: #e9efdf;
-    }
-
-    /* =========================
-       LANGUAGE
-    ========================= */
-
-    .language-section {
-      margin-top: 5px;
-      padding-top: 8px;
-      border-top: 1px solid #e5dfd0;
-    }
-
-    .language-title {
-      display: block;
-      padding: 6px 15px 4px;
-      color: #7a7468;
-      font-size: 12px;
-      font-weight: bold;
-    }
-
-    .language-options {
-      display: flex;
-      gap: 6px;
-      padding: 0 5px 5px;
-    }
-
-    .language-option {
-      flex: 1;
-      border: none;
-      padding: 8px 5px;
-      border-radius: 10px;
-      background: transparent;
-      color: #29452d;
-      font-family: inherit;
-      font-size: 13px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.25s;
-    }
-
-    .language-option:hover {
-      background: #f1ead8;
-    }
-
-    .language-option.selected {
-      background: #315d38;
-      color: white;
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      min-height: 82vh;
-      padding: 70px 20px 80px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-
-      background:
-        radial-gradient(
-          circle at top,
-          #fff9e9,
-          #efe2c4
-        );
-    }
-
-    .hero-content {
-      max-width: 850px;
-      width: 100%;
-    }
-
-    .hero h1 {
-      font-size: clamp(48px, 10vw, 90px);
-      line-height: 1.2;
-      color: #315d38;
-      margin-bottom: 12px;
-    }
-
-    .hero h2 {
-      font-size: clamp(20px, 4vw, 34px);
-      color: #75451f;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      max-width: 650px;
-      margin: auto;
-      color: #625d50;
-      font-size: 18px;
-      margin-bottom: 28px;
-    }
-
-    /* =========================
-       HERO VIDEO
-    ========================= */
-
-    .hero-video {
-      width: 100%;
-      max-width: 430px;
-      margin: 0 auto;
-      border-radius: 22px;
-      overflow: hidden;
-      background: #203b26;
-      box-shadow: 0 12px 35px rgba(0,0,0,0.15);
-    }
-
-    .hero-video video {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: cover;
-    }
-
-    /* =========================
-       BUTTON
-    ========================= */
-
-    .button {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 14px 32px;
-      background: #315d38;
-      color: #ffffff;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .button:hover {
-      transform: translateY(-3px);
-      background: #23472a;
-    }
-
-    /* =========================
-       COMMON SECTION
-    ========================= */
-
-    section {
-      padding: 80px 7%;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 36px;
-      color: #315d38;
-      margin-bottom: 45px;
-    }
-
-    /* =========================
-       ABOUT
-    ========================= */
-
-    .about {
-      background: #fffdf7;
-    }
-
-    .about-content {
-      max-width: 850px;
-      margin: auto;
-      text-align: center;
-      color: #625d50;
-      font-size: 18px;
-    }
-
-    /* =========================
-       PRODUCTS
-    ========================= */
-
-    .products {
-      background: #f1ead8;
-    }
-
-    .product-grid {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .product-card {
-      background: #fffaf0;
-      border-radius: 20px;
-      padding: 22px;
-      text-align: center;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.09);
-      transition: 0.3s;
-    }
-
-    .product-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .product-image {
-      height: 250px;
-      border-radius: 17px;
-      background: #ead9b5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #75451f;
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      overflow: hidden;
-    }
-
-    .product-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      border-radius: 17px;
-      display: block;
-    }
-
-    .product-card h3 {
-      font-size: 24px;
-      color: #315d38;
-      margin-bottom: 8px;
-    }
-
-    .product-card p {
-      color: #6b665a;
-    }
-
-    /* =========================
-       WHY GRAAM THEKE
-    ========================= */
-
-    .why-us {
-      background: #fffdf7;
-    }
-
-    .why-grid {
-      max-width: 1050px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .why-card {
-      background: #f5f0e2;
-      padding: 30px 18px;
-      text-align: center;
-      border-radius: 20px;
-    }
-
-    .why-icon {
-      font-size: 62px;
-      line-height: 1;
-      margin-bottom: 28px;
-      display: block;
-    }
-
-    .why-card h3 {
-      color: #315d38;
-      margin-bottom: 8px;
-      font-size: 28px;
-    }
-
-    .why-card p {
-      color: #6b665a;
-      font-size: 17px;
-    }
-
-    /* =========================
-       CONTACT
-    ========================= */
-
-    .contact {
-      background: #315d38;
-      color: white;
-      text-align: center;
-    }
-
-    .contact .section-title {
-      color: white;
-      margin-bottom: 20px;
-    }
-
-    .location {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 12px;
-    }
-
-    .contact-description {
-      font-size: 17px;
-      margin-bottom: 15px;
-    }
-
-    .phone-number {
-      display: inline-block;
-      color: white;
-      text-decoration: none;
-      font-size: 22px;
-      font-weight: bold;
-      margin-bottom: 28px;
-    }
-
-    .phone-number:hover {
-      text-decoration: underline;
-    }
-
-    /* =========================
-       SOCIAL LINKS
-    ========================= */
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 28px;
-      margin: 0 auto 28px;
-    }
-
-    .social-link {
-      width: auto;
-      height: auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: transparent;
-      border-radius: 0;
-      text-decoration: none;
-      transition: transform 0.25s ease;
-    }
-
-    .social-link:hover {
-      transform: translateY(-4px) scale(1.10);
-    }
-
-    .social-link svg {
-      width: 44px;
-      height: 44px;
-      display: block;
-    }
-
-    .facebook svg {
-      fill: #1877F2;
-    }
-
-    .instagram svg {
-      fill: #E4405F;
-    }
-
-    .whatsapp svg {
-      fill: #25D366;
-    }
-
-    /* =========================
-       ORDER BUTTON
-    ========================= */
-
-    .order-button {
-      background: #f3c66b;
-      color: #29452d;
-      margin-top: 0;
-      padding: 14px 38px;
-      font-size: 17px;
-    }
-
-    .order-button:hover {
-      background: #e8b957;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      background: #203b26;
-      color: #dddddd;
-      text-align: center;
-      padding: 25px 15px;
-      font-size: 14px;
-    }
-
-    /* =========================
-       TABLET
-    ========================= */
-
-    @media (max-width: 800px) {
-
-      .product-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .why-grid {
-        grid-template-columns: 1fr;
-        max-width: 600px;
-      }
-
-      section {
-        padding: 65px 5%;
-      }
-
-    }
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 500px) {
-
-      header {
-        padding: 11px 5%;
-      }
-
-      .brand-logo {
-        width: 105px;
-      }
-
-      .menu-button {
-        padding: 10px 15px;
-        font-size: 14px;
-      }
-
-      .dropdown-menu {
-        width: 220px;
-        right: 0;
-      }
-
-      .dropdown-menu a {
-        font-size: 14px;
-      }
-
-      .hero {
-        min-height: auto;
-        padding: 60px 20px 70px;
-      }
-
-      .hero h1 {
-        font-size: 42px;
-      }
-
-      .hero h2 {
-        font-size: 20px;
-      }
-
-      .hero p {
-        font-size: 16px;
-        margin-bottom: 25px;
-      }
-
-      .hero-video {
-        max-width: 100%;
-        border-radius: 18px;
-      }
-
-      .section-title {
-        font-size: 30px;
-      }
-
-      .why-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .why-icon {
-        font-size: 58px;
-      }
-
-      .why-card h3 {
-        font-size: 26px;
-      }
-
-      .social-links {
-        gap: 22px;
-      }
-
-      .social-link svg {
-        width: 40px;
-        height: 40px;
-      }
-
-    }
-
-  </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>গ্রাম থেকে | খাঁটি আখের গুড়</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Noto Sans Bengali","SolaimanLipi",Arial,sans-serif;
+    background:#f8f1df;
+    color:#29452f;
+    line-height:1.7;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(248,241,223,.96);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(45,82,51,.12);
+    box-shadow:0 3px 15px rgba(40,60,35,.08);
+}
+
+.header-inner{
+    max-width:1150px;
+    margin:auto;
+    padding:10px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo img{
+    width:82px;
+    height:auto;
+    display:block;
+}
+
+/* MENU BUTTON */
+
+.menu-btn{
+    border:1px solid #466b49;
+    background:#fffaf0;
+    color:#29452f;
+    padding:9px 17px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    transition:.3s;
+}
+
+.menu-btn:hover{
+    background:#29452f;
+    color:#fffaf0;
+}
+
+.menu-icon{
+    font-size:19px;
+}
+
+/* DROPDOWN */
+
+.menu-box{
+    position:absolute;
+    top:78px;
+    right:20px;
+    width:235px;
+    background:#fffaf0;
+    border:1px solid rgba(45,82,51,.15);
+    border-radius:15px;
+    padding:12px;
+    box-shadow:0 15px 35px rgba(30,55,35,.16);
+    display:none;
+}
+
+.menu-box.show{
+    display:block;
+    animation:menuOpen .2s ease;
+}
+
+@keyframes menuOpen{
+    from{
+        opacity:0;
+        transform:translateY(-8px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.menu-box a{
+    display:block;
+    text-decoration:none;
+    color:#29452f;
+    padding:11px 13px;
+    border-radius:9px;
+    margin-bottom:3px;
+    font-weight:600;
+    transition:.25s;
+}
+
+.menu-box a:hover{
+    background:#e8eedf;
+    padding-left:18px;
+}
+
+/* LANGUAGE */
+
+.language-title{
+    font-size:13px;
+    color:#75816f;
+    padding:8px 13px 3px;
+}
+
+.language-buttons{
+    display:flex;
+    gap:7px;
+    padding:5px 8px 7px;
+}
+
+.language-buttons button{
+    flex:1;
+    border:1px solid #b7c3ad;
+    background:#f8f1df;
+    color:#29452f;
+    padding:7px;
+    border-radius:7px;
+    cursor:pointer;
+    font-size:13px;
+}
+
+.language-buttons button.active{
+    background:#29452f;
+    color:white;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    max-width:1150px;
+    margin:auto;
+    padding:65px 20px 50px;
+    text-align:center;
+}
+
+.hero-logo{
+    width:min(180px,45vw);
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:42px;
+    color:#29452f;
+    margin-bottom:8px;
+}
+
+.hero p{
+    font-size:18px;
+    color:#63715e;
+}
+
+.hero-video{
+    margin:35px auto 0;
+    max-width:850px;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 12px 30px rgba(35,60,40,.15);
+}
+
+.hero-video video{
+    width:100%;
+    display:block;
+}
+
+/* ================= COMMON ================= */
+
+section{
+    max-width:1100px;
+    margin:auto;
+    padding:70px 20px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:31px;
+    margin-bottom:38px;
+    color:#29452f;
+}
+
+.section-title::after{
+    content:"";
+    display:block;
+    width:55px;
+    height:3px;
+    background:#6d8b58;
+    margin:10px auto 0;
+    border-radius:10px;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+    text-align:center;
+    max-width:850px;
+}
+
+.about p{
+    font-size:17px;
+    color:#5d6959;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.product-card{
+    background:#fffaf0;
+    border:1px solid rgba(55,86,54,.13);
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(42,65,43,.08);
+    transition:.3s;
+    text-align:center;
+    padding-bottom:22px;
+}
+
+.product-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 14px 32px rgba(42,65,43,.14);
+}
+
+/* NEW PRODUCT LABEL */
+
+.product-label{
+    display:inline-block;
+    margin-top:17px;
+    padding:5px 13px;
+    border-radius:20px;
+    background:#e2ead7;
+    color:#41613e;
+    font-size:13px;
+    font-weight:700;
+}
+
+.product-image{
+    height:285px;
+    margin:15px;
+    border-radius:13px;
+    overflow:hidden;
+    background:#eee6d2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.product-card h3{
+    font-size:21px;
+    color:#29452f;
+    margin:8px 15px 3px;
+}
+
+.product-card p{
+    color:#687263;
+    font-size:15px;
+}
+
+/* COMING SOON */
+
+.coming-soon{
+    height:285px;
+    margin:15px;
+    border-radius:13px;
+    background:#eee8d8;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#71806a;
+    font-size:21px;
+    font-weight:600;
+}
+
+/* ================= WHY US ================= */
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.why-card{
+    background:#fffaf0;
+    padding:28px 20px;
+    text-align:center;
+    border-radius:16px;
+    border:1px solid rgba(55,86,54,.12);
+}
+
+.why-card .icon{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.why-card h3{
+    margin-bottom:7px;
+    color:#29452f;
+}
+
+.why-card p{
+    color:#687263;
+    font-size:15px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    text-align:center;
+}
+
+.contact-text{
+    color:#687263;
+    margin-bottom:20px;
+}
+
+.contact-location{
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:8px;
+    color:#29452f;
+}
+
+.phone{
+    display:inline-block;
+    color:#29452f;
+    text-decoration:none;
+    font-size:19px;
+    font-weight:700;
+    margin:8px 0 20px;
+}
+
+/* SOCIAL ICONS */
+
+.social-icons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+    margin:10px 0 25px;
+}
+
+.social-icons a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+}
+
+.social-icons img{
+    width:44px;
+    height:44px;
+    object-fit:contain;
+    transition:.25s;
+}
+
+.social-icons img:hover{
+    transform:scale(1.12);
+}
+
+.order-btn{
+    display:inline-block;
+    text-decoration:none;
+    background:#29452f;
+    color:#fffaf0;
+    padding:12px 27px;
+    border-radius:10px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.order-btn:hover{
+    background:#456b48;
+    transform:translateY(-2px);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#29452f;
+    color:#edf2e8;
+    text-align:center;
+    padding:25px 20px;
+}
+
+footer p{
+    font-size:14px;
+    margin:3px 0;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:800px){
+
+    .hero{
+        padding-top:45px;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .products-grid,
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .product-image,
+    .coming-soon{
+        height:320px;
+    }
+
+    section{
+        padding:55px 18px;
+    }
+}
+
+@media(max-width:500px){
+
+    .header-inner{
+        padding:9px 15px;
+    }
+
+    .logo img{
+        width:70px;
+    }
+
+    .menu-box{
+        right:15px;
+        top:70px;
+        width:220px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .section-title{
+        font-size:27px;
+    }
+
+    .social-icons{
+        gap:20px;
+    }
+
+    .social-icons img{
+        width:40px;
+        height:40px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- =========================
-       HEADER
-  ========================= -->
+<!-- ================= HEADER ================= -->
 
-  <header>
-
+<header>
     <div class="header-inner">
 
-      <a href="#home" class="logo-link">
+        <a href="#home" class="logo">
+            <img src="99927B00-BDEF-45EB-9A5C-AC1CEFE3E77A.png" alt="গ্রাম থেকে">
+        </a>
 
-        <img
-          src="99927B00-BDEF-45EB-9A5C-AC1CEFE3E77A.png"
-          alt="গ্রাম থেকে"
-          class="brand-logo"
-        >
-
-      </a>
-
-      <div class="menu-area">
-
-        <button
-          class="menu-button"
-          id="menuButton"
-          type="button"
-          aria-label="মেনু"
-          aria-expanded="false"
-        >
-
-          <span id="menuText">মেনু</span>
-
-          <span class="menu-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-
+        <button class="menu-btn" onclick="toggleMenu()">
+            <span class="menu-icon">☰</span>
+            <span data-bn="মেনু" data-en="Menu">মেনু</span>
         </button>
 
-        <div
-          class="dropdown-menu"
-          id="dropdownMenu"
-        >
+        <div class="menu-box" id="menuBox">
 
-          <a
-            href="#home"
-            class="menu-link active"
-            data-bn="হোম"
-            data-en="Home"
-          >
-            হোম
-          </a>
+            <a href="#home" onclick="closeMenu()"
+               data-bn="হোম"
+               data-en="Home">হোম</a>
 
-          <a
-            href="#new-product"
-            class="menu-link"
-            data-bn="নতুন পণ্য"
-            data-en="New Product"
-          >
-            নতুন পণ্য
-          </a>
+            <a href="#products" onclick="closeMenu()"
+               data-bn="নতুন পণ্য"
+               data-en="New Product">নতুন পণ্য</a>
 
-          <a
-            href="#upcoming-product"
-            class="menu-link"
-            data-bn="শীঘ্রই আসছে"
-            data-en="Coming Soon"
-          >
-            শীঘ্রই আসছে
-          </a>
+            <a href="#upcoming-product" onclick="closeMenu()"
+               data-bn="শীঘ্রই আসছে"
+               data-en="Coming Soon">শীঘ্রই আসছে</a>
 
-          <a
-            href="#contact"
-            class="menu-link"
-            data-bn="যোগাযোগ"
-            data-en="Contact"
-          >
-            যোগাযোগ
-          </a>
+            <a href="#contact" onclick="closeMenu()"
+               data-bn="যোগাযোগ"
+               data-en="Contact">যোগাযোগ</a>
 
-          <!-- LANGUAGE -->
+            <div class="language-title"
+                 data-bn="ভাষা"
+                 data-en="Language">ভাষা</div>
 
-          <div class="language-section">
+            <div class="language-buttons">
+                <button id="bnBtn" class="active" onclick="setLanguage('bn')">
+                    বাংলা
+                </button>
 
-            <span
-              class="language-title"
-              id="languageTitle"
-            >
-              ভাষা
-            </span>
-
-            <div class="language-options">
-
-              <button
-                class="language-option selected"
-                id="bnButton"
-                type="button"
-              >
-                বাংলা
-              </button>
-
-              <button
-                class="language-option"
-                id="enButton"
-                type="button"
-              >
-                English
-              </button>
-
+                <button id="enBtn" onclick="setLanguage('en')">
+                    English
+                </button>
             </div>
 
-          </div>
-
         </div>
-
-      </div>
-
     </div>
+</header>
 
-  </header>
 
+<!-- ================= HERO ================= -->
 
-  <!-- =========================
-       HOME / HERO
-  ========================= -->
+<main>
 
-  <section class="hero" id="home">
+<section id="home" class="hero">
 
-    <div class="hero-content">
+    <img
+        class="hero-logo"
+        src="99927B00-BDEF-45EB-9A5C-AC1CEFE3E77A.png"
+        alt="গ্রাম থেকে"
+    >
 
-      <h1 id="heroTitle">
-        গ্রাম থেকে
-      </h1>
-
-      <h2 id="heroSubtitle">
+    <h1
+        data-bn="প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য"
+        data-en="Natural Sweetness, Heritage of Rural Bengal">
         প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য
-      </h2>
+    </h1>
 
-      <p id="heroDescription">
-        আমাদের গ্রামের প্রকৃতি, ঐতিহ্য ও ভালোবাসা
-        থেকে বেছে নেওয়া পণ্য পৌঁছে যাবে আপনার ঘরে।
-      </p>
+    <p
+        data-bn="গ্রামের খাঁটি স্বাদ আপনার ঘরে"
+        data-en="Pure village taste, delivered to your home">
+        গ্রামের খাঁটি স্বাদ আপনার ঘরে
+    </p>
 
-      <!-- HERO VIDEO -->
-
-      <div class="hero-video">
-
-        <video
-          id="heroVideo"
-          src="video-output-B0BA3A30-A641-4947-B97B-2AC591D5D93F-1.mov"
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="auto"
-        ></video>
-
-      </div>
-
-      <a
-        href="#products"
-        class="button"
-        id="productButton"
-      >
-        আমাদের পণ্য দেখুন
-      </a>
-
+    <div class="hero-video">
+        <video autoplay muted loop playsinline controls>
+            <source
+                src="video-output-B0BA3A30-A641-4947-B97B-2AC591D5D93F-1.mov"
+                type="video/mp4">
+        </video>
     </div>
 
-  </section>
+</section>
 
 
-  <!-- =========================
-       ABOUT
-  ========================= -->
+<!-- ================= ABOUT ================= -->
 
-  <section
-    class="about"
-    id="about"
-  >
+<section class="about">
 
-    <h2
-      class="section-title"
-      id="aboutTitle"
-    >
-      আমাদের গল্প
+    <h2 class="section-title"
+        data-bn="আমাদের সম্পর্কে"
+        data-en="About Us">
+        আমাদের সম্পর্কে
     </h2>
 
-    <div class="about-content">
+    <p
+        data-bn="গ্রাম থেকে—গ্রামবাংলার প্রকৃতি, ঐতিহ্য ও খাঁটি স্বাদকে আপনাদের কাছে পৌঁছে দেওয়ার একটি ছোট্ট প্রয়াস।"
+        data-en="Graam Theke is a small initiative to bring the nature, heritage and authentic taste of rural Bengal to your home.">
+        গ্রাম থেকে—গ্রামবাংলার প্রকৃতি, ঐতিহ্য ও খাঁটি স্বাদকে আপনাদের কাছে পৌঁছে দেওয়ার একটি ছোট্ট প্রয়াস।
+    </p>
 
-      <p id="aboutTextOne">
-
-        <strong>গ্রাম থেকে</strong> একটি পণ্য নয়,
-        এটি আমাদের গ্রামবাংলার জীবন, প্রকৃতি,
-        ঐতিহ্য ও মানুষের ভালোবাসার গল্প।
-
-      </p>
-
-      <br>
-
-      <p id="aboutTextTwo">
-
-        গ্রামের প্রাকৃতিক স্বাদ ও ঐতিহ্যকে
-        মানুষের কাছে পৌঁছে দেওয়াই
-        আমাদের লক্ষ্য।
-
-      </p>
-
-    </div>
-
-  </section>
+</section>
 
 
-  <!-- =========================
-       PRODUCTS
-  ========================= -->
+<!-- ================= PRODUCTS ================= -->
 
-  <section
-    class="products"
-    id="products"
-  >
+<section id="products">
 
-    <h2
-      class="section-title"
-      id="productsTitle"
-    >
-      আমাদের পণ্য
+    <h2 class="section-title"
+        data-bn="আমাদের পণ্য"
+        data-en="Our Product">
+        আমাদের পণ্য
     </h2>
 
-    <div class="product-grid">
+    <div class="products-grid">
 
+        <!-- CURRENT PRODUCT -->
 
-      <!-- NEW PRODUCT
-           CURRENT PRODUCT IMAGE
-      -->
+        <div class="product-card" id="new-product">
 
-      <div
-        class="product-card"
-        id="new-product"
-      >
+            <div class="product-label"
+                 data-bn="নতুন পণ্য"
+                 data-en="New Product">
+                নতুন পণ্য
+            </div>
 
-        <div class="product-image">
+            <div class="product-image">
+                <img
+                    src="DDEFE989-0077-4992-8E6F-AC19B734DF8B.png"
+                    alt="খাঁটি আখের গুড়">
+            </div>
 
-          <img
-            src="DDEFE989-0077-4992-8E6F-AC19B734DF8B.png"
-            alt="খাঁটি আখের গুড়"
-            id="productImage"
-          >
+            <h3
+                data-bn="খাঁটি আখের গুড়"
+                data-en="Pure Sugarcane Jaggery">
+                খাঁটি আখের গুড়
+            </h3>
+
+            <p
+                data-bn="ওজন: 500 gm"
+                data-en="Weight: 500 gm">
+                ওজন: 500 gm
+            </p>
 
         </div>
 
-        <h3 id="jaggeryTitle">
-          খাঁটি আখের গুড়
-        </h3>
 
-        <p id="jaggeryWeight">
-          ওজন: 500 gm
-        </p>
+        <!-- COMING SOON -->
 
-      </div>
+        <div class="product-card" id="upcoming-product">
 
+            <div class="coming-soon"
+                 data-bn="শীঘ্রই আসছে"
+                 data-en="Coming Soon">
+                শীঘ্রই আসছে
+            </div>
 
-      <!-- COMING SOON -->
+            <h3
+                data-bn="শীঘ্রই আসছে"
+                data-en="Coming Soon">
+                শীঘ্রই আসছে
+            </h3>
 
-      <div
-        class="product-card"
-        id="upcoming-product"
-      >
+            <p
+                data-bn="আমাদের নতুন পণ্য খুব শিগগিরই যুক্ত হবে।"
+                data-en="Our next product will be added very soon.">
+                আমাদের নতুন পণ্য খুব শিগগিরই যুক্ত হবে।
+            </p>
 
-        <div
-          class="product-image"
-          id="comingSoonOne"
-        >
-          শীঘ্রই আসছে
         </div>
 
-        <h3 id="newProductTitle">
-          শীঘ্রই আসছে
-        </h3>
 
-        <p id="newProductDescription">
-          আমাদের নতুন পণ্য খুব শিগগিরই যুক্ত হবে।
-        </p>
+        <!-- MORE PRODUCTS -->
 
-      </div>
+        <div class="product-card">
 
+            <div class="coming-soon"
+                 data-bn="শীঘ্রই আসছে"
+                 data-en="Coming Soon">
+                শীঘ্রই আসছে
+            </div>
 
-      <!-- MORE PRODUCT -->
+            <h3
+                data-bn="আরও পণ্য"
+                data-en="More Products">
+                আরও পণ্য
+            </h3>
 
-      <div class="product-card">
+            <p
+                data-bn="ভবিষ্যতে আরও পণ্য যুক্ত করা হবে।"
+                data-en="More products will be added in the future.">
+                ভবিষ্যতে আরও পণ্য যুক্ত করা হবে।
+            </p>
 
-        <div
-          class="product-image"
-          id="comingSoonTwo"
-        >
-          শীঘ্রই আসছে
         </div>
-
-        <h3 id="moreProductTitle">
-          আরও পণ্য
-        </h3>
-
-        <p id="moreProductDescription">
-          গ্রাম থেকে আরও নতুন পণ্য নিয়ে আসছে।
-        </p>
-
-      </div>
 
     </div>
 
-  </section>
+</section>
 
 
-  <!-- =========================
-       WHY GRAAM THEKE
-  ========================= -->
+<!-- ================= WHY US ================= -->
 
-  <section class="why-us">
+<section>
 
-    <h2
-      class="section-title"
-      id="whyTitle"
-    >
-      কেন গ্রাম থেকে?
+    <h2 class="section-title"
+        data-bn="কেন গ্রাম থেকে?"
+        data-en="Why Graam Theke?">
+        কেন গ্রাম থেকে?
     </h2>
 
     <div class="why-grid">
 
-      <div class="why-card">
+        <div class="why-card">
+            <div class="icon">🌿</div>
 
-        <div class="why-icon">
-          🌿
+            <h3
+                data-bn="খাঁটি ও প্রাকৃতিক"
+                data-en="Pure & Natural">
+                খাঁটি ও প্রাকৃতিক
+            </h3>
+
+            <p
+                data-bn="প্রাকৃতিক উপায়ে তৈরি খাঁটি পণ্য।"
+                data-en="Authentic products made naturally.">
+                প্রাকৃতিক উপায়ে তৈরি খাঁটি পণ্য।
+            </p>
         </div>
 
-        <h3 id="naturalTitle">
-          প্রাকৃতিক
-        </h3>
 
-        <p id="naturalDescription">
-          প্রকৃতির কাছাকাছি থাকা পণ্য ও উপাদানকে গুরুত্ব দেওয়া হয়।
-        </p>
+        <div class="why-card">
+            <div class="icon">🏡</div>
 
-      </div>
+            <h3
+                data-bn="গ্রামের স্বাদ"
+                data-en="Village Taste">
+                গ্রামের স্বাদ
+            </h3>
 
-
-      <div class="why-card">
-
-        <div class="why-icon">
-          🏡
+            <p
+                data-bn="গ্রামবাংলার ঐতিহ্যবাহী স্বাদকে আপনার ঘরে পৌঁছে দিই।"
+                data-en="We bring the traditional taste of rural Bengal to your home.">
+                গ্রামবাংলার ঐতিহ্যবাহী স্বাদকে আপনার ঘরে পৌঁছে দিই।
+            </p>
         </div>
 
-        <h3 id="traditionTitle">
-          গ্রামবাংলার ঐতিহ্য
-        </h3>
 
-        <p id="traditionDescription">
-          আমাদের পণ্যের সঙ্গে জড়িয়ে আছে বাংলার মাটি ও মানুষের ঐতিহ্য।
-        </p>
+        <div class="why-card">
+            <div class="icon">❤️</div>
 
-      </div>
+            <h3
+                data-bn="ভালোবাসা ও যত্ন"
+                data-en="Care & Love">
+                ভালোবাসা ও যত্ন
+            </h3>
 
-
-      <div class="why-card">
-
-        <div class="why-icon">
-          ❤️
+            <p
+                data-bn="প্রতিটি পণ্যে থাকে আমাদের যত্ন ও আন্তরিকতা।"
+                data-en="Every product carries our care and sincerity.">
+                প্রতিটি পণ্যে থাকে আমাদের যত্ন ও আন্তরিকতা।
+            </p>
         </div>
-
-        <h3 id="loveTitle">
-          ভালোবাসা
-        </h3>
-
-        <p id="loveDescription">
-          প্রতিটি পণ্যের সঙ্গে থাকে আমাদের যত্ন ও আন্তরিকতা।
-        </p>
-
-      </div>
 
     </div>
 
-  </section>
+</section>
 
 
-  <!-- =========================
-       CONTACT
-  ========================= -->
+<!-- ================= CONTACT ================= -->
 
-  <section
-    class="contact"
-    id="contact"
-  >
+<section id="contact" class="contact">
 
-    <h2
-      class="section-title"
-      id="contactTitle"
-    >
-      যোগাযোগ করুন
+    <h2 class="section-title"
+        data-bn="যোগাযোগ করুন"
+        data-en="Contact Us">
+        যোগাযোগ করুন
     </h2>
 
-    <p
-      class="location"
-      id="locationText"
-    >
-      যোগাযোগ: কাপাসিয়া, গাজীপুর
+    <div class="contact-location"
+         data-bn="যোগাযোগ: কাপাসিয়া, গাজীপুর"
+         data-en="Location: Kapasia, Gazipur">
+        যোগাযোগ: কাপাসিয়া, গাজীপুর
+    </div>
+
+    <p class="contact-text"
+       data-bn="অর্ডার বা যেকোনো তথ্যের জন্য আমাদের সঙ্গে যোগাযোগ করুন।"
+       data-en="Contact us for orders or any information.">
+        অর্ডার বা যেকোনো তথ্যের জন্য আমাদের সঙ্গে যোগাযোগ করুন।
     </p>
 
-    <p
-      class="contact-description"
-      id="contactDescription"
-    >
-      অর্ডার বা যেকোনো তথ্যের জন্য আমাদের সঙ্গে যোগাযোগ করুন।
-    </p>
-
-    <a
-      href="tel:+8801601601998"
-      class="phone-number"
-    >
-      +8801601601998
+    <a class="phone" href="tel:+8801601601998">
+        +8801601601998
     </a>
 
 
-    <!-- SOCIAL LINKS -->
+    <!-- SOCIAL ICONS -->
 
-    <div class="social-links">
+    <div class="social-icons">
 
-      <!-- FACEBOOK -->
+        <a
+            href="https://www.facebook.com/share/18F1J2ej6V/?mibextid=wwXIfr"
+            target="_blank"
+            rel="noopener noreferrer">
 
-      <a
-        href="https://www.facebook.com/share/18F1J2ej6V/?mibextid=wwXIfr"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="social-link facebook"
-        aria-label="Facebook"
-        title="Facebook"
-      >
-
-        <svg
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-        >
-
-          <path
-            d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.095 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.025 1.792-4.696 4.533-4.696 1.312 0 2.686.235 2.686.235v2.973h-1.514c-1.491 0-1.956.93-1.956 1.885v2.263h3.328l-.532 3.49h-2.796V24C19.612 23.095 24 18.1 24 12.073z"
-          />
-
-        </svg>
-
-      </a>
+            <img
+                src="https://cdn.simpleicons.org/facebook/1877F2"
+                alt="Facebook">
+        </a>
 
 
-      <!-- INSTAGRAM -->
+        <a
+            href="https://www.instagram.com/graam_theke/"
+            target="_blank"
+            rel="noopener noreferrer">
 
-      <a
-        href="https://www.instagram.com/graam_theke/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="social-link instagram"
-        aria-label="Instagram"
-        title="Instagram"
-      >
-
-        <svg
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-        >
-
-          <path
-            d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5a4.25 4.25 0 0 0 4.25 4.25h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5a4.25 4.25 0 0 0-4.25-4.25h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.25-2.75a1.125 1.125 0 1 1 0 2.25 1.125 1.125 0 0 1 0-2.25z"
-          />
-
-        </svg>
-
-      </a>
+            <img
+                src="https://cdn.simpleicons.org/instagram/E4405F"
+                alt="Instagram">
+        </a>
 
 
-      <!-- WHATSAPP -->
+        <a
+            href="https://wa.me/message/PSDZUZ6DPBKDL1"
+            target="_blank"
+            rel="noopener noreferrer">
 
-      <a
+            <img
+                src="https://cdn.simpleicons.org/whatsapp/25D366"
+                alt="WhatsApp">
+        </a>
+
+    </div>
+
+
+    <a
+        class="order-btn"
         href="https://wa.me/message/PSDZUZ6DPBKDL1"
         target="_blank"
         rel="noopener noreferrer"
-        class="social-link whatsapp"
-        aria-label="WhatsApp"
-        title="WhatsApp"
-      >
-
-        <svg
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-        >
-
-          <path
-            d="M20.52 3.48A11.86 11.86 0 0 0 12.08 0C5.52 0 .18 5.34.18 11.9c0 2.1.55 4.15 1.6 5.96L.08 24l6.28-1.65a11.9 11.9 0 0 0 5.72 1.46h.01c6.55 0 11.88-5.34 11.88-11.9 0-3.18-1.24-6.16-3.45-8.43zM12.09 21.83h-.01a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.73.98.99-3.64-.23-.37a9.85 9.85 0 0 1-1.51-5.31c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.12 1.03 6.98 2.9a9.82 9.82 0 0 1 2.89 7c0 5.45-4.44 9.89-9.87 9.89zm5.42-7.4c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.09 4.5.71.31 1.27.49 1.7.63.71.23 1.35.2 1.86.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35z"
-          />
-
-        </svg>
-
-      </a>
-
-    </div>
-
-
-    <!-- ORDER BUTTON -->
-
-    <a
-      href="https://wa.me/message/PSDZUZ6DPBKDL1"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="button order-button"
-      id="orderButton"
-    >
-      অর্ডার করুন
+        data-bn="WhatsApp-এ অর্ডার করুন"
+        data-en="Order on WhatsApp">
+        WhatsApp-এ অর্ডার করুন
     </a>
 
-  </section>
+</section>
+
+</main>
 
 
-  <!-- =========================
-       FOOTER
-  ========================= -->
+<!-- ================= FOOTER ================= -->
 
-  <footer>
+<footer>
 
-    <p id="footerCopyright">
-      © 2026 গ্রাম থেকে
+    <p
+        data-bn="© 2026 গ্রাম থেকে"
+        data-en="© 2026 Graam Theke">
+        © 2026 গ্রাম থেকে
     </p>
 
-    <p id="footerMotto">
-      প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য
+    <p
+        data-bn="প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য"
+        data-en="Natural Sweetness, Heritage of Rural Bengal">
+        প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য
     </p>
 
-  </footer>
+</footer>
 
 
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
+<!-- ================= JAVASCRIPT ================= -->
 
-  <script>
+<script>
 
-    /* =========================
-       MENU
-    ========================= */
+function toggleMenu(){
 
-    const menuButton =
-      document.getElementById("menuButton");
+    const menu = document.getElementById("menuBox");
 
-    const dropdownMenu =
-      document.getElementById("dropdownMenu");
+    menu.classList.toggle("show");
+}
 
 
-    menuButton.addEventListener(
-      "click",
-      function () {
+function closeMenu(){
 
-        const isOpen =
-          dropdownMenu.classList.toggle("show");
+    document.getElementById("menuBox").classList.remove("show");
+}
 
-        menuButton.classList.toggle(
-          "active",
-          isOpen
-        );
 
-        menuButton.setAttribute(
-          "aria-expanded",
-          isOpen
-        );
+/* CLOSE MENU WHEN CLICKING OUTSIDE */
 
-      }
-    );
+document.addEventListener("click", function(event){
 
+    const menu = document.getElementById("menuBox");
+    const button = document.querySelector(".menu-btn");
 
-    /* CLOSE MENU AFTER CLICKING LINK */
-
-    document
-      .querySelectorAll(".menu-link")
-      .forEach(function (link) {
-
-        link.addEventListener(
-          "click",
-          function () {
-
-            dropdownMenu.classList.remove("show");
-
-            menuButton.classList.remove("active");
-
-            menuButton.setAttribute(
-              "aria-expanded",
-              "false"
-            );
-
-          }
-        );
-
-      });
-
-
-    /* CLOSE MENU WHEN CLICKING OUTSIDE */
-
-    document.addEventListener(
-      "click",
-      function (event) {
-
-        if (
-          !event.target.closest(".menu-area")
-        ) {
-
-          dropdownMenu.classList.remove("show");
-
-          menuButton.classList.remove("active");
-
-          menuButton.setAttribute(
-            "aria-expanded",
-            "false"
-          );
-
-        }
-
-      }
-    );
-
-
-    /* =========================
-       LANGUAGE DATA
-    ========================= */
-
-    const translations = {
-
-      bn: {
-
-        menu: "মেনু",
-
-        language: "ভাষা",
-
-        title:
-          "গ্রাম থেকে | প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য",
-
-        description:
-          "গ্রাম থেকে — প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য।",
-
-        heroTitle:
-          "গ্রাম থেকে",
-
-        heroSubtitle:
-          "প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য",
-
-        heroDescription:
-          "আমাদের গ্রামের প্রকৃতি, ঐতিহ্য ও ভালোবাসা থেকে বেছে নেওয়া পণ্য পৌঁছে যাবে আপনার ঘরে।",
-
-        productButton:
-          "আমাদের পণ্য দেখুন",
-
-        aboutTitle:
-          "আমাদের গল্প",
-
-        aboutTextOne:
-          "<strong>গ্রাম থেকে</strong> একটি পণ্য নয়, এটি আমাদের গ্রামবাংলার জীবন, প্রকৃতি, ঐতিহ্য ও মানুষের ভালোবাসার গল্প।",
-
-        aboutTextTwo:
-          "গ্রামের প্রাকৃতিক স্বাদ ও ঐতিহ্যকে মানুষের কাছে পৌঁছে দেওয়াই আমাদের লক্ষ্য।",
-
-        productsTitle:
-          "আমাদের পণ্য",
-
-        jaggeryTitle:
-          "খাঁটি আখের গুড়",
-
-        jaggeryWeight:
-          "ওজন: 500 gm",
-
-        comingSoon:
-          "শীঘ্রই আসছে",
-
-        newProductTitle:
-          "শীঘ্রই আসছে",
-
-        newProductDescription:
-          "আমাদের নতুন পণ্য খুব শিগগিরই যুক্ত হবে।",
-
-        moreProductTitle:
-          "আরও পণ্য",
-
-        moreProductDescription:
-          "গ্রাম থেকে আরও নতুন পণ্য নিয়ে আসছে।",
-
-        whyTitle:
-          "কেন গ্রাম থেকে?",
-
-        naturalTitle:
-          "প্রাকৃতিক",
-
-        naturalDescription:
-          "প্রকৃতির কাছাকাছি থাকা পণ্য ও উপাদানকে গুরুত্ব দেওয়া হয়।",
-
-        traditionTitle:
-          "গ্রামবাংলার ঐতিহ্য",
-
-        traditionDescription:
-          "আমাদের পণ্যের সঙ্গে জড়িয়ে আছে বাংলার মাটি ও মানুষের ঐতিহ্য।",
-
-        loveTitle:
-          "ভালোবাসা",
-
-        loveDescription:
-          "প্রতিটি পণ্যের সঙ্গে থাকে আমাদের যত্ন ও আন্তরিকতা।",
-
-        contactTitle:
-          "যোগাযোগ করুন",
-
-        location:
-          "যোগাযোগ: কাপাসিয়া, গাজীপুর",
-
-        contactDescription:
-          "অর্ডার বা যেকোনো তথ্যের জন্য আমাদের সঙ্গে যোগাযোগ করুন।",
-
-        orderButton:
-          "অর্ডার করুন",
-
-        footerCopyright:
-          "© 2026 গ্রাম থেকে",
-
-        footerMotto:
-          "প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য"
-
-      },
-
-
-      en: {
-
-        menu:
-          "Menu",
-
-        language:
-          "Language",
-
-        title:
-          "Graam Theke | Natural Sweetness, Rural Bengal Heritage",
-
-        description:
-          "Graam Theke — Natural Sweetness, Rural Bengal Heritage.",
-
-        heroTitle:
-          "Graam Theke",
-
-        heroSubtitle:
-          "Natural Sweetness, Rural Bengal Heritage",
-
-        heroDescription:
-          "Carefully selected products inspired by the nature, heritage and love of our village, delivered to your home.",
-
-        productButton:
-          "Explore Our Products",
-
-        aboutTitle:
-          "Our Story",
-
-        aboutTextOne:
-          "<strong>Graam Theke</strong> is more than a product; it is a story of rural Bengal's life, nature, heritage and people's love.",
-
-        aboutTextTwo:
-          "Our goal is to bring the natural taste and heritage of the village closer to you.",
-
-        productsTitle:
-          "Our Products",
-
-        jaggeryTitle:
-          "Pure Sugarcane Jaggery",
-
-        jaggeryWeight:
-          "Weight: 500 gm",
-
-        comingSoon:
-          "Coming Soon",
-
-        newProductTitle:
-          "Coming Soon",
-
-        newProductDescription:
-          "Our new product will be added very soon.",
-
-        moreProductTitle:
-          "More Products",
-
-        moreProductDescription:
-          "Graam Theke is bringing more new products for you.",
-
-        whyTitle:
-          "Why Graam Theke?",
-
-        naturalTitle:
-          "Natural",
-
-        naturalDescription:
-          "We value products and ingredients that stay close to nature.",
-
-        traditionTitle:
-          "Rural Bengal Heritage",
-
-        traditionDescription:
-          "Our products carry the heritage of Bengal's land and people.",
-
-        loveTitle:
-          "Care & Love",
-
-        loveDescription:
-          "Every product comes with our care, dedication and sincerity.",
-
-        contactTitle:
-          "Contact Us",
-
-        location:
-          "Location: Kapasia, Gazipur",
-
-        contactDescription:
-          "For orders or any information, feel free to contact us.",
-
-        orderButton:
-          "Order Now",
-
-        footerCopyright:
-          "© 2026 Graam Theke",
-
-        footerMotto:
-          "Natural Sweetness, Rural Bengal Heritage"
-
-      }
-
-    };
-
-
-    /* =========================
-       CHANGE LANGUAGE
-    ========================= */
-
-    function changeLanguage(language) {
-
-      const t =
-        translations[language];
-
-      document.documentElement.lang =
-        language === "bn"
-          ? "bn"
-          : "en";
-
-
-      /* PAGE */
-
-      document.title =
-        t.title;
-
-      document
-        .getElementById("pageDescription")
-        .setAttribute(
-          "content",
-          t.description
-        );
-
-
-      /* HEADER */
-
-      document
-        .getElementById("menuText")
-        .textContent =
-        t.menu;
-
-      document
-        .getElementById("languageTitle")
-        .textContent =
-        t.language;
-
-
-      /* NAV */
-
-      document
-        .querySelectorAll(".menu-link")
-        .forEach(function (link) {
-
-          link.textContent =
-            link.getAttribute(
-              language === "bn"
-                ? "data-bn"
-                : "data-en"
-            );
-
-        });
-
-
-      /* HERO */
-
-      document
-        .getElementById("heroTitle")
-        .textContent =
-        t.heroTitle;
-
-      document
-        .getElementById("heroSubtitle")
-        .textContent =
-        t.heroSubtitle;
-
-      document
-        .getElementById("heroDescription")
-        .textContent =
-        t.heroDescription;
-
-      document
-        .getElementById("productButton")
-        .textContent =
-        t.productButton;
-
-
-      /* ABOUT */
-
-      document
-        .getElementById("aboutTitle")
-        .textContent =
-        t.aboutTitle;
-
-      document
-        .getElementById("aboutTextOne")
-        .innerHTML =
-        t.aboutTextOne;
-
-      document
-        .getElementById("aboutTextTwo")
-        .textContent =
-        t.aboutTextTwo;
-
-
-      /* PRODUCTS */
-
-      document
-        .getElementById("productsTitle")
-        .textContent =
-        t.productsTitle;
-
-      document
-        .getElementById("jaggeryTitle")
-        .textContent =
-        t.jaggeryTitle;
-
-      document
-        .getElementById("jaggeryWeight")
-        .textContent =
-        t.jaggeryWeight;
-
-      document
-        .getElementById("comingSoonOne")
-        .textContent =
-        t.comingSoon;
-
-      document
-        .getElementById("comingSoonTwo")
-        .textContent =
-        t.comingSoon;
-
-      document
-        .getElementById("newProductTitle")
-        .textContent =
-        t.newProductTitle;
-
-      document
-        .getElementById("newProductDescription")
-        .textContent =
-        t.newProductDescription;
-
-      document
-        .getElementById("moreProductTitle")
-        .textContent =
-        t.moreProductTitle;
-
-      document
-        .getElementById("moreProductDescription")
-        .textContent =
-        t.moreProductDescription;
-
-
-      /* WHY */
-
-      document
-        .getElementById("whyTitle")
-        .textContent =
-        t.whyTitle;
-
-      document
-        .getElementById("naturalTitle")
-        .textContent =
-        t.naturalTitle;
-
-      document
-        .getElementById("naturalDescription")
-        .textContent =
-        t.naturalDescription;
-
-      document
-        .getElementById("traditionTitle")
-        .textContent =
-        t.traditionTitle;
-
-      document
-        .getElementById("traditionDescription")
-        .textContent =
-        t.traditionDescription;
-
-      document
-        .getElementById("loveTitle")
-        .textContent =
-        t.loveTitle;
-
-      document
-        .getElementById("loveDescription")
-        .textContent =
-        t.loveDescription;
-
-
-      /* CONTACT */
-
-      document
-        .getElementById("contactTitle")
-        .textContent =
-        t.contactTitle;
-
-      document
-        .getElementById("locationText")
-        .textContent =
-        t.location;
-
-      document
-        .getElementById("contactDescription")
-        .textContent =
-        t.contactDescription;
-
-      document
-        .getElementById("orderButton")
-        .textContent =
-        t.orderButton;
-
-
-      /* FOOTER */
-
-      document
-        .getElementById("footerCopyright")
-        .textContent =
-        t.footerCopyright;
-
-      document
-        .getElementById("footerMotto")
-        .textContent =
-        t.footerMotto;
-
-
-      /* LANGUAGE BUTTON */
-
-      document
-        .getElementById("bnButton")
-        .classList.toggle(
-          "selected",
-          language === "bn"
-        );
-
-      document
-        .getElementById("enButton")
-        .classList.toggle(
-          "selected",
-          language === "en"
-        );
-
-
-      /* SAVE LANGUAGE */
-
-      localStorage.setItem(
-        "graamThekeLanguage",
-        language
-      );
-
+    if(
+        !menu.contains(event.target) &&
+        !button.contains(event.target)
+    ){
+        menu.classList.remove("show");
     }
 
-
-    /* =========================
-       LANGUAGE BUTTONS
-    ========================= */
-
-    document
-      .getElementById("bnButton")
-      .addEventListener(
-        "click",
-        function () {
-
-          changeLanguage("bn");
-
-        }
-      );
+});
 
 
-    document
-      .getElementById("enButton")
-      .addEventListener(
-        "click",
-        function () {
+/* LANGUAGE */
 
-          changeLanguage("en");
+function setLanguage(lang){
 
-        }
-      );
+    document.documentElement.lang = lang;
 
+    const elements = document.querySelectorAll("[data-bn][data-en]");
 
-    /* =========================
-       LOAD SAVED LANGUAGE
-    ========================= */
+    elements.forEach(function(element){
 
-    const savedLanguage =
-      localStorage.getItem(
-        "graamThekeLanguage"
-      );
+        element.textContent =
+            lang === "bn"
+            ? element.getAttribute("data-bn")
+            : element.getAttribute("data-en");
 
-    if (
-      savedLanguage === "en"
-    ) {
-
-      changeLanguage("en");
-
-    } else {
-
-      changeLanguage("bn");
-
-    }
+    });
 
 
-    /* =========================
-       FORCE VIDEO AUTOPLAY
-    ========================= */
+    document.getElementById("bnBtn")
+        .classList.toggle("active", lang === "bn");
 
-    document.addEventListener(
-      "DOMContentLoaded",
-      function () {
-
-        const video =
-          document.getElementById(
-            "heroVideo"
-          );
-
-        if (video) {
-
-          video.muted = true;
-
-          video.setAttribute(
-            "muted",
-            ""
-          );
-
-          video.setAttribute(
-            "autoplay",
-            ""
-          );
-
-          video.setAttribute(
-            "playsinline",
-            ""
-          );
-
-          video.setAttribute(
-            "webkit-playsinline",
-            ""
-          );
-
-          video.setAttribute(
-            "loop",
-            ""
-          );
+    document.getElementById("enBtn")
+        .classList.toggle("active", lang === "en");
 
 
-          video.play().catch(
-            function () {
-
-              document.addEventListener(
-                "visibilitychange",
-                function () {
-
-                  if (!document.hidden) {
-
-                    video.play().catch(
-                      function () {}
-                    );
-
-                  }
-
-                }
-              );
-
-            }
-          );
-
-        }
-
-      }
-    );
+    localStorage.setItem("graamThekeLanguage", lang);
+}
 
 
-    window.addEventListener(
-      "load",
-      function () {
+/* LOAD SAVED LANGUAGE */
 
-        const video =
-          document.getElementById(
-            "heroVideo"
-          );
+const savedLanguage =
+    localStorage.getItem("graamThekeLanguage") || "bn";
 
-        if (video) {
+setLanguage(savedLanguage);
 
-          video.muted = true;
-
-          video.play().catch(
-            function () {}
-          );
-
-        }
-
-      }
-    );
-
-  </script>
+</script>
 
 </body>
-
 </html>
