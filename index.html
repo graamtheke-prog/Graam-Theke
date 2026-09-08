@@ -262,6 +262,8 @@ section{
     box-shadow:0 14px 32px rgba(42,65,43,.14);
 }
 
+/* NEW PRODUCT LABEL */
+
 .product-label{
     display:inline-block;
     margin-top:17px;
@@ -715,122 +717,6 @@ section{
     margin-bottom:18px;
 }
 
-/* ================= PAYMENT METHODS ================= */
-
-.payment-title{
-    font-weight:bold;
-    color:#29452f;
-    margin-bottom:8px;
-}
-
-.payment-options{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-    margin-bottom:20px;
-}
-
-.payment-option{
-    position:relative;
-    border:1px solid #bdc8b8;
-    border-radius:12px;
-    padding:15px 10px;
-    cursor:pointer;
-    background:#f8f1df;
-    text-align:center;
-    transition:.25s;
-    min-height:85px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.payment-option:hover{
-    border-color:#29452f;
-    transform:translateY(-2px);
-}
-
-.payment-option.selected{
-    background:#e2ead7;
-    border:2px solid #29452f;
-}
-
-.payment-option input{
-    position:absolute;
-    opacity:0;
-    pointer-events:none;
-}
-
-.payment-content{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    font-weight:700;
-    color:#29452f;
-}
-
-.cod-icon{
-    font-size:29px;
-}
-
-.bkash-logo{
-    width:70px;
-    height:32px;
-    object-fit:contain;
-}
-
-.payment-help{
-    text-align:center;
-    font-size:13px;
-    color:#777;
-    margin-top:-10px;
-    margin-bottom:18px;
-}
-
-/* ================= ORDER CONFIRMATION ================= */
-
-.order-success{
-    display:none;
-    max-width:700px;
-    margin:auto;
-    padding:70px 20px;
-}
-
-.order-success.show{
-    display:block;
-}
-
-.success-box{
-    background:#fffaf0;
-    border-radius:20px;
-    padding:35px 25px;
-    text-align:center;
-    box-shadow:0 10px 30px rgba(42,65,43,.1);
-}
-
-.success-icon{
-    width:75px;
-    height:75px;
-    border-radius:50%;
-    background:#e2ead7;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin:0 auto 20px;
-    font-size:38px;
-}
-
-.success-box h2{
-    color:#29452f;
-    margin-bottom:10px;
-}
-
-.success-box p{
-    color:#687263;
-    margin-bottom:20px;
-}
-
 /* ================= FOOTER ================= */
 
 footer{
@@ -923,8 +809,7 @@ footer p{
         height:80px;
     }
 
-    .delivery-options,
-    .payment-options{
+    .delivery-options{
         grid-template-columns:1fr;
     }
 
@@ -1143,8 +1028,9 @@ data-en="Weight: 500 gm">
 
 </p>
 
-<div
-class="cart-sticker"
+<!-- CART STICKER -->
+
+<div class="cart-sticker"
 onclick="event.stopPropagation(); addToCart();">
 
 🛒
@@ -1269,8 +1155,7 @@ data-en="Weight: 500 gm">
 
 </p>
 
-<div
-class="announced-price"
+<div class="announced-price"
 data-bn="দাম শীঘ্রই ঘোষণা করা হবে"
 data-en="Price will be announced soon">
 
@@ -1334,8 +1219,7 @@ data-en="500 gm">
 
 </p>
 
-<p
-class="price-note"
+<p class="price-note"
 data-bn="দাম শীঘ্রই ঘোষণা করা হবে"
 data-en="Price will be announced soon">
 
@@ -1420,7 +1304,6 @@ data-en="Complete Your Order">
 
 </h2>
 
-
 <div class="form-group">
 
 <label
@@ -1477,8 +1360,6 @@ required>
 
 </div>
 
-
-<!-- ================= DELIVERY ================= -->
 
 <div class="form-group">
 
@@ -1538,98 +1419,6 @@ data-en="Outside Dhaka — ৳120">
 
 </div>
 
-
-<!-- ================= PAYMENT ================= -->
-
-<div class="form-group">
-
-<div
-class="payment-title"
-data-bn="পেমেন্ট পদ্ধতি"
-data-en="Payment Method">
-
-পেমেন্ট পদ্ধতি
-
-</div>
-
-<div class="payment-options">
-
-
-<!-- CASH ON DELIVERY -->
-
-<label
-class="payment-option"
-id="codOption"
-onclick="selectPayment('Cash on Delivery')">
-
-<input
-type="radio"
-name="payment"
-value="cod">
-
-<div class="payment-content">
-
-<span class="cod-icon">💵</span>
-
-<span
-data-bn="Cash on Delivery"
-data-en="Cash on Delivery">
-
-Cash on Delivery
-
-</span>
-
-</div>
-
-</label>
-
-
-<!-- BKASH -->
-
-<label
-class="payment-option"
-id="bkashOption"
-onclick="selectPayment('bKash Payment')">
-
-<input
-type="radio"
-name="payment"
-value="bkash">
-
-<div class="payment-content">
-
-<img
-class="bkash-logo"
-src="https://cdn.simpleicons.org/bkash"
-alt="bKash">
-
-<span
-data-bn="bKash Payment"
-data-en="bKash Payment">
-
-bKash Payment
-
-</span>
-
-</div>
-
-</label>
-
-</div>
-
-<p
-class="payment-help"
-data-bn="অর্ডার কনফার্ম করার আগে একটি পেমেন্ট পদ্ধতি নির্বাচন করুন।"
-data-en="Please select a payment method before confirming your order.">
-
-অর্ডার কনফার্ম করার আগে একটি পেমেন্ট পদ্ধতি নির্বাচন করুন।
-
-</p>
-
-</div>
-
-
-<!-- ================= ORDER SUMMARY ================= -->
 
 <div class="order-summary">
 
@@ -1701,22 +1490,6 @@ data-en="Delivery Charge">
 
 </div>
 
-<div class="summary-row">
-
-<span
-data-bn="পেমেন্ট"
-data-en="Payment">
-
-পেমেন্ট
-
-</span>
-
-<span id="summaryPayment">
-নির্বাচন করুন
-</span>
-
-</div>
-
 <div class="summary-row summary-total">
 
 <span
@@ -1740,8 +1513,7 @@ data-en="Price will be announced soon">
 </div>
 
 
-<div
-class="announced-price"
+<div class="announced-price"
 data-bn="পণ্যের দাম শীঘ্রই ঘোষণা করা হবে। অর্ডার পাঠানোর সময় WhatsApp-এ এই তথ্যও থাকবে।"
 data-en="Product price will be announced soon. This information will also appear in the WhatsApp order.">
 
@@ -1768,49 +1540,6 @@ data-bn="কার্টে ফিরে যান"
 data-en="Back to Cart">
 
 কার্টে ফিরে যান
-
-</button>
-
-</div>
-
-</section>
-
-
-<!-- ================= SUCCESS ================= -->
-
-<section
-id="orderSuccess"
-class="order-success">
-
-<div class="success-box">
-
-<div class="success-icon">
-✓
-</div>
-
-<h2
-data-bn="অর্ডার প্রস্তুত!"
-data-en="Order Ready!">
-
-অর্ডার প্রস্তুত!
-
-</h2>
-
-<p
-data-bn="আপনার অর্ডারের তথ্য WhatsApp-এ পাঠানো হয়েছে।"
-data-en="Your order information has been sent to WhatsApp.">
-
-আপনার অর্ডারের তথ্য WhatsApp-এ পাঠানো হয়েছে।
-
-</p>
-
-<button
-class="primary-btn"
-onclick="backToProducts()"
-data-bn="কেনাকাটায় ফিরে যান"
-data-en="Continue Shopping">
-
-কেনাকাটায় ফিরে যান
 
 </button>
 
@@ -2081,8 +1810,6 @@ let quantity = 1;
 
 let deliveryCharge = 60;
 
-let selectedPayment = "";
-
 
 function addToCart(){
 
@@ -2104,10 +1831,6 @@ function addToCart(){
 
     document
         .getElementById("productDetails")
-        .classList.remove("show");
-
-    document
-        .getElementById("orderSuccess")
         .classList.remove("show");
 
     window.scrollTo({
@@ -2168,10 +1891,6 @@ function openProductDetails(){
         .getElementById("orderSection")
         .classList.remove("show");
 
-    document
-        .getElementById("orderSuccess")
-        .classList.remove("show");
-
     window.scrollTo({
         top:0,
         behavior:"smooth"
@@ -2198,10 +1917,6 @@ function backToProducts(){
         .getElementById("orderSection")
         .classList.remove("show");
 
-    document
-        .getElementById("orderSuccess")
-        .classList.remove("show");
-
     window.scrollTo({
         top:0,
         behavior:"smooth"
@@ -2224,10 +1939,6 @@ function openCart(){
 
     document
         .getElementById("orderSection")
-        .classList.remove("show");
-
-    document
-        .getElementById("orderSuccess")
         .classList.remove("show");
 
     document
@@ -2260,10 +1971,6 @@ function openOrderForm(){
 
     document
         .getElementById("cartSection")
-        .classList.remove("show");
-
-    document
-        .getElementById("orderSuccess")
         .classList.remove("show");
 
     document
@@ -2304,47 +2011,6 @@ function setDelivery(charge){
             "selected",
             charge === 120
         );
-
-}
-
-
-/* ================= PAYMENT ================= */
-
-function selectPayment(payment){
-
-    selectedPayment = payment;
-
-    const cod =
-        document.getElementById("codOption");
-
-    const bkash =
-        document.getElementById("bkashOption");
-
-    cod.classList.remove("selected");
-    bkash.classList.remove("selected");
-
-
-    if(payment === "Cash on Delivery"){
-
-        cod.classList.add("selected");
-
-        cod.querySelector("input").checked = true;
-
-    }
-
-
-    if(payment === "bKash Payment"){
-
-        bkash.classList.add("selected");
-
-        bkash.querySelector("input").checked = true;
-
-    }
-
-
-    document
-        .getElementById("summaryPayment")
-        .textContent = payment;
 
 }
 
@@ -2396,14 +2062,6 @@ function confirmOrder(){
     }
 
 
-    if(!selectedPayment){
-
-        alert("দয়া করে একটি Payment Method নির্বাচন করুন।");
-        return;
-
-    }
-
-
     const deliveryText =
         deliveryCharge === 60
         ? "ঢাকার ভিতরে — ৳60"
@@ -2431,8 +2089,6 @@ ${address}
 
 🚚 Delivery: ${deliveryText}
 
-💳 Payment Method: ${selectedPayment}
-
 💵 মোট দাম: পণ্যের দাম শীঘ্রই ঘোষণা করা হবে + ${deliveryCharge} টাকা Delivery Charge
 
 ✅ Customer website থেকে অর্ডার করেছে।`;
@@ -2443,45 +2099,7 @@ ${address}
         encodeURIComponent(message);
 
 
-    /*
-       WhatsApp-এ যাওয়ার আগে success screen দেখানো হচ্ছে।
-       তারপর নতুন WhatsApp tab/window খোলার চেষ্টা করবে।
-    */
-
-    document
-        .getElementById("mainContent")
-        .style.display = "none";
-
-    document
-        .getElementById("productDetails")
-        .classList.remove("show");
-
-    document
-        .getElementById("cartSection")
-        .classList.remove("show");
-
-    document
-        .getElementById("orderSection")
-        .classList.remove("show");
-
-    document
-        .getElementById("orderSuccess")
-        .classList.add("show");
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
-
-    setTimeout(function(){
-
-        window.open(
-            whatsappURL,
-            "_blank"
-        );
-
-    },500);
+    window.location.href = whatsappURL;
 
 }
 
