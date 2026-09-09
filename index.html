@@ -874,8 +874,9 @@ section{
     display:flex;
     justify-content:center;
     align-items:center;
-    gap:22px;
+    gap:18px;
     margin-top:20px;
+    flex-wrap:wrap;
 }
 
 .social-icons a{
@@ -896,10 +897,21 @@ section{
     transform:translateY(-4px);
 }
 
+/* FACEBOOK */
+
 .facebook-icon{
     color:#1877F2;
     font-size:52px;
 }
+
+/* MESSENGER */
+
+.messenger-icon{
+    color:#0084FF;
+    font-size:52px;
+}
+
+/* INSTAGRAM */
 
 .instagram-icon{
     font-size:52px;
@@ -917,6 +929,15 @@ section{
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
+
+/* THREADS */
+
+.threads-icon{
+    color:#000000;
+    font-size:52px;
+}
+
+/* WHATSAPP */
 
 .whatsapp-icon{
     color:#25D366;
@@ -1041,6 +1062,23 @@ footer p{
 
     .social-subtitle{
         font-size:16px;
+    }
+
+    .social-icons{
+        gap:12px;
+    }
+
+    .social-icons a{
+        width:48px;
+        height:48px;
+    }
+
+    .facebook-icon,
+    .messenger-icon,
+    .instagram-icon,
+    .threads-icon,
+    .whatsapp-icon{
+        font-size:48px;
     }
 
     .footer-logo{
@@ -1429,7 +1467,7 @@ footer p{
 </div>
 
 
-<!-- SOCIAL — UNCHANGED -->
+<!-- SOCIAL -->
 
 <div class="contact-card">
 
@@ -1458,6 +1496,19 @@ footer p{
 </a>
 
 
+<!-- MESSENGER -->
+
+<a
+    href="https://m.me/GraamTheke"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Messenger">
+
+    <i class="fa-brands fa-facebook-messenger messenger-icon"></i>
+
+</a>
+
+
 <!-- INSTAGRAM -->
 
 <a
@@ -1467,6 +1518,19 @@ footer p{
     aria-label="Instagram">
 
     <i class="fa-brands fa-instagram instagram-icon"></i>
+
+</a>
+
+
+<!-- THREADS -->
+
+<a
+    href="https://www.threads.com/@graam_theke?igshid=NTc4MTIwNjQ2YQ=="
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Threads">
+
+    <i class="fa-brands fa-threads threads-icon"></i>
 
 </a>
 
@@ -2169,55 +2233,11 @@ function updateCart(){
         document.getElementById("cartItems");
 
 
-    /* CART EMPTY */
-
-    if(cartQuantity <= 0){
-
-        cartQuantity = 0;
-
-
-        cartItems.innerHTML = `
-
-            <div class="cart-empty">
-
-                ${
-                    currentLanguage === "bn"
-                    ? "আপনার কার্ট খালি।"
-                    : "Your cart is empty."
-                }
-
-            </div>
-
-        `;
-
-
-        document
-            .getElementById("productTotal")
-            .textContent =
-                currentLanguage === "bn"
-                ? "দাম শীঘ্রই ঘোষণা করা হবে"
-                : "Price will be announced soon";
-
-
-        document
-            .getElementById("deliveryTotal")
-            .textContent = "৳0";
-
-
-        document
-            .getElementById("grandTotal")
-            .textContent =
-                currentLanguage === "bn"
-                ? "দাম শীঘ্রই ঘোষণা করা হবে"
-                : "Price will be announced soon";
-
-
-        return;
-
-    }
-
-
-    /* CART HAS PRODUCT */
+    /*
+        IMPORTANT:
+        Quantity 0 হলেও product row থাকবে।
+        তাই Cart কখনো empty message-এ switch করবে না।
+    */
 
     cartItems.innerHTML = `
 
@@ -2321,6 +2341,11 @@ function updateCart(){
         .textContent = "৳" + delivery;
 
 
+    /*
+        Quantity 0 হলে মোট অংশে শুধু delivery থাকবে।
+        Product price এখনো ঘোষণা হয়নি, তাই price text unchanged রাখা হয়েছে।
+    */
+
     document
         .getElementById("grandTotal")
         .textContent =
@@ -2338,17 +2363,16 @@ function changeQuantity(amount){
     cartQuantity += amount;
 
 
+    /*
+        Quantity কখনো 0-এর নিচে যাবে না।
+        1 থেকে - চাপলে সরাসরি 0 হবে।
+        0 হলেও Cart page এবং product row থাকবে।
+    */
+
     if(cartQuantity < 0){
         cartQuantity = 0;
     }
 
-
-    /*
-        গুরুত্বপূর্ণ:
-        Quantity 1 থেকে - চাপলে 0 হবে।
-        কিন্তু Cart page বন্ধ হবে না।
-        একই Cart page-এ "আপনার কার্ট খালি" দেখাবে।
-    */
 
     updateCart();
 
@@ -2358,6 +2382,11 @@ function changeQuantity(amount){
 /* ================= REMOVE PRODUCT ================= */
 
 function removeFromCart(){
+
+    /*
+        Remove button চাপলে quantity 0 হবে।
+        Cart page বন্ধ হবে না।
+    */
 
     cartQuantity = 0;
 
