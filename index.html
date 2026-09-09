@@ -246,8 +246,6 @@ section{
     padding:15px;
 }
 
-/* PRODUCT IMAGE FIT */
-
 .product-image{
     width:100%;
     height:100%;
@@ -318,8 +316,6 @@ section{
     background:#425d31;
     transform:translateY(-2px);
 }
-
-/* GREEN CART ICON */
 
 .cart-sticker i{
     color:#79a35b;
@@ -513,6 +509,28 @@ section{
     border-radius:18px;
     padding:30px;
     box-shadow:0 7px 25px rgba(0,0,0,.08);
+}
+
+/* CART BACK BUTTON */
+
+.cart-back-btn{
+    border:none;
+    background:#55733e;
+    color:white;
+    padding:10px 18px;
+    border-radius:25px;
+    cursor:pointer;
+    margin-bottom:25px;
+    font-size:15px;
+}
+
+/* CART EMPTY */
+
+.cart-empty{
+    text-align:center;
+    color:#777;
+    padding:35px 20px;
+    font-size:17px;
 }
 
 .cart-item{
@@ -878,8 +896,6 @@ section{
     transform:translateY(-4px);
 }
 
-/* ACTUAL BRAND COLORS */
-
 .facebook-icon{
     color:#1877F2;
     font-size:52px;
@@ -916,8 +932,6 @@ footer{
     text-align:center;
 }
 
-/* FOOTER LOGO - NO WHITE BORDER */
-
 .footer-logo-wrap{
     display:flex;
     justify-content:center;
@@ -931,8 +945,6 @@ footer{
     object-fit:contain;
     display:block;
 }
-
-/* NO WHITE BOX */
 
 .footer-logo-box{
     background:transparent;
@@ -1401,13 +1413,6 @@ footer p{
     গ্রাম থেকে
 </div>
 
-<div
-    class="contact-address-title"
-    data-bn="ঠিকানা"
-    data-en="Address">
-    ঠিকানা
-</div>
-
 <p
     class="contact-address"
     data-bn="কাপাসিয়া, গাজীপুর, বাংলাদেশ"
@@ -1586,6 +1591,17 @@ footer p{
 
 
 <div class="cart-box">
+
+<!-- CART BACK BUTTON -->
+
+<button
+    class="cart-back-btn"
+    onclick="backFromCart()"
+    data-bn="← পণ্য দেখুন"
+    data-en="← Back to Products">
+    ← পণ্য দেখুন
+</button>
+
 
 <div id="cartItems"></div>
 
@@ -2136,12 +2152,6 @@ function backToProducts(){
 
 /* ================= ADD TO CART ================= */
 
-/*
-    কার্টে যোগ করুন চাপলে:
-    1. quantity +1 হবে
-    2. updateCart() হবে
-*/
-
 function addToCart(){
 
     cartQuantity++;
@@ -2168,13 +2178,7 @@ function updateCart(){
 
         cartItems.innerHTML = `
 
-            <p
-                style="
-                    text-align:center;
-                    color:#777;
-                    padding:20px;
-                "
-            >
+            <div class="cart-empty">
 
                 ${
                     currentLanguage === "bn"
@@ -2182,7 +2186,7 @@ function updateCart(){
                     : "Your cart is empty."
                 }
 
-            </p>
+            </div>
 
         `;
 
@@ -2334,12 +2338,17 @@ function changeQuantity(amount){
     cartQuantity += amount;
 
 
-    /* 0-এর নিচে যেতে পারবে না */
-
     if(cartQuantity < 0){
         cartQuantity = 0;
     }
 
+
+    /*
+        গুরুত্বপূর্ণ:
+        Quantity 1 থেকে - চাপলে 0 হবে।
+        কিন্তু Cart page বন্ধ হবে না।
+        একই Cart page-এ "আপনার কার্ট খালি" দেখাবে।
+    */
 
     updateCart();
 
@@ -2360,16 +2369,6 @@ function removeFromCart(){
 /* ================= OPEN CART ================= */
 
 function openCart(){
-
-    /*
-        গুরুত্বপূর্ণ:
-        এখানে আর automatic +1 নেই।
-
-        অর্থাৎ:
-        Cart button চাপলে শুধু cart খুলবে।
-        Product-এর "কার্টে যোগ করুন" চাপলেই +1 হবে।
-    */
-
 
     document
         .getElementById("mainContent")
@@ -2399,6 +2398,44 @@ function openCart(){
         top:0,
         behavior:"smooth"
     });
+
+}
+
+
+/* ================= CART BACK ================= */
+
+function backFromCart(){
+
+    document
+        .getElementById("cartSection")
+        .style.display = "none";
+
+    document
+        .getElementById("productDetail")
+        .style.display = "none";
+
+    document
+        .getElementById("orderSection")
+        .style.display = "none";
+
+    document
+        .getElementById("successSection")
+        .style.display = "none";
+
+    document
+        .getElementById("mainContent")
+        .style.display = "block";
+
+
+    setTimeout(() => {
+
+        document
+            .getElementById("products")
+            .scrollIntoView({
+                behavior:"smooth"
+            });
+
+    },100);
 
 }
 
@@ -2723,6 +2760,94 @@ document.addEventListener(
         }
 
     }
+);
+
+
+/* ================= PHONE BACK BUTTON ================= */
+
+/*
+    ফোনের Back button চাপলে website থেকে বের হওয়ার বদলে
+    website-এর আগের view-এ ফেরানোর চেষ্টা করবে।
+*/
+
+let currentView = "home";
+
+function setView(view){
+    currentView = view;
+}
+
+
+window.addEventListener(
+    "popstate",
+    function(){
+
+        if(currentView === "cart"){
+
+            backFromCart();
+
+            history.pushState(
+                {view:"home"},
+                "",
+                window.location.href
+            );
+
+            setView("home");
+
+            return;
+
+        }
+
+
+        if(currentView === "product"){
+
+            backToProducts();
+
+            history.pushState(
+                {view:"home"},
+                "",
+                window.location.href
+            );
+
+            setView("home");
+
+            return;
+
+        }
+
+
+        if(currentView === "order"){
+
+            document
+                .getElementById("orderSection")
+                .style.display = "none";
+
+            openCart();
+
+            history.pushState(
+                {view:"cart"},
+                "",
+                window.location.href
+            );
+
+            setView("cart");
+
+            return;
+
+        }
+
+
+        goHome();
+
+    }
+);
+
+
+/* Keep one history state inside the website */
+
+history.replaceState(
+    {view:"home"},
+    "",
+    window.location.href
 );
 
 
