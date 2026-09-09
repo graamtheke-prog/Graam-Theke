@@ -10,29 +10,6 @@
 
 <style>
 
-/* =====================================================
-   GRAM THEKE - BRAND THEME
-   Colors inspired by the original logo
-===================================================== */
-
-:root{
-    --cream:#fff9eb;
-    --cream-dark:#f5ecd7;
-    --green:#3f642f;
-    --green-dark:#304d25;
-    --brown:#713817;
-    --brown-light:#9a5628;
-    --orange:#c66a20;
-    --gold:#dca331;
-    --border:#e5d6b8;
-    --white:#ffffff;
-    --text:#3b342b;
-    --muted:#756e63;
-}
-
-
-/* ================= RESET ================= */
-
 *{
     margin:0;
     padding:0;
@@ -45,29 +22,26 @@ html{
 
 body{
     font-family:"Noto Sans Bengali","SolaimanLipi",Arial,sans-serif;
-    background:var(--cream);
-    color:var(--text);
+    background:#fffdf7;
+    color:#26351f;
     line-height:1.6;
 }
 
-
-/* =====================================================
-   HEADER
-===================================================== */
+/* ================= HEADER ================= */
 
 header{
     position:sticky;
     top:0;
     z-index:1000;
     background:#fffdf7;
-    border-bottom:1px solid var(--border);
-    box-shadow:0 2px 12px rgba(85,55,20,.08);
+    border-bottom:1px solid #e7dfc9;
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
 }
 
 .header-inner{
     max-width:1200px;
     margin:auto;
-    min-height:78px;
+    height:78px;
     padding:8px 20px;
     display:flex;
     align-items:center;
@@ -87,15 +61,12 @@ header{
     gap:10px;
 }
 
-
-/* LANGUAGE */
-
 .lang-btn{
-    border:1px solid var(--green);
+    border:1px solid #55733e;
     background:white;
-    color:var(--green);
-    padding:8px 14px;
-    border-radius:22px;
+    color:#42622f;
+    padding:7px 12px;
+    border-radius:20px;
     cursor:pointer;
     font-size:13px;
     transition:.2s;
@@ -103,19 +74,16 @@ header{
 
 .lang-btn.active,
 .lang-btn:hover{
-    background:var(--green);
+    background:#55733e;
     color:white;
 }
 
-
-/* MENU */
-
 .menu-btn{
     border:none;
-    background:var(--green);
+    background:#55733e;
     color:white;
-    width:44px;
-    height:44px;
+    width:42px;
+    height:42px;
     border-radius:50%;
     cursor:pointer;
     font-size:21px;
@@ -127,11 +95,11 @@ header{
     right:20px;
     top:78px;
     background:white;
-    width:220px;
-    border-radius:14px;
+    width:210px;
+    border-radius:12px;
     box-shadow:0 8px 25px rgba(0,0,0,.15);
     overflow:hidden;
-    border:1px solid var(--border);
+    border:1px solid #eee4cd;
 }
 
 .dropdown.show{
@@ -141,19 +109,16 @@ header{
 .dropdown a{
     display:block;
     text-decoration:none;
-    color:var(--green-dark);
-    padding:14px 17px;
-    border-bottom:1px solid #f0e7d6;
+    color:#304729;
+    padding:13px 16px;
+    border-bottom:1px solid #f0eadb;
 }
 
 .dropdown a:hover{
-    background:#f8efdc;
+    background:#f5f0df;
 }
 
-
-/* =====================================================
-   HERO
-===================================================== */
+/* ================= HERO ================= */
 
 .hero{
     position:relative;
@@ -178,7 +143,7 @@ header{
     content:"";
     position:absolute;
     inset:0;
-    background:rgba(40,55,25,.48);
+    background:rgba(20,35,15,.48);
     z-index:1;
 }
 
@@ -193,7 +158,7 @@ header{
 .hero-content h1{
     font-size:clamp(34px,6vw,65px);
     margin-bottom:12px;
-    text-shadow:0 3px 12px rgba(0,0,0,.45);
+    text-shadow:0 3px 12px rgba(0,0,0,.4);
 }
 
 .hero-content p{
@@ -203,8 +168,8 @@ header{
 
 .hero-btn{
     display:inline-block;
-    background:var(--orange);
-    color:white;
+    background:#e2ad39;
+    color:#fff;
     text-decoration:none;
     padding:13px 28px;
     border-radius:30px;
@@ -214,13 +179,10 @@ header{
 
 .hero-btn:hover{
     transform:translateY(-2px);
-    background:var(--brown);
+    background:#c99526;
 }
 
-
-/* =====================================================
-   COMMON
-===================================================== */
+/* ================= COMMON ================= */
 
 section{
     padding:70px 20px;
@@ -234,22 +196,18 @@ section{
 .section-title{
     text-align:center;
     font-size:34px;
-    color:var(--green);
+    color:#3f5f2e;
     margin-bottom:12px;
-    font-weight:800;
 }
 
 .section-subtitle{
     text-align:center;
-    color:var(--muted);
+    color:#777;
     max-width:700px;
     margin:0 auto 40px;
 }
 
-
-/* =====================================================
-   PRODUCTS
-===================================================== */
+/* ================= PRODUCT ================= */
 
 .products-grid{
     display:grid;
@@ -259,10 +217,10 @@ section{
 
 .product-card{
     background:white;
-    border:1px solid var(--border);
+    border:1px solid #e9e0c9;
     border-radius:18px;
     overflow:hidden;
-    box-shadow:0 7px 22px rgba(90,55,20,.08);
+    box-shadow:0 7px 22px rgba(61,53,27,.08);
     cursor:pointer;
     transition:.25s;
     position:relative;
@@ -270,23 +228,20 @@ section{
 
 .product-card:hover{
     transform:translateY(-5px);
-    box-shadow:0 12px 28px rgba(90,55,20,.15);
+    box-shadow:0 12px 28px rgba(61,53,27,.15);
 }
-
-
-/* IMPORTANT:
-   Product image no longer zoomed
-*/
 
 .product-image-wrap{
     height:290px;
-    background:#f8f0df;
+    background:#f4efdf;
     display:flex;
     align-items:center;
     justify-content:center;
     overflow:hidden;
-    padding:10px;
+    padding:15px;
 }
+
+/* PRODUCT IMAGE ZOOM FIX */
 
 .product-image{
     width:100%;
@@ -296,135 +251,114 @@ section{
     display:block;
 }
 
-
-/* PRODUCT INFO */
-
 .product-info{
     padding:20px;
 }
 
 .product-info h3{
     font-size:23px;
-    color:var(--green);
+    color:#3f5f2e;
     margin-bottom:7px;
 }
 
 .product-info p{
-    color:var(--muted);
+    color:#777;
 }
 
 .product-price{
     margin-top:12px;
     font-weight:bold;
-    color:var(--brown);
+    color:#9b6b13;
 }
 
-
-/* CART BUTTON */
+/* CART BUTTON - NO ROUND CIRCLE */
 
 .cart-sticker{
     position:absolute;
     right:15px;
     bottom:15px;
+
     border:none;
-    background:var(--orange);
+
+    background:#6b3f20;
     color:white;
-    width:48px;
-    height:48px;
-    border-radius:50%;
+
+    min-width:52px;
+    height:44px;
+
+    padding:0 15px;
+
+    border-radius:22px;
+
     cursor:pointer;
-    font-size:19px;
+    font-size:15px;
+    font-weight:bold;
+
     box-shadow:0 4px 12px rgba(0,0,0,.18);
-    display:flex;
-    align-items:center;
-    justify-content:center;
+
+    transition:.2s;
 }
 
 .cart-sticker:hover{
-    background:var(--brown);
+    background:#4f2e18;
+    transform:translateY(-2px);
 }
 
-
-/* CART NUMBER */
-
-.cart-badge{
-    position:absolute;
-    top:-5px;
-    right:-5px;
-    min-width:21px;
-    height:21px;
-    padding:0 5px;
-    border-radius:50%;
-    background:var(--brown);
-    color:white;
-    font-size:12px;
-    font-weight:bold;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border:2px solid white;
-}
-
-
-/* =====================================================
-   UPCOMING PRODUCT
-===================================================== */
-
-.upcoming-section{
-    background:#f5ecd8;
-}
+/* ================= UPCOMING PRODUCT ================= */
 
 .upcoming-card{
-    max-width:420px;
-    margin:0 auto;
-    background:white;
-    border:1px solid var(--border);
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 8px 25px rgba(90,55,20,.08);
-    text-align:center;
-}
+    background:#fff;
+    border:1px solid #e9e0c9;
+    border-radius:18px;
+    min-height:290px;
 
-.upcoming-image{
-    height:240px;
-    background:#f7efdf;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:70px;
+    text-align:center;
+
+    padding:30px;
+
+    box-shadow:0 7px 22px rgba(61,53,27,.08);
+
+    position:relative;
+    overflow:hidden;
+}
+
+.upcoming-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        radial-gradient(circle at 20% 20%,rgba(226,173,57,.10),transparent 35%),
+        radial-gradient(circle at 80% 80%,rgba(85,115,62,.10),transparent 35%);
 }
 
 .upcoming-content{
-    padding:25px 20px 30px;
+    position:relative;
+    z-index:2;
+}
+
+.upcoming-icon{
+    font-size:48px;
+    margin-bottom:12px;
 }
 
 .upcoming-content h3{
-    color:var(--green);
     font-size:25px;
+    color:#6b3f20;
     margin-bottom:8px;
 }
 
 .upcoming-content p{
-    color:var(--muted);
+    color:#777;
 }
 
-.coming-badge{
-    display:inline-block;
-    margin-top:15px;
-    padding:7px 16px;
-    border-radius:20px;
-    background:#f4e4bd;
-    color:var(--brown);
-    font-weight:bold;
-}
-
-
-/* =====================================================
-   WHY
-===================================================== */
+/* ================= WHY ================= */
 
 .why-section{
-    background:#f3ecd9;
+    background:#f3efdf;
 }
 
 .why-grid{
@@ -438,7 +372,7 @@ section{
     padding:28px 20px;
     border-radius:15px;
     text-align:center;
-    border:1px solid var(--border);
+    border:1px solid #e5dcc4;
 }
 
 .why-icon{
@@ -447,19 +381,16 @@ section{
 }
 
 .why-card h3{
-    color:var(--green);
+    color:#486634;
     margin-bottom:8px;
 }
 
-
-/* =====================================================
-   PRODUCT DETAIL
-===================================================== */
+/* ================= PRODUCT DETAIL ================= */
 
 #productDetail{
     display:none;
     min-height:650px;
-    background:var(--cream);
+    background:#fffdf7;
 }
 
 .detail-container{
@@ -469,7 +400,7 @@ section{
 
 .back-btn{
     border:none;
-    background:var(--green);
+    background:#55733e;
     color:white;
     padding:10px 18px;
     border-radius:25px;
@@ -489,32 +420,34 @@ section{
     width:100%;
     max-height:500px;
     object-fit:contain;
+    object-position:center;
     border-radius:20px;
-    box-shadow:0 8px 25px rgba(90,55,20,.12);
-    background:#f8f0df;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+    background:#f4efdf;
+    padding:15px;
 }
 
 .detail-content h2{
     font-size:40px;
-    color:var(--green);
+    color:#3f5f2e;
     margin-bottom:10px;
 }
 
 .detail-content .weight{
-    color:var(--muted);
+    color:#777;
     margin-bottom:18px;
 }
 
 .detail-price{
     font-size:23px;
-    color:var(--brown);
+    color:#9b6b13;
     font-weight:bold;
     margin:18px 0;
 }
 
 .add-cart-btn{
     border:none;
-    background:var(--orange);
+    background:#6b3f20;
     color:white;
     padding:13px 25px;
     border-radius:30px;
@@ -523,14 +456,15 @@ section{
     font-weight:bold;
 }
 
+.add-cart-btn:hover{
+    background:#4f2e18;
+}
 
-/* =====================================================
-   CART
-===================================================== */
+/* ================= CART ================= */
 
 #cartSection{
     display:none;
-    background:#f8f1e2;
+    background:#f8f4e8;
     min-height:650px;
 }
 
@@ -540,8 +474,7 @@ section{
     background:white;
     border-radius:18px;
     padding:30px;
-    box-shadow:0 7px 25px rgba(90,55,20,.08);
-    border:1px solid var(--border);
+    box-shadow:0 7px 25px rgba(0,0,0,.08);
 }
 
 .cart-item{
@@ -560,20 +493,26 @@ section{
 }
 
 .quantity-control button{
-    width:32px;
-    height:32px;
+    width:36px;
+    height:36px;
     border:none;
-    background:var(--green);
+    background:#55733e;
     color:white;
     border-radius:50%;
     cursor:pointer;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.quantity-control button:hover{
+    background:#3f5f2e;
 }
 
 .quantity-number{
-    min-width:25px;
+    min-width:30px;
     text-align:center;
     font-weight:bold;
-    color:var(--brown);
+    font-size:18px;
 }
 
 .cart-summary{
@@ -592,17 +531,30 @@ section{
     padding-top:15px;
     font-size:20px;
     font-weight:bold;
-    color:var(--green);
+    color:#3f5f2e;
 }
 
+/* REMOVE PRODUCT BUTTON */
 
-/* =====================================================
-   ORDER
-===================================================== */
+.remove-item-btn{
+    border:none;
+    background:#eee2d5;
+    color:#6b3f20;
+    padding:7px 12px;
+    border-radius:15px;
+    cursor:pointer;
+    font-size:13px;
+}
+
+.remove-item-btn:hover{
+    background:#e5d2bf;
+}
+
+/* ================= ORDER ================= */
 
 #orderSection{
     display:none;
-    background:var(--cream);
+    background:#fffdf7;
     min-height:650px;
 }
 
@@ -610,10 +562,10 @@ section{
     max-width:700px;
     margin:auto;
     background:white;
-    border:1px solid var(--border);
+    border:1px solid #e6dcc5;
     border-radius:18px;
     padding:30px;
-    box-shadow:0 8px 25px rgba(90,55,20,.07);
+    box-shadow:0 8px 25px rgba(0,0,0,.07);
 }
 
 .form-group{
@@ -623,7 +575,7 @@ section{
 .form-group label{
     display:block;
     font-weight:bold;
-    color:var(--green);
+    color:#405a32;
     margin-bottom:7px;
 }
 
@@ -642,7 +594,7 @@ section{
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus{
-    border-color:var(--orange);
+    border-color:#55733e;
 }
 
 .form-group textarea{
@@ -650,10 +602,7 @@ section{
     resize:vertical;
 }
 
-
-/* =====================================================
-   DELIVERY
-===================================================== */
+/* ================= DELIVERY ================= */
 
 .option-grid{
     display:grid;
@@ -670,8 +619,8 @@ section{
 }
 
 .option-card.selected{
-    border-color:var(--green);
-    background:#f1f5ea;
+    border-color:#55733e;
+    background:#f2f6ed;
 }
 
 .option-card input{
@@ -680,23 +629,20 @@ section{
 
 .option-title{
     font-weight:bold;
-    color:var(--green);
+    color:#405a32;
 }
 
 .option-price{
-    color:var(--brown);
+    color:#8c6b27;
     font-size:14px;
 }
 
-
-/* =====================================================
-   PAYMENT
-===================================================== */
+/* ================= PAYMENT ================= */
 
 .payment-title{
     margin:25px 0 10px;
     font-size:18px;
-    color:var(--green);
+    color:#405a32;
     font-weight:bold;
 }
 
@@ -719,8 +665,8 @@ section{
 }
 
 .payment-card.selected{
-    border-color:var(--green);
-    background:#f1f5ea;
+    border-color:#55733e;
+    background:#f2f6ed;
 }
 
 .payment-card input{
@@ -733,15 +679,12 @@ section{
     object-fit:contain;
 }
 
-
-/* =====================================================
-   CONFIRM
-===================================================== */
+/* ================= CONFIRM ================= */
 
 .confirm-btn{
     width:100%;
     border:none;
-    background:var(--orange);
+    background:#55733e;
     color:white;
     padding:14px;
     border-radius:30px;
@@ -753,28 +696,25 @@ section{
 }
 
 .confirm-btn:hover{
-    background:var(--brown);
+    background:#425d31;
     transform:translateY(-1px);
 }
 
-
-/* =====================================================
-   SUCCESS
-===================================================== */
+/* ================= SUCCESS ================= */
 
 #successSection{
     display:none;
     min-height:600px;
     padding:90px 20px;
     text-align:center;
-    background:#f3f6ed;
+    background:#f4f7ef;
 }
 
 .success-icon{
     width:85px;
     height:85px;
     border-radius:50%;
-    background:var(--green);
+    background:#55733e;
     color:white;
     display:flex;
     align-items:center;
@@ -784,7 +724,7 @@ section{
 }
 
 #successSection h2{
-    color:var(--green);
+    color:#3f5f2e;
     font-size:34px;
     margin-bottom:12px;
 }
@@ -800,100 +740,86 @@ section{
     margin-top:25px;
     padding:12px 25px;
     border-radius:25px;
-    background:var(--orange);
+    background:#55733e;
     color:white;
     text-decoration:none;
 }
 
-
-/* =====================================================
-   CONTACT
-===================================================== */
+/* ================= CONTACT ================= */
 
 .contact-section{
-    background:#f4ecda;
+    background:#f3efdf;
 }
 
 .contact-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:20px;
     text-align:center;
 }
 
-
-/* CONTACT CARD */
-
 .contact-card{
     background:white;
-    padding:32px 25px;
-    border-radius:18px;
-    border:1px solid var(--border);
-    box-shadow:0 5px 18px rgba(90,55,20,.05);
+    padding:30px 25px;
+    border-radius:20px;
+    border:1px solid #e3d9c2;
+    box-shadow:0 5px 18px rgba(61,53,27,.05);
 }
 
-.contact-card h3{
-    color:var(--green);
-    margin-bottom:10px;
-    font-size:27px;
-    font-weight:800;
-}
-
-
-/* BIG BRAND NAME */
+/* CONTACT BRAND NAME */
 
 .contact-brand{
-    color:var(--brown) !important;
-    font-size:32px !important;
-    font-weight:900 !important;
+    font-size:32px;
+    font-weight:800;
+    color:#6b3f20;
+    margin-bottom:8px;
 }
 
-
-/* ADDRESS */
+.contact-address-title{
+    font-size:27px;
+    color:#405a32;
+    font-weight:800;
+    margin-bottom:8px;
+}
 
 .contact-address{
-    color:var(--text);
     font-size:19px;
     font-weight:700;
+    color:#4d4035;
 }
 
-
-/* PHONE */
+/* PHONE WITHOUT BLUE */
 
 .contact-phone{
-    color:var(--brown);
-    font-size:25px;
+    font-size:27px;
     font-weight:800;
-    letter-spacing:.3px;
+    color:#6b3f20;
+    text-decoration:none;
+    display:inline-block;
+    margin-top:5px;
 }
 
-
-/* SOCIAL TEXT */
+/* SOCIAL MEDIA */
 
 .social-title{
-    color:var(--green);
-    font-size:22px;
-    font-weight:800;
-    margin-bottom:4px;
+    font-size:23px;
+    font-weight:700;
+    color:#405a32;
+    margin-bottom:5px;
 }
 
 .social-subtitle{
-    color:var(--brown);
-    font-size:16px;
-    margin-bottom:18px;
+    font-size:18px;
+    font-weight:600;
+    color:#6b6259;
 }
-
-
-/* =====================================================
-   ACTUAL SOCIAL MEDIA SVG ICONS
-===================================================== */
 
 .social-icons{
     display:flex;
     justify-content:center;
     align-items:center;
     gap:22px;
-    margin-top:12px;
+    margin-top:20px;
 }
 
 .social-icons a{
@@ -901,89 +827,66 @@ section{
     display:flex;
     align-items:center;
     justify-content:center;
-    width:58px;
-    height:58px;
-    border-radius:50%;
-    transition:.25s;
+    width:52px;
+    height:52px;
+    border-radius:14px;
+    transition:.2s;
 }
 
 .social-icons a:hover{
-    transform:translateY(-4px) scale(1.05);
-}
-
-
-/* Facebook */
-
-.facebook-icon{
-    background:#1877F2;
-}
-
-
-/* Instagram */
-
-.instagram-icon{
-    background:linear-gradient(
-        45deg,
-        #f58529,
-        #dd2a7b,
-        #8134af,
-        #515bd4
-    );
-}
-
-
-/* WhatsApp */
-
-.whatsapp-icon{
-    background:#25D366;
+    transform:translateY(-4px);
 }
 
 .social-icons svg{
-    width:34px;
-    height:34px;
-    fill:white;
+    width:52px;
+    height:52px;
+    display:block;
 }
 
-
-/* =====================================================
-   FOOTER
-===================================================== */
+/* ================= FOOTER ================= */
 
 footer{
-    background:#304b27;
+    background:#33472a;
     color:#eee;
-    padding:35px 20px;
+    padding:40px 20px;
     text-align:center;
 }
 
+/* REAL LOGO - NO FILTER */
 
-/* IMPORTANT:
-   Logo will remain ORIGINAL COLOR
-*/
+.footer-logo-wrap{
+    display:flex;
+    justify-content:center;
+    margin-bottom:15px;
+}
+
+.footer-logo-box{
+    background:#fffdf7;
+    padding:10px 18px;
+    border-radius:20px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 5px 18px rgba(0,0,0,.12);
+}
 
 .footer-logo{
     height:75px;
     width:auto;
-    margin-bottom:10px;
     object-fit:contain;
-    filter:none;
 }
-
 
 footer p{
     font-size:14px;
     opacity:.9;
 }
 
-
-/* =====================================================
-   MOBILE
-===================================================== */
+/* ================= MOBILE ================= */
 
 @media(max-width:700px){
 
     .header-inner{
-        min-height:70px;
+        height:70px;
         padding:7px 14px;
     }
 
@@ -1006,11 +909,6 @@ footer p{
 
     .section-title{
         font-size:29px;
-    }
-
-    .product-image-wrap{
-        height:280px;
-        padding:8px;
     }
 
     .product-detail-grid{
@@ -1037,47 +935,36 @@ footer p{
         flex-direction:column;
     }
 
-    .social-icons a{
-        width:56px;
-        height:56px;
+    .product-image-wrap{
+        height:270px;
+    }
+
+    .cart-sticker{
+        right:12px;
+        bottom:12px;
+        height:42px;
+        padding:0 13px;
+        font-size:14px;
     }
 
     .contact-brand{
-        font-size:29px !important;
+        font-size:29px;
     }
 
     .contact-phone{
-        font-size:22px;
+        font-size:23px;
     }
 
-    .upcoming-image{
-        height:210px;
+    .social-title{
+        font-size:20px;
     }
 
-}
-
-
-/* =====================================================
-   VERY SMALL MOBILE
-===================================================== */
-
-@media(max-width:400px){
-
-    .header-actions{
-        gap:6px;
+    .social-subtitle{
+        font-size:16px;
     }
 
-    .lang-btn{
-        padding:7px 10px;
-    }
-
-    .menu-btn{
-        width:42px;
-        height:42px;
-    }
-
-    .logo{
-        height:50px;
+    .footer-logo{
+        height:68px;
     }
 
 }
@@ -1086,13 +973,9 @@ footer p{
 
 </head>
 
-
 <body>
 
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
+<!-- ================= HEADER ================= -->
 
 <header>
 
@@ -1130,55 +1013,26 @@ footer p{
 
 </div>
 
-
 <div class="dropdown" id="dropdownMenu">
 
-<a
-href="#home"
-onclick="closeMenu()"
-data-bn="হোম"
-data-en="Home">
-হোম
+<a href="#home" onclick="closeMenu()" data-bn="হোম" data-en="Home">
+    হোম
 </a>
 
-<a
-href="#products"
-onclick="closeMenu()"
-data-bn="পণ্য"
-data-en="Products">
-পণ্য
+<a href="#products" onclick="closeMenu()" data-bn="পণ্য" data-en="Products">
+    পণ্য
 </a>
 
-<a
-href="#upcoming"
-onclick="closeMenu()"
-data-bn="আসন্ন পণ্য"
-data-en="Upcoming Product">
-আসন্ন পণ্য
+<a href="#why" onclick="closeMenu()" data-bn="কেন গ্রাম থেকে?" data-en="Why Graam Theke?">
+    কেন গ্রাম থেকে?
 </a>
 
-<a
-href="#why"
-onclick="closeMenu()"
-data-bn="কেন গ্রাম থেকে?"
-data-en="Why Graam Theke?">
-কেন গ্রাম থেকে?
+<a href="#contact" onclick="closeMenu()" data-bn="যোগাযোগ" data-en="Contact">
+    যোগাযোগ
 </a>
 
-<a
-href="#contact"
-onclick="closeMenu()"
-data-bn="যোগাযোগ"
-data-en="Contact">
-যোগাযোগ
-</a>
-
-<a
-href="javascript:void(0)"
-onclick="openCart();closeMenu()"
-data-bn="কার্ট 🛒"
-data-en="Cart 🛒">
-কার্ট 🛒
+<a href="javascript:void(0)" onclick="openCart();closeMenu()" data-bn="কার্ট 🛒" data-en="Cart 🛒">
+    কার্ট 🛒
 </a>
 
 </div>
@@ -1186,17 +1040,11 @@ data-en="Cart 🛒">
 </header>
 
 
-
-<!-- =====================================================
-     MAIN CONTENT
-===================================================== -->
+<!-- ================= MAIN CONTENT ================= -->
 
 <div id="mainContent">
 
-
-<!-- =====================================================
-     HERO
-===================================================== -->
+<!-- HERO -->
 
 <section class="hero" id="home">
 
@@ -1206,18 +1054,15 @@ data-en="Cart 🛒">
     loop
     playsinline>
 
-<source
-    src="video-output-B0BA3A30-A641-4947-B97B-2AC591D5D93F-1.mov">
+    <source
+        src="video-output-B0BA3A30-A641-4947-B97B-2AC591D5D93F-1.mov">
 
 </video>
 
-
 <div class="hero-content">
 
-<h1
-data-bn="গ্রাম থেকে"
-data-en="Graam Theke">
-গ্রাম থেকে
+<h1 data-bn="গ্রাম থেকে" data-en="Graam Theke">
+    গ্রাম থেকে
 </h1>
 
 <p
@@ -1239,10 +1084,7 @@ data-en="View Products">
 </section>
 
 
-
-<!-- =====================================================
-     PRODUCTS
-===================================================== -->
+<!-- ================= PRODUCTS ================= -->
 
 <section id="products">
 
@@ -1265,15 +1107,11 @@ data-en="Pure sugarcane jaggery inspired by the tradition and natural taste of r
 
 <div class="products-grid">
 
-
-<!-- =====================================================
-     CURRENT PRODUCT
-===================================================== -->
+<!-- CURRENT PRODUCT -->
 
 <div
 class="product-card"
 onclick="openProductDetails()">
-
 
 <div class="product-image-wrap">
 
@@ -1283,7 +1121,6 @@ class="product-image"
 alt="খাঁটি আখের গুড়">
 
 </div>
-
 
 <div class="product-info">
 
@@ -1311,15 +1148,12 @@ data-en="Price will be announced soon">
 
 <button
 class="cart-sticker"
-onclick="event.stopPropagation(); addToCart();">
+onclick="event.stopPropagation(); addToCart(); openCart();">
 
-🛒
-
-<span
-class="cart-badge"
-id="productCartBadge"
-style="display:none;">
-0
+🛒 <span
+data-bn="কার্টে যোগ করুন"
+data-en="Add to Cart">
+কার্টে যোগ করুন
 </span>
 
 </button>
@@ -1327,65 +1161,29 @@ style="display:none;">
 </div>
 
 
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     UPCOMING PRODUCT
-===================================================== -->
-
-<section
-class="upcoming-section"
-id="upcoming">
-
-<div class="container">
-
-<h2
-class="section-title"
-data-bn="আসন্ন পণ্য"
-data-en="Upcoming Product">
-আসন্ন পণ্য
-</h2>
-
-<p
-class="section-subtitle"
-data-bn="খুব শীঘ্রই আরও গ্রামবাংলার পণ্য নিয়ে আসছি"
-data-en="More authentic rural products are coming soon">
-খুব শীঘ্রই আরও গ্রামবাংলার পণ্য নিয়ে আসছি
-</p>
-
+<!-- UPCOMING PRODUCT -->
 
 <div class="upcoming-card">
 
-<div class="upcoming-image">
+<div class="upcoming-content">
+
+<div class="upcoming-icon">
 🌾
 </div>
 
-<div class="upcoming-content">
-
 <h3
-data-bn="নতুন পণ্য আসছে"
-data-en="New Product Coming Soon">
-নতুন পণ্য আসছে
-</h3>
-
-<p
-data-bn="গ্রাম থেকে আরও খাঁটি ও ঐতিহ্যবাহী পণ্য আপনাদের জন্য নিয়ে আসবে।"
-data-en="Graam Theke will bring more authentic and traditional products for you.">
-গ্রাম থেকে আরও খাঁটি ও ঐতিহ্যবাহী পণ্য আপনাদের জন্য নিয়ে আসবে।
-</p>
-
-<span
-class="coming-badge"
 data-bn="শীঘ্রই আসছে"
 data-en="Coming Soon">
 শীঘ্রই আসছে
-</span>
+</h3>
+
+<p
+data-bn="নতুন পণ্য খুব শীঘ্রই যুক্ত হবে।"
+data-en="A new product will be added very soon.">
+নতুন পণ্য খুব শীঘ্রই যুক্ত হবে।
+</p>
+
+</div>
 
 </div>
 
@@ -1396,14 +1194,9 @@ data-en="Coming Soon">
 </section>
 
 
+<!-- ================= WHY ================= -->
 
-<!-- =====================================================
-     WHY
-===================================================== -->
-
-<section
-class="why-section"
-id="why">
+<section class="why-section" id="why">
 
 <div class="container">
 
@@ -1424,7 +1217,6 @@ data-en="From nature closer to your home">
 
 <div class="why-grid">
 
-
 <div class="why-card">
 
 <div class="why-icon">🌾</div>
@@ -1442,7 +1234,6 @@ data-en="Pure sugarcane jaggery made naturally.">
 </p>
 
 </div>
-
 
 
 <div class="why-card">
@@ -1464,7 +1255,6 @@ data-en="Traditional taste and love from rural Bengal.">
 </div>
 
 
-
 <div class="why-card">
 
 <div class="why-icon">✨</div>
@@ -1483,7 +1273,6 @@ data-en="Special care for taste and quality.">
 
 </div>
 
-
 </div>
 
 </div>
@@ -1491,14 +1280,9 @@ data-en="Special care for taste and quality.">
 </section>
 
 
+<!-- ================= CONTACT ================= -->
 
-<!-- =====================================================
-     CONTACT
-===================================================== -->
-
-<section
-class="contact-section"
-id="contact">
+<section class="contact-section" id="contact">
 
 <div class="container">
 
@@ -1509,34 +1293,40 @@ data-en="Contact">
 যোগাযোগ
 </h2>
 
+<p
+class="section-subtitle"
+data-bn="গ্রাম থেকে"
+data-en="Graam Theke">
+গ্রাম থেকে
+</p>
+
 
 <div class="contact-grid">
-
 
 <!-- BRAND -->
 
 <div class="contact-card">
 
-<h3
+<div
 class="contact-brand"
 data-bn="গ্রাম থেকে"
 data-en="Graam Theke">
 গ্রাম থেকে
-</h3>
-
 </div>
 
+</div>
 
 
 <!-- ADDRESS -->
 
 <div class="contact-card">
 
-<h3
+<div
+class="contact-address-title"
 data-bn="ঠিকানা"
 data-en="Address">
 ঠিকানা
-</h3>
+</div>
 
 <p
 class="contact-address"
@@ -1548,23 +1338,17 @@ data-en="Kapasia, Gazipur, Bangladesh">
 </div>
 
 
-
 <!-- PHONE -->
 
 <div class="contact-card">
 
-<h3
-data-bn="যোগাযোগ"
-data-en="Contact">
-যোগাযোগ
-</h3>
-
-<p class="contact-phone">
+<a
+href="tel:+8801601601998"
+class="contact-phone">
 +8801601601998
-</p>
+</a>
 
 </div>
-
 
 
 <!-- SOCIAL -->
@@ -1580,35 +1364,37 @@ data-en="Follow us on Social Media">
 
 <div
 class="social-subtitle"
-data-bn="Follow us on Social Media"
-data-en="Follow us on Social Media">
-Follow us on Social Media
+data-bn=""
+data-en="">
 </div>
 
 
 <div class="social-icons">
-
 
 <!-- FACEBOOK -->
 
 <a
 href="https://www.facebook.com/share/18F1J2ej6V/?mibextid=wwXIfr"
 target="_blank"
-rel="noopener noreferrer"
-aria-label="Facebook"
-class="facebook-icon">
+aria-label="Facebook">
 
 <svg
-viewBox="0 0 24 24"
+viewBox="0 0 64 64"
 xmlns="http://www.w3.org/2000/svg">
 
+<circle
+cx="32"
+cy="32"
+r="30"
+fill="#1877F2"/>
+
 <path
-d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.7-1.6h1.8V3.8c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1V10H8v3h2.6v8h2.9z"/>
+d="M35.5 50V34.5H41L42 28H35.5V23.8C35.5 21.9 36.1 20.6 39.1 20.6H42.3V14.8C40.8 14.6 39.3 14.5 37.8 14.5C31.7 14.5 27.5 18.2 27.5 24.9V28H21.8V34.5H27.5V50H35.5Z"
+fill="white"/>
 
 </svg>
 
 </a>
-
 
 
 <!-- INSTAGRAM -->
@@ -1616,21 +1402,66 @@ d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.7-1.6h1.8V3.8c-.3 0-1.3-.1-2.4-.1-
 <a
 href="https://www.instagram.com/graam_theke/"
 target="_blank"
-rel="noopener noreferrer"
-aria-label="Instagram"
-class="instagram-icon">
+aria-label="Instagram">
 
 <svg
-viewBox="0 0 24 24"
+viewBox="0 0 64 64"
 xmlns="http://www.w3.org/2000/svg">
 
-<path
-d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.2-3.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/>
+<defs>
+
+<linearGradient
+id="igGradient"
+x1="0"
+y1="1"
+x2="1"
+y2="0">
+
+<stop offset="0%" stop-color="#FFDC80"/>
+<stop offset="25%" stop-color="#F77737"/>
+<stop offset="55%" stop-color="#E1306C"/>
+<stop offset="78%" stop-color="#C13584"/>
+<stop offset="100%" stop-color="#833AB4"/>
+
+</linearGradient>
+
+</defs>
+
+<rect
+x="4"
+y="4"
+width="56"
+height="56"
+rx="16"
+fill="url(#igGradient)"/>
+
+<rect
+x="17"
+y="17"
+width="30"
+height="30"
+rx="9"
+fill="none"
+stroke="white"
+stroke-width="4"/>
+
+<circle
+cx="32"
+cy="32"
+r="7"
+fill="none"
+stroke="white"
+stroke-width="4"/>
+
+<circle
+cx="43"
+cy="21"
+r="3"
+fill="white"/>
 
 </svg>
 
 </a>
-
 
 
 <!-- WHATSAPP -->
@@ -1638,26 +1469,33 @@ d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5
 <a
 href="https://wa.me/8801601601998"
 target="_blank"
-rel="noopener noreferrer"
-aria-label="WhatsApp"
-class="whatsapp-icon">
+aria-label="WhatsApp">
 
 <svg
-viewBox="0 0 24 24"
+viewBox="0 0 64 64"
 xmlns="http://www.w3.org/2000/svg">
 
+<circle
+cx="32"
+cy="32"
+r="30"
+fill="#25D366"/>
+
 <path
-d="M12 2a10 10 0 0 0-8.7 14.9L2 22l5.3-1.4A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8 8 0 1 1 12 20zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.7.9-.1.2-.3.2-.5.1-1.4-.7-2.3-1.2-3.2-2.7-.2-.3.2-.3.5-1 .1-.2 0-.4-.1-.5-.1-.1-.5-1.2-.7-1.7-.2-.4-.4-.4-.5-.4h-.4c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.4 1 2.5c.1.2 1.7 2.7 4.2 3.7 1.6.6 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.5-.3z"/>
+d="M18 48L20.8 39.5C18.7 36.2 17.6 32.4 17.6 28.5C17.6 17.2 26.8 8 38.1 8C49.4 8 58.4 17.2 58.4 28.5C58.4 39.8 49.4 49 38.1 49C34.3 49 30.6 48 27.4 46.1L18 48Z"
+fill="white"/>
+
+<path
+d="M29 21.5C29.5 20.4 30 20.3 30.7 20.3H32.1C32.7 20.3 33.1 20.5 33.4 21.2L35.2 25.4C35.5 26.1 35.4 26.5 35 27L33.5 28.8C35.2 32 37.7 34.3 41.2 35.8L42.8 34.2C43.3 33.7 43.7 33.6 44.4 33.9L48.5 35.8C49.2 36.1 49.4 36.6 49.2 37.2L48.5 39.8C48.2 41 47.2 41.6 46.2 41.6C36.2 41.2 27.5 32.7 26.9 22.7C26.9 22.2 27.3 21.7 29 21.5Z"
+fill="#25D366"/>
 
 </svg>
 
 </a>
 
-
 </div>
 
 </div>
-
 
 </div>
 
@@ -1665,14 +1503,10 @@ d="M12 2a10 10 0 0 0-8.7 14.9L2 22l5.3-1.4A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-
 
 </section>
 
-
 </div>
 
 
-
-<!-- =====================================================
-     PRODUCT DETAIL
-===================================================== -->
+<!-- ================= PRODUCT DETAIL ================= -->
 
 <section id="productDetail">
 
@@ -1680,7 +1514,7 @@ d="M12 2a10 10 0 0 0-8.7 14.9L2 22l5.3-1.4A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-
 
 <button
 class="back-btn"
-onclick="backToProducts()"
+onclick="backToProducts"
 data-bn="← পণ্যে ফিরে যান"
 data-en="← Back to Products">
 ← পণ্যে ফিরে যান
@@ -1744,10 +1578,7 @@ data-en="🛒 Add to Cart">
 </section>
 
 
-
-<!-- =====================================================
-     CART
-===================================================== -->
+<!-- ================= CART ================= -->
 
 <section id="cartSection">
 
@@ -1764,7 +1595,6 @@ data-en="Your Cart">
 <div class="cart-box">
 
 <div id="cartItems"></div>
-
 
 <div class="cart-summary">
 
@@ -1830,10 +1660,7 @@ data-en="Proceed to Order">
 </section>
 
 
-
-<!-- =====================================================
-     ORDER
-===================================================== -->
+<!-- ================= ORDER ================= -->
 
 <section id="orderSection">
 
@@ -1876,7 +1703,6 @@ data-placeholder-en="Your Name">
 </div>
 
 
-
 <div class="form-group">
 
 <label
@@ -1894,7 +1720,6 @@ data-placeholder-bn="মোবাইল নম্বর"
 data-placeholder-en="Mobile Number">
 
 </div>
-
 
 
 <div class="form-group">
@@ -1915,7 +1740,6 @@ data-placeholder-en="Full delivery address"></textarea>
 </div>
 
 
-
 <div class="form-group">
 
 <label
@@ -1928,9 +1752,7 @@ data-en="Delivery Area">
 <div class="option-grid">
 
 
-<label
-class="option-card"
-id="insideDhakaCard">
+<label class="option-card" id="insideDhakaCard">
 
 <input
 type="radio"
@@ -1952,10 +1774,7 @@ data-en="Inside Dhaka">
 </label>
 
 
-
-<label
-class="option-card"
-id="outsideDhakaCard">
+<label class="option-card" id="outsideDhakaCard">
 
 <input
 type="radio"
@@ -1981,22 +1800,17 @@ data-en="Outside Dhaka">
 </div>
 
 
-
-<div
-class="payment-title"
+<div class="payment-title"
 data-bn="পেমেন্ট পদ্ধতি"
 data-en="Payment Method">
 পেমেন্ট পদ্ধতি
 </div>
 
 
-
 <div class="payment-options">
 
 
-<label
-class="payment-card"
-id="codCard">
+<label class="payment-card" id="codCard">
 
 <input
 type="radio"
@@ -2025,10 +1839,7 @@ data-en="Pay when you receive the product">
 </label>
 
 
-
-<label
-class="payment-card"
-id="bkashCard">
+<label class="payment-card" id="bkashCard">
 
 <input
 type="radio"
@@ -2054,7 +1865,7 @@ bKash Payment
 class="option-price"
 data-bn="bKash-এর মাধ্যমে পেমেন্ট"
 data-en="Pay via bKash">
-bKash-এর মাধ্যমে পেমেন্ট
+Pay via bKash
 </div>
 
 </div>
@@ -2062,7 +1873,6 @@ bKash-এর মাধ্যমে পেমেন্ট
 </label>
 
 </div>
-
 
 
 <button
@@ -2073,7 +1883,6 @@ data-en="Confirm Order">
 অর্ডার নিশ্চিত করুন
 </button>
 
-
 </div>
 
 </div>
@@ -2081,10 +1890,7 @@ data-en="Confirm Order">
 </section>
 
 
-
-<!-- =====================================================
-     SUCCESS
-===================================================== -->
+<!-- ================= SUCCESS ================= -->
 
 <section id="successSection">
 
@@ -2116,17 +1922,22 @@ data-en="Back to Home">
 </section>
 
 
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
+
+<div class="footer-logo-wrap">
+
+<div class="footer-logo-box">
 
 <img
 src="99927B00-BDEF-45EB-9A5C-AC1CEFE3E77A.png"
 class="footer-logo"
 alt="গ্রাম থেকে">
+
+</div>
+
+</div>
 
 <p
 data-bn="প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য"
@@ -2141,138 +1952,87 @@ data-en="Natural sweetness, the tradition of rural Bengal">
 </footer>
 
 
-
 <script>
 
-/* =====================================================
-   VARIABLES
-===================================================== */
+/* ================= VARIABLES ================= */
 
 let cartQuantity = 0;
-
 let selectedDelivery = "";
-
 let selectedPayment = "";
-
-let currentLanguage =
-localStorage.getItem("language") || "bn";
+let currentLanguage = localStorage.getItem("language") || "bn";
 
 
-
-/* =====================================================
-   MENU
-===================================================== */
+/* ================= MENU ================= */
 
 function toggleMenu(){
 
-    const menu =
-    document.getElementById("dropdownMenu");
+    const menu = document.getElementById("dropdownMenu");
 
     menu.classList.toggle("show");
 
 }
 
-
 function closeMenu(){
 
-    document
-    .getElementById("dropdownMenu")
-    .classList.remove("show");
+    document.getElementById("dropdownMenu")
+        .classList.remove("show");
 
 }
 
 
-
-/* =====================================================
-   LANGUAGE
-===================================================== */
+/* ================= LANGUAGE ================= */
 
 function setLanguage(lang){
 
     currentLanguage = lang;
 
-    localStorage.setItem("language",lang);
+    localStorage.setItem("language", lang);
 
     document.documentElement.lang = lang;
 
-
-    document
-    .querySelectorAll("[data-bn][data-en]")
-    .forEach(el => {
+    document.querySelectorAll("[data-bn][data-en]").forEach(el => {
 
         el.textContent =
-        lang === "bn"
-        ? el.getAttribute("data-bn")
-        : el.getAttribute("data-en");
+            lang === "bn"
+            ? el.getAttribute("data-bn")
+            : el.getAttribute("data-en");
 
     });
 
 
-    document
-    .querySelectorAll(
-        "[data-placeholder-bn][data-placeholder-en]"
-    )
-    .forEach(el => {
+    document.querySelectorAll("[data-placeholder-bn][data-placeholder-en]")
+        .forEach(el => {
 
-        el.placeholder =
-        lang === "bn"
-        ? el.getAttribute("data-placeholder-bn")
-        : el.getAttribute("data-placeholder-en");
+            el.placeholder =
+                lang === "bn"
+                ? el.getAttribute("data-placeholder-bn")
+                : el.getAttribute("data-placeholder-en");
 
-    });
+        });
 
 
-    document
-    .getElementById("bnBtn")
-    .classList.toggle(
-        "active",
-        lang === "bn"
-    );
+    document.getElementById("bnBtn")
+        .classList.toggle("active", lang === "bn");
 
-
-    document
-    .getElementById("enBtn")
-    .classList.toggle(
-        "active",
-        lang === "en"
-    );
-
+    document.getElementById("enBtn")
+        .classList.toggle("active", lang === "en");
 
     updateCart();
 
 }
 
 
-
-/* =====================================================
-   HOME
-===================================================== */
+/* ================= HOME ================= */
 
 function goHome(){
 
-    document
-    .getElementById("mainContent")
-    .style.display = "block";
-
-    document
-    .getElementById("productDetail")
-    .style.display = "none";
-
-    document
-    .getElementById("cartSection")
-    .style.display = "none";
-
-    document
-    .getElementById("orderSection")
-    .style.display = "none";
-
-    document
-    .getElementById("successSection")
-    .style.display = "none";
-
+    document.getElementById("mainContent").style.display = "block";
+    document.getElementById("productDetail").style.display = "none";
+    document.getElementById("cartSection").style.display = "none";
+    document.getElementById("orderSection").style.display = "none";
+    document.getElementById("successSection").style.display = "none";
 
     closeMenu();
-
 
     window.scrollTo({
         top:0,
@@ -2282,33 +2042,16 @@ function goHome(){
 }
 
 
-
-/* =====================================================
-   PRODUCT DETAILS
-===================================================== */
+/* ================= PRODUCT DETAILS ================= */
 
 function openProductDetails(){
 
-    document
-    .getElementById("mainContent")
-    .style.display = "none";
+    document.getElementById("mainContent").style.display = "none";
+    document.getElementById("cartSection").style.display = "none";
+    document.getElementById("orderSection").style.display = "none";
+    document.getElementById("successSection").style.display = "none";
 
-    document
-    .getElementById("cartSection")
-    .style.display = "none";
-
-    document
-    .getElementById("orderSection")
-    .style.display = "none";
-
-    document
-    .getElementById("successSection")
-    .style.display = "none";
-
-    document
-    .getElementById("productDetail")
-    .style.display = "block";
-
+    document.getElementById("productDetail").style.display = "block";
 
     window.scrollTo({
         top:0,
@@ -2320,32 +2063,28 @@ function openProductDetails(){
 
 function backToProducts(){
 
-    document
-    .getElementById("productDetail")
-    .style.display = "none";
-
-    document
-    .getElementById("mainContent")
-    .style.display = "block";
-
+    document.getElementById("productDetail").style.display = "none";
+    document.getElementById("mainContent").style.display = "block";
 
     setTimeout(() => {
 
-        document
-        .getElementById("products")
-        .scrollIntoView({
-            behavior:"smooth"
-        });
+        document.getElementById("products")
+            .scrollIntoView({
+                behavior:"smooth"
+            });
 
     },100);
 
 }
 
 
+/* ================= CART ================= */
 
-/* =====================================================
-   CART
-===================================================== */
+/*
+   Cart button এখন:
+   1. quantity +1 করবে
+   2. cart page খুলবে
+*/
 
 function addToCart(){
 
@@ -2356,85 +2095,43 @@ function addToCart(){
 }
 
 
+/* ================= UPDATE CART ================= */
+
 function updateCart(){
 
     const cartItems =
-    document.getElementById("cartItems");
-
-    const badge =
-    document.getElementById("productCartBadge");
-
-
-    /* UPDATE BADGE */
-
-    if(badge){
-
-        if(cartQuantity > 0){
-
-            badge.style.display = "flex";
-
-            badge.textContent =
-            cartQuantity;
-
-        }else{
-
-            badge.style.display = "none";
-
-        }
-
-    }
-
-
-    /* EMPTY CART */
+        document.getElementById("cartItems");
 
     if(cartQuantity <= 0){
 
         cartItems.innerHTML = `
-
-            <p style="
-                text-align:center;
-                color:#777;
-            ">
-
+            <p style="text-align:center;color:#777;padding:20px;">
                 ${
                     currentLanguage === "bn"
                     ? "আপনার কার্ট খালি।"
                     : "Your cart is empty."
                 }
-
             </p>
-
         `;
 
+        document.getElementById("productTotal")
+            .textContent =
+            currentLanguage === "bn"
+            ? "দাম শীঘ্রই ঘোষণা করা হবে"
+            : "Price will be announced soon";
 
-        document
-        .getElementById("productTotal")
-        .textContent =
-        currentLanguage === "bn"
-        ? "দাম শীঘ্রই ঘোষণা করা হবে"
-        : "Price will be announced soon";
+        document.getElementById("deliveryTotal")
+            .textContent = "৳0";
 
-
-        document
-        .getElementById("deliveryTotal")
-        .textContent = "৳0";
-
-
-        document
-        .getElementById("grandTotal")
-        .textContent =
-        currentLanguage === "bn"
-        ? "দাম শীঘ্রই ঘোষণা করা হবে"
-        : "Price will be announced soon";
-
+        document.getElementById("grandTotal")
+            .textContent =
+            currentLanguage === "bn"
+            ? "দাম শীঘ্রই ঘোষণা করা হবে"
+            : "Price will be announced soon";
 
         return;
-
     }
 
-
-
-    /* CART ITEM */
 
     cartItems.innerHTML = `
 
@@ -2443,27 +2140,19 @@ function updateCart(){
             <div>
 
                 <strong>
-
                     ${
                         currentLanguage === "bn"
                         ? "খাঁটি আখের গুড়"
                         : "Pure Sugarcane Jaggery"
                     }
-
                 </strong>
 
-
-                <div style="
-                    color:#777;
-                    font-size:14px;
-                ">
-
+                <div style="color:#777;font-size:14px;">
                     ${
                         currentLanguage === "bn"
                         ? "৫০০ গ্রাম"
                         : "500 gm"
                     }
-
                 </div>
 
             </div>
@@ -2472,119 +2161,118 @@ function updateCart(){
             <div class="quantity-control">
 
                 <button
-                onclick="changeQuantity(-1)">
+                    onclick="changeQuantity(-1)"
+                    aria-label="Decrease quantity">
                     −
                 </button>
-
 
                 <span class="quantity-number">
                     ${cartQuantity}
                 </span>
 
-
                 <button
-                onclick="changeQuantity(1)">
+                    onclick="changeQuantity(1)"
+                    aria-label="Increase quantity">
                     +
                 </button>
 
             </div>
+
+
+            <button
+                class="remove-item-btn"
+                onclick="removeFromCart()">
+
+                ${
+                    currentLanguage === "bn"
+                    ? "পণ্য বাদ দিন"
+                    : "Remove"
+                }
+
+            </button>
 
         </div>
 
     `;
 
 
-
-    document
-    .getElementById("productTotal")
-    .textContent =
-    currentLanguage === "bn"
-    ? "দাম শীঘ্রই ঘোষণা করা হবে"
-    : "Price will be announced soon";
-
+    document.getElementById("productTotal")
+        .textContent =
+        currentLanguage === "bn"
+        ? "দাম শীঘ্রই ঘোষণা করা হবে"
+        : "Price will be announced soon";
 
 
     let delivery = 0;
-
 
     if(selectedDelivery === "inside"){
         delivery = 60;
     }
 
-
     if(selectedDelivery === "outside"){
         delivery = 120;
     }
 
-
-    document
-    .getElementById("deliveryTotal")
-    .textContent =
-    "৳" + delivery;
+    document.getElementById("deliveryTotal")
+        .textContent = "৳" + delivery;
 
 
-
-    document
-    .getElementById("grandTotal")
-    .textContent =
-    currentLanguage === "bn"
-    ? "দাম শীঘ্রই ঘোষণা করা হবে + ৳" + delivery
-    : "Price will be announced soon + ৳" + delivery;
+    document.getElementById("grandTotal")
+        .textContent =
+        currentLanguage === "bn"
+        ? "দাম শীঘ্রই ঘোষণা করা হবে + ৳" + delivery
+        : "Price will be announced soon + ৳" + delivery;
 
 }
 
 
+/* ================= CHANGE QUANTITY ================= */
 
 function changeQuantity(amount){
 
     cartQuantity += amount;
 
-
     if(cartQuantity < 0){
         cartQuantity = 0;
     }
-
 
     updateCart();
 
 }
 
 
+/* ================= REMOVE ALL ================= */
 
-/* =====================================================
-   OPEN CART
-===================================================== */
+function removeFromCart(){
+
+    cartQuantity = 0;
+
+    updateCart();
+
+}
+
+
+/* ================= OPEN CART ================= */
 
 function openCart(){
+
+    /*
+       Menu থেকে cart খুললে যদি cart empty থাকে,
+       তাহলে 1 quantity automatically যোগ হবে।
+    */
 
     if(cartQuantity === 0){
         cartQuantity = 1;
     }
 
+    document.getElementById("mainContent").style.display = "none";
+    document.getElementById("productDetail").style.display = "none";
+    document.getElementById("orderSection").style.display = "none";
+    document.getElementById("successSection").style.display = "none";
 
-    document
-    .getElementById("mainContent")
-    .style.display = "none";
-
-    document
-    .getElementById("productDetail")
-    .style.display = "none";
-
-    document
-    .getElementById("orderSection")
-    .style.display = "none";
-
-    document
-    .getElementById("successSection")
-    .style.display = "none";
-
-    document
-    .getElementById("cartSection")
-    .style.display = "block";
-
+    document.getElementById("cartSection").style.display = "block";
 
     updateCart();
-
 
     window.scrollTo({
         top:0,
@@ -2594,10 +2282,7 @@ function openCart(){
 }
 
 
-
-/* =====================================================
-   ORDER
-===================================================== */
+/* ================= ORDER ================= */
 
 function openOrder(){
 
@@ -2610,19 +2295,12 @@ function openOrder(){
         );
 
         return;
-
     }
 
 
-    document
-    .getElementById("cartSection")
-    .style.display = "none";
+    document.getElementById("cartSection").style.display = "none";
 
-
-    document
-    .getElementById("orderSection")
-    .style.display = "block";
-
+    document.getElementById("orderSection").style.display = "block";
 
     window.scrollTo({
         top:0,
@@ -2632,40 +2310,31 @@ function openOrder(){
 }
 
 
-
-/* =====================================================
-   DELIVERY
-===================================================== */
+/* ================= DELIVERY ================= */
 
 function selectDelivery(type){
 
     selectedDelivery = type;
 
+    document.getElementById("insideDhakaCard")
+        .classList.remove("selected");
 
-    document
-    .getElementById("insideDhakaCard")
-    .classList.remove("selected");
-
-
-    document
-    .getElementById("outsideDhakaCard")
-    .classList.remove("selected");
+    document.getElementById("outsideDhakaCard")
+        .classList.remove("selected");
 
 
     if(type === "inside"){
 
-        document
-        .getElementById("insideDhakaCard")
-        .classList.add("selected");
+        document.getElementById("insideDhakaCard")
+            .classList.add("selected");
 
     }
 
 
     if(type === "outside"){
 
-        document
-        .getElementById("outsideDhakaCard")
-        .classList.add("selected");
+        document.getElementById("outsideDhakaCard")
+            .classList.add("selected");
 
     }
 
@@ -2675,73 +2344,52 @@ function selectDelivery(type){
 }
 
 
-
-/* =====================================================
-   PAYMENT
-===================================================== */
+/* ================= PAYMENT ================= */
 
 function selectPayment(type){
 
     selectedPayment = type;
 
+    document.getElementById("codCard")
+        .classList.remove("selected");
 
-    document
-    .getElementById("codCard")
-    .classList.remove("selected");
-
-
-    document
-    .getElementById("bkashCard")
-    .classList.remove("selected");
+    document.getElementById("bkashCard")
+        .classList.remove("selected");
 
 
     if(type === "cod"){
 
-        document
-        .getElementById("codCard")
-        .classList.add("selected");
+        document.getElementById("codCard")
+            .classList.add("selected");
 
     }
 
 
     if(type === "bkash"){
 
-        document
-        .getElementById("bkashCard")
-        .classList.add("selected");
+        document.getElementById("bkashCard")
+            .classList.add("selected");
 
     }
 
 }
 
 
-
-/* =====================================================
-   CONFIRM ORDER
-===================================================== */
+/* ================= CONFIRM ORDER ================= */
 
 function confirmOrder(){
 
     const name =
-    document
-    .getElementById("customerName")
-    .value
-    .trim();
-
+        document.getElementById("customerName")
+            .value.trim();
 
     const phone =
-    document
-    .getElementById("customerPhone")
-    .value
-    .trim();
-
+        document.getElementById("customerPhone")
+            .value.trim();
 
     const address =
-    document
-    .getElementById("customerAddress")
-    .value
-    .trim();
-
+        document.getElementById("customerAddress")
+            .value.trim();
 
 
     if(!name || !phone || !address){
@@ -2753,9 +2401,7 @@ function confirmOrder(){
         );
 
         return;
-
     }
-
 
 
     if(!selectedDelivery){
@@ -2767,9 +2413,7 @@ function confirmOrder(){
         );
 
         return;
-
     }
-
 
 
     if(!selectedPayment){
@@ -2781,45 +2425,32 @@ function confirmOrder(){
         );
 
         return;
-
     }
 
 
-
     let deliveryText =
-    selectedDelivery === "inside"
-
-    ?
-
-    (
-        currentLanguage === "bn"
-        ? "ঢাকার ভিতরে — ৳60"
-        : "Inside Dhaka — ৳60"
-    )
-
-    :
-
-    (
-        currentLanguage === "bn"
-        ? "ঢাকার বাইরে — ৳120"
-        : "Outside Dhaka — ৳120"
-    );
-
+        selectedDelivery === "inside"
+        ? (
+            currentLanguage === "bn"
+            ? "ঢাকার ভিতরে — ৳60"
+            : "Inside Dhaka — ৳60"
+          )
+        : (
+            currentLanguage === "bn"
+            ? "ঢাকার বাইরে — ৳120"
+            : "Outside Dhaka — ৳120"
+          );
 
 
     let paymentText =
-    selectedPayment === "cod"
-    ? "Cash on Delivery"
-    : "bKash Payment";
-
+        selectedPayment === "cod"
+        ? "Cash on Delivery"
+        : "bKash Payment";
 
 
     const message =
-
-    currentLanguage === "bn"
-
-    ?
-
+        currentLanguage === "bn"
+        ?
 `🌾 *গ্রাম থেকে — নতুন অর্ডার*
 
 👤 নাম: ${name}
@@ -2840,9 +2471,7 @@ ${address}
 💰 পণ্যের দাম: শীঘ্রই ঘোষণা করা হবে
 
 ধন্যবাদ — গ্রাম থেকে 🌾`
-
-    :
-
+        :
 `🌾 *Graam Theke — New Order*
 
 👤 Name: ${name}
@@ -2865,39 +2494,21 @@ ${address}
 Thank you — Graam Theke 🌾`;
 
 
-
     const whatsappURL =
-    "https://wa.me/8801601601998?text="
-    + encodeURIComponent(message);
-
+        "https://wa.me/8801601601998?text="
+        + encodeURIComponent(message);
 
 
     window.location.href = whatsappURL;
 
 
-
     setTimeout(() => {
 
-        document
-        .getElementById("mainContent")
-        .style.display = "none";
-
-        document
-        .getElementById("productDetail")
-        .style.display = "none";
-
-        document
-        .getElementById("cartSection")
-        .style.display = "none";
-
-        document
-        .getElementById("orderSection")
-        .style.display = "none";
-
-        document
-        .getElementById("successSection")
-        .style.display = "block";
-
+        document.getElementById("mainContent").style.display = "none";
+        document.getElementById("productDetail").style.display = "none";
+        document.getElementById("cartSection").style.display = "none";
+        document.getElementById("orderSection").style.display = "none";
+        document.getElementById("successSection").style.display = "block";
 
         window.scrollTo({
             top:0,
@@ -2909,39 +2520,26 @@ Thank you — Graam Theke 🌾`;
 }
 
 
+/* ================= VIDEO ================= */
 
-/* =====================================================
-   VIDEO
-===================================================== */
-
-document.addEventListener(
-"DOMContentLoaded",
-function(){
+document.addEventListener("DOMContentLoaded", function(){
 
     setLanguage(currentLanguage);
 
-
     const video =
-    document.querySelector(".hero video");
-
+        document.querySelector(".hero video");
 
     if(video){
 
         video.muted = true;
 
-
         const playPromise =
-        video.play();
+            video.play();
 
-
-        if(
-            playPromise !== undefined
-        ){
+        if(playPromise !== undefined){
 
             playPromise.catch(() => {
-
                 // Browser autoplay policy
-
             });
 
         }
@@ -2951,21 +2549,15 @@ function(){
 });
 
 
+/* ================= OUTSIDE CLICK ================= */
 
-/* =====================================================
-   OUTSIDE CLICK
-===================================================== */
-
-document.addEventListener(
-"click",
-function(event){
+document.addEventListener("click", function(event){
 
     const menu =
-    document.getElementById("dropdownMenu");
-
+        document.getElementById("dropdownMenu");
 
     const button =
-    document.querySelector(".menu-btn");
+        document.querySelector(".menu-btn");
 
 
     if(
