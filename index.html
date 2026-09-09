@@ -290,35 +290,24 @@ section{
 /* ================= CART BUTTON ================= */
 
 .cart-sticker{
-
     position:absolute;
     right:15px;
     bottom:15px;
-
     border:none;
-
     background:#55733e;
     color:white;
-
     min-width:52px;
     height:44px;
-
     padding:0 16px;
-
     border-radius:22px;
-
     cursor:pointer;
-
     font-size:15px;
     font-weight:bold;
-
     display:flex;
     align-items:center;
     justify-content:center;
     gap:8px;
-
     box-shadow:0 4px 12px rgba(0,0,0,.18);
-
     transition:.2s;
 }
 
@@ -339,16 +328,12 @@ section{
     border:1px solid #e9e0c9;
     border-radius:18px;
     min-height:290px;
-
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-
     padding:30px;
-
     box-shadow:0 7px 22px rgba(61,53,27,.08);
-
     position:relative;
     overflow:hidden;
 }
@@ -357,7 +342,6 @@ section{
     content:"";
     position:absolute;
     inset:0;
-
     background:
         radial-gradient(
             circle at 20% 20%,
@@ -490,7 +474,6 @@ section{
     cursor:pointer;
     font-size:16px;
     font-weight:bold;
-
     display:inline-flex;
     align-items:center;
     gap:9px;
@@ -521,8 +504,6 @@ section{
     box-shadow:0 7px 25px rgba(0,0,0,.08);
 }
 
-/* CART BACK BUTTON */
-
 .cart-back-btn{
     border:none;
     background:#55733e;
@@ -533,8 +514,6 @@ section{
     margin-bottom:25px;
     font-size:15px;
 }
-
-/* CART EMPTY */
 
 .cart-empty{
     text-align:center;
@@ -811,13 +790,6 @@ section{
     text-decoration:none;
 }
 
-/* ================= CONTACT SECTION ================= */
-
-/*
-   Contact-এর আগের দুইটি box পুরোপুরি remove করা হয়েছে।
-   Contact information এখন Footer-এর ভিতরে থাকবে।
-*/
-
 /* ================= FOOTER ================= */
 
 footer{
@@ -832,7 +804,7 @@ footer{
     margin:auto;
 }
 
-/* ENGLISH LOGO */
+/* FOOTER LOGO */
 
 .footer-logo-wrap{
     display:flex;
@@ -873,8 +845,6 @@ footer{
 .footer-social-icons a:hover{
     transform:translateY(-4px) scale(1.05);
 }
-
-/* ACTUAL SOCIAL MEDIA COLORS */
 
 .footer-social-icons i{
     font-size:40px;
@@ -1175,12 +1145,9 @@ footer{
 
 </header>
 
-
 <!-- ================= MAIN CONTENT ================= -->
 
 <div id="mainContent">
-
-<!-- HERO -->
 
 <section class="hero" id="home">
 
@@ -1225,7 +1192,6 @@ footer{
 
 </section>
 
-
 <!-- ================= PRODUCTS ================= -->
 
 <section id="products">
@@ -1246,10 +1212,7 @@ footer{
     গ্রামবাংলার ঐতিহ্য ও প্রাকৃতিক স্বাদের খাঁটি আখের গুড়
 </p>
 
-
 <div class="products-grid">
-
-<!-- CURRENT PRODUCT -->
 
 <div
     class="product-card"
@@ -1287,9 +1250,6 @@ footer{
 
 </div>
 
-
-<!-- CART BUTTON -->
-
 <button
     class="cart-sticker"
     onclick="event.stopPropagation(); addToCart(); openCart();">
@@ -1305,7 +1265,6 @@ footer{
 </button>
 
 </div>
-
 
 <!-- UPCOMING PRODUCT -->
 
@@ -1339,7 +1298,6 @@ footer{
 
 </section>
 
-
 <!-- ================= WHY ================= -->
 
 <section class="why-section" id="why">
@@ -1359,7 +1317,6 @@ footer{
     data-en="From nature closer to your home">
     প্রকৃতির কাছাকাছি থেকে আপনার ঘরে
 </p>
-
 
 <div class="why-grid">
 
@@ -1381,7 +1338,6 @@ footer{
 
 </div>
 
-
 <div class="why-card">
 
 <div class="why-icon">🏡</div>
@@ -1399,7 +1355,6 @@ footer{
 </p>
 
 </div>
-
 
 <div class="why-card">
 
@@ -1427,7 +1382,6 @@ footer{
 
 </div>
 
-
 <!-- ================= PRODUCT DETAIL ================= -->
 
 <section id="productDetail">
@@ -1442,7 +1396,6 @@ footer{
     ← পণ্যে ফিরে যান
 </button>
 
-
 <div class="product-detail-grid">
 
 <div>
@@ -1453,7 +1406,6 @@ footer{
     alt="খাঁটি আখের গুড়">
 
 </div>
-
 
 <div class="detail-content">
 
@@ -1507,7 +1459,6 @@ footer{
 
 </section>
 
-
 <!-- ================= CART ================= -->
 
 <section id="cartSection">
@@ -1521,10 +1472,7 @@ footer{
     আপনার কার্ট
 </h2>
 
-
 <div class="cart-box">
-
-<!-- CART BACK BUTTON -->
 
 <button
     class="cart-back-btn"
@@ -1533,7 +1481,6 @@ footer{
     data-en="← Back to Products">
     ← পণ্য দেখুন
 </button>
-
 
 <div id="cartItems"></div>
 
@@ -1553,7 +1500,6 @@ footer{
 
 </div>
 
-
 <div class="summary-row">
 
 <span
@@ -1567,7 +1513,6 @@ footer{
 </span>
 
 </div>
-
 
 <div class="summary-row summary-total">
 
@@ -1585,7 +1530,6 @@ footer{
 
 </div>
 
-
 <button
     class="confirm-btn"
     onclick="openOrder()"
@@ -1599,7 +1543,6 @@ footer{
 </div>
 
 </section>
-
 
 <!-- ================= ORDER ================= -->
 
@@ -1621,9 +1564,7 @@ footer{
     আপনার তথ্য দিয়ে অর্ডার সম্পন্ন করুন
 </p>
 
-
 <div class="order-box">
-
 
 <div class="form-group">
 
@@ -1643,7 +1584,6 @@ footer{
 
 </div>
 
-
 <div class="form-group">
 
 <label
@@ -1662,7 +1602,6 @@ footer{
 
 </div>
 
-
 <div class="form-group">
 
 <label
@@ -1680,7 +1619,6 @@ footer{
 
 </div>
 
-
 <div class="form-group">
 
 <label
@@ -1689,9 +1627,7 @@ footer{
     ডেলিভারি এলাকা
 </label>
 
-
 <div class="option-grid">
-
 
 <label
     class="option-card"
@@ -1715,7 +1651,6 @@ footer{
 </div>
 
 </label>
-
 
 <label
     class="option-card"
@@ -1744,7 +1679,6 @@ footer{
 
 </div>
 
-
 <div
     class="payment-title"
     data-bn="পেমেন্ট পদ্ধতি"
@@ -1752,9 +1686,7 @@ footer{
     পেমেন্ট পদ্ধতি
 </div>
 
-
 <div class="payment-options">
-
 
 <label
     class="payment-card"
@@ -1786,7 +1718,6 @@ footer{
 
 </label>
 
-
 <label
     class="payment-card"
     id="bkashCard">
@@ -1796,8 +1727,6 @@ footer{
     name="payment"
     value="bkash"
     onclick="selectPayment('bkash')">
-
-<!-- YOUR UPLOADED BKASH LOGO -->
 
 <img
     src="IMG_3245.png"
@@ -1826,7 +1755,6 @@ footer{
 
 </div>
 
-
 <button
     class="confirm-btn"
     onclick="confirmOrder()"
@@ -1840,7 +1768,6 @@ footer{
 </div>
 
 </section>
-
 
 <!-- ================= SUCCESS ================= -->
 
@@ -1873,30 +1800,26 @@ footer{
 
 </section>
 
-
 <!-- ================= FOOTER ================= -->
 
 <footer id="footer">
 
 <div class="footer-container">
 
-<!-- ENGLISH GRAAM THEKE LOGO -->
+<!-- NEW FOOTER LOGO -->
 
 <div class="footer-logo-wrap">
 
 <img
-    src="a_clean_high_resolution_cutout_style_logo_illust.png"
+    src="C03DACE3-4506-4B0C-93D1-0162CC9BC08D.png"
     class="footer-logo"
     alt="Graam Theke">
 
 </div>
 
-
 <!-- SOCIAL MEDIA -->
 
 <div class="footer-social-icons">
-
-<!-- FACEBOOK -->
 
 <a
     href="https://www.facebook.com/share/18F1J2ej6V/?mibextid=wwXIfr"
@@ -1908,9 +1831,6 @@ footer{
 
 </a>
 
-
-<!-- MESSENGER -->
-
 <a
     href="https://m.me/GraamTheke"
     target="_blank"
@@ -1920,9 +1840,6 @@ footer{
     <i class="fa-brands fa-facebook-messenger"></i>
 
 </a>
-
-
-<!-- INSTAGRAM -->
 
 <a
     href="https://www.instagram.com/graam_theke/"
@@ -1934,9 +1851,6 @@ footer{
 
 </a>
 
-
-<!-- THREADS -->
-
 <a
     href="https://www.threads.com/@graam_theke?igshid=NTc4MTIwNjQ2YQ=="
     target="_blank"
@@ -1946,9 +1860,6 @@ footer{
     <i class="fa-brands fa-threads"></i>
 
 </a>
-
-
-<!-- WHATSAPP -->
 
 <a
     href="https://wa.me/8801601601998"
@@ -1961,7 +1872,6 @@ footer{
 </a>
 
 </div>
-
 
 <!-- BRAND INFORMATION -->
 
@@ -1985,31 +1895,19 @@ footer{
     +8801601601998
 </a>
 
-
-<!-- DIVIDER -->
-
 <div class="footer-divider"></div>
 
-
-<!-- TAGLINE -->
-
-<div
-    class="footer-tagline">
+<div class="footer-tagline">
     Natural Sweetness, The Tradition of Rural Bengal.
 </div>
 
-
-<!-- COPYRIGHT -->
-
-<div
-    class="footer-copyright">
+<div class="footer-copyright">
     © 2026 Graam Theke. All Rights Reserved.
 </div>
 
 </div>
 
 </footer>
-
 
 <script>
 
@@ -2022,7 +1920,6 @@ let selectedPayment = "";
 let currentLanguage =
     localStorage.getItem("language") || "bn";
 
-
 /* ================= MENU ================= */
 
 function toggleMenu(){
@@ -2034,7 +1931,6 @@ function toggleMenu(){
 
 }
 
-
 function closeMenu(){
 
     document
@@ -2042,7 +1938,6 @@ function closeMenu(){
         .classList.remove("show");
 
 }
-
 
 /* ================= LANGUAGE ================= */
 
@@ -2054,7 +1949,6 @@ function setLanguage(lang){
 
     document.documentElement.lang = lang;
 
-
     document
         .querySelectorAll("[data-bn][data-en]")
         .forEach(el => {
@@ -2065,7 +1959,6 @@ function setLanguage(lang){
                 : el.getAttribute("data-en");
 
         });
-
 
     document
         .querySelectorAll(
@@ -2080,14 +1973,12 @@ function setLanguage(lang){
 
         });
 
-
     document
         .getElementById("bnBtn")
         .classList.toggle(
             "active",
             lang === "bn"
         );
-
 
     document
         .getElementById("enBtn")
@@ -2096,12 +1987,9 @@ function setLanguage(lang){
             lang === "en"
         );
 
-
     updateCart();
 
-
 }
-
 
 /* ================= HOME ================= */
 
@@ -2127,9 +2015,7 @@ function goHome(){
         .getElementById("successSection")
         .style.display = "none";
 
-
     closeMenu();
-
 
     window.scrollTo({
         top:0,
@@ -2137,7 +2023,6 @@ function goHome(){
     });
 
 }
-
 
 /* ================= PRODUCT DETAILS ================= */
 
@@ -2163,14 +2048,12 @@ function openProductDetails(){
         .getElementById("productDetail")
         .style.display = "block";
 
-
     window.scrollTo({
         top:0,
         behavior:"smooth"
     });
 
 }
-
 
 function backToProducts(){
 
@@ -2181,7 +2064,6 @@ function backToProducts(){
     document
         .getElementById("mainContent")
         .style.display = "block";
-
 
     setTimeout(() => {
 
@@ -2195,7 +2077,6 @@ function backToProducts(){
 
 }
 
-
 /* ================= ADD TO CART ================= */
 
 function addToCart(){
@@ -2206,20 +2087,12 @@ function addToCart(){
 
 }
 
-
 /* ================= UPDATE CART ================= */
 
 function updateCart(){
 
     const cartItems =
         document.getElementById("cartItems");
-
-
-    /*
-        IMPORTANT:
-        Quantity 0 হলেও product row থাকবে।
-        তাই Cart কখনো empty message-এ switch করবে না।
-    */
 
     cartItems.innerHTML = `
 
@@ -2252,9 +2125,6 @@ function updateCart(){
 
             </div>
 
-
-            <!-- QUANTITY -->
-
             <div class="quantity-control">
 
                 <button
@@ -2263,11 +2133,9 @@ function updateCart(){
                     −
                 </button>
 
-
                 <span class="quantity-number">
                     ${cartQuantity}
                 </span>
-
 
                 <button
                     onclick="changeQuantity(1)"
@@ -2276,9 +2144,6 @@ function updateCart(){
                 </button>
 
             </div>
-
-
-            <!-- REMOVE -->
 
             <button
                 class="remove-item-btn"
@@ -2296,7 +2161,6 @@ function updateCart(){
 
     `;
 
-
     document
         .getElementById("productTotal")
         .textContent =
@@ -2304,24 +2168,19 @@ function updateCart(){
             ? "দাম শীঘ্রই ঘোষণা করা হবে"
             : "Price will be announced soon";
 
-
     let delivery = 0;
-
 
     if(selectedDelivery === "inside"){
         delivery = 60;
     }
 
-
     if(selectedDelivery === "outside"){
         delivery = 120;
     }
 
-
     document
         .getElementById("deliveryTotal")
         .textContent = "৳" + delivery;
-
 
     document
         .getElementById("grandTotal")
@@ -2332,23 +2191,19 @@ function updateCart(){
 
 }
 
-
 /* ================= CHANGE QUANTITY ================= */
 
 function changeQuantity(amount){
 
     cartQuantity += amount;
 
-
     if(cartQuantity < 0){
         cartQuantity = 0;
     }
 
-
     updateCart();
 
 }
-
 
 /* ================= REMOVE PRODUCT ================= */
 
@@ -2359,7 +2214,6 @@ function removeFromCart(){
     updateCart();
 
 }
-
 
 /* ================= OPEN CART ================= */
 
@@ -2385,9 +2239,7 @@ function openCart(){
         .getElementById("cartSection")
         .style.display = "block";
 
-
     updateCart();
-
 
     window.scrollTo({
         top:0,
@@ -2395,7 +2247,6 @@ function openCart(){
     });
 
 }
-
 
 /* ================= CART BACK ================= */
 
@@ -2421,7 +2272,6 @@ function backFromCart(){
         .getElementById("mainContent")
         .style.display = "block";
 
-
     setTimeout(() => {
 
         document
@@ -2433,7 +2283,6 @@ function backFromCart(){
     },100);
 
 }
-
 
 /* ================= ORDER ================= */
 
@@ -2451,7 +2300,6 @@ function openOrder(){
 
     }
 
-
     document
         .getElementById("cartSection")
         .style.display = "none";
@@ -2460,7 +2308,6 @@ function openOrder(){
         .getElementById("orderSection")
         .style.display = "block";
 
-
     window.scrollTo({
         top:0,
         behavior:"smooth"
@@ -2468,13 +2315,11 @@ function openOrder(){
 
 }
 
-
 /* ================= DELIVERY ================= */
 
 function selectDelivery(type){
 
     selectedDelivery = type;
-
 
     document
         .getElementById("insideDhakaCard")
@@ -2484,7 +2329,6 @@ function selectDelivery(type){
         .getElementById("outsideDhakaCard")
         .classList.remove("selected");
 
-
     if(type === "inside"){
 
         document
@@ -2492,7 +2336,6 @@ function selectDelivery(type){
             .classList.add("selected");
 
     }
-
 
     if(type === "outside"){
 
@@ -2502,18 +2345,15 @@ function selectDelivery(type){
 
     }
 
-
     updateCart();
 
 }
-
 
 /* ================= PAYMENT ================= */
 
 function selectPayment(type){
 
     selectedPayment = type;
-
 
     document
         .getElementById("codCard")
@@ -2523,7 +2363,6 @@ function selectPayment(type){
         .getElementById("bkashCard")
         .classList.remove("selected");
 
-
     if(type === "cod"){
 
         document
@@ -2531,7 +2370,6 @@ function selectPayment(type){
             .classList.add("selected");
 
     }
-
 
     if(type === "bkash"){
 
@@ -2543,7 +2381,6 @@ function selectPayment(type){
 
 }
 
-
 /* ================= CONFIRM ORDER ================= */
 
 function confirmOrder(){
@@ -2554,20 +2391,17 @@ function confirmOrder(){
             .value
             .trim();
 
-
     const phone =
         document
             .getElementById("customerPhone")
             .value
             .trim();
 
-
     const address =
         document
             .getElementById("customerAddress")
             .value
             .trim();
-
 
     if(!name || !phone || !address){
 
@@ -2581,7 +2415,6 @@ function confirmOrder(){
 
     }
 
-
     if(!selectedDelivery){
 
         alert(
@@ -2594,7 +2427,6 @@ function confirmOrder(){
 
     }
 
-
     if(!selectedPayment){
 
         alert(
@@ -2606,7 +2438,6 @@ function confirmOrder(){
         return;
 
     }
-
 
     let deliveryText =
         selectedDelivery === "inside"
@@ -2621,12 +2452,10 @@ function confirmOrder(){
             : "Outside Dhaka — ৳120"
           );
 
-
     let paymentText =
         selectedPayment === "cod"
         ? "Cash on Delivery"
         : "bKash Payment";
-
 
     const message =
         currentLanguage === "bn"
@@ -2676,14 +2505,11 @@ ${address}
 
 Thank you — Graam Theke 🌾`;
 
-
     const whatsappURL =
         "https://wa.me/8801601601998?text="
         + encodeURIComponent(message);
 
-
     window.location.href = whatsappURL;
-
 
     setTimeout(() => {
 
@@ -2707,7 +2533,6 @@ Thank you — Graam Theke 🌾`;
             .getElementById("successSection")
             .style.display = "block";
 
-
         window.scrollTo({
             top:0,
             behavior:"smooth"
@@ -2717,7 +2542,6 @@ Thank you — Graam Theke 🌾`;
 
 }
 
-
 /* ================= VIDEO AUTOPLAY ================= */
 
 document.addEventListener(
@@ -2726,10 +2550,8 @@ document.addEventListener(
 
         setLanguage(currentLanguage);
 
-
         const video =
             document.querySelector(".hero video");
-
 
         if(video){
 
@@ -2742,12 +2564,10 @@ document.addEventListener(
 
             video.load();
 
-
             const tryPlay = () => {
 
                 const playPromise =
                     video.play();
-
 
                 if(
                     playPromise !== undefined
@@ -2755,22 +2575,13 @@ document.addEventListener(
 
                     playPromise.catch(() => {
 
-                        /*
-                            Browser autoplay policy.
-                            Video remains muted and
-                            browser may allow playback
-                            after page interaction.
-                        */
-
                     });
 
                 }
 
             };
 
-
             tryPlay();
-
 
             window.addEventListener(
                 "load",
@@ -2778,7 +2589,6 @@ document.addEventListener(
                     tryPlay();
                 }
             );
-
 
             document.addEventListener(
                 "touchstart",
@@ -2800,7 +2610,6 @@ document.addEventListener(
     }
 );
 
-
 /* ================= PHONE BACK BUTTON ================= */
 
 let currentView = "home";
@@ -2808,7 +2617,6 @@ let currentView = "home";
 function setView(view){
     currentView = view;
 }
-
 
 window.addEventListener(
     "popstate",
@@ -2830,7 +2638,6 @@ window.addEventListener(
 
         }
 
-
         if(currentView === "product"){
 
             backToProducts();
@@ -2846,7 +2653,6 @@ window.addEventListener(
             return;
 
         }
-
 
         if(currentView === "order"){
 
@@ -2868,12 +2674,10 @@ window.addEventListener(
 
         }
 
-
         goHome();
 
     }
 );
-
 
 /* Keep one history state inside the website */
 
@@ -2882,7 +2686,6 @@ history.replaceState(
     "",
     window.location.href
 );
-
 
 /* ================= OUTSIDE CLICK ================= */
 
@@ -2895,12 +2698,10 @@ document.addEventListener(
                 "dropdownMenu"
             );
 
-
         const button =
             document.querySelector(
                 ".menu-btn"
             );
-
 
         if(
             menu &&
