@@ -1566,6 +1566,16 @@ footer{
 
 <div class="order-box">
 
+<!-- ORDER BACK BUTTON -->
+
+<button
+    class="cart-back-btn"
+    onclick="backFromOrder()"
+    data-bn="← কার্টে ফিরে যান"
+    data-en="← Back to Cart">
+    ← কার্টে ফিরে যান
+</button>
+
 <div class="form-group">
 
 <label
@@ -2312,6 +2322,29 @@ function openOrder(){
         top:0,
         behavior:"smooth"
     });
+
+}
+
+/* ================= ORDER BACK ================= */
+
+function backFromOrder(){
+
+    document
+        .getElementById("orderSection")
+        .style.display = "none";
+
+    document
+        .getElementById("cartSection")
+        .style.display = "block";
+
+    updateCart();
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+    setView("cart");
 
 }
 
