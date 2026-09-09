@@ -531,6 +531,28 @@ section{
     border-bottom:1px solid #eee5d3;
 }
 
+/* ================= CART PRODUCT IMAGE ================= */
+
+.cart-product-image-wrap{
+    width:120px;
+    height:120px;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.cart-product-image{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center;
+    display:block;
+}
+
+/* ================= QUANTITY ================= */
+
 .quantity-control{
     display:flex;
     align-items:center;
@@ -1009,6 +1031,21 @@ footer{
         height:42px;
         padding:0 13px;
         font-size:14px;
+    }
+
+    /* CART PRODUCT IMAGE MOBILE */
+
+    .cart-product-image-wrap{
+        width:115px;
+        height:115px;
+        align-self:flex-end;
+        margin-top:-5px;
+    }
+
+    .cart-product-image{
+        width:100%;
+        height:100%;
+        object-fit:contain;
     }
 
     /* FOOTER MOBILE */
@@ -2132,6 +2169,19 @@ function updateCart(){
                     }
 
                 </div>
+
+            </div>
+
+            <div class="cart-product-image-wrap">
+
+                <img
+                    src="DDEFE989-0077-4992-8E6F-AC19B734DF8B.png"
+                    class="cart-product-image"
+                    alt="${
+                        currentLanguage === "bn"
+                        ? "খাঁটি আখের গুড়"
+                        : "Pure Sugarcane Jaggery"
+                    }">
 
             </div>
 
