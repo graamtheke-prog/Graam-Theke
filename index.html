@@ -829,13 +829,13 @@ footer{
     display:flex;
     justify-content:center;
     align-items:center;
-    margin-bottom:22px;
+    margin-bottom:25px;
 }
 
 .footer-logo{
-    height:112px;
+    height:135px;
     width:auto;
-    max-width:90%;
+    max-width:94%;
     object-fit:contain;
     display:block;
 }
@@ -856,18 +856,67 @@ footer{
     display:flex;
     align-items:center;
     justify-content:center;
-    width:48px;
-    height:48px;
+    width:52px;
+    height:52px;
     transition:.2s;
 }
 
 .footer-social-icons a:hover{
-    transform:translateY(-4px);
+    transform:translateY(-4px) scale(1.05);
 }
 
+/* ACTUAL SOCIAL MEDIA COLORS */
+
 .footer-social-icons i{
-    color:#79a35b;
-    font-size:39px;
+    font-size:40px;
+}
+
+/* Facebook */
+
+.footer-social-icons .fa-facebook{
+    color:#1877F2;
+}
+
+/* Messenger */
+
+.footer-social-icons .fa-facebook-messenger{
+    background:linear-gradient(
+        135deg,
+        #0099FF 0%,
+        #A033FF 100%
+    );
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+}
+
+/* Instagram */
+
+.footer-social-icons .fa-instagram{
+    background:
+        radial-gradient(
+            circle at 30% 107%,
+            #fdf497 0%,
+            #fdf497 5%,
+            #fd5949 45%,
+            #d6249f 60%,
+            #285AEB 90%
+        );
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+}
+
+/* Threads */
+
+.footer-social-icons .fa-threads{
+    color:#000000;
+}
+
+/* WhatsApp */
+
+.footer-social-icons .fa-whatsapp{
+    color:#25D366;
 }
 
 /* BRAND INFO */
@@ -990,8 +1039,8 @@ footer{
     }
 
     .footer-logo{
-        height:95px;
-        max-width:92%;
+        height:112px;
+        max-width:94%;
     }
 
     .footer-social-icons{
@@ -1000,12 +1049,12 @@ footer{
     }
 
     .footer-social-icons a{
-        width:45px;
-        height:45px;
+        width:46px;
+        height:46px;
     }
 
     .footer-social-icons i{
-        font-size:36px;
+        font-size:37px;
     }
 
     .footer-brand{
