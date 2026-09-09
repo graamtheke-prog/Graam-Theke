@@ -142,6 +142,7 @@ header{
     height:100%;
     object-fit:cover;
     z-index:0;
+    display:block;
 }
 
 .hero::after{
@@ -801,184 +802,118 @@ section{
     text-decoration:none;
 }
 
-/* ================= CONTACT ================= */
+/* ================= CONTACT SECTION ================= */
 
-.contact-section{
-    background:#f3efdf;
-}
-
-.contact-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-    text-align:center;
-}
-
-.contact-card{
-    background:white;
-    padding:30px 25px;
-    border-radius:20px;
-    border:1px solid #e3d9c2;
-    box-shadow:0 5px 18px rgba(61,53,27,.05);
-}
-
-/* CONTACT BRAND NAME */
-
-.contact-brand{
-    font-size:32px;
-    font-weight:800;
-    color:#6b3f20;
-    margin-bottom:8px;
-}
-
-.contact-address-title{
-    font-size:27px;
-    color:#405a32;
-    font-weight:800;
-    margin-bottom:8px;
-}
-
-.contact-address{
-    font-size:19px;
-    font-weight:700;
-    color:#4d4035;
-}
-
-/* PHONE */
-
-.contact-phone{
-    font-size:27px;
-    font-weight:800;
-    color:#6b3f20;
-    text-decoration:none;
-    display:inline-block;
-    margin-top:5px;
-}
-
-/* ================= SOCIAL ================= */
-
-.social-title{
-    font-size:23px;
-    font-weight:700;
-    color:#405a32;
-    margin-bottom:5px;
-}
-
-.social-subtitle{
-    font-size:18px;
-    font-weight:600;
-    color:#6b6259;
-}
-
-.social-icons{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:18px;
-    margin-top:20px;
-    flex-wrap:wrap;
-}
-
-.social-icons a{
-    text-decoration:none;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    width:52px;
-    height:52px;
-
-    border-radius:14px;
-
-    transition:.2s;
-}
-
-.social-icons a:hover{
-    transform:translateY(-4px);
-}
-
-/* FACEBOOK */
-
-.facebook-icon{
-    color:#1877F2;
-    font-size:52px;
-}
-
-/* MESSENGER */
-
-.messenger-icon{
-    color:#0084FF;
-    font-size:52px;
-}
-
-/* INSTAGRAM */
-
-.instagram-icon{
-    font-size:52px;
-
-    background:
-    linear-gradient(
-        45deg,
-        #feda75,
-        #fa7e1e,
-        #d62976,
-        #962fbf,
-        #4f5bd5
-    );
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-/* THREADS */
-
-.threads-icon{
-    color:#000000;
-    font-size:52px;
-}
-
-/* WHATSAPP */
-
-.whatsapp-icon{
-    color:#25D366;
-    font-size:52px;
-}
+/*
+   Contact-এর আগের দুইটি box পুরোপুরি remove করা হয়েছে।
+   Contact information এখন Footer-এর ভিতরে থাকবে।
+*/
 
 /* ================= FOOTER ================= */
 
 footer{
     background:#33472a;
     color:#eee;
-    padding:40px 20px;
+    padding:58px 20px 28px;
     text-align:center;
 }
+
+.footer-container{
+    max-width:700px;
+    margin:auto;
+}
+
+/* ENGLISH LOGO */
 
 .footer-logo-wrap{
     display:flex;
     justify-content:center;
     align-items:center;
-    margin-bottom:15px;
+    margin-bottom:22px;
 }
 
 .footer-logo{
-    height:85px;
+    height:112px;
     width:auto;
+    max-width:90%;
     object-fit:contain;
     display:block;
 }
 
-.footer-logo-box{
-    background:transparent;
-    padding:0;
-    border:none;
-    box-shadow:none;
+/* SOCIAL ICONS */
+
+.footer-social-icons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin:4px auto 27px;
+}
+
+.footer-social-icons a{
+    text-decoration:none;
     display:flex;
     align-items:center;
     justify-content:center;
+    width:48px;
+    height:48px;
+    transition:.2s;
 }
 
-footer p{
-    font-size:14px;
+.footer-social-icons a:hover{
+    transform:translateY(-4px);
+}
+
+.footer-social-icons i{
+    color:#79a35b;
+    font-size:39px;
+}
+
+/* BRAND INFO */
+
+.footer-brand{
+    font-size:25px;
+    font-weight:800;
+    color:#fff;
+    margin-bottom:3px;
+}
+
+.footer-address{
+    font-size:15px;
+    color:#e1e7da;
+    margin-bottom:2px;
+}
+
+.footer-phone{
+    display:inline-block;
+    text-decoration:none;
+    color:#e1e7da;
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:23px;
+}
+
+.footer-divider{
+    width:55px;
+    height:1px;
+    background:#79a35b;
+    margin:0 auto 21px;
+    opacity:.75;
+}
+
+.footer-tagline{
+    font-family:Arial,sans-serif;
+    font-size:15px;
+    letter-spacing:.2px;
+    color:#e5eadf;
+    margin-bottom:22px;
+}
+
+.footer-copyright{
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    color:#cbd4c4;
     opacity:.9;
 }
 
@@ -1048,41 +983,46 @@ footer p{
         font-size:14px;
     }
 
-    .contact-brand{
-        font-size:29px;
-    }
+    /* FOOTER MOBILE */
 
-    .contact-phone{
-        font-size:23px;
-    }
-
-    .social-title{
-        font-size:20px;
-    }
-
-    .social-subtitle{
-        font-size:16px;
-    }
-
-    .social-icons{
-        gap:12px;
-    }
-
-    .social-icons a{
-        width:48px;
-        height:48px;
-    }
-
-    .facebook-icon,
-    .messenger-icon,
-    .instagram-icon,
-    .threads-icon,
-    .whatsapp-icon{
-        font-size:48px;
+    footer{
+        padding:48px 18px 25px;
     }
 
     .footer-logo{
-        height:75px;
+        height:95px;
+        max-width:92%;
+    }
+
+    .footer-social-icons{
+        gap:12px;
+        margin-bottom:25px;
+    }
+
+    .footer-social-icons a{
+        width:45px;
+        height:45px;
+    }
+
+    .footer-social-icons i{
+        font-size:36px;
+    }
+
+    .footer-brand{
+        font-size:23px;
+    }
+
+    .footer-address{
+        font-size:14px;
+    }
+
+    .footer-phone{
+        font-size:15px;
+    }
+
+    .footer-tagline{
+        font-size:13px;
+        line-height:1.5;
     }
 
 }
@@ -1158,7 +1098,7 @@ footer p{
 </a>
 
 <a
-    href="#contact"
+    href="#footer"
     onclick="closeMenu()"
     data-bn="যোগাযোগ"
     data-en="Contact">
@@ -1190,10 +1130,14 @@ footer p{
     autoplay
     muted
     loop
-    playsinline>
+    playsinline
+    webkit-playsinline
+    preload="auto"
+    poster="DDEFE989-0077-4992-8E6F-AC19B734DF8B.png">
 
     <source
-        src="video-output-B0BA3A30-A641-4947-B97B-2AC591D5D93F-1.mov">
+        src="video-output-B0BA3A30-A641-4947-B97B-2AC591D5D93F-1.mov"
+        type="video/quicktime">
 
 </video>
 
@@ -1414,140 +1358,6 @@ footer p{
     data-en="Special care for taste and quality.">
     স্বাদ ও মানের প্রতি আমাদের বিশেষ যত্ন।
 </p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= CONTACT ================= -->
-
-<section class="contact-section" id="contact">
-
-<div class="container">
-
-<h2
-    class="section-title"
-    data-bn="যোগাযোগ"
-    data-en="Contact">
-    যোগাযোগ
-</h2>
-
-
-<div class="contact-grid">
-
-<!-- CONTACT INFORMATION — ONE CARD -->
-
-<div class="contact-card">
-
-<div
-    class="contact-brand"
-    data-bn="গ্রাম থেকে"
-    data-en="Graam Theke">
-    গ্রাম থেকে
-</div>
-
-<p
-    class="contact-address"
-    data-bn="কাপাসিয়া, গাজীপুর, বাংলাদেশ"
-    data-en="Kapasia, Gazipur, Bangladesh">
-    কাপাসিয়া, গাজীপুর, বাংলাদেশ
-</p>
-
-<a
-    href="tel:+8801601601998"
-    class="contact-phone">
-    +8801601601998
-</a>
-
-</div>
-
-
-<!-- SOCIAL -->
-
-<div class="contact-card">
-
-<div
-    class="social-title"
-    data-bn="সামাজিক যোগাযোগের মাধ্যমে আমাদের ফলো করুন"
-    data-en="Follow us on Social Media">
-    সামাজিক যোগাযোগের মাধ্যমে আমাদের ফলো করুন
-</div>
-
-<div class="social-subtitle"></div>
-
-
-<div class="social-icons">
-
-<!-- FACEBOOK -->
-
-<a
-    href="https://www.facebook.com/share/18F1J2ej6V/?mibextid=wwXIfr"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Facebook">
-
-    <i class="fa-brands fa-facebook facebook-icon"></i>
-
-</a>
-
-
-<!-- MESSENGER -->
-
-<a
-    href="https://m.me/GraamTheke"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Messenger">
-
-    <i class="fa-brands fa-facebook-messenger messenger-icon"></i>
-
-</a>
-
-
-<!-- INSTAGRAM -->
-
-<a
-    href="https://www.instagram.com/graam_theke/"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Instagram">
-
-    <i class="fa-brands fa-instagram instagram-icon"></i>
-
-</a>
-
-
-<!-- THREADS -->
-
-<a
-    href="https://www.threads.com/@graam_theke?igshid=NTc4MTIwNjQ2YQ=="
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Threads">
-
-    <i class="fa-brands fa-threads threads-icon"></i>
-
-</a>
-
-
-<!-- WHATSAPP -->
-
-<a
-    href="https://wa.me/8801601601998"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="WhatsApp">
-
-    <i class="fa-brands fa-whatsapp whatsapp-icon"></i>
-
-</a>
-
-</div>
 
 </div>
 
@@ -2006,26 +1816,137 @@ footer p{
 
 <!-- ================= FOOTER ================= -->
 
-<footer>
+<footer id="footer">
+
+<div class="footer-container">
+
+<!-- ENGLISH GRAAM THEKE LOGO -->
 
 <div class="footer-logo-wrap">
 
 <img
-    src="99927B00-BDEF-45EB-9A5C-AC1CEFE3E77A.png"
+    src="F5F0EAE9-46E5-4043-B161-F9613A36F4BD.png"
     class="footer-logo"
-    alt="গ্রাম থেকে">
+    alt="Graam Theke">
 
 </div>
 
-<p
-    data-bn="প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য"
-    data-en="Natural sweetness, the tradition of rural Bengal">
-    প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য
-</p>
 
-<p style="margin-top:8px;">
-    © 2026 গ্রাম থেকে
-</p>
+<!-- SOCIAL MEDIA -->
+
+<div class="footer-social-icons">
+
+<!-- FACEBOOK -->
+
+<a
+    href="https://www.facebook.com/share/18F1J2ej6V/?mibextid=wwXIfr"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook">
+
+    <i class="fa-brands fa-facebook"></i>
+
+</a>
+
+
+<!-- MESSENGER -->
+
+<a
+    href="https://m.me/GraamTheke"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Messenger">
+
+    <i class="fa-brands fa-facebook-messenger"></i>
+
+</a>
+
+
+<!-- INSTAGRAM -->
+
+<a
+    href="https://www.instagram.com/graam_theke/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram">
+
+    <i class="fa-brands fa-instagram"></i>
+
+</a>
+
+
+<!-- THREADS -->
+
+<a
+    href="https://www.threads.com/@graam_theke?igshid=NTc4MTIwNjQ2YQ=="
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Threads">
+
+    <i class="fa-brands fa-threads"></i>
+
+</a>
+
+
+<!-- WHATSAPP -->
+
+<a
+    href="https://wa.me/8801601601998"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp">
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+</div>
+
+
+<!-- BRAND INFORMATION -->
+
+<div
+    class="footer-brand"
+    data-bn="গ্রাম থেকে"
+    data-en="Graam Theke">
+    গ্রাম থেকে
+</div>
+
+<div
+    class="footer-address"
+    data-bn="কাপাসিয়া, গাজীপুর, বাংলাদেশ"
+    data-en="Kapasia, Gazipur, Bangladesh">
+    কাপাসিয়া, গাজীপুর, বাংলাদেশ
+</div>
+
+<a
+    href="tel:+8801601601998"
+    class="footer-phone">
+    +8801601601998
+</a>
+
+
+<!-- DIVIDER -->
+
+<div class="footer-divider"></div>
+
+
+<!-- TAGLINE -->
+
+<div
+    class="footer-tagline">
+    Natural Sweetness, The Tradition of Rural Bengal.
+</div>
+
+
+<!-- COPYRIGHT -->
+
+<div
+    class="footer-copyright">
+    © 2026 Graam Theke. All Rights Reserved.
+</div>
+
+</div>
 
 </footer>
 
@@ -2341,11 +2262,6 @@ function updateCart(){
         .textContent = "৳" + delivery;
 
 
-    /*
-        Quantity 0 হলে মোট অংশে শুধু delivery থাকবে।
-        Product price এখনো ঘোষণা হয়নি, তাই price text unchanged রাখা হয়েছে।
-    */
-
     document
         .getElementById("grandTotal")
         .textContent =
@@ -2363,12 +2279,6 @@ function changeQuantity(amount){
     cartQuantity += amount;
 
 
-    /*
-        Quantity কখনো 0-এর নিচে যাবে না।
-        1 থেকে - চাপলে সরাসরি 0 হবে।
-        0 হলেও Cart page এবং product row থাকবে।
-    */
-
     if(cartQuantity < 0){
         cartQuantity = 0;
     }
@@ -2382,11 +2292,6 @@ function changeQuantity(amount){
 /* ================= REMOVE PRODUCT ================= */
 
 function removeFromCart(){
-
-    /*
-        Remove button চাপলে quantity 0 হবে।
-        Cart page বন্ধ হবে না।
-    */
 
     cartQuantity = 0;
 
@@ -2752,7 +2657,7 @@ Thank you — Graam Theke 🌾`;
 }
 
 
-/* ================= VIDEO ================= */
+/* ================= VIDEO AUTOPLAY ================= */
 
 document.addEventListener(
     "DOMContentLoaded",
@@ -2768,23 +2673,66 @@ document.addEventListener(
         if(video){
 
             video.muted = true;
+            video.defaultMuted = true;
+
+            video.setAttribute("muted","");
+            video.setAttribute("autoplay","");
+            video.setAttribute("playsinline","");
+
+            video.load();
 
 
-            const playPromise =
-                video.play();
+            const tryPlay = () => {
+
+                const playPromise =
+                    video.play();
 
 
-            if(
-                playPromise !== undefined
-            ){
+                if(
+                    playPromise !== undefined
+                ){
 
-                playPromise.catch(() => {
+                    playPromise.catch(() => {
 
-                    // Browser autoplay policy
+                        /*
+                            Browser autoplay policy.
+                            Video remains muted and
+                            browser may allow playback
+                            after page interaction.
+                        */
 
-                });
+                    });
 
-            }
+                }
+
+            };
+
+
+            tryPlay();
+
+
+            window.addEventListener(
+                "load",
+                function(){
+                    tryPlay();
+                }
+            );
+
+
+            document.addEventListener(
+                "touchstart",
+                function(){
+
+                    if(video.paused){
+                        tryPlay();
+                    }
+
+                },
+                {
+                    once:true,
+                    passive:true
+                }
+            );
 
         }
 
@@ -2793,11 +2741,6 @@ document.addEventListener(
 
 
 /* ================= PHONE BACK BUTTON ================= */
-
-/*
-    ফোনের Back button চাপলে website থেকে বের হওয়ার বদলে
-    website-এর আগের view-এ ফেরানোর চেষ্টা করবে।
-*/
 
 let currentView = "home";
 
