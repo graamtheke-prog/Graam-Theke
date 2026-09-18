@@ -304,10 +304,44 @@ section{
     color:#777;
 }
 
+/* ================= PRICE ================= */
+
 .product-price{
     margin-top:12px;
-    font-weight:bold;
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:4px;
+}
+
+.old-price{
+    color:#777;
+    text-decoration:line-through;
+    font-size:16px;
+    font-weight:normal;
+    margin-right:5px;
+}
+
+.current-price{
     color:#9b6b13;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.detail-price{
+    margin:18px 0;
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:5px;
+}
+
+.detail-price .old-price{
+    font-size:18px;
+}
+
+.detail-price .current-price{
+    font-size:25px;
 }
 
 /* ================= CART BUTTON ================= */
@@ -555,13 +589,6 @@ section{
 .detail-content .weight{
     color:#777;
     margin-bottom:18px;
-}
-
-.detail-price{
-    font-size:23px;
-    color:#9b6b13;
-    font-weight:bold;
-    margin:18px 0;
 }
 
 .add-cart-btn{
@@ -1417,11 +1444,16 @@ footer{
     পরিমাণ: ৫০০ গ্রাম
 </p>
 
-<div
-    class="product-price"
-    data-bn="দাম শীঘ্রই ঘোষণা করা হবে"
-    data-en="Price will be announced soon">
-    দাম শীঘ্রই ঘোষণা করা হবে
+<div class="product-price">
+
+<span class="old-price">
+    ৳150
+</span>
+
+<span class="current-price">
+    ৳135
+</span>
+
 </div>
 
 </div>
@@ -1689,11 +1721,16 @@ footer{
     গ্রামবাংলার ঐতিহ্যবাহী স্বাদ ও প্রাকৃতিক মিষ্টতায় তৈরি খাঁটি আখের গুড়।
 </p>
 
-<div
-    class="detail-price"
-    data-bn="দাম শীঘ্রই ঘোষণা করা হবে"
-    data-en="Price will be announced soon">
-    দাম শীঘ্রই ঘোষণা করা হবে
+<div class="detail-price">
+
+<span class="old-price">
+    ৳150
+</span>
+
+<span class="current-price">
+    ৳135
+</span>
+
 </div>
 
 <button
@@ -1756,7 +1793,7 @@ footer{
 </span>
 
 <span id="productTotal">
-    দাম শীঘ্রই ঘোষণা করা হবে
+    ৳0
 </span>
 
 </div>
@@ -1784,7 +1821,7 @@ footer{
 </span>
 
 <span id="grandTotal">
-    দাম শীঘ্রই ঘোষণা করা হবে
+    ৳0
 </span>
 
 </div>
@@ -2191,6 +2228,14 @@ let selectedPayment = "";
 let currentLanguage =
     localStorage.getItem("language") || "bn";
 
+/* ================= PRODUCT PRICING ================= */
+
+const PRODUCT_REGULAR_PRICE = 150;
+const PRODUCT_PRICE = 135;
+
+const INSIDE_DHAKA_DELIVERY = 60;
+const OUTSIDE_DHAKA_DELIVERY = 120;
+
 /* ================= WHY CAROUSEL VARIABLES ================= */
 
 let currentWhySlide = 0;
@@ -2298,6 +2343,8 @@ function goHome(){
 
     closeMenu();
 
+    setView("home");
+
     window.scrollTo({
         top:0,
         behavior:"smooth"
@@ -2329,6 +2376,8 @@ function openProductDetails(){
         .getElementById("productDetail")
         .style.display = "block";
 
+    setView("product");
+
     window.scrollTo({
         top:0,
         behavior:"smooth"
@@ -2345,6 +2394,8 @@ function backToProducts(){
     document
         .getElementById("mainContent")
         .style.display = "block";
+
+    setView("home");
 
     setTimeout(() => {
 
@@ -2375,6 +2426,10 @@ function updateCart(){
     const cartItems =
         document.getElementById("cartItems");
 
+    if(!cartItems){
+        return;
+    }
+
     cartItems.innerHTML = `
 
         <div class="cart-item">
@@ -2400,6 +2455,23 @@ function updateCart(){
                         currentLanguage === "bn"
                         ? "৫০০ গ্রাম"
                         : "500 gm"
+                    }
+
+                </div>
+
+                <div
+                    style="
+                        color:#9b6b13;
+                        font-size:15px;
+                        font-weight:bold;
+                        margin-top:4px;
+                    "
+                >
+
+                    ৳${PRODUCT_PRICE} ${
+                        currentLanguage === "bn"
+                        ? "প্রতি প্যাক"
+                        : "per pack"
                     }
 
                 </div>
@@ -2455,22 +2527,25 @@ function updateCart(){
 
     `;
 
-    document
-        .getElementById("productTotal")
-        .textContent =
-            currentLanguage === "bn"
-            ? "দাম শীঘ্রই ঘোষণা করা হবে"
-            : "Price will be announced soon";
+    const productTotal =
+        PRODUCT_PRICE * cartQuantity;
 
     let delivery = 0;
 
     if(selectedDelivery === "inside"){
-        delivery = 60;
+        delivery = INSIDE_DHAKA_DELIVERY;
     }
 
     if(selectedDelivery === "outside"){
-        delivery = 120;
+        delivery = OUTSIDE_DHAKA_DELIVERY;
     }
+
+    const grandTotal =
+        productTotal + delivery;
+
+    document
+        .getElementById("productTotal")
+        .textContent = "৳" + productTotal;
 
     document
         .getElementById("deliveryTotal")
@@ -2478,10 +2553,7 @@ function updateCart(){
 
     document
         .getElementById("grandTotal")
-        .textContent =
-            currentLanguage === "bn"
-            ? "দাম শীঘ্রই ঘোষণা করা হবে + ৳" + delivery
-            : "Price will be announced soon + ৳" + delivery;
+        .textContent = "৳" + grandTotal;
 
 }
 
@@ -2535,6 +2607,8 @@ function openCart(){
 
     updateCart();
 
+    setView("cart");
+
     window.scrollTo({
         top:0,
         behavior:"smooth"
@@ -2565,6 +2639,8 @@ function backFromCart(){
     document
         .getElementById("mainContent")
         .style.display = "block";
+
+    setView("home");
 
     setTimeout(() => {
 
@@ -2601,6 +2677,8 @@ function openOrder(){
     document
         .getElementById("orderSection")
         .style.display = "block";
+
+    setView("order");
 
     window.scrollTo({
         top:0,
@@ -2756,6 +2834,11 @@ function confirmOrder(){
 
     }
 
+    let deliveryAmount =
+        selectedDelivery === "inside"
+        ? INSIDE_DHAKA_DELIVERY
+        : OUTSIDE_DHAKA_DELIVERY;
+
     let deliveryText =
         selectedDelivery === "inside"
         ? (
@@ -2774,6 +2857,12 @@ function confirmOrder(){
         ? "Cash on Delivery"
         : "bKash Payment";
 
+    const productTotal =
+        PRODUCT_PRICE * cartQuantity;
+
+    const grandTotal =
+        productTotal + deliveryAmount;
+
     const message =
         currentLanguage === "bn"
         ?
@@ -2788,6 +2877,10 @@ function confirmOrder(){
 
 ⚖️ পরিমাণ: ৫০০ গ্রাম × ${cartQuantity}
 
+💵 প্রতি প্যাক: ৳${PRODUCT_PRICE}
+
+💰 পণ্যের মোট মূল্য: ৳${productTotal}
+
 🚚 ডেলিভারি: ${deliveryText}
 
 💳 পেমেন্ট: ${paymentText}
@@ -2795,7 +2888,7 @@ function confirmOrder(){
 📍 ঠিকানা:
 ${address}
 
-💰 পণ্যের দাম: শীঘ্রই ঘোষণা করা হবে
+🧾 *সর্বমোট: ৳${grandTotal}*
 
 ধন্যবাদ — গ্রাম থেকে 🌾`
 
@@ -2811,6 +2904,10 @@ ${address}
 
 ⚖️ Quantity: 500 gm × ${cartQuantity}
 
+💵 Price per pack: ৳${PRODUCT_PRICE}
+
+💰 Product Total: ৳${productTotal}
+
 🚚 Delivery: ${deliveryText}
 
 💳 Payment: ${paymentText}
@@ -2818,7 +2915,7 @@ ${address}
 📍 Address:
 ${address}
 
-💰 Product Price: Price will be announced soon
+🧾 *Grand Total: ৳${grandTotal}*
 
 Thank you — Graam Theke 🌾`;
 
@@ -2849,6 +2946,8 @@ Thank you — Graam Theke 🌾`;
         document
             .getElementById("successSection")
             .style.display = "block";
+
+        setView("home");
 
         window.scrollTo({
             top:0,
