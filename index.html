@@ -1064,6 +1064,156 @@ footer{
     opacity:.9;
 }
 
+/* ================= 10% DISCOUNT POPUP ================= */
+
+.discount-popup-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    opacity:0;
+    visibility:hidden;
+    transition:.3s ease;
+}
+
+.discount-popup-overlay.show{
+    opacity:1;
+    visibility:visible;
+}
+
+.discount-popup{
+    width:100%;
+    max-width:430px;
+    background:#f2efe0;
+    border-radius:22px;
+    padding:35px 25px 30px;
+    text-align:center;
+    position:relative;
+    box-shadow:0 15px 45px rgba(0,0,0,.25);
+    transform:translateY(20px) scale(.96);
+    transition:.3s ease;
+    border:1px solid #e7dfc9;
+}
+
+.discount-popup-overlay.show .discount-popup{
+    transform:translateY(0) scale(1);
+}
+
+.discount-popup-close{
+    position:absolute;
+    top:10px;
+    right:12px;
+    width:34px;
+    height:34px;
+    border:none;
+    border-radius:50%;
+    background:#55733e;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.2s;
+}
+
+.discount-popup-close:hover{
+    background:#425d31;
+    transform:rotate(90deg);
+}
+
+.discount-popup-icon{
+    font-size:42px;
+    margin-bottom:8px;
+}
+
+.discount-popup h2{
+    color:#3f5f2e;
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.discount-popup h3{
+    color:#9b6b13;
+    font-size:27px;
+    margin-bottom:10px;
+}
+
+.discount-popup p{
+    color:#666;
+    font-size:16px;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.discount-popup-price{
+    margin:12px 0 22px;
+}
+
+.discount-popup-old{
+    color:#777;
+    text-decoration:line-through;
+    font-size:18px;
+    margin-right:8px;
+}
+
+.discount-popup-current{
+    color:#9b6b13;
+    font-size:25px;
+    font-weight:bold;
+}
+
+.discount-popup-btn{
+    display:inline-block;
+    border:none;
+    background:#55733e;
+    color:white;
+    padding:13px 28px;
+    border-radius:30px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    text-decoration:none;
+    transition:.2s;
+}
+
+.discount-popup-btn:hover{
+    background:#425d31;
+    transform:translateY(-2px);
+}
+
+.discount-popup-note{
+    margin-top:14px;
+    margin-bottom:0 !important;
+    font-size:12px !important;
+    color:#888 !important;
+}
+
+@media(max-width:700px){
+
+    .discount-popup{
+        max-width:360px;
+        padding:32px 20px 25px;
+    }
+
+    .discount-popup h2{
+        font-size:27px;
+    }
+
+    .discount-popup h3{
+        font-size:24px;
+    }
+
+    .discount-popup p{
+        font-size:15px;
+    }
+
+}
+
 /* ================= MOBILE ================= */
 
 @media(max-width:700px){
@@ -1228,6 +1378,76 @@ footer{
 </head>
 
 <body>
+
+<!-- ================= 10% DISCOUNT POPUP ================= -->
+
+<div
+    class="discount-popup-overlay"
+    id="discountPopup">
+
+    <div class="discount-popup">
+
+        <button
+            class="discount-popup-close"
+            onclick="closeDiscountPopup()"
+            aria-label="বন্ধ করুন">
+            ×
+        </button>
+
+        <div class="discount-popup-icon">
+            🎉
+        </div>
+
+        <h2
+            data-bn="বিশেষ অফার!"
+            data-en="Special Offer!">
+            বিশেষ অফার!
+        </h2>
+
+        <h3
+            data-bn="১০% ছাড়"
+            data-en="10% Discount">
+            ১০% ছাড়
+        </h3>
+
+        <p
+            data-bn="গ্রাম থেকে-এর খাঁটি আখের গুড়ে এখন উপভোগ করুন বিশেষ ১০% ছাড়।"
+            data-en="Enjoy a special 10% discount on Graam Theke's Pure Sugarcane Jaggery.">
+            গ্রাম থেকে-এর খাঁটি আখের গুড়ে এখন উপভোগ করুন বিশেষ ১০% ছাড়।
+        </p>
+
+        <div class="discount-popup-price">
+
+            <span class="discount-popup-old">
+                ৳১৫০
+            </span>
+
+            <span
+                class="discount-popup-current"
+                id="popupCurrentPrice">
+                ৳১৩৫
+            </span>
+
+        </div>
+
+        <button
+            class="discount-popup-btn"
+            onclick="closeDiscountPopup();openProductDetails();"
+            data-bn="অর্ডার করুন"
+            data-en="Order Now">
+            অর্ডার করুন
+        </button>
+
+        <p
+            class="discount-popup-note"
+            data-bn="সীমিত সময়ের বিশেষ অফার"
+            data-en="Limited-time special offer">
+            সীমিত সময়ের বিশেষ অফার
+        </p>
+
+    </div>
+
+</div>
 
 <!-- ================= HEADER ================= -->
 
@@ -2226,6 +2446,73 @@ function formatPrice(number){
 
 }
 
+/* ================= 10% DISCOUNT POPUP ================= */
+
+function openDiscountPopup(){
+
+    const popup =
+        document.getElementById("discountPopup");
+
+    if(popup){
+        popup.classList.add("show");
+    }
+
+}
+
+function closeDiscountPopup(){
+
+    const popup =
+        document.getElementById("discountPopup");
+
+    if(popup){
+        popup.classList.remove("show");
+    }
+
+}
+
+function setupDiscountPopup(){
+
+    const popup =
+        document.getElementById("discountPopup");
+
+    if(!popup){
+        return;
+    }
+
+    /*
+        Popup প্রতি browser session-এ একবার দেখাবে।
+        একই visitor refresh করলেও একই session-এ
+        popup বারবার আসবে না।
+    */
+
+    if(!sessionStorage.getItem("discountPopupShown")){
+
+        setTimeout(() => {
+
+            openDiscountPopup();
+
+            sessionStorage.setItem(
+                "discountPopupShown",
+                "true"
+            );
+
+        },1200);
+
+    }
+
+    popup.addEventListener(
+        "click",
+        function(event){
+
+            if(event.target === popup){
+                closeDiscountPopup();
+            }
+
+        }
+    );
+
+}
+
 /* ================= WHY CAROUSEL ================= */
 
 let currentWhySlide = 0;
@@ -2331,6 +2618,9 @@ function updatePriceDisplay(){
     const outsideDeliveryPrice =
         document.getElementById("outsideDeliveryPrice");
 
+    const popupCurrentPrice =
+        document.getElementById("popupCurrentPrice");
+
     if(productOldPrice){
         productOldPrice.textContent =
             formatPrice(PRODUCT_REGULAR_PRICE);
@@ -2359,6 +2649,11 @@ function updatePriceDisplay(){
     if(outsideDeliveryPrice){
         outsideDeliveryPrice.textContent =
             formatPrice(OUTSIDE_DHAKA_DELIVERY);
+    }
+
+    if(popupCurrentPrice){
+        popupCurrentPrice.textContent =
+            formatPrice(PRODUCT_PRICE);
     }
 
 }
@@ -3227,6 +3522,8 @@ function handleWhySwipe(){
 document.addEventListener(
     "DOMContentLoaded",
     function(){
+
+        setupDiscountPopup();
 
         setLanguage(currentLanguage);
 
