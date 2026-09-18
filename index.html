@@ -8,23 +8,49 @@
 
 <title>গ্রাম থেকে</title>
 
+<!-- SHARE / LINK PREVIEW -->
 <meta property="og:title" content="গ্রাম থেকে">
 <meta property="og:site_name" content="গ্রাম থেকে">
-<meta property="og:image" content="99927B00-BDEF-45EB-9A5C-AC1CEFE3E77A.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://graamtheke-prog.github.io/Graam-Theke/">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- SHARE PREVIEW IMAGE -->
+<meta
+    property="og:image"
+    content="https://graamtheke-prog.github.io/Graam-Theke/99927B00-BDEF-45EB-9A5C-AC1CEFE3E77A.png">
 
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<meta
+    property="og:image:secure_url"
+    content="https://graamtheke-prog.github.io/Graam-Theke/99927B00-BDEF-45EB-9A5C-AC1CEFE3E77A.png">
+
+<meta
+    property="og:image:alt"
+    content="গ্রাম থেকে">
+
+<meta property="og:image:type" content="image/png">
+
+<meta
+    property="og:image:width"
+    content="1200">
+
+<meta
+    property="og:image:height"
+    content="630">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="গ্রাম থেকে">
+
+<!-- FONT AWESOME -->
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <style>
 
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 html{
@@ -32,136 +58,113 @@ html{
 }
 
 body{
-    font-family:'Noto Sans Bengali',sans-serif;
-    background:#fffdf8;
-    color:#333;
+    font-family:"Noto Sans Bengali","SolaimanLipi",Arial,sans-serif;
+    background:#f2efe0;
+    color:#26351f;
+    line-height:1.6;
 }
 
-button{
-    font-family:inherit;
-}
-
-img{
-    max-width:100%;
-}
-
-.hidden{
-    display:none!important;
-}
-
-/* =========================
-   EXISTING WEBSITE CSS
-   ========================= */
+/* ================= HEADER ================= */
 
 header{
     position:sticky;
     top:0;
     z-index:1000;
-    background:#fff;
-    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    background:#f2efe0;
+    border-bottom:1px solid #e7dfc9;
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
 }
 
-.navbar{
+.header-inner{
     max-width:1200px;
     margin:auto;
-    min-height:70px;
+    height:78px;
+    padding:8px 20px;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:10px 20px;
 }
 
 .logo{
-    display:flex;
-    align-items:center;
+    height:62px;
+    width:auto;
+    object-fit:contain;
     cursor:pointer;
 }
 
-.logo img{
-    width:58px;
-    height:58px;
-    object-fit:contain;
-}
-
-.nav-right{
+.header-actions{
     display:flex;
     align-items:center;
     gap:10px;
 }
 
-.lang-buttons{
-    display:flex;
-    gap:5px;
-}
-
 .lang-btn{
     border:1px solid #55733e;
-    background:#fff;
-    color:#55733e;
-    padding:6px 10px;
+    background:white;
+    color:#42622f;
+    padding:7px 12px;
     border-radius:20px;
     cursor:pointer;
-    font-size:12px;
+    font-size:13px;
+    transition:.2s;
 }
 
-.lang-btn.active{
+.lang-btn.active,
+.lang-btn:hover{
     background:#55733e;
-    color:#fff;
-}
-
-.menu-wrapper{
-    position:relative;
+    color:white;
 }
 
 .menu-btn{
+    border:none;
+    background:#55733e;
+    color:white;
     width:42px;
     height:42px;
-    border:none;
     border-radius:50%;
-    background:#55733e;
-    color:#fff;
     cursor:pointer;
-    font-size:18px;
+    font-size:21px;
 }
 
-.dropdown-menu{
+.dropdown{
+    display:none;
     position:absolute;
-    right:0;
-    top:50px;
+    right:20px;
+    top:78px;
+    background:white;
     width:210px;
-    background:#fff;
     border-radius:12px;
     box-shadow:0 8px 25px rgba(0,0,0,.15);
-    padding:8px;
-    display:none;
+    overflow:hidden;
+    border:1px solid #eee4cd;
 }
 
-.dropdown-menu.show{
+.dropdown.show{
     display:block;
 }
 
-.dropdown-menu button{
-    width:100%;
-    border:none;
-    background:none;
-    padding:11px 12px;
-    text-align:left;
-    border-radius:8px;
-    cursor:pointer;
-    color:#444;
+.dropdown a{
+    display:block;
+    text-decoration:none;
+    color:#304729;
+    padding:13px 16px;
+    border-bottom:1px solid #f0eadb;
 }
 
-.dropdown-menu button:hover{
-    background:#f2f5ed;
+.dropdown a:hover{
+    background:#f5f0df;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
     position:relative;
-    height:calc(100vh - 70px);
     min-height:520px;
     overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
 }
 
 .hero video{
@@ -170,258 +173,543 @@ header{
     width:100%;
     height:100%;
     object-fit:cover;
+    z-index:0;
+    display:block;
 }
 
-.hero-overlay{
+.hero::after{
+    content:"";
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,.28);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
+    background:rgba(20,35,15,.48);
+    z-index:1;
 }
 
 .hero-content{
-    color:#fff;
-    padding:20px;
+    position:relative;
+    z-index:2;
+    color:white;
+    padding:30px 20px;
+    max-width:850px;
 }
 
 .hero-content h1{
-    font-size:clamp(42px,8vw,78px);
+    font-size:clamp(34px,6vw,65px);
     margin-bottom:12px;
-    font-weight:800;
+    text-shadow:0 3px 12px rgba(0,0,0,.4);
 }
 
 .hero-content p{
-    font-size:clamp(16px,3vw,24px);
+    font-size:clamp(17px,2.5vw,24px);
     margin-bottom:25px;
 }
 
-.primary-btn{
-    border:none;
-    background:#55733e;
+.hero-btn{
+    display:inline-block;
+    background:#e2ad39;
     color:#fff;
-    padding:12px 25px;
-    border-radius:25px;
-    cursor:pointer;
-    font-size:15px;
-    font-weight:600;
+    text-decoration:none;
+    padding:13px 28px;
+    border-radius:30px;
+    font-weight:bold;
+    transition:.2s;
 }
 
-/* SECTIONS */
+.hero-btn:hover{
+    transform:translateY(-2px);
+    background:#c99526;
+}
+
+/* ================= COMMON ================= */
 
 section{
-    max-width:1200px;
-    margin:auto;
     padding:70px 20px;
+}
+
+.container{
+    max-width:1150px;
+    margin:auto;
 }
 
 .section-title{
     text-align:center;
-    margin-bottom:35px;
-}
-
-.section-title h2{
+    font-size:34px;
     color:#3f5f2e;
-    font-size:30px;
-    margin-bottom:8px;
+    margin-bottom:12px;
 }
 
-.section-title p{
+.section-subtitle{
+    text-align:center;
     color:#777;
+    max-width:700px;
+    margin:0 auto 40px;
 }
 
-/* PRODUCT */
+/* ================= PRODUCT ================= */
+
+.products-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
 
 .product-card{
-    max-width:420px;
-    margin:auto;
-    background:#fff;
+    background:white;
+    border:1px solid #e9e0c9;
     border-radius:18px;
     overflow:hidden;
-    box-shadow:0 5px 20px rgba(0,0,0,.09);
-    padding-bottom:20px;
+    box-shadow:0 7px 22px rgba(61,53,27,.08);
+    cursor:pointer;
+    transition:.25s;
+    position:relative;
+}
+
+.product-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 28px rgba(61,53,27,.15);
+}
+
+.product-image-wrap{
+    height:290px;
+    background:#f4efdf;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    padding:15px;
 }
 
 .product-image{
     width:100%;
-    aspect-ratio:1/1;
-    object-fit:cover;
+    height:100%;
+    object-fit:contain;
+    object-position:center;
     display:block;
 }
 
+/* ================= PRODUCT INFO ================= */
+
 .product-info{
     padding:20px;
-    text-align:center;
+    padding-bottom:75px;
 }
 
 .product-info h3{
-    font-size:24px;
+    font-size:23px;
     color:#3f5f2e;
     margin-bottom:7px;
 }
 
-.product-info .weight{
+.product-info p{
     color:#777;
-    margin-bottom:4px;
 }
 
-/* DISCOUNT LABEL */
+/* ================= PRICE ================= */
 
-.discount-label{
-    display:inline-block;
-    background:#55733e;
-    color:#fff;
-    padding:4px 9px;
-    border-radius:14px;
-    font-size:12px;
-    font-weight:700;
-    margin-top:7px;
-}
-
-/* PRICE */
-
-.price-box{
-    margin:10px 0 16px;
+.product-price{
+    margin-top:12px;
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:4px;
 }
 
 .old-price{
-    color:#999;
+    color:#777;
     text-decoration:line-through;
-    font-size:15px;
-    margin-right:8px;
+    font-size:16px;
+    font-weight:normal;
+    margin-right:5px;
 }
 
 .current-price{
     color:#9b6b13;
-    font-size:23px;
-    font-weight:800;
+    font-size:22px;
+    font-weight:bold;
 }
 
-/* CAROUSEL */
+.detail-price{
+    margin:18px 0;
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:5px;
+}
 
-.carousel{
+.detail-price .old-price{
+    font-size:18px;
+}
+
+.detail-price .current-price{
+    font-size:25px;
+}
+
+/* ================= CART BUTTON ================= */
+
+.cart-sticker{
+    position:absolute;
+    right:15px;
+    bottom:15px;
+    border:none;
+    background:#55733e;
+    color:white;
+    min-width:52px;
+    height:44px;
+    padding:0 16px;
+    border-radius:22px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    box-shadow:0 4px 12px rgba(0,0,0,.18);
+    transition:.2s;
+}
+
+.cart-sticker:hover{
+    background:#425d31;
+    transform:translateY(-2px);
+}
+
+.cart-sticker i{
+    color:#79a35b;
+    font-size:17px;
+}
+
+/* ================= UPCOMING PRODUCT ================= */
+
+.upcoming-card{
+    background:#fff;
+    border:1px solid #e9e0c9;
+    border-radius:18px;
+    min-height:290px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:30px;
+    box-shadow:0 7px 22px rgba(61,53,27,.08);
     position:relative;
     overflow:hidden;
 }
 
-.carousel-track{
+.upcoming-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(226,173,57,.10),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(85,115,62,.10),
+            transparent 35%
+        );
+}
+
+.upcoming-content{
+    position:relative;
+    z-index:2;
+}
+
+.upcoming-content img{
+    width:100%;
+    max-width:260px;
+    height:230px;
+    object-fit:contain;
+    display:block;
+    margin:0 auto 12px;
+}
+
+.upcoming-content h3{
+    font-size:25px;
+    color:#6b3f20;
+    margin-bottom:8px;
+}
+
+.upcoming-content p{
+    color:#777;
+}
+
+/* ================= WHY ================= */
+
+.why-section{
+    background:#f3efdf;
+}
+
+/* ================= WHY CAROUSEL ================= */
+
+.why-carousel{
+    max-width:820px;
+    margin:0 auto;
+    position:relative;
+}
+
+.why-slider{
+    width:100%;
+    overflow:hidden;
+    border-radius:18px;
+    touch-action:pan-y;
+}
+
+.why-track{
     display:flex;
-    transition:transform .4s ease;
+    width:300%;
+    transition:transform .65s cubic-bezier(.4,0,.2,1);
+    will-change:transform;
 }
 
-.carousel-slide{
-    min-width:100%;
+.why-slide{
+    width:33.333333%;
+    flex-shrink:0;
+    padding:0 5px;
 }
 
-/* PRODUCT DETAILS */
+.why-card{
+    background:white;
+    min-height:320px;
+    padding:42px 45px;
+    border-radius:18px;
+    text-align:center;
+    border:1px solid #e5dcc4;
+    box-shadow:0 7px 22px rgba(61,53,27,.08);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
 
-.detail-page{
+.why-icon{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.why-card h3{
+    color:#486634;
+    margin-bottom:8px;
+    font-size:25px;
+}
+
+.why-card h4{
+    color:#6b3f20;
+    font-size:18px;
+    font-weight:600;
+    margin-bottom:18px;
+}
+
+.why-card p{
+    color:#777;
+    max-width:640px;
+    font-size:16px;
+    line-height:1.9;
+}
+
+.why-dots{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:9px;
+    margin-top:22px;
+}
+
+.why-dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    border:none;
+    background:#c8c0aa;
+    padding:0;
+    cursor:pointer;
+    transition:.3s ease;
+}
+
+.why-dot.active{
+    width:24px;
+    border-radius:10px;
+    background:#55733e;
+}
+
+.why-dot:hover{
+    background:#55733e;
+}
+
+/* ================= PRODUCT DETAIL ================= */
+
+#productDetail{
     display:none;
+    min-height:650px;
+    background:#f2efe0;
 }
 
 .detail-container{
-    max-width:900px;
+    max-width:1100px;
     margin:auto;
-    background:#fff;
-    border-radius:18px;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
-    overflow:hidden;
+}
+
+.back-btn{
+    border:none;
+    background:#55733e;
+    color:white;
+    padding:10px 18px;
+    border-radius:25px;
+    cursor:pointer;
+    margin-bottom:30px;
+    font-size:15px;
+}
+
+.product-detail-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:45px;
+    align-items:center;
 }
 
 .detail-image{
     width:100%;
     max-height:500px;
     object-fit:contain;
-    background:#faf8f2;
-}
-
-.detail-info{
-    padding:25px;
-    text-align:center;
-}
-
-.detail-info h2{
-    color:#3f5f2e;
-    margin-bottom:8px;
-}
-
-.detail-price{
-    margin:10px 0 20px;
-}
-
-.back-btn{
-    border:none;
-    background:#eee;
-    color:#444;
-    padding:10px 18px;
+    object-position:center;
     border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+    background:#f4efdf;
+    padding:15px;
+}
+
+.detail-content h2{
+    font-size:40px;
+    color:#3f5f2e;
+    margin-bottom:10px;
+}
+
+.detail-content .weight{
+    color:#777;
+    margin-bottom:18px;
+}
+
+.add-cart-btn{
+    border:none;
+    background:#6b3f20;
+    color:white;
+    padding:13px 25px;
+    border-radius:30px;
     cursor:pointer;
-    margin-bottom:20px;
+    font-size:16px;
+    font-weight:bold;
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
 }
 
-/* CART */
+.add-cart-btn i{
+    color:#79a35b;
+}
 
-.cart-page,
-.order-page{
+.add-cart-btn:hover{
+    background:#4f2e18;
+}
+
+/* ================= CART ================= */
+
+#cartSection{
     display:none;
+    background:#f8f4e8;
+    min-height:650px;
 }
 
-.cart-box,
-.order-box{
-    max-width:700px;
+.cart-box{
+    max-width:800px;
     margin:auto;
-    background:#fff;
+    background:white;
     border-radius:18px;
-    padding:25px;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    padding:30px;
+    box-shadow:0 7px 25px rgba(0,0,0,.08);
+}
+
+.cart-back-btn{
+    border:none;
+    background:#55733e;
+    color:white;
+    padding:10px 18px;
+    border-radius:25px;
+    cursor:pointer;
+    margin-bottom:25px;
+    font-size:15px;
+}
+
+.cart-empty{
+    text-align:center;
+    color:#777;
+    padding:35px 20px;
+    font-size:17px;
 }
 
 .cart-item{
     display:flex;
     align-items:center;
+    justify-content:space-between;
     gap:15px;
-    padding-bottom:18px;
-    margin-bottom:18px;
+    padding:15px 0;
     border-bottom:1px solid #eee5d3;
 }
 
-.cart-item-image{
-    width:90px;
-    height:90px;
-    object-fit:cover;
-    border-radius:12px;
+/* ================= CART PRODUCT IMAGE ================= */
+
+.cart-product-image-wrap{
+    width:120px;
+    height:120px;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
 }
 
-.cart-item-info{
-    flex:1;
+.cart-product-image{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center;
+    display:block;
 }
 
-.cart-item-info h3{
-    color:#3f5f2e;
-    margin-bottom:4px;
-}
+/* ================= QUANTITY ================= */
 
 .quantity-control{
     display:flex;
     align-items:center;
     gap:10px;
-    margin-top:8px;
 }
 
 .quantity-control button{
-    width:30px;
-    height:30px;
+    width:36px;
+    height:36px;
     border:none;
-    border-radius:50%;
     background:#55733e;
-    color:#fff;
+    color:white;
+    border-radius:50%;
     cursor:pointer;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.quantity-control button:hover{
+    background:#3f5f2e;
+}
+
+.quantity-number{
+    min-width:30px;
+    text-align:center;
+    font-weight:bold;
+    font-size:18px;
 }
 
 .cart-summary{
-    margin-top:20px;
+    margin-top:25px;
 }
 
 .summary-row{
@@ -431,273 +719,543 @@ section{
 }
 
 .summary-total{
-    border-top:1px solid #eee5d3;
-    margin-top:8px;
-    padding-top:14px;
-    font-size:18px;
-    font-weight:800;
+    border-top:1px solid #ddd3bd;
+    margin-top:10px;
+    padding-top:15px;
+    font-size:20px;
+    font-weight:bold;
     color:#3f5f2e;
 }
 
-.cart-actions{
-    display:flex;
-    gap:10px;
-    justify-content:center;
-    margin-top:25px;
-    flex-wrap:wrap;
+/* ================= REMOVE BUTTON ================= */
+
+.remove-item-btn{
+    border:none;
+    background:#eee2d5;
+    color:#6b3f20;
+    padding:7px 12px;
+    border-radius:15px;
+    cursor:pointer;
+    font-size:13px;
 }
 
-/* ORDER FORM */
+.remove-item-btn:hover{
+    background:#e5d2bf;
+}
+
+/* ================= ORDER ================= */
+
+#orderSection{
+    display:none;
+    background:#f2efe0;
+    min-height:650px;
+}
+
+.order-box{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    border:1px solid #e6dcc5;
+    border-radius:18px;
+    padding:30px;
+    box-shadow:0 8px 25px rgba(0,0,0,.07);
+}
 
 .form-group{
-    margin-bottom:16px;
+    margin-bottom:18px;
 }
 
 .form-group label{
     display:block;
-    margin-bottom:6px;
-    font-weight:600;
-}
-
-.form-group input,
-.form-group textarea{
-    width:100%;
-    border:1px solid #ddd5c7;
-    border-radius:10px;
-    padding:12px;
-    font-family:inherit;
-    outline:none;
-}
-
-.form-group textarea{
-    min-height:90px;
-    resize:vertical;
-}
-
-.delivery-options,
-.payment-options{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-    margin-top:10px;
-}
-
-.delivery-card,
-.payment-card{
-    border:1px solid #ddd5c7;
-    border-radius:12px;
-    padding:14px;
-    cursor:pointer;
-    text-align:center;
-}
-
-.delivery-card.selected,
-.payment-card.selected{
-    border-color:#55733e;
-    background:#f2f5ed;
-}
-
-.payment-card img{
-    max-height:35px;
-    width:auto;
-    margin-bottom:5px;
-}
-
-.confirm-btn{
-    width:100%;
-    margin-top:20px;
-}
-
-/* FOOTER */
-
-footer{
-    background:#3f5f2e;
-    color:#fff;
-    padding:45px 20px 25px;
-}
-
-.footer-container{
-    max-width:1200px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:30px;
-}
-
-.footer-logo img{
-    width:100px;
-    height:100px;
-    object-fit:contain;
-}
-
-.footer-section h3{
-    margin-bottom:12px;
-}
-
-.footer-section p{
-    color:#e8eee3;
-    line-height:1.8;
-}
-
-.social-icons{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-}
-
-.social-icons a{
-    width:38px;
-    height:38px;
-    border-radius:50%;
-    background:#fff;
-    color:#3f5f2e;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-decoration:none;
-}
-
-.footer-bottom{
-    max-width:1200px;
-    margin:30px auto 0;
-    padding-top:18px;
-    border-top:1px solid rgba(255,255,255,.2);
-    text-align:center;
-    color:#e8eee3;
-    font-size:13px;
-}
-
-/* =========================
-   DISCOUNT POPUP
-   ========================= */
-
-.discount-popup-overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.45);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:15px;
-    opacity:0;
-    visibility:hidden;
-    pointer-events:none;
-    transition:.25s;
-    z-index:3000;
-}
-
-.discount-popup-overlay.show{
-    opacity:1;
-    visibility:visible;
-    pointer-events:auto;
-}
-
-.discount-popup{
-    position:relative;
-    width:min(100%,330px);
-    background:#fff;
-    border-radius:18px;
-    padding:18px 16px 18px;
-    box-shadow:0 12px 35px rgba(0,0,0,.22);
-    text-align:center;
-}
-
-.discount-popup-image{
-    width:100%;
-    max-width:255px;
-    max-height:175px;
-    object-fit:contain;
-    display:block;
-    margin:0 auto 10px;
-    border-radius:12px;
-}
-
-.discount-popup-close{
-    position:absolute;
-    top:8px;
-    right:9px;
-    width:30px;
-    height:30px;
-    border:none;
-    border-radius:50%;
-    background:#55733e;
-    color:#fff;
-    cursor:pointer;
-    font-size:18px;
-    line-height:30px;
-}
-
-.discount-popup h2{
-    font-size:22px;
-    color:#3f5f2e;
-    margin:2px 0 3px;
-}
-
-.discount-popup h3{
-    font-size:17px;
-    color:#9b6b13;
-    margin:0 0 5px;
-}
-
-.discount-popup p{
-    font-size:13px;
-    color:#666;
+    font-weight:bold;
+    color:#405a32;
     margin-bottom:7px;
 }
 
-.discount-popup .popup-price{
-    margin:4px 0 12px;
+.form-group input,
+.form-group textarea,
+.form-group select{
+    width:100%;
+    border:1px solid #dcd2ba;
+    border-radius:10px;
+    padding:12px 14px;
+    font-family:inherit;
+    font-size:15px;
+    outline:none;
 }
 
-.discount-popup .popup-price .old-price{
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+    border-color:#55733e;
+}
+
+.form-group textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+/* ================= DELIVERY ================= */
+
+.option-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.option-card{
+    border:2px solid #e2dbc9;
+    padding:15px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option-card.selected{
+    border-color:#55733e;
+    background:#f2f6ed;
+}
+
+.option-card input{
+    display:none;
+}
+
+.option-title{
+    font-weight:bold;
+    color:#405a32;
+}
+
+.option-price{
+    color:#8c6b27;
     font-size:14px;
 }
 
-.discount-popup .popup-price .current-price{
-    font-size:22px;
+/* ================= PAYMENT ================= */
+
+.payment-title{
+    margin:25px 0 10px;
+    font-size:18px;
+    color:#405a32;
+    font-weight:bold;
 }
 
-.popup-order-btn{
+.payment-options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.payment-card{
+    border:2px solid #e2dbc9;
+    border-radius:12px;
+    padding:15px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    min-height:75px;
+    transition:.2s;
+}
+
+.payment-card.selected{
+    border-color:#55733e;
+    background:#f2f6ed;
+}
+
+.payment-card input{
+    display:none;
+}
+
+.bkash-logo{
+    width:62px;
+    height:30px;
+    object-fit:contain;
+}
+
+/* ================= CONFIRM ================= */
+
+.confirm-btn{
+    width:100%;
     border:none;
     background:#55733e;
-    color:#fff;
-    padding:10px 22px;
-    border-radius:22px;
+    color:white;
+    padding:14px;
+    border-radius:30px;
     cursor:pointer;
-    font-weight:700;
+    font-size:17px;
+    font-weight:bold;
+    margin-top:20px;
+    transition:.2s;
 }
 
-.discount-popup .popup-note{
-    font-size:11px;
-    color:#888;
-    margin-top:8px;
+.confirm-btn:hover{
+    background:#425d31;
+    transform:translateY(-1px);
 }
+
+/* ================= SUCCESS ================= */
+
+#successSection{
+    display:none;
+    min-height:600px;
+    padding:90px 20px;
+    text-align:center;
+    background:#f4f7ef;
+}
+
+.success-icon{
+    width:85px;
+    height:85px;
+    border-radius:50%;
+    background:#55733e;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 25px;
+    font-size:45px;
+}
+
+#successSection h2{
+    color:#3f5f2e;
+    font-size:34px;
+    margin-bottom:12px;
+}
+
+#successSection p{
+    color:#666;
+    max-width:600px;
+    margin:auto;
+}
+
+.success-btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 25px;
+    border-radius:25px;
+    background:#55733e;
+    color:white;
+    text-decoration:none;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#33472a;
+    color:#eee;
+    padding:58px 20px 28px;
+    text-align:center;
+}
+
+.footer-container{
+    max-width:700px;
+    margin:auto;
+}
+
+/* FOOTER LOGO */
+
+.footer-logo-wrap{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.footer-logo{
+    height:135px;
+    width:auto;
+    max-width:94%;
+    object-fit:contain;
+    display:block;
+}
+
+/* SOCIAL ICONS */
+
+.footer-social-icons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin:4px auto 27px;
+}
+
+.footer-social-icons a{
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:52px;
+    height:52px;
+    transition:.2s;
+}
+
+.footer-social-icons a:hover{
+    transform:translateY(-4px) scale(1.05);
+}
+
+.footer-social-icons i{
+    font-size:40px;
+}
+
+/* Facebook */
+
+.footer-social-icons .fa-facebook{
+    color:#1877F2;
+}
+
+/* Messenger */
+
+.footer-social-icons .fa-facebook-messenger{
+    background:linear-gradient(
+        135deg,
+        #0099FF 0%,
+        #A033FF 100%
+    );
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+}
+
+/* Instagram */
+
+.footer-social-icons .fa-instagram{
+    background:
+        radial-gradient(
+            circle at 30% 107%,
+            #fdf497 0%,
+            #fdf497 5%,
+            #fd5949 45%,
+            #d6249f 60%,
+            #285AEB 90%
+        );
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+}
+
+/* Threads */
+
+.footer-social-icons .fa-threads{
+    color:#000000;
+}
+
+/* WhatsApp */
+
+.footer-social-icons .fa-whatsapp{
+    color:#25D366;
+}
+
+/* BRAND INFO */
+
+.footer-brand{
+    font-size:25px;
+    font-weight:800;
+    color:#fff;
+    margin-bottom:3px;
+}
+
+.footer-address{
+    font-size:15px;
+    color:#e1e7da;
+    margin-bottom:2px;
+}
+
+.footer-phone{
+    display:inline-block;
+    text-decoration:none;
+    color:#e1e7da;
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:23px;
+}
+
+.footer-divider{
+    width:55px;
+    height:1px;
+    background:#79a35b;
+    margin:0 auto 21px;
+    opacity:.75;
+}
+
+.footer-tagline{
+    font-family:Arial,sans-serif;
+    font-size:15px;
+    letter-spacing:.2px;
+    color:#e5eadf;
+    margin-bottom:22px;
+}
+
+.footer-copyright{
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    color:#cbd4c4;
+    opacity:.9;
+}
+
+/* ================= MOBILE ================= */
 
 @media(max-width:700px){
 
-    .footer-container{
+    .header-inner{
+        height:70px;
+        padding:7px 14px;
+    }
+
+    .logo{
+        height:55px;
+    }
+
+    .dropdown{
+        top:70px;
+        right:14px;
+    }
+
+    .hero{
+        min-height:470px;
+    }
+
+    section{
+        padding:55px 15px;
+    }
+
+    .section-title{
+        font-size:29px;
+    }
+
+    .product-detail-grid{
         grid-template-columns:1fr;
-        text-align:center;
+        gap:25px;
     }
 
-    .social-icons{
-        justify-content:center;
+    .detail-content h2{
+        font-size:31px;
     }
 
-    .delivery-options,
+    .option-grid,
     .payment-options{
         grid-template-columns:1fr;
     }
 
-    .discount-popup{
-        width:min(100%,310px);
-        padding:15px 14px 15px;
+    .cart-box,
+    .order-box{
+        padding:20px;
     }
 
-    .discount-popup-image{
-        max-width:230px;
-        max-height:150px;
+    .cart-item{
+        align-items:flex-start;
+        flex-direction:column;
     }
+
+    .product-image-wrap{
+        height:270px;
+    }
+
+    .cart-sticker{
+        right:12px;
+        bottom:12px;
+        height:42px;
+        padding:0 13px;
+        font-size:14px;
+    }
+
+    /* WHY CAROUSEL MOBILE */
+
+    .why-carousel{
+        max-width:100%;
+    }
+
+    .why-slide{
+        padding:0;
+    }
+
+    .why-card{
+        min-height:390px;
+        padding:32px 25px;
+        border-radius:16px;
+    }
+
+    .why-icon{
+        font-size:38px;
+        margin-bottom:13px;
+    }
+
+    .why-card h3{
+        font-size:23px;
+        margin-bottom:7px;
+    }
+
+    .why-card h4{
+        font-size:17px;
+        margin-bottom:16px;
+    }
+
+    .why-card p{
+        font-size:15px;
+        line-height:1.85;
+    }
+
+    .why-dots{
+        margin-top:18px;
+    }
+
+    /* CART PRODUCT IMAGE MOBILE */
+
+    .cart-product-image-wrap{
+        width:115px;
+        height:115px;
+        align-self:flex-end;
+        margin-top:-5px;
+    }
+
+    .cart-product-image{
+        width:100%;
+        height:100%;
+        object-fit:contain;
+    }
+
+    /* FOOTER MOBILE */
+
+    footer{
+        padding:48px 18px 25px;
+    }
+
+    .footer-logo{
+        height:112px;
+        max-width:94%;
+    }
+
+    .footer-social-icons{
+        gap:12px;
+        margin-bottom:25px;
+    }
+
+    .footer-social-icons a{
+        width:46px;
+        height:46px;
+    }
+
+    .footer-social-icons i{
+        font-size:37px;
+    }
+
+    .footer-brand{
+        font-size:23px;
+    }
+
+    .footer-address{
+        font-size:14px;
+    }
+
+    .footer-phone{
+        font-size:15px;
+    }
+
+    .footer-tagline{
+        font-size:13px;
+        line-height:1.5;
+    }
+
 }
 
 </style>
@@ -706,817 +1264,1119 @@ footer{
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
-    <div class="navbar">
 
-        <div class="logo" onclick="goHome()">
-            <img src="99927B00-BDEF-45EB-9A5C-AC1CEFE3E77A.png" alt="গ্রাম থেকে">
-        </div>
-
-        <div class="nav-right">
-
-            <div class="lang-buttons">
-                <button class="lang-btn active" id="bnBtn" onclick="setLanguage('bn')">বাংলা</button>
-                <button class="lang-btn" id="enBtn" onclick="setLanguage('en')">EN</button>
-            </div>
-
-            <div class="menu-wrapper">
-
-                <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-
-                <div class="dropdown-menu" id="dropdownMenu">
-
-                    <button onclick="goHome()"
-                            data-bn="হোম"
-                            data-en="Home">
-                        হোম
-                    </button>
-
-                    <button onclick="openProductDetails()"
-                            data-bn="নতুন পণ্য"
-                            data-en="New Product">
-                        নতুন পণ্য
-                    </button>
-
-                    <button onclick="scrollToUpcoming()"
-                            data-bn="আসন্ন পণ্য"
-                            data-en="Upcoming Product">
-                        আসন্ন পণ্য
-                    </button>
-
-                    <button onclick="openCart()"
-                            data-bn="কার্ট 🛒"
-                            data-en="Cart 🛒">
-                        কার্ট 🛒
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-</header>
-
-
-<!-- HERO -->
-
-<main id="homePage">
-
-<section class="hero">
-
-    <video autoplay muted loop playsinline>
-        <source src="video-output-FB20D9D5-58B1-4676-A147-1F5E586ACC44-1.mp4" type="video/mp4">
-    </video>
-
-    <div class="hero-overlay">
-
-        <div class="hero-content">
-
-            <h1 data-bn="গ্রাম থেকে"
-                data-en="Graam Theke">
-                গ্রাম থেকে
-            </h1>
-
-            <p data-bn="প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য"
-               data-en="Natural sweetness, the tradition of rural Bengal">
-                প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য
-            </p>
-
-            <button class="primary-btn"
-                    onclick="scrollToProducts()"
-                    data-bn="আমাদের পণ্য দেখুন"
-                    data-en="View Our Products">
-                আমাদের পণ্য দেখুন
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- PRODUCT SECTION -->
-
-<section id="productsSection">
-
-    <div class="section-title">
-
-        <h2 data-bn="আমাদের পণ্য"
-            data-en="Our Products">
-            আমাদের পণ্য
-        </h2>
-
-    </div>
-
-
-    <div class="carousel">
-
-        <div class="carousel-track" id="carouselTrack">
-
-            <div class="carousel-slide">
-
-                <div class="product-card">
-
-                    <img class="product-image"
-                         src="DDEFE989-0077-4992-8E6F-AC19B734DF8B.png"
-                         alt="খাঁটি আখের গুড়">
-
-                    <div class="product-info">
-
-                        <h3 data-bn="খাঁটি আখের গুড়"
-                            data-en="Pure Sugarcane Jaggery">
-                            খাঁটি আখের গুড়
-                        </h3>
-
-                        <div class="weight"
-                             data-bn="ওজন: 500 gm"
-                             data-en="Weight: 500 gm">
-                            ওজন: 500 gm
-                        </div>
-
-                        <div class="discount-label"
-                             data-bn="১০% ছাড়"
-                             data-en="10% Discount">
-                            ১০% ছাড়
-                        </div>
-
-                        <div class="price-box">
-
-                            <span class="old-price">৳150</span>
-
-                            <span class="current-price">৳135</span>
-
-                        </div>
-
-                        <button class="primary-btn"
-                                onclick="openProductDetails()"
-                                data-bn="বিস্তারিত দেখুন"
-                                data-en="View Details">
-                            বিস্তারিত দেখুন
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- UPCOMING PRODUCT -->
-
-            <div class="carousel-slide">
-
-                <div class="product-card">
-
-                    <img class="product-image"
-                         src="7677A364-08A7-4141-BA47-3932833126CA.png"
-                         alt="নতুন পণ্য">
-
-                    <div class="product-info">
-
-                        <h3 data-bn="নতুন পণ্য"
-                            data-en="New Product">
-                            নতুন পণ্য
-                        </h3>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section id="upcomingSection">
-
-    <div class="section-title">
-
-        <h2 data-bn="নতুন পণ্য"
-            data-en="New Product">
-            নতুন পণ্য
-        </h2>
-
-    </div>
-
-</section>
-
-</main>
-
-
-<!-- PRODUCT DETAILS -->
-
-<section class="detail-page" id="productDetailsPage">
-
-    <button class="back-btn"
-            onclick="backToProducts()"
-            data-bn="← ফিরে যান"
-            data-en="← Back">
-        ← ফিরে যান
-    </button>
-
-    <div class="detail-container">
-
-        <img class="detail-image"
-             src="DDEFE989-0077-4992-8E6F-AC19B734DF8B.png"
-             alt="খাঁটি আখের গুড়">
-
-        <div class="detail-info">
-
-            <h2 data-bn="খাঁটি আখের গুড়"
-                data-en="Pure Sugarcane Jaggery">
-                খাঁটি আখের গুড়
-            </h2>
-
-            <p data-bn="প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য"
-               data-en="Natural sweetness, the tradition of rural Bengal">
-                প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য
-            </p>
-
-            <div class="discount-label"
-                 data-bn="১০% ছাড়"
-                 data-en="10% Discount">
-                ১০% ছাড়
-            </div>
-
-            <div class="detail-price">
-
-                <span class="old-price">৳150</span>
-
-                <span class="current-price">৳135</span>
-
-            </div>
-
-            <button class="primary-btn"
-                    onclick="addToCart()"
-                    data-bn="কার্টে যোগ করুন"
-                    data-en="Add to Cart">
-                কার্টে যোগ করুন
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- CART -->
-
-<section class="cart-page" id="cartPage">
-
-    <button class="back-btn"
-            onclick="backFromCart()"
-            data-bn="← ফিরে যান"
-            data-en="← Back">
-        ← ফিরে যান
-    </button>
-
-    <div class="cart-box">
-
-        <h2 data-bn="আপনার কার্ট"
-            data-en="Your Cart">
-            আপনার কার্ট
-        </h2>
-
-        <div id="cartItems"></div>
-
-        <div class="cart-summary">
-
-            <div class="summary-row">
-                <span data-bn="পণ্যের মোট মূল্য"
-                      data-en="Product Total">
-                    পণ্যের মোট মূল্য
-                </span>
-                <span id="cartProductTotal">৳0</span>
-            </div>
-
-            <div class="summary-row">
-
-                <span data-bn="ডেলিভারি চার্জ"
-                      data-en="Delivery Charge">
-                    ডেলিভারি চার্জ
-                </span>
-
-                <span id="cartDelivery">৳0</span>
-
-            </div>
-
-            <div class="summary-row summary-total">
-
-                <span data-bn="সর্বমোট"
-                      data-en="Grand Total">
-                    সর্বমোট
-                </span>
-
-                <span id="cartGrandTotal">৳0</span>
-
-            </div>
-
-        </div>
-
-        <div class="cart-actions">
-
-            <button class="primary-btn"
-                    onclick="openOrder()"
-                    data-bn="অর্ডার করুন"
-                    data-en="Place Order">
-                অর্ডার করুন
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ORDER -->
-
-<section class="order-page" id="orderPage">
-
-    <button class="back-btn"
-            onclick="backFromOrder()"
-            data-bn="← ফিরে যান"
-            data-en="← Back">
-        ← ফিরে যান
-    </button>
-
-    <div class="order-box">
-
-        <h2 data-bn="অর্ডার সম্পন্ন করুন"
-            data-en="Complete Your Order">
-            অর্ডার সম্পন্ন করুন
-        </h2>
-
-        <br>
-
-        <div class="form-group">
-
-            <label data-bn="নাম"
-                   data-en="Name">
-                নাম
-            </label>
-
-            <input type="text"
-                   id="customerName"
-                   data-placeholder-bn="আপনার নাম লিখুন"
-                   data-placeholder-en="Enter your name"
-                   placeholder="আপনার নাম লিখুন">
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label data-bn="ফোন নম্বর"
-                   data-en="Phone Number">
-                ফোন নম্বর
-            </label>
-
-            <input type="tel"
-                   id="customerPhone"
-                   data-placeholder-bn="আপনার ফোন নম্বর লিখুন"
-                   data-placeholder-en="Enter your phone number"
-                   placeholder="আপনার ফোন নম্বর লিখুন">
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label data-bn="ঠিকানা"
-                   data-en="Address">
-                ঠিকানা
-            </label>
-
-            <textarea id="customerAddress"
-                      data-placeholder-bn="আপনার ঠিকানা লিখুন"
-                      data-placeholder-en="Enter your address"
-                      placeholder="আপনার ঠিকানা লিখুন"></textarea>
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label data-bn="ডেলিভারি এলাকা"
-                   data-en="Delivery Area">
-                ডেলিভারি এলাকা
-            </label>
-
-            <div class="delivery-options">
-
-                <div class="delivery-card"
-                     id="insideDelivery"
-                     onclick="selectDelivery('inside')">
-
-                    <strong data-bn="ঢাকার ভিতরে"
-                            data-en="Inside Dhaka">
-                        ঢাকার ভিতরে
-                    </strong>
-
-                    <br>
-
-                    <span>৳60</span>
-
-                </div>
-
-
-                <div class="delivery-card"
-                     id="outsideDelivery"
-                     onclick="selectDelivery('outside')">
-
-                    <strong data-bn="ঢাকার বাইরে"
-                            data-en="Outside Dhaka">
-                        ঢাকার বাইরে
-                    </strong>
-
-                    <br>
-
-                    <span>৳120</span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- ORDER TOTAL -->
-
-        <div class="cart-summary order-summary">
-
-            <div class="summary-row">
-
-                <span data-bn="পণ্যের মোট মূল্য"
-                      data-en="Product Total">
-                    পণ্যের মোট মূল্য
-                </span>
-
-                <span id="orderProductTotal">৳0</span>
-
-            </div>
-
-            <div class="summary-row">
-
-                <span data-bn="ডেলিভারি চার্জ"
-                      data-en="Delivery Charge">
-                    ডেলিভারি চার্জ
-                </span>
-
-                <span id="orderDeliveryTotal">৳0</span>
-
-            </div>
-
-            <div class="summary-row summary-total">
-
-                <span data-bn="সর্বমোট"
-                      data-en="Grand Total">
-                    সর্বমোট
-                </span>
-
-                <span id="orderGrandTotal">৳0</span>
-
-            </div>
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label data-bn="পেমেন্ট পদ্ধতি"
-                   data-en="Payment Method">
-                পেমেন্ট পদ্ধতি
-            </label>
-
-            <div class="payment-options">
-
-                <div class="payment-card"
-                     id="bkashPayment"
-                     onclick="selectPayment('bkash')">
-
-                    <img src="IMG_3245.png" alt="bKash">
-
-                    <div data-bn="বিকাশ"
-                         data-en="bKash">
-                        বিকাশ
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <button class="primary-btn confirm-btn"
-                onclick="confirmOrder()"
-                data-bn="অর্ডার নিশ্চিত করুন"
-                data-en="Confirm Order">
-            অর্ডার নিশ্চিত করুন
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-    <div class="footer-container">
-
-        <div class="footer-section footer-logo">
-
-            <img src="C03DACE3-4506-4B0C-93D1-0162CC9BC08D.png"
-                 alt="গ্রাম থেকে">
-
-        </div>
-
-
-        <div class="footer-section">
-
-            <h3 data-bn="যোগাযোগ"
-                data-en="Contact">
-                যোগাযোগ
-            </h3>
-
-            <p>
-                +8801601601998
-                <br>
-                কাপাসিয়া, গাজীপুর, বাংলাদেশ
-            </p>
-
-        </div>
-
-
-        <div class="footer-section">
-
-            <h3 data-bn="আমাদের সাথে যুক্ত থাকুন"
-                data-en="Follow Us">
-                আমাদের সাথে যুক্ত থাকুন
-            </h3>
-
-            <div class="social-icons">
-
-                <a href="https://www.facebook.com/share/18F1J2ej6V/?mibextid=wwXIfr"
-                   target="_blank">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
-
-                <a href="https://m.me/GraamTheke"
-                   target="_blank">
-                    <i class="fa-brands fa-facebook-messenger"></i>
-                </a>
-
-                <a href="https://www.instagram.com/graam_theke/"
-                   target="_blank">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-
-                <a href="https://www.threads.com/@graam_theke?igshid=NTc4MTIwNjQ2YQ=="
-                   target="_blank">
-                    <i class="fa-brands fa-threads"></i>
-                </a>
-
-                <a href="https://wa.me/8801601601998"
-                   target="_blank">
-                    <i class="fa-brands fa-whatsapp"></i>
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="footer-bottom">
-        © 2026 Graam Theke. All Rights Reserved.
-    </div>
-
-</footer>
-
-
-<!-- DISCOUNT POPUP -->
-
-<div class="discount-popup-overlay" id="discountPopup">
-
-    <div class="discount-popup"
-         role="dialog"
-         aria-modal="true">
-
-        <button class="discount-popup-close"
-                onclick="closeDiscountPopup()"
-                aria-label="Close">
-            ×
-        </button>
-
-        <img src="117E58FC-39F2-4D58-BC43-9DF871C02E94.jpeg"
-             class="discount-popup-image"
-             alt="বিশেষ অফার">
-
-        <h2 data-bn="বিশেষ অফার!"
-            data-en="Special Offer!">
-            বিশেষ অফার!
-        </h2>
-
-        <h3 data-bn="১০% ছাড়"
-            data-en="10% Discount">
-            ১০% ছাড়
-        </h3>
-
-        <p data-bn="খাঁটি আখের গুড় — এখন বিশেষ মূল্যে"
-           data-en="Pure Sugarcane Jaggery — now at a special price">
-            খাঁটি আখের গুড় — এখন বিশেষ মূল্যে
-        </p>
-
-        <div class="popup-price">
-
-            <span class="old-price">৳150</span>
-
-            <span class="current-price">৳135</span>
-
-        </div>
-
-        <button class="popup-order-btn"
-                onclick="closeDiscountPopup(); openProductDetails();"
-                data-bn="অর্ডার করুন"
-                data-en="Order Now">
-            অর্ডার করুন
-        </button>
-
-        <div class="popup-note"
-             data-bn="১০% ছাড়ের অফার"
-             data-en="10% discount offer">
-            ১০% ছাড়ের অফার
-        </div>
-
-    </div>
+<div class="header-inner">
+
+<img
+    src="99927B00-BDEF-45EB-9A5C-AC1CEFE3E77A.png"
+    class="logo"
+    onclick="goHome()"
+    alt="গ্রাম থেকে">
+
+<div class="header-actions">
+
+<button
+    class="lang-btn active"
+    id="bnBtn"
+    onclick="setLanguage('bn')">
+    বাংলা
+</button>
+
+<button
+    class="lang-btn"
+    id="enBtn"
+    onclick="setLanguage('en')">
+    EN
+</button>
+
+<button
+    class="menu-btn"
+    onclick="toggleMenu()">
+    ☰
+</button>
 
 </div>
 
- 
+</div>
+
+<div class="dropdown" id="dropdownMenu">
+
+<a
+    href="#home"
+    onclick="closeMenu()"
+    data-bn="হোম"
+    data-en="Home">
+    হোম
+</a>
+
+<a
+    href="#products"
+    onclick="closeMenu()"
+    data-bn="পণ্য"
+    data-en="Products">
+    পণ্য
+</a>
+
+<a
+    href="#why"
+    onclick="closeMenu()"
+    data-bn="কেন গ্রাম থেকে?"
+    data-en="Why Graam Theke?">
+    কেন গ্রাম থেকে?
+</a>
+
+<a
+    href="#footer"
+    onclick="closeMenu()"
+    data-bn="যোগাযোগ"
+    data-en="Contact">
+    যোগাযোগ
+</a>
+
+<a
+    href="javascript:void(0)"
+    onclick="openCart();closeMenu()"
+    data-bn="কার্ট 🛒"
+    data-en="Cart 🛒">
+    কার্ট 🛒
+</a>
+
+</div>
+
+</header>
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<div id="mainContent">
+
+<section class="hero" id="home">
+
+<video
+    autoplay
+    muted
+    loop
+    playsinline
+    webkit-playsinline
+    preload="auto"
+    poster="DDEFE989-0077-4992-8E6F-AC19B734DF8B.png">
+
+    <source
+        src="video-output-FB20D9D5-58B1-4676-A147-1F5E586ACC44-1.mp4"
+        type="video/mp4">
+
+</video>
+
+<div class="hero-content">
+
+<h1
+    data-bn="গ্রাম থেকে"
+    data-en="Graam Theke">
+    গ্রাম থেকে
+</h1>
+
+<p
+    data-bn="প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য"
+    data-en="Natural sweetness, the tradition of rural Bengal">
+    প্রাকৃতিক মিষ্টতা, গ্রামবাংলার ঐতিহ্য
+</p>
+
+<a
+    href="#products"
+    class="hero-btn"
+    data-bn="পণ্য দেখুন"
+    data-en="View Products">
+    পণ্য দেখুন
+</a>
+
+</div>
+
+</section>
+
+<!-- ================= PRODUCTS ================= -->
+
+<section id="products">
+
+<div class="container">
+
+<h2
+    class="section-title"
+    data-bn="আমাদের পণ্য"
+    data-en="Our Products">
+    আমাদের পণ্য
+</h2>
+
+<p
+    class="section-subtitle"
+    data-bn="গ্রামবাংলার ঐতিহ্য ও প্রাকৃতিক স্বাদের খাঁটি আখের গুড়"
+    data-en="Pure sugarcane jaggery inspired by the tradition and natural taste of rural Bengal">
+    গ্রামবাংলার ঐতিহ্য ও প্রাকৃতিক স্বাদের খাঁটি আখের গুড়
+</p>
+
+<div class="products-grid">
+
+<div
+    class="product-card"
+    onclick="openProductDetails()">
+
+<div class="product-image-wrap">
+
+<img
+    src="DDEFE989-0077-4992-8E6F-AC19B734DF8B.png"
+    class="product-image"
+    alt="খাঁটি আখের গুড়">
+
+</div>
+
+<div class="product-info">
+
+<h3
+    data-bn="খাঁটি আখের গুড়"
+    data-en="Pure Sugarcane Jaggery">
+    খাঁটি আখের গুড়
+</h3>
+
+<p
+    data-bn="পরিমাণ: ৫০০ গ্রাম"
+    data-en="Weight: 500 gm">
+    পরিমাণ: ৫০০ গ্রাম
+</p>
+
+<div class="product-price">
+
+<span class="old-price">
+    ৳150
+</span>
+
+<span class="current-price">
+    ৳135
+</span>
+
+</div>
+
+</div>
+
+<button
+    class="cart-sticker"
+    onclick="event.stopPropagation(); addToCart(); openCart();">
+
+    <i class="fa-solid fa-cart-shopping"></i>
+
+    <span
+        data-bn="কার্টে যোগ করুন"
+        data-en="Add to Cart">
+        কার্টে যোগ করুন
+    </span>
+
+</button>
+
+</div>
+
+<!-- UPCOMING PRODUCT -->
+
+<div class="upcoming-card">
+
+<div class="upcoming-content">
+
+<img
+    src="7677A364-08A7-4141-BA47-3932833126CA.png"
+    alt="খাঁটি খেজুরের পাটালি গুড়">
+
+<h3
+    data-bn="খাঁটি খেজুরের পাটালি গুড়"
+    data-en="Pure Date Palm Patali Jaggery">
+    খাঁটি খেজুরের পাটালি গুড়
+</h3>
+
+<p
+    data-bn="১ কেজি"
+    data-en="1 KG">
+    ১ কেজি
+</p>
+
+<p
+    data-bn="শীঘ্রই আসছে"
+    data-en="Coming Soon">
+    শীঘ্রই আসছে
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= WHY ================= -->
+
+<section class="why-section" id="why">
+
+<div class="container">
+
+<h2
+    class="section-title"
+    data-bn="কেন গ্রাম থেকে?"
+    data-en="Why Graam Theke?">
+    কেন গ্রাম থেকে?
+</h2>
+
+<p
+    class="section-subtitle"
+    data-bn="প্রকৃতির কাছাকাছি থেকে আপনার ঘরে"
+    data-en="From nature closer to your home">
+    প্রকৃতির কাছাকাছি থেকে আপনার ঘরে
+</p>
+
+<div class="why-carousel">
+
+<div class="why-slider" id="whySlider">
+
+<div class="why-track" id="whyTrack">
+
+<!-- ================= CARD 1 ================= -->
+
+<div class="why-slide">
+
+<div class="why-card">
+
+<div class="why-icon">
+🌿
+</div>
+
+<h3
+    data-bn="প্রাকৃতিক"
+    data-en="Natural">
+    প্রাকৃতিক
+</h3>
+
+<h4
+    data-bn="যেখানে সরলতাই সৌন্দর্য"
+    data-en="Where simplicity is the beauty">
+    যেখানে সরলতাই সৌন্দর্য
+</h4>
+
+<p
+    data-bn="প্রকৃতি আমাদের যা দিয়েছে, তার নিজস্ব স্বাদ ও বৈশিষ্ট্যকে যতটা সম্ভব অক্ষুণ্ণ রাখার চেষ্টা করি। অপ্রয়োজনীয় প্রক্রিয়াজাতকরণ কমিয়ে খাবারকে তার স্বাভাবিক পরিচয়ের কাছাকাছি রাখাই আমাদের ভাবনা।"
+    data-en="We try to preserve the natural taste and characteristics of what nature has given us as much as possible. Our approach is to keep food close to its natural identity by reducing unnecessary processing.">
+    প্রকৃতি আমাদের যা দিয়েছে, তার নিজস্ব স্বাদ ও বৈশিষ্ট্যকে যতটা সম্ভব অক্ষুণ্ণ রাখার চেষ্টা করি। অপ্রয়োজনীয় প্রক্রিয়াজাতকরণ কমিয়ে খাবারকে তার স্বাভাবিক পরিচয়ের কাছাকাছি রাখাই আমাদের ভাবনা।
+</p>
+
+</div>
+
+</div>
+
+<!-- ================= CARD 2 ================= -->
+
+<div class="why-slide">
+
+<div class="why-card">
+
+<div class="why-icon">
+🏡
+</div>
+
+<h3
+    data-bn="গ্রামবাংলার ঐতিহ্য"
+    data-en="Rural Bengal Tradition">
+    গ্রামবাংলার ঐতিহ্য
+</h3>
+
+<h4
+    data-bn="একটি স্বাদ, একটি গল্প, একটি শেকড়"
+    data-en="A taste, a story, a root">
+    একটি স্বাদ, একটি গল্প, একটি শেকড়
+</h4>
+
+<p
+    data-bn="গ্রামের খাবারের সঙ্গে মিশে থাকে আমাদের শৈশব, উৎসব, পরিবার আর অসংখ্য স্মৃতি। হারিয়ে যেতে বসা সেই চেনা স্বাদ ও ঐতিহ্যকে নতুন করে মানুষের ঘরে ফিরিয়ে আনাই Graam Theke-এর ভালোবাসার একটি অংশ।"
+    data-en="Rural food carries our childhood, festivals, family and countless memories. Bringing those familiar tastes and traditions, which are gradually disappearing, back into people's homes is a part of Graam Theke's love and purpose.">
+    গ্রামের খাবারের সঙ্গে মিশে থাকে আমাদের শৈশব, উৎসব, পরিবার আর অসংখ্য স্মৃতি। হারিয়ে যেতে বসা সেই চেনা স্বাদ ও ঐতিহ্যকে নতুন করে মানুষের ঘরে ফিরিয়ে আনাই Graam Theke-এর ভালোবাসার একটি অংশ।
+</p>
+
+</div>
+
+</div>
+
+<!-- ================= CARD 3 ================= -->
+
+<div class="why-slide">
+
+<div class="why-card">
+
+<div class="why-icon">
+✨
+</div>
+
+<h3
+    data-bn="বিশ্বস্ততা"
+    data-en="Trust">
+    বিশ্বস্ততা
+</h3>
+
+<h4
+    data-bn="স্বাদের সঙ্গে বিশ্বাসের সম্পর্ক"
+    data-en="A relationship between taste and trust">
+    স্বাদের সঙ্গে বিশ্বাসের সম্পর্ক
+</h4>
+
+<p
+    data-bn="আপনার ঘরে যে খাবারটি পৌঁছাবে, তার প্রতি আমাদের দায়িত্বও ততটাই গুরুত্বপূর্ণ। উৎস থেকে প্রস্তুতি পর্যন্ত যত্নশীল থাকার চেষ্টা করি—কারণ একটি ভালো খাবারের সঙ্গে তৈরি হয় একটি দীর্ঘস্থায়ী বিশ্বাসের সম্পর্ক।"
+    data-en="The food that reaches your home carries an equally important responsibility for us. We try to be careful from sourcing to preparation, because good food builds a lasting relationship of trust.">
+    আপনার ঘরে যে খাবারটি পৌঁছাবে, তার প্রতি আমাদের দায়িত্বও ততটাই গুরুত্বপূর্ণ। উৎস থেকে প্রস্তুতি পর্যন্ত যত্নশীল থাকার চেষ্টা করি—কারণ একটি ভালো খাবারের সঙ্গে তৈরি হয় একটি দীর্ঘস্থায়ী বিশ্বাসের সম্পর্ক।
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= DOTS ================= -->
+
+<div
+    class="why-dots"
+    aria-label="Why Graam Theke slides">
+
+<button
+    class="why-dot active"
+    type="button"
+    aria-label="প্রাকৃতিক"
+    onclick="goToWhySlide(0)">
+</button>
+
+<button
+    class="why-dot"
+    type="button"
+    aria-label="গ্রামবাংলার ঐতিহ্য"
+    onclick="goToWhySlide(1)">
+</button>
+
+<button
+    class="why-dot"
+    type="button"
+    aria-label="বিশ্বস্ততা"
+    onclick="goToWhySlide(2)">
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+<!-- ================= PRODUCT DETAIL ================= -->
+
+<section id="productDetail">
+
+<div class="detail-container">
+
+<button
+    class="back-btn"
+    onclick="backToProducts()"
+    data-bn="← পণ্যে ফিরে যান"
+    data-en="← Back to Products">
+    ← পণ্যে ফিরে যান
+</button>
+
+<div class="product-detail-grid">
+
+<div>
+
+<img
+    src="DDEFE989-0077-4992-8E6F-AC19B734DF8B.png"
+    class="detail-image"
+    alt="খাঁটি আখের গুড়">
+
+</div>
+
+<div class="detail-content">
+
+<h2
+    data-bn="খাঁটি আখের গুড়"
+    data-en="Pure Sugarcane Jaggery">
+    খাঁটি আখের গুড়
+</h2>
+
+<div
+    class="weight"
+    data-bn="পরিমাণ: ৫০০ গ্রাম"
+    data-en="Weight: 500 gm">
+    পরিমাণ: ৫০০ গ্রাম
+</div>
+
+<p
+    data-bn="গ্রামবাংলার ঐতিহ্যবাহী স্বাদ ও প্রাকৃতিক মিষ্টতায় তৈরি খাঁটি আখের গুড়।"
+    data-en="Pure sugarcane jaggery made with the traditional taste and natural sweetness of rural Bengal.">
+    গ্রামবাংলার ঐতিহ্যবাহী স্বাদ ও প্রাকৃতিক মিষ্টতায় তৈরি খাঁটি আখের গুড়।
+</p>
+
+<div class="detail-price">
+
+<span class="old-price">
+    ৳150
+</span>
+
+<span class="current-price">
+    ৳135
+</span>
+
+</div>
+
+<button
+    class="add-cart-btn"
+    onclick="addToCart();openCart();"
+    data-bn="কার্টে যোগ করুন"
+    data-en="Add to Cart">
+
+    <i class="fa-solid fa-cart-shopping"></i>
+
+    <span
+        data-bn="কার্টে যোগ করুন"
+        data-en="Add to Cart">
+        কার্টে যোগ করুন
+    </span>
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= CART ================= -->
+
+<section id="cartSection">
+
+<div class="container">
+
+<h2
+    class="section-title"
+    data-bn="আপনার কার্ট"
+    data-en="Your Cart">
+    আপনার কার্ট
+</h2>
+
+<div class="cart-box">
+
+<button
+    class="cart-back-btn"
+    onclick="backFromCart()"
+    data-bn="← পণ্য দেখুন"
+    data-en="← Back to Products">
+    ← পণ্য দেখুন
+</button>
+
+<div id="cartItems"></div>
+
+<div class="cart-summary">
+
+<div class="summary-row">
+
+<span
+    data-bn="পণ্য"
+    data-en="Product">
+    পণ্য
+</span>
+
+<span id="productTotal">
+    ৳0
+</span>
+
+</div>
+
+<div class="summary-row">
+
+<span
+    data-bn="ডেলিভারি"
+    data-en="Delivery">
+    ডেলিভারি
+</span>
+
+<span id="deliveryTotal">
+    ৳0
+</span>
+
+</div>
+
+<div class="summary-row summary-total">
+
+<span
+    data-bn="সর্বমোট"
+    data-en="Total">
+    সর্বমোট
+</span>
+
+<span id="grandTotal">
+    ৳0
+</span>
+
+</div>
+
+</div>
+
+<button
+    class="confirm-btn"
+    onclick="openOrder()"
+    data-bn="অর্ডার করতে এগিয়ে যান"
+    data-en="Proceed to Order">
+    অর্ডার করতে এগিয়ে যান
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= ORDER ================= -->
+
+<section id="orderSection">
+
+<div class="container">
+
+<h2
+    class="section-title"
+    data-bn="অর্ডার নিশ্চিত করুন"
+    data-en="Confirm Your Order">
+    অর্ডার নিশ্চিত করুন
+</h2>
+
+<p
+    class="section-subtitle"
+    data-bn="আপনার তথ্য দিয়ে অর্ডার সম্পন্ন করুন"
+    data-en="Complete your order with your information">
+    আপনার তথ্য দিয়ে অর্ডার সম্পন্ন করুন
+</p>
+
+<div class="order-box">
+
+<!-- ORDER BACK BUTTON -->
+
+<button
+    class="cart-back-btn"
+    onclick="backFromOrder()"
+    data-bn="← কার্টে ফিরে যান"
+    data-en="← Back to Cart">
+    ← কার্টে ফিরে যান
+</button>
+
+<div class="form-group">
+
+<label
+    for="customerName"
+    data-bn="আপনার নাম"
+    data-en="Your Name">
+    আপনার নাম
+</label>
+
+<input
+    type="text"
+    id="customerName"
+    placeholder="আপনার নাম"
+    data-placeholder-bn="আপনার নাম"
+    data-placeholder-en="Your Name">
+
+</div>
+
+<div class="form-group">
+
+<label
+    for="customerPhone"
+    data-bn="মোবাইল নম্বর"
+    data-en="Mobile Number">
+    মোবাইল নম্বর
+</label>
+
+<input
+    type="tel"
+    id="customerPhone"
+    placeholder="মোবাইল নম্বর"
+    data-placeholder-bn="মোবাইল নম্বর"
+    data-placeholder-en="Mobile Number">
+
+</div>
+
+<div class="form-group">
+
+<label
+    for="customerAddress"
+    data-bn="ডেলিভারি ঠিকানা"
+    data-en="Delivery Address">
+    ডেলিভারি ঠিকানা
+</label>
+
+<textarea
+    id="customerAddress"
+    placeholder="সম্পূর্ণ ডেলিভারি ঠিকানা"
+    data-placeholder-bn="সম্পূর্ণ ডেলিভারি ঠিকানা"
+    data-placeholder-en="Full delivery address"></textarea>
+
+</div>
+
+<div class="form-group">
+
+<label
+    data-bn="ডেলিভারি এলাকা"
+    data-en="Delivery Area">
+    ডেলিভারি এলাকা
+</label>
+
+<div class="option-grid">
+
+<label
+    class="option-card"
+    id="insideDhakaCard">
+
+<input
+    type="radio"
+    name="delivery"
+    value="inside"
+    onclick="selectDelivery('inside')">
+
+<div
+    class="option-title"
+    data-bn="ঢাকার ভিতরে"
+    data-en="Inside Dhaka">
+    ঢাকার ভিতরে
+</div>
+
+<div class="option-price">
+    ৳60
+</div>
+
+</label>
+
+<label
+    class="option-card"
+    id="outsideDhakaCard">
+
+<input
+    type="radio"
+    name="delivery"
+    value="outside"
+    onclick="selectDelivery('outside')">
+
+<div
+    class="option-title"
+    data-bn="ঢাকার বাইরে"
+    data-en="Outside Dhaka">
+    ঢাকার বাইরে
+</div>
+
+<div class="option-price">
+    ৳120
+</div>
+
+</label>
+
+</div>
+
+</div>
+
+<div
+    class="payment-title"
+    data-bn="পেমেন্ট পদ্ধতি"
+    data-en="Payment Method">
+    পেমেন্ট পদ্ধতি
+</div>
+
+<div class="payment-options">
+
+<label
+    class="payment-card"
+    id="codCard">
+
+<input
+    type="radio"
+    name="payment"
+    value="cod"
+    onclick="selectPayment('cod')">
+
+<div>
+
+<div
+    class="option-title"
+    data-bn="Cash on Delivery"
+    data-en="Cash on Delivery">
+    Cash on Delivery
+</div>
+
+<div
+    class="option-price"
+    data-bn="পণ্য হাতে পেয়ে পেমেন্ট"
+    data-en="Pay when you receive the product">
+    পণ্য হাতে পেয়ে পেমেন্ট
+</div>
+
+</div>
+
+</label>
+
+<label
+    class="payment-card"
+    id="bkashCard">
+
+<input
+    type="radio"
+    name="payment"
+    value="bkash"
+    onclick="selectPayment('bkash')">
+
+<img
+    src="IMG_3245.png"
+    class="bkash-logo"
+    alt="bKash">
+
+<div>
+
+<div
+    class="option-title"
+    data-bn="bKash Payment"
+    data-en="bKash Payment">
+    bKash Payment
+</div>
+
+<div
+    class="option-price"
+    data-bn="bKash-এর মাধ্যমে পেমেন্ট"
+    data-en="Pay via bKash">
+    Pay via bKash
+</div>
+
+</div>
+
+</label>
+
+</div>
+
+<button
+    class="confirm-btn"
+    onclick="confirmOrder()"
+    data-bn="অর্ডার নিশ্চিত করুন"
+    data-en="Confirm Order">
+    অর্ডার নিশ্চিত করুন
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= SUCCESS ================= -->
+
+<section id="successSection">
+
+<div class="success-icon">
+✓
+</div>
+
+<h2
+    data-bn="অর্ডারের তথ্য প্রস্তুত হয়েছে!"
+    data-en="Order Information Ready!">
+    অর্ডারের তথ্য প্রস্তুত হয়েছে!
+</h2>
+
+<p
+    data-bn="WhatsApp খুলে আপনার অর্ডারের তথ্য Send করুন।"
+    data-en="WhatsApp will open with your order information. Please press Send to complete your order.">
+    WhatsApp খুলে আপনার অর্ডারের তথ্য Send করুন।
+</p>
+
+<a
+    href="javascript:void(0)"
+    onclick="goHome()"
+    class="success-btn"
+    data-bn="হোমে ফিরে যান"
+    data-en="Back to Home">
+    হোমে ফিরে যান
+</a>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="footer">
+
+<div class="footer-container">
+
+<!-- NEW FOOTER LOGO -->
+
+<div class="footer-logo-wrap">
+
+<img
+    src="C03DACE3-4506-4B0C-93D1-0162CC9BC08D.png"
+    class="footer-logo"
+    alt="Graam Theke">
+
+</div>
+
+<!-- SOCIAL MEDIA -->
+
+<div class="footer-social-icons">
+
+<a
+    href="https://www.facebook.com/share/18F1J2ej6V/?mibextid=wwXIfr"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook">
+
+    <i class="fa-brands fa-facebook"></i>
+
+</a>
+
+<a
+    href="https://m.me/GraamTheke"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Messenger">
+
+    <i class="fa-brands fa-facebook-messenger"></i>
+
+</a>
+
+<a
+    href="https://www.instagram.com/graam_theke/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram">
+
+    <i class="fa-brands fa-instagram"></i>
+
+</a>
+
+<a
+    href="https://www.threads.com/@graam_theke?igshid=NTc4MTIwNjQ2YQ=="
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Threads">
+
+    <i class="fa-brands fa-threads"></i>
+
+</a>
+
+<a
+    href="https://wa.me/8801601601998"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp">
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+</div>
+
+<!-- BRAND INFORMATION -->
+
+<div
+    class="footer-brand"
+    data-bn="গ্রাম থেকে"
+    data-en="Graam Theke">
+    গ্রাম থেকে
+</div>
+
+<div
+    class="footer-address"
+    data-bn="কাপাসিয়া, গাজীপুর, বাংলাদেশ"
+    data-en="Kapasia, Gazipur, Bangladesh">
+    কাপাসিয়া, গাজীপুর, বাংলাদেশ
+</div>
+
+<a
+    href="tel:+8801601601998"
+    class="footer-phone">
+    +8801601601998
+</a>
+
+<div class="footer-divider"></div>
+
+<div class="footer-tagline">
+    Natural Sweetness, The Tradition of Rural Bengal.
+</div>
+
+<div class="footer-copyright">
+    © 2026 Graam Theke. All Rights Reserved.
+</div>
+
+</div>
+
+</footer>
+
 <script>
-    const PRODUCT_REGULAR_PRICE = 150;
-const PRODUCT_PRICE = 135;
 
-const INSIDE_DHAKA_DELIVERY = 60;
-const OUTSIDE_DHAKA_DELIVERY = 120;
-
-let currentLanguage = "bn";
+/* ================= VARIABLES ================= */
 
 let cartQuantity = 0;
 let selectedDelivery = "";
 let selectedPayment = "";
 
+let currentLanguage =
+    localStorage.getItem("language") || "bn";
 
-/* =========================
-   LANGUAGE
-   ========================= */
+/* ================= PRODUCT PRICING ================= */
 
-function setLanguage(language){
+const PRODUCT_REGULAR_PRICE = 150;
+const PRODUCT_PRICE = 135;
 
-    currentLanguage = language;
+const INSIDE_DHAKA_DELIVERY = 60;
+const OUTSIDE_DHAKA_DELIVERY = 120;
 
-    document.querySelectorAll("[data-bn][data-en]").forEach(element => {
+/* ================= WHY CAROUSEL VARIABLES ================= */
 
-        element.textContent =
-            language === "bn"
-                ? element.getAttribute("data-bn")
-                : element.getAttribute("data-en");
+let currentWhySlide = 0;
+let whyAutoSlideTimer = null;
+let whyTouchStartX = 0;
+let whyTouchEndX = 0;
 
-    });
+const WHY_TOTAL_SLIDES = 3;
+const WHY_AUTO_SLIDE_DELAY = 5000;
 
+/* ================= MENU ================= */
 
-    document.querySelectorAll("[data-placeholder-bn][data-placeholder-en]").forEach(element => {
+function toggleMenu(){
 
-        element.placeholder =
-            language === "bn"
-                ? element.getAttribute("data-placeholder-bn")
-                : element.getAttribute("data-placeholder-en");
+    const menu =
+        document.getElementById("dropdownMenu");
 
-    });
+    menu.classList.toggle("show");
 
+}
 
-    document.getElementById("bnBtn").classList.toggle(
-        "active",
-        language === "bn"
-    );
+function closeMenu(){
 
-    document.getElementById("enBtn").classList.toggle(
-        "active",
-        language === "en"
-    );
+    document
+        .getElementById("dropdownMenu")
+        .classList.remove("show");
 
+}
+
+/* ================= LANGUAGE ================= */
+
+function setLanguage(lang){
+
+    currentLanguage = lang;
+
+    localStorage.setItem("language", lang);
+
+    document.documentElement.lang = lang;
+
+    document
+        .querySelectorAll("[data-bn][data-en]")
+        .forEach(el => {
+
+            el.textContent =
+                lang === "bn"
+                ? el.getAttribute("data-bn")
+                : el.getAttribute("data-en");
+
+        });
+
+    document
+        .querySelectorAll(
+            "[data-placeholder-bn][data-placeholder-en]"
+        )
+        .forEach(el => {
+
+            el.placeholder =
+                lang === "bn"
+                ? el.getAttribute("data-placeholder-bn")
+                : el.getAttribute("data-placeholder-en");
+
+        });
+
+    document
+        .getElementById("bnBtn")
+        .classList.toggle(
+            "active",
+            lang === "bn"
+        );
+
+    document
+        .getElementById("enBtn")
+        .classList.toggle(
+            "active",
+            lang === "en"
+        );
 
     updateCart();
 
 }
 
-
-/* =========================
-   MENU
-   ========================= */
-
-function toggleMenu(){
-
-    document.getElementById("dropdownMenu")
-        .classList.toggle("show");
-
-}
-
-
-document.addEventListener("click", function(event){
-
-    const menuWrapper = document.querySelector(".menu-wrapper");
-    const menu = document.getElementById("dropdownMenu");
-
-    if(
-        menu &&
-        menuWrapper &&
-        !menuWrapper.contains(event.target)
-    ){
-        menu.classList.remove("show");
-    }
-
-});
-
-
-/* =========================
-   HOME
-   ========================= */
+/* ================= HOME ================= */
 
 function goHome(){
 
-    document.getElementById("homePage").style.display = "block";
+    document
+        .getElementById("mainContent")
+        .style.display = "block";
 
-    document.getElementById("productDetailsPage").style.display = "none";
+    document
+        .getElementById("productDetail")
+        .style.display = "none";
 
-    document.getElementById("cartPage").style.display = "none";
+    document
+        .getElementById("cartSection")
+        .style.display = "none";
 
-    document.getElementById("orderPage").style.display = "none";
+    document
+        .getElementById("orderSection")
+        .style.display = "none";
+
+    document
+        .getElementById("successSection")
+        .style.display = "none";
+
+    closeMenu();
+
+    setView("home");
 
     window.scrollTo({
         top:0,
         behavior:"smooth"
     });
 
-    document.getElementById("dropdownMenu")
-        .classList.remove("show");
-
 }
 
-
-function scrollToProducts(){
-
-    document.getElementById("productsSection")
-        .scrollIntoView({
-            behavior:"smooth"
-        });
-
-}
-
-
-function scrollToUpcoming(){
-
-    document.getElementById("upcomingSection")
-        .scrollIntoView({
-            behavior:"smooth"
-        });
-
-    document.getElementById("dropdownMenu")
-        .classList.remove("show");
-
-}
-
-
-/* =========================
-   PRODUCT DETAILS
-   ========================= */
+/* ================= PRODUCT DETAILS ================= */
 
 function openProductDetails(){
 
-    document.getElementById("homePage").style.display = "none";
+    document
+        .getElementById("mainContent")
+        .style.display = "none";
 
-    document.getElementById("productDetailsPage").style.display = "block";
+    document
+        .getElementById("cartSection")
+        .style.display = "none";
 
-    document.getElementById("cartPage").style.display = "none";
+    document
+        .getElementById("orderSection")
+        .style.display = "none";
 
-    document.getElementById("orderPage").style.display = "none";
+    document
+        .getElementById("successSection")
+        .style.display = "none";
 
-    document.getElementById("dropdownMenu")
-        .classList.remove("show");
+    document
+        .getElementById("productDetail")
+        .style.display = "block";
+
+    setView("product");
 
     window.scrollTo({
         top:0,
@@ -1525,21 +2385,31 @@ function openProductDetails(){
 
 }
 
-
 function backToProducts(){
 
-    goHome();
+    document
+        .getElementById("productDetail")
+        .style.display = "none";
+
+    document
+        .getElementById("mainContent")
+        .style.display = "block";
+
+    setView("home");
 
     setTimeout(() => {
-        scrollToProducts();
+
+        document
+            .getElementById("products")
+            .scrollIntoView({
+                behavior:"smooth"
+            });
+
     },100);
 
 }
 
-
-/* =========================
-   CART
-   ========================= */
+/* ================= ADD TO CART ================= */
 
 function addToCart(){
 
@@ -1547,164 +2417,115 @@ function addToCart(){
 
     updateCart();
 
-    openCart();
-
 }
 
-
-function increaseQuantity(){
-
-    cartQuantity++;
-
-    updateCart();
-
-}
-
-
-function decreaseQuantity(){
-
-    if(cartQuantity > 0){
-        cartQuantity--;
-    }
-
-    updateCart();
-
-}
-
+/* ================= UPDATE CART ================= */
 
 function updateCart(){
 
-    const cartItems = document.getElementById("cartItems");
+    const cartItems =
+        document.getElementById("cartItems");
 
-    const productTotal =
-        PRODUCT_PRICE * cartQuantity;
-
-    let delivery = 0;
-
-    if(selectedDelivery === "inside"){
-        delivery = INSIDE_DHAKA_DELIVERY;
+    if(!cartItems){
+        return;
     }
 
-    if(selectedDelivery === "outside"){
-        delivery = OUTSIDE_DHAKA_DELIVERY;
-    }
+    cartItems.innerHTML = `
 
-    const grandTotal =
-        productTotal + delivery;
+        <div class="cart-item">
 
+            <div>
 
-    if(cartItems){
+                <strong>
+                    ${
+                        currentLanguage === "bn"
+                        ? "খাঁটি আখের গুড়"
+                        : "Pure Sugarcane Jaggery"
+                    }
+                </strong>
 
-        if(cartQuantity <= 0){
+                <div
+                    style="
+                        color:#777;
+                        font-size:14px;
+                    "
+                >
 
-            cartItems.innerHTML = `
-                <p style="text-align:center;color:#777;padding:25px 0;"
-                   data-bn="আপনার কার্ট খালি"
-                   data-en="Your cart is empty">
-                    ${currentLanguage === "bn"
-                        ? "আপনার কার্ট খালি"
-                        : "Your cart is empty"}
-                </p>
-            `;
-
-        }else{
-
-            cartItems.innerHTML = `
-
-                <div class="cart-item">
-
-                    <img
-                        src="DDEFE989-0077-4992-8E6F-AC19B734DF8B.png"
-                        class="cart-item-image"
-                        alt="খাঁটি আখের গুড়">
-
-                    <div class="cart-item-info">
-
-                        <h3>
-                            ${
-                                currentLanguage === "bn"
-                                ? "খাঁটি আখের গুড়"
-                                : "Pure Sugarcane Jaggery"
-                            }
-                        </h3>
-
-                        <div class="discount-label">
-                            ${
-                                currentLanguage === "bn"
-                                ? "১০% ছাড়"
-                                : "10% Discount"
-                            }
-                        </div>
-
-                        <div style="margin-top:6px;">
-                            <span class="current-price">
-                                ৳${PRODUCT_PRICE}
-                            </span>
-                        </div>
-
-                        <div class="quantity-control">
-
-                            <button
-                                onclick="decreaseQuantity()">
-                                −
-                            </button>
-
-                            <span>${cartQuantity}</span>
-
-                            <button
-                                onclick="increaseQuantity()">
-                                +
-                            </button>
-
-                        </div>
-
-                    </div>
+                    ${
+                        currentLanguage === "bn"
+                        ? "৫০০ গ্রাম"
+                        : "500 gm"
+                    }
 
                 </div>
 
-            `;
+                <div
+                    style="
+                        color:#9b6b13;
+                        font-size:15px;
+                        font-weight:bold;
+                        margin-top:4px;
+                    "
+                >
 
-        }
+                    ৳${PRODUCT_PRICE} ${
+                        currentLanguage === "bn"
+                        ? "প্রতি প্যাক"
+                        : "per pack"
+                    }
 
-    }
+                </div>
 
+            </div>
 
-    const cartProductTotal =
-        document.getElementById("cartProductTotal");
+            <div class="cart-product-image-wrap">
 
-    const cartDelivery =
-        document.getElementById("cartDelivery");
+                <img
+                    src="DDEFE989-0077-4992-8E6F-AC19B734DF8B.png"
+                    class="cart-product-image"
+                    alt="${
+                        currentLanguage === "bn"
+                        ? "খাঁটি আখের গুড়"
+                        : "Pure Sugarcane Jaggery"
+                    }">
 
-    const cartGrandTotal =
-        document.getElementById("cartGrandTotal");
+            </div>
 
+            <div class="quantity-control">
 
-    if(cartProductTotal){
-        cartProductTotal.textContent =
-            "৳" + productTotal;
-    }
+                <button
+                    onclick="changeQuantity(-1)"
+                    aria-label="Decrease quantity">
+                    −
+                </button>
 
-    if(cartDelivery){
-        cartDelivery.textContent =
-            "৳" + delivery;
-    }
+                <span class="quantity-number">
+                    ${cartQuantity}
+                </span>
 
-    if(cartGrandTotal){
-        cartGrandTotal.textContent =
-            "৳" + grandTotal;
-    }
+                <button
+                    onclick="changeQuantity(1)"
+                    aria-label="Increase quantity">
+                    +
+                </button>
 
+            </div>
 
-    updateOrderSummary();
+            <button
+                class="remove-item-btn"
+                onclick="removeFromCart()">
 
-}
+                ${
+                    currentLanguage === "bn"
+                    ? "পণ্য বাদ দিন"
+                    : "Remove"
+                }
 
+            </button>
 
-/* =========================
-   ORDER SUMMARY
-   ========================= */
+        </div>
 
-function updateOrderSummary(){
+    `;
 
     const productTotal =
         PRODUCT_PRICE * cartQuantity;
@@ -1722,53 +2543,71 @@ function updateOrderSummary(){
     const grandTotal =
         productTotal + delivery;
 
+    document
+        .getElementById("productTotal")
+        .textContent = "৳" + productTotal;
 
-    const productElement =
-        document.getElementById("orderProductTotal");
+    document
+        .getElementById("deliveryTotal")
+        .textContent = "৳" + delivery;
 
-    const deliveryElement =
-        document.getElementById("orderDeliveryTotal");
-
-    const grandElement =
-        document.getElementById("orderGrandTotal");
-
-
-    if(productElement){
-        productElement.textContent =
-            "৳" + productTotal;
-    }
-
-    if(deliveryElement){
-        deliveryElement.textContent =
-            "৳" + delivery;
-    }
-
-    if(grandElement){
-        grandElement.textContent =
-            "৳" + grandTotal;
-    }
+    document
+        .getElementById("grandTotal")
+        .textContent = "৳" + grandTotal;
 
 }
 
+/* ================= CHANGE QUANTITY ================= */
 
-/* =========================
-   OPEN CART
-   ========================= */
+function changeQuantity(amount){
+
+    cartQuantity += amount;
+
+    if(cartQuantity < 0){
+        cartQuantity = 0;
+    }
+
+    updateCart();
+
+}
+
+/* ================= REMOVE PRODUCT ================= */
+
+function removeFromCart(){
+
+    cartQuantity = 0;
+
+    updateCart();
+
+}
+
+/* ================= OPEN CART ================= */
 
 function openCart(){
 
-    document.getElementById("homePage").style.display = "none";
+    document
+        .getElementById("mainContent")
+        .style.display = "none";
 
-    document.getElementById("productDetailsPage").style.display = "none";
+    document
+        .getElementById("productDetail")
+        .style.display = "none";
 
-    document.getElementById("cartPage").style.display = "block";
+    document
+        .getElementById("orderSection")
+        .style.display = "none";
 
-    document.getElementById("orderPage").style.display = "none";
+    document
+        .getElementById("successSection")
+        .style.display = "none";
 
-    document.getElementById("dropdownMenu")
-        .classList.remove("show");
+    document
+        .getElementById("cartSection")
+        .style.display = "block";
 
     updateCart();
+
+    setView("cart");
 
     window.scrollTo({
         top:0,
@@ -1777,17 +2616,45 @@ function openCart(){
 
 }
 
+/* ================= CART BACK ================= */
 
 function backFromCart(){
 
-    goHome();
+    document
+        .getElementById("cartSection")
+        .style.display = "none";
+
+    document
+        .getElementById("productDetail")
+        .style.display = "none";
+
+    document
+        .getElementById("orderSection")
+        .style.display = "none";
+
+    document
+        .getElementById("successSection")
+        .style.display = "none";
+
+    document
+        .getElementById("mainContent")
+        .style.display = "block";
+
+    setView("home");
+
+    setTimeout(() => {
+
+        document
+            .getElementById("products")
+            .scrollIntoView({
+                behavior:"smooth"
+            });
+
+    },100);
 
 }
 
-
-/* =========================
-   ORDER
-   ========================= */
+/* ================= ORDER ================= */
 
 function openOrder(){
 
@@ -1795,7 +2662,7 @@ function openOrder(){
 
         alert(
             currentLanguage === "bn"
-            ? "প্রথমে একটি পণ্য কার্টে যোগ করুন।"
+            ? "অনুগ্রহ করে প্রথমে পণ্য কার্টে যোগ করুন।"
             : "Please add a product to the cart first."
         );
 
@@ -1803,16 +2670,15 @@ function openOrder(){
 
     }
 
+    document
+        .getElementById("cartSection")
+        .style.display = "none";
 
-    document.getElementById("homePage").style.display = "none";
+    document
+        .getElementById("orderSection")
+        .style.display = "block";
 
-    document.getElementById("productDetailsPage").style.display = "none";
-
-    document.getElementById("cartPage").style.display = "none";
-
-    document.getElementById("orderPage").style.display = "block";
-
-    updateCart();
+    setView("order");
 
     window.scrollTo({
         top:0,
@@ -1821,98 +2687,128 @@ function openOrder(){
 
 }
 
+/* ================= ORDER BACK ================= */
 
 function backFromOrder(){
 
-    openCart();
+    document
+        .getElementById("orderSection")
+        .style.display = "none";
+
+    document
+        .getElementById("cartSection")
+        .style.display = "block";
+
+    updateCart();
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+    setView("cart");
 
 }
 
-
-/* =========================
-   DELIVERY
-   ========================= */
+/* ================= DELIVERY ================= */
 
 function selectDelivery(type){
 
     selectedDelivery = type;
 
+    document
+        .getElementById("insideDhakaCard")
+        .classList.remove("selected");
 
     document
-        .getElementById("insideDelivery")
-        .classList.toggle(
-            "selected",
-            type === "inside"
-        );
+        .getElementById("outsideDhakaCard")
+        .classList.remove("selected");
 
+    if(type === "inside"){
 
-    document
-        .getElementById("outsideDelivery")
-        .classList.toggle(
-            "selected",
-            type === "outside"
-        );
+        document
+            .getElementById("insideDhakaCard")
+            .classList.add("selected");
 
+    }
 
-    /*
-       updateCart() automatically updates:
-       - Cart delivery charge
-       - Cart grand total
-       - Order delivery charge
-       - Order grand total
-    */
+    if(type === "outside"){
+
+        document
+            .getElementById("outsideDhakaCard")
+            .classList.add("selected");
+
+    }
 
     updateCart();
 
 }
 
-
-/* =========================
-   PAYMENT
-   ========================= */
+/* ================= PAYMENT ================= */
 
 function selectPayment(type){
 
     selectedPayment = type;
 
     document
-        .getElementById("bkashPayment")
-        .classList.toggle(
-            "selected",
-            type === "bkash"
-        );
+        .getElementById("codCard")
+        .classList.remove("selected");
+
+    document
+        .getElementById("bkashCard")
+        .classList.remove("selected");
+
+    if(type === "cod"){
+
+        document
+            .getElementById("codCard")
+            .classList.add("selected");
+
+    }
+
+    if(type === "bkash"){
+
+        document
+            .getElementById("bkashCard")
+            .classList.add("selected");
+
+    }
 
 }
 
-
-/* =========================
-   CONFIRM ORDER
-   ========================= */
+/* ================= CONFIRM ORDER ================= */
 
 function confirmOrder(){
 
     const name =
-        document.getElementById("customerName").value.trim();
+        document
+            .getElementById("customerName")
+            .value
+            .trim();
 
     const phone =
-        document.getElementById("customerPhone").value.trim();
+        document
+            .getElementById("customerPhone")
+            .value
+            .trim();
 
     const address =
-        document.getElementById("customerAddress").value.trim();
-
+        document
+            .getElementById("customerAddress")
+            .value
+            .trim();
 
     if(!name || !phone || !address){
 
         alert(
             currentLanguage === "bn"
-            ? "অনুগ্রহ করে আপনার নাম, ফোন নম্বর ও ঠিকানা পূরণ করুন।"
-            : "Please enter your name, phone number and address."
+            ? "অনুগ্রহ করে আপনার নাম, মোবাইল নম্বর এবং ঠিকানা পূরণ করুন।"
+            : "Please enter your name, mobile number and address."
         );
 
         return;
 
     }
-
 
     if(!selectedDelivery){
 
@@ -1926,7 +2822,6 @@ function confirmOrder(){
 
     }
 
-
     if(!selectedPayment){
 
         alert(
@@ -1939,240 +2834,477 @@ function confirmOrder(){
 
     }
 
-
-    const productTotal =
-        PRODUCT_PRICE * cartQuantity;
-
-
-    const delivery =
+    let deliveryAmount =
         selectedDelivery === "inside"
         ? INSIDE_DHAKA_DELIVERY
         : OUTSIDE_DHAKA_DELIVERY;
 
-
-    const grandTotal =
-        productTotal + delivery;
-
-
-    const deliveryText =
+    let deliveryText =
         selectedDelivery === "inside"
         ? (
             currentLanguage === "bn"
-            ? "ঢাকার ভিতরে"
-            : "Inside Dhaka"
-        )
+            ? "ঢাকার ভিতরে — ৳60"
+            : "Inside Dhaka — ৳60"
+          )
         : (
             currentLanguage === "bn"
-            ? "ঢাকার বাইরে"
-            : "Outside Dhaka"
-        );
+            ? "ঢাকার বাইরে — ৳120"
+            : "Outside Dhaka — ৳120"
+          );
 
+    let paymentText =
+        selectedPayment === "cod"
+        ? "Cash on Delivery"
+        : "bKash Payment";
 
-    const paymentText =
-        currentLanguage === "bn"
-        ? "বিকাশ"
-        : "bKash";
+    const productTotal =
+        PRODUCT_PRICE * cartQuantity;
 
+    const grandTotal =
+        productTotal + deliveryAmount;
 
     const message =
+        currentLanguage === "bn"
+        ?
 
-        `*Graam Theke - Order*
+`🌾 *গ্রাম থেকে — নতুন অর্ডার*
 
-` +
-        `Name: ${name}
-` +
-        `Phone: ${phone}
-` +
-        `Address: ${address}
+👤 নাম: ${name}
 
-` +
-        `Product: ${
-            currentLanguage === "bn"
-            ? "খাঁটি আখের গুড়"
-            : "Pure Sugarcane Jaggery"
-        }
-` +
-        `Quantity: ${cartQuantity}
-` +
-        `Price: ৳${PRODUCT_PRICE} / pack
-` +
-        `Discount: 10%
-` +
-        `Product Total: ৳${productTotal}
-` +
-        `Delivery: ${deliveryText} - ৳${delivery}
-` +
-        `Grand Total: ৳${grandTotal}
-` +
-        `Payment: ${paymentText}`;
+📱 মোবাইল: ${phone}
 
+📦 পণ্য: খাঁটি আখের গুড়
+
+⚖️ পরিমাণ: ৫০০ গ্রাম × ${cartQuantity}
+
+💵 প্রতি প্যাক: ৳${PRODUCT_PRICE}
+
+💰 পণ্যের মোট মূল্য: ৳${productTotal}
+
+🚚 ডেলিভারি: ${deliveryText}
+
+💳 পেমেন্ট: ${paymentText}
+
+📍 ঠিকানা:
+${address}
+
+🧾 *সর্বমোট: ৳${grandTotal}*
+
+ধন্যবাদ — গ্রাম থেকে 🌾`
+
+        :
+
+`🌾 *Graam Theke — New Order*
+
+👤 Name: ${name}
+
+📱 Mobile: ${phone}
+
+📦 Product: Pure Sugarcane Jaggery
+
+⚖️ Quantity: 500 gm × ${cartQuantity}
+
+💵 Price per pack: ৳${PRODUCT_PRICE}
+
+💰 Product Total: ৳${productTotal}
+
+🚚 Delivery: ${deliveryText}
+
+💳 Payment: ${paymentText}
+
+📍 Address:
+${address}
+
+🧾 *Grand Total: ৳${grandTotal}*
+
+Thank you — Graam Theke 🌾`;
 
     const whatsappURL =
-        "https://wa.me/8801601601998?text=" +
-        encodeURIComponent(message);
+        "https://wa.me/8801601601998?text="
+        + encodeURIComponent(message);
 
+    window.location.href = whatsappURL;
 
-    window.open(
-        whatsappURL,
-        "_blank"
-    );
+    setTimeout(() => {
 
-}
+        document
+            .getElementById("mainContent")
+            .style.display = "none";
 
+        document
+            .getElementById("productDetail")
+            .style.display = "none";
 
-/* =========================
-   DISCOUNT POPUP
-   ========================= */
+        document
+            .getElementById("cartSection")
+            .style.display = "none";
 
-function openDiscountPopup(){
+        document
+            .getElementById("orderSection")
+            .style.display = "none";
 
-    const popup =
-        document.getElementById("discountPopup");
+        document
+            .getElementById("successSection")
+            .style.display = "block";
 
-    if(popup){
-        popup.classList.add("show");
-    }
+        setView("home");
 
-}
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
 
-
-function closeDiscountPopup(){
-
-    const popup =
-        document.getElementById("discountPopup");
-
-    if(popup){
-        popup.classList.remove("show");
-    }
-
-}
-
-
-function setupDiscountPopup(){
-
-    const popup =
-        document.getElementById("discountPopup");
-
-
-    if(!popup){
-        return;
-    }
-
-
-    try{
-
-        if(!sessionStorage.getItem("discountPopupShown")){
-
-            setTimeout(function(){
-
-                openDiscountPopup();
-
-                sessionStorage.setItem(
-                    "discountPopupShown",
-                    "true"
-                );
-
-            },1200);
-
-        }
-
-    }catch(error){
-
-        /*
-          If sessionStorage is unavailable,
-          popup still appears once after 1.2 seconds.
-        */
-
-        setTimeout(function(){
-            openDiscountPopup();
-        },1200);
-
-    }
-
-
-    popup.addEventListener(
-        "click",
-        function(event){
-
-            if(event.target === popup){
-                closeDiscountPopup();
-            }
-
-        }
-    );
+    },1500);
 
 }
 
+/* ================= WHY CAROUSEL ================= */
 
-/* =========================
-   CAROUSEL
-   ========================= */
+function goToWhySlide(index){
 
-let currentSlide = 0;
+    if(index < 0){
+        index = WHY_TOTAL_SLIDES - 1;
+    }
 
-function showSlide(index){
+    if(index >= WHY_TOTAL_SLIDES){
+        index = 0;
+    }
+
+    currentWhySlide = index;
 
     const track =
-        document.getElementById("carouselTrack");
+        document.getElementById("whyTrack");
 
-    if(!track){
-        return;
+    if(track){
+
+        track.style.transform =
+            "translateX(-" +
+            (currentWhySlide * 33.333333) +
+            "%)";
+
     }
 
-    const slides =
-        track.children.length;
+    document
+        .querySelectorAll(".why-dot")
+        .forEach((dot, i) => {
 
-    if(slides === 0){
-        return;
-    }
+            dot.classList.toggle(
+                "active",
+                i === currentWhySlide
+            );
 
-    currentSlide =
-        (index + slides) % slides;
+        });
 
-    track.style.transform =
-        `translateX(-${currentSlide * 100}%)`;
+    resetWhyAutoSlide();
 
 }
 
+function startWhyAutoSlide(){
 
-/* =========================
-   INITIALIZATION
-   ========================= */
+    clearInterval(whyAutoSlideTimer);
+
+    whyAutoSlideTimer =
+        setInterval(() => {
+
+            currentWhySlide++;
+
+            if(
+                currentWhySlide >=
+                WHY_TOTAL_SLIDES
+            ){
+
+                currentWhySlide = 0;
+
+            }
+
+            goToWhySlideWithoutReset(
+                currentWhySlide
+            );
+
+        }, WHY_AUTO_SLIDE_DELAY);
+
+}
+
+function resetWhyAutoSlide(){
+
+    clearInterval(whyAutoSlideTimer);
+
+    startWhyAutoSlide();
+
+}
+
+function goToWhySlideWithoutReset(index){
+
+    const track =
+        document.getElementById("whyTrack");
+
+    if(track){
+
+        track.style.transform =
+            "translateX(-" +
+            (index * 33.333333) +
+            "%)";
+
+    }
+
+    document
+        .querySelectorAll(".why-dot")
+        .forEach((dot, i) => {
+
+            dot.classList.toggle(
+                "active",
+                i === index
+            );
+
+        });
+
+}
+
+/* ================= WHY SWIPE ================= */
+
+function setupWhySwipe(){
+
+    const slider =
+        document.getElementById("whySlider");
+
+    if(!slider){
+        return;
+    }
+
+    slider.addEventListener(
+        "touchstart",
+        function(event){
+
+            whyTouchStartX =
+                event.changedTouches[0].screenX;
+
+        },
+        {
+            passive:true
+        }
+    );
+
+    slider.addEventListener(
+        "touchend",
+        function(event){
+
+            whyTouchEndX =
+                event.changedTouches[0].screenX;
+
+            handleWhySwipe();
+
+        },
+        {
+            passive:true
+        }
+    );
+
+}
+
+function handleWhySwipe(){
+
+    const difference =
+        whyTouchStartX - whyTouchEndX;
+
+    const minimumSwipeDistance = 45;
+
+    if(
+        Math.abs(difference) <
+        minimumSwipeDistance
+    ){
+
+        return;
+
+    }
+
+    if(difference > 0){
+
+        goToWhySlide(
+            currentWhySlide + 1
+        );
+
+    }else{
+
+        goToWhySlide(
+            currentWhySlide - 1
+        );
+
+    }
+
+}
+
+/* ================= VIDEO AUTOPLAY ================= */
 
 document.addEventListener(
     "DOMContentLoaded",
     function(){
 
-        setLanguage("bn");
+        setLanguage(currentLanguage);
 
-        updateCart();
+        setupWhySwipe();
 
-        setupDiscountPopup();
-
-    }
-);
-
-
-/* =========================
-   VIDEO AUTOPLAY
-   ========================= */
-
-document.addEventListener(
-    "visibilitychange",
-    function(){
-
-        if(document.hidden){
-            return;
-        }
+        startWhyAutoSlide();
 
         const video =
             document.querySelector(".hero video");
 
         if(video){
 
-            video.play().catch(function(){
-                // Browser autoplay restriction
-            });
+            video.muted = true;
+            video.defaultMuted = true;
+
+            video.setAttribute("muted","");
+            video.setAttribute("autoplay","");
+            video.setAttribute("playsinline","");
+
+            video.load();
+
+            const tryPlay = () => {
+
+                const playPromise =
+                    video.play();
+
+                if(
+                    playPromise !== undefined
+                ){
+
+                    playPromise.catch(() => {
+
+                    });
+
+                }
+
+            };
+
+            tryPlay();
+
+            window.addEventListener(
+                "load",
+                function(){
+                    tryPlay();
+                }
+            );
+
+            document.addEventListener(
+                "touchstart",
+                function(){
+
+                    if(video.paused){
+                        tryPlay();
+                    }
+
+                },
+                {
+                    once:true,
+                    passive:true
+                }
+            );
+
+        }
+
+    }
+);
+
+/* ================= PHONE BACK BUTTON ================= */
+
+let currentView = "home";
+
+function setView(view){
+    currentView = view;
+}
+
+window.addEventListener(
+    "popstate",
+    function(){
+
+        if(currentView === "cart"){
+
+            backFromCart();
+
+            history.pushState(
+                {view:"home"},
+                "",
+                window.location.href
+            );
+
+            setView("home");
+
+            return;
+
+        }
+
+        if(currentView === "product"){
+
+            backToProducts();
+
+            history.pushState(
+                {view:"home"},
+                "",
+                window.location.href
+            );
+
+            setView("home");
+
+            return;
+
+        }
+
+        if(currentView === "order"){
+
+            document
+                .getElementById("orderSection")
+                .style.display = "none";
+
+            openCart();
+
+            history.pushState(
+                {view:"cart"},
+                "",
+                window.location.href
+            );
+
+            setView("cart");
+
+            return;
+
+        }
+
+        goHome();
+
+    }
+);
+
+/* Keep one history state inside the website */
+
+history.replaceState(
+    {view:"home"},
+    "",
+    window.location.href
+);
+
+/* ================= OUTSIDE CLICK ================= */
+
+document.addEventListener(
+    "click",
+    function(event){
+
+        const menu =
+            document.getElementById(
+                "dropdownMenu"
+            );
+
+        const button =
+            document.querySelector(
+                ".menu-btn"
+            );
+
+        if(
+            menu &&
+            !menu.contains(event.target) &&
+            !button.contains(event.target)
+        ){
+
+            menu.classList.remove("show");
 
         }
 
