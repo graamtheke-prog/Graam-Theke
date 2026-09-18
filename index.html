@@ -14,7 +14,6 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://graamtheke-prog.github.io/Graam-Theke/">
 
-<!-- SHARE PREVIEW IMAGE -->
 <meta
     property="og:image"
     content="https://graamtheke-prog.github.io/Graam-Theke/99927B00-BDEF-45EB-9A5C-AC1CEFE3E77A.png">
@@ -29,13 +28,8 @@
 
 <meta property="og:image:type" content="image/png">
 
-<meta
-    property="og:image:width"
-    content="1200">
-
-<meta
-    property="og:image:height"
-    content="630">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="গ্রাম থেকে">
@@ -342,6 +336,19 @@ section{
 
 .detail-price .current-price{
     font-size:25px;
+}
+
+/* ================= DISCOUNT LABEL ================= */
+
+.discount-label{
+    display:inline-block;
+    background:#9b6b13;
+    color:white;
+    padding:4px 9px;
+    border-radius:12px;
+    font-size:12px;
+    font-weight:bold;
+    margin-top:8px;
 }
 
 /* ================= CART BUTTON ================= */
@@ -743,6 +750,50 @@ section{
     background:#e5d2bf;
 }
 
+/* ================= CART DELIVERY ================= */
+
+.cart-delivery-title{
+    margin-top:25px;
+    margin-bottom:10px;
+    font-size:18px;
+    font-weight:bold;
+    color:#405a32;
+}
+
+.cart-delivery-options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-bottom:20px;
+}
+
+.cart-delivery-card{
+    border:2px solid #e2dbc9;
+    padding:15px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.cart-delivery-card.selected{
+    border-color:#55733e;
+    background:#f2f6ed;
+}
+
+.cart-delivery-card input{
+    display:none;
+}
+
+.cart-delivery-title-text{
+    font-weight:bold;
+    color:#405a32;
+}
+
+.cart-delivery-price{
+    color:#8c6b27;
+    font-size:14px;
+}
+
 /* ================= ORDER ================= */
 
 #orderSection{
@@ -938,6 +989,42 @@ section{
     text-decoration:none;
 }
 
+/* ================= POPUP ================= */
+
+.popup-overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    background:rgba(0,0,0,.48);
+    align-items:center;
+    justify-content:center;
+    padding:15px;
+}
+
+.popup-overlay.show{
+    display:flex;
+}
+
+.popup-box{
+    position:relative;
+    width:min(430px,92vw);
+    max-height:90vh;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 15px 45px rgba(0,0,0,.28);
+    cursor:pointer;
+    background:transparent;
+}
+
+.popup-image{
+    width:100%;
+    height:auto;
+    max-height:90vh;
+    object-fit:contain;
+    display:block;
+}
+
 /* ================= FOOTER ================= */
 
 footer{
@@ -951,8 +1038,6 @@ footer{
     max-width:700px;
     margin:auto;
 }
-
-/* FOOTER LOGO */
 
 .footer-logo-wrap{
     display:flex;
@@ -968,8 +1053,6 @@ footer{
     object-fit:contain;
     display:block;
 }
-
-/* SOCIAL ICONS */
 
 .footer-social-icons{
     display:flex;
@@ -998,13 +1081,9 @@ footer{
     font-size:40px;
 }
 
-/* Facebook */
-
 .footer-social-icons .fa-facebook{
     color:#1877F2;
 }
-
-/* Messenger */
 
 .footer-social-icons .fa-facebook-messenger{
     background:linear-gradient(
@@ -1016,8 +1095,6 @@ footer{
     -webkit-text-fill-color:transparent;
     background-clip:text;
 }
-
-/* Instagram */
 
 .footer-social-icons .fa-instagram{
     background:
@@ -1034,19 +1111,13 @@ footer{
     background-clip:text;
 }
 
-/* Threads */
-
 .footer-social-icons .fa-threads{
     color:#000000;
 }
 
-/* WhatsApp */
-
 .footer-social-icons .fa-whatsapp{
     color:#25D366;
 }
-
-/* BRAND INFO */
 
 .footer-brand{
     font-size:25px;
@@ -1133,7 +1204,8 @@ footer{
     }
 
     .option-grid,
-    .payment-options{
+    .payment-options,
+    .cart-delivery-options{
         grid-template-columns:1fr;
     }
 
@@ -1158,8 +1230,6 @@ footer{
         padding:0 13px;
         font-size:14px;
     }
-
-    /* WHY CAROUSEL MOBILE */
 
     .why-carousel{
         max-width:100%;
@@ -1199,8 +1269,6 @@ footer{
         margin-top:18px;
     }
 
-    /* CART PRODUCT IMAGE MOBILE */
-
     .cart-product-image-wrap{
         width:115px;
         height:115px;
@@ -1214,7 +1282,9 @@ footer{
         object-fit:contain;
     }
 
-    /* FOOTER MOBILE */
+    .popup-box{
+        width:min(380px,90vw);
+    }
 
     footer{
         padding:48px 18px 25px;
@@ -1263,6 +1333,26 @@ footer{
 </head>
 
 <body>
+
+<!-- ================= POPUP ================= -->
+
+<div
+    class="popup-overlay"
+    id="promoPopup"
+    onclick="closePopup(event)">
+
+    <div
+        class="popup-box"
+        onclick="openProductFromPopup(event)">
+
+        <img
+            src="117E58FC-39F2-4D58-BC43-9DF871C02E94.jpeg"
+            class="popup-image"
+            alt="">
+
+    </div>
+
+</div>
 
 <!-- ================= HEADER ================= -->
 
@@ -1538,8 +1628,6 @@ footer{
 
 <div class="why-track" id="whyTrack">
 
-<!-- ================= CARD 1 ================= -->
-
 <div class="why-slide">
 
 <div class="why-card">
@@ -1570,8 +1658,6 @@ footer{
 
 </div>
 
-<!-- ================= CARD 2 ================= -->
-
 <div class="why-slide">
 
 <div class="why-card">
@@ -1601,8 +1687,6 @@ footer{
 </div>
 
 </div>
-
-<!-- ================= CARD 3 ================= -->
 
 <div class="why-slide">
 
@@ -1638,11 +1722,7 @@ footer{
 
 </div>
 
-<!-- ================= DOTS ================= -->
-
-<div
-    class="why-dots"
-    aria-label="Why Graam Theke slides">
+<div class="why-dots">
 
 <button
     class="why-dot active"
@@ -1733,6 +1813,13 @@ footer{
 
 </div>
 
+<div
+    class="discount-label"
+    data-bn="10% Discount"
+    data-en="10% Discount">
+    10% Discount
+</div>
+
 <button
     class="add-cart-btn"
     onclick="addToCart();openCart();"
@@ -1781,6 +1868,64 @@ footer{
 </button>
 
 <div id="cartItems"></div>
+
+<!-- CART DELIVERY -->
+
+<div class="cart-delivery-title"
+    data-bn="ডেলিভারি এলাকা"
+    data-en="Delivery Area">
+    ডেলিভারি এলাকা
+</div>
+
+<div class="cart-delivery-options">
+
+<label
+    class="cart-delivery-card"
+    id="cartInsideDhakaCard">
+
+<input
+    type="radio"
+    name="cartDelivery"
+    value="inside"
+    onclick="selectDelivery('inside')">
+
+<div
+    class="cart-delivery-title-text"
+    data-bn="ঢাকার ভিতরে"
+    data-en="Inside Dhaka">
+    ঢাকার ভিতরে
+</div>
+
+<div class="cart-delivery-price">
+    ৳60
+</div>
+
+</label>
+
+<label
+    class="cart-delivery-card"
+    id="cartOutsideDhakaCard">
+
+<input
+    type="radio"
+    name="cartDelivery"
+    value="outside"
+    onclick="selectDelivery('outside')">
+
+<div
+    class="cart-delivery-title-text"
+    data-bn="ঢাকার বাইরে"
+    data-en="Outside Dhaka">
+    ঢাকার বাইরে
+</div>
+
+<div class="cart-delivery-price">
+    ৳120
+</div>
+
+</label>
+
+</div>
 
 <div class="cart-summary">
 
@@ -1864,8 +2009,6 @@ footer{
 
 <div class="order-box">
 
-<!-- ORDER BACK BUTTON -->
-
 <button
     class="cart-back-btn"
     onclick="backFromOrder()"
@@ -1924,66 +2067,6 @@ footer{
     placeholder="সম্পূর্ণ ডেলিভারি ঠিকানা"
     data-placeholder-bn="সম্পূর্ণ ডেলিভারি ঠিকানা"
     data-placeholder-en="Full delivery address"></textarea>
-
-</div>
-
-<div class="form-group">
-
-<label
-    data-bn="ডেলিভারি এলাকা"
-    data-en="Delivery Area">
-    ডেলিভারি এলাকা
-</label>
-
-<div class="option-grid">
-
-<label
-    class="option-card"
-    id="insideDhakaCard">
-
-<input
-    type="radio"
-    name="delivery"
-    value="inside"
-    onclick="selectDelivery('inside')">
-
-<div
-    class="option-title"
-    data-bn="ঢাকার ভিতরে"
-    data-en="Inside Dhaka">
-    ঢাকার ভিতরে
-</div>
-
-<div class="option-price">
-    ৳60
-</div>
-
-</label>
-
-<label
-    class="option-card"
-    id="outsideDhakaCard">
-
-<input
-    type="radio"
-    name="delivery"
-    value="outside"
-    onclick="selectDelivery('outside')">
-
-<div
-    class="option-title"
-    data-bn="ঢাকার বাইরে"
-    data-en="Outside Dhaka">
-    ঢাকার বাইরে
-</div>
-
-<div class="option-price">
-    ৳120
-</div>
-
-</label>
-
-</div>
 
 </div>
 
@@ -2114,8 +2197,6 @@ footer{
 
 <div class="footer-container">
 
-<!-- NEW FOOTER LOGO -->
-
 <div class="footer-logo-wrap">
 
 <img
@@ -2124,8 +2205,6 @@ footer{
     alt="Graam Theke">
 
 </div>
-
-<!-- SOCIAL MEDIA -->
 
 <div class="footer-social-icons">
 
@@ -2181,8 +2260,6 @@ footer{
 
 </div>
 
-<!-- BRAND INFORMATION -->
-
 <div
     class="footer-brand"
     data-bn="গ্রাম থেকে"
@@ -2235,6 +2312,88 @@ const PRODUCT_PRICE = 135;
 
 const INSIDE_DHAKA_DELIVERY = 60;
 const OUTSIDE_DHAKA_DELIVERY = 120;
+
+/* ================= POPUP ================= */
+
+const POPUP_SESSION_KEY =
+    "graamThekePromoShown";
+
+function showPopup(){
+
+    const popup =
+        document.getElementById("promoPopup");
+
+    if(!popup){
+        return;
+    }
+
+    popup.classList.add("show");
+
+}
+
+function closePopup(event){
+
+    if(
+        event &&
+        event.target !== event.currentTarget
+    ){
+        return;
+    }
+
+    const popup =
+        document.getElementById("promoPopup");
+
+    if(popup){
+        popup.classList.remove("show");
+    }
+
+}
+
+function openProductFromPopup(event){
+
+    if(event){
+        event.stopPropagation();
+    }
+
+    sessionStorage.setItem(
+        POPUP_SESSION_KEY,
+        "true"
+    );
+
+    const popup =
+        document.getElementById("promoPopup");
+
+    if(popup){
+        popup.classList.remove("show");
+    }
+
+    openProductDetails();
+
+}
+
+function initializePopup(){
+
+    const alreadyShown =
+        sessionStorage.getItem(
+            POPUP_SESSION_KEY
+        );
+
+    if(alreadyShown === "true"){
+        return;
+    }
+
+    setTimeout(() => {
+
+        showPopup();
+
+        sessionStorage.setItem(
+            POPUP_SESSION_KEY,
+            "true"
+        );
+
+    },1200);
+
+}
 
 /* ================= WHY CAROUSEL VARIABLES ================= */
 
@@ -2430,102 +2589,141 @@ function updateCart(){
         return;
     }
 
-    cartItems.innerHTML = `
+    if(cartQuantity <= 0){
 
-        <div class="cart-item">
+        cartItems.innerHTML = `
 
-            <div>
-
-                <strong>
-                    ${
-                        currentLanguage === "bn"
-                        ? "খাঁটি আখের গুড়"
-                        : "Pure Sugarcane Jaggery"
-                    }
-                </strong>
-
-                <div
-                    style="
-                        color:#777;
-                        font-size:14px;
-                    "
-                >
-
-                    ${
-                        currentLanguage === "bn"
-                        ? "৫০০ গ্রাম"
-                        : "500 gm"
-                    }
-
-                </div>
-
-                <div
-                    style="
-                        color:#9b6b13;
-                        font-size:15px;
-                        font-weight:bold;
-                        margin-top:4px;
-                    "
-                >
-
-                    ৳${PRODUCT_PRICE} ${
-                        currentLanguage === "bn"
-                        ? "প্রতি প্যাক"
-                        : "per pack"
-                    }
-
-                </div>
-
-            </div>
-
-            <div class="cart-product-image-wrap">
-
-                <img
-                    src="DDEFE989-0077-4992-8E6F-AC19B734DF8B.png"
-                    class="cart-product-image"
-                    alt="${
-                        currentLanguage === "bn"
-                        ? "খাঁটি আখের গুড়"
-                        : "Pure Sugarcane Jaggery"
-                    }">
-
-            </div>
-
-            <div class="quantity-control">
-
-                <button
-                    onclick="changeQuantity(-1)"
-                    aria-label="Decrease quantity">
-                    −
-                </button>
-
-                <span class="quantity-number">
-                    ${cartQuantity}
-                </span>
-
-                <button
-                    onclick="changeQuantity(1)"
-                    aria-label="Increase quantity">
-                    +
-                </button>
-
-            </div>
-
-            <button
-                class="remove-item-btn"
-                onclick="removeFromCart()">
+            <div class="cart-empty">
 
                 ${
                     currentLanguage === "bn"
-                    ? "পণ্য বাদ দিন"
-                    : "Remove"
+                    ? "আপনার কার্ট খালি।"
+                    : "Your cart is empty."
                 }
 
-            </button>
+            </div>
 
-        </div>
+        `;
 
-    `;
+    }else{
+
+        cartItems.innerHTML = `
+
+            <div class="cart-item">
+
+                <div>
+
+                    <strong>
+                        ${
+                            currentLanguage === "bn"
+                            ? "খাঁটি আখের গুড়"
+                            : "Pure Sugarcane Jaggery"
+                        }
+                    </strong>
+
+                    <div
+                        style="
+                            color:#777;
+                            font-size:14px;
+                        "
+                    >
+
+                        ${
+                            currentLanguage === "bn"
+                            ? "৫০০ গ্রাম"
+                            : "500 gm"
+                        }
+
+                    </div>
+
+                    <div
+                        style="
+                            margin-top:5px;
+                        "
+                    >
+
+                        <span
+                            style="
+                                color:#777;
+                                text-decoration:line-through;
+                                font-size:14px;
+                                margin-right:5px;
+                            "
+                        >
+                            ৳${PRODUCT_REGULAR_PRICE}
+                        </span>
+
+                        <span
+                            style="
+                                color:#9b6b13;
+                                font-size:16px;
+                                font-weight:bold;
+                            "
+                        >
+                            ৳${PRODUCT_PRICE}
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="discount-label"
+                        data-bn="10% Discount"
+                        data-en="10% Discount">
+                        10% Discount
+                    </div>
+
+                </div>
+
+                <div class="cart-product-image-wrap">
+
+                    <img
+                        src="DDEFE989-0077-4992-8E6F-AC19B734DF8B.png"
+                        class="cart-product-image"
+                        alt="${
+                            currentLanguage === "bn"
+                            ? "খাঁটি আখের গুড়"
+                            : "Pure Sugarcane Jaggery"
+                        }">
+
+                </div>
+
+                <div class="quantity-control">
+
+                    <button
+                        onclick="changeQuantity(-1)"
+                        aria-label="Decrease quantity">
+                        −
+                    </button>
+
+                    <span class="quantity-number">
+                        ${cartQuantity}
+                    </span>
+
+                    <button
+                        onclick="changeQuantity(1)"
+                        aria-label="Increase quantity">
+                        +
+                    </button>
+
+                </div>
+
+                <button
+                    class="remove-item-btn"
+                    onclick="removeFromCart()">
+
+                    ${
+                        currentLanguage === "bn"
+                        ? "পণ্য বাদ দিন"
+                        : "Remove"
+                    }
+
+                </button>
+
+            </div>
+
+        `;
+
+    }
 
     const productTotal =
         PRODUCT_PRICE * cartQuantity;
@@ -2554,6 +2752,54 @@ function updateCart(){
     document
         .getElementById("grandTotal")
         .textContent = "৳" + grandTotal;
+
+    updateDeliverySelection();
+
+}
+
+/* ================= DELIVERY UI ================= */
+
+function updateDeliverySelection(){
+
+    const insideCard =
+        document.getElementById(
+            "cartInsideDhakaCard"
+        );
+
+    const outsideCard =
+        document.getElementById(
+            "cartOutsideDhakaCard"
+        );
+
+    if(!insideCard || !outsideCard){
+        return;
+    }
+
+    insideCard.classList.toggle(
+        "selected",
+        selectedDelivery === "inside"
+    );
+
+    outsideCard.classList.toggle(
+        "selected",
+        selectedDelivery === "outside"
+    );
+
+    const insideRadio =
+        insideCard.querySelector("input");
+
+    const outsideRadio =
+        outsideCard.querySelector("input");
+
+    if(insideRadio){
+        insideRadio.checked =
+            selectedDelivery === "inside";
+    }
+
+    if(outsideRadio){
+        outsideRadio.checked =
+            selectedDelivery === "outside";
+    }
 
 }
 
@@ -2670,6 +2916,18 @@ function openOrder(){
 
     }
 
+    if(!selectedDelivery){
+
+        alert(
+            currentLanguage === "bn"
+            ? "অনুগ্রহ করে ডেলিভারি এলাকা নির্বাচন করুন।"
+            : "Please select a delivery area."
+        );
+
+        return;
+
+    }
+
     document
         .getElementById("cartSection")
         .style.display = "none";
@@ -2716,29 +2974,7 @@ function selectDelivery(type){
 
     selectedDelivery = type;
 
-    document
-        .getElementById("insideDhakaCard")
-        .classList.remove("selected");
-
-    document
-        .getElementById("outsideDhakaCard")
-        .classList.remove("selected");
-
-    if(type === "inside"){
-
-        document
-            .getElementById("insideDhakaCard")
-            .classList.add("selected");
-
-    }
-
-    if(type === "outside"){
-
-        document
-            .getElementById("outsideDhakaCard")
-            .classList.add("selected");
-
-    }
+    updateDeliverySelection();
 
     updateCart();
 
@@ -3145,6 +3381,8 @@ document.addEventListener(
 
         startWhyAutoSlide();
 
+        initializePopup();
+
         const video =
             document.querySelector(".hero video");
 
@@ -3273,8 +3511,6 @@ window.addEventListener(
 
     }
 );
-
-/* Keep one history state inside the website */
 
 history.replaceState(
     {view:"home"},
