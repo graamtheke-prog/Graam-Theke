@@ -968,6 +968,14 @@ section{
 
 /* ================= BKASH DETAILS ================= */
 
+.bkash-details-logo{
+    display:block;
+    width:78px;
+    height:auto;
+    object-fit:contain;
+    margin:0 auto 10px;
+}
+
 .bkash-details{
     display:none;
     margin-top:18px;
@@ -1324,7 +1332,13 @@ footer{
 
     .cart-item{
         align-items:flex-start;
-        flex-direction:column;
+        flex-direction:row;
+        flex-wrap:wrap;
+    }
+
+    .cart-item > div:first-child{
+        flex:1 1 calc(100% - 135px);
+        min-width:0;
     }
 
     .product-image-wrap{
@@ -1380,8 +1394,9 @@ footer{
     .cart-product-image-wrap{
         width:115px;
         height:115px;
-        align-self:flex-end;
-        margin-top:-5px;
+        align-self:flex-start;
+        margin-top:0;
+        margin-left:auto;
     }
 
     .cart-product-image{
@@ -2259,6 +2274,11 @@ footer{
     class="bkash-details"
     id="bkashDetails">
 
+    <img
+        src="IMG_3245.png"
+        class="bkash-details-logo"
+        alt="bKash">
+
     <div
         class="payment-title"
         style="margin-top:0;"
@@ -2272,9 +2292,9 @@ footer{
         style="margin-bottom:10px;">
 
         <label
-            data-bn="bKash নম্বর"
-            data-en="bKash Number">
-            bKash নম্বর
+            data-bn="bKash Merchant Number"
+            data-en="bKash Merchant Number">
+            bKash Merchant Number
         </label>
 
         <div class="bkash-number-row">
@@ -3030,11 +3050,10 @@ function updateDeliverySelection(){
 
 function changeQuantity(amount){
 
-    cartQuantity += amount;
-
-    if(cartQuantity < 0){
-        cartQuantity = 0;
-    }
+    cartQuantity = Math.max(
+        0,
+        Number(cartQuantity || 0) + Number(amount || 0)
+    );
 
     updateCart();
 
@@ -3960,3 +3979,4 @@ document.addEventListener(
 </script>
 
 </body>
+</html>
