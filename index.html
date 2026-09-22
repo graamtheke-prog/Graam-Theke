@@ -968,22 +968,55 @@ section{
 
 /* ================= BKASH DETAILS ================= */
 
-.bkash-details-logo{
-    display:block;
-    width:78px;
-    height:auto;
-    object-fit:contain;
-    margin:0 auto 10px;
-}
-
 .bkash-details{
     display:none;
     margin-top:18px;
-    padding:18px;
+    padding:22px 18px 20px;
     background:#f8f4e8;
     border:1px solid #e2dbc9;
     border-radius:12px;
+    text-align:left;
 }
+
+.bkash-details-logo{
+    display:block;
+    width:92px;
+    height:auto;
+    max-height:42px;
+    object-fit:contain;
+    object-position:center;
+    margin:0 auto 10px;
+}
+
+.bkash-details .payment-title{
+    text-align:center;
+    margin:0 0 20px !important;
+    width:100%;
+}
+
+.bkash-details .form-group{
+    text-align:left;
+}
+
+.bkash-details .bkash-qr-wrap{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    margin:14px 0 22px;
+}
+
+.bkash-details .bkash-qr-label{
+    display:block;
+    margin:10px 0 0;
+    color:#405a32;
+    font-size:17px;
+    font-weight:700;
+    line-height:1.3;
+    text-align:center;
+}
+
 
 .bkash-details.show{
     display:block;
@@ -992,12 +1025,14 @@ section{
 .bkash-number-row{
     display:flex;
     align-items:center;
-    gap:8px;
+    gap:10px;
+    width:100%;
     margin:8px 0 15px;
 }
 
 .bkash-number{
     flex:1;
+    min-width:0;
     background:white;
     border:1px solid #dcd2ba;
     border-radius:10px;
@@ -1403,6 +1438,36 @@ footer{
         width:100%;
         height:100%;
         object-fit:contain;
+    }
+
+    .bkash-details{
+        padding:20px 14px 18px;
+    }
+
+    .bkash-details-logo{
+        width:88px;
+        max-height:40px;
+        margin-bottom:9px;
+    }
+
+    .bkash-details .payment-title{
+        font-size:22px;
+        line-height:1.35;
+        margin-bottom:18px !important;
+    }
+
+    .bkash-number-row{
+        gap:7px;
+    }
+
+    .bkash-copy-btn{
+        flex-shrink:0;
+        padding:10px 13px;
+    }
+
+    .bkash-details .bkash-qr-wrap{
+        margin-top:14px;
+        margin-bottom:20px;
     }
 
     .popup-box{
@@ -2321,10 +2386,21 @@ footer{
 
     </div>
 
-    <img
-        src="bKashQR.JPEG"
-        class="bkash-qr"
-        alt="bKash QR Code">
+    <div class="bkash-qr-wrap">
+
+        <img
+            src="bKashQR.JPEG"
+            class="bkash-qr"
+            alt="bKash QR Code">
+
+        <div
+            class="bkash-qr-label"
+            data-bn="bKash QR"
+            data-en="bKash QR">
+            bKash QR
+        </div>
+
+    </div>
 
     <div class="form-group">
 
@@ -2789,152 +2865,135 @@ function updateCart(){
         return;
     }
 
-    if(cartQuantity <= 0){
+    /* Keep the product visible even when quantity reaches 0.
+       This prevents the Cart page from appearing blank. */
+    cartItems.innerHTML = `
 
-        cartItems.innerHTML = `
+        <div class="cart-item">
 
-            <div class="cart-empty">
+            <div class="cart-product-info">
 
-                ${
-                    currentLanguage === "bn"
-                    ? "আপনার কার্ট খালি।"
-                    : "Your cart is empty."
-                }
+                <strong>
+                    ${
+                        currentLanguage === "bn"
+                        ? "খাঁটি আখের গুড়"
+                        : "Pure Sugarcane Jaggery"
+                    }
+                </strong>
+
+                <div
+                    style="
+                        color:#777;
+                        font-size:14px;
+                    "
+                >
+                    ${
+                        currentLanguage === "bn"
+                        ? "৫০০ গ্রাম"
+                        : "500 gm"
+                    }
+                </div>
+
+                <div
+                    style="
+                        margin-top:5px;
+                    "
+                >
+
+                    <span
+                        style="
+                            color:#777;
+                            text-decoration:line-through;
+                            font-size:14px;
+                            margin-right:5px;
+                        "
+                    >
+                        ৳${PRODUCT_REGULAR_PRICE}
+                    </span>
+
+                    <span
+                        style="
+                            color:#9b6b13;
+                            font-size:16px;
+                            font-weight:bold;
+                        "
+                    >
+                        ৳${PRODUCT_PRICE}
+                    </span>
+
+                </div>
+
+                <div
+                    class="discount-label"
+                    data-bn="10% Discount"
+                    data-en="10% Discount">
+                    10% Discount
+                </div>
 
             </div>
 
-        `;
+            <div class="cart-product-image-wrap">
 
-    }else{
+                <img
+                    src="2C642370-3332-4F95-AE14-F2082F03A597.png"
+                    class="cart-product-image"
+                    alt="${
+                        currentLanguage === "bn"
+                        ? "খাঁটি আখের গুড়"
+                        : "Pure Sugarcane Jaggery"
+                    }">
 
-        cartItems.innerHTML = `
+            </div>
 
-            <div class="cart-item">
-
-                <div>
-
-                    <strong>
-                        ${
-                            currentLanguage === "bn"
-                            ? "খাঁটি আখের গুড়"
-                            : "Pure Sugarcane Jaggery"
-                        }
-                    </strong>
-
-                    <div
-                        style="
-                            color:#777;
-                            font-size:14px;
-                        "
-                    >
-
-                        ${
-                            currentLanguage === "bn"
-                            ? "৫০০ গ্রাম"
-                            : "500 gm"
-                        }
-
-                    </div>
-
-                    <div
-                        style="
-                            margin-top:5px;
-                        "
-                    >
-
-                        <span
-                            style="
-                                color:#777;
-                                text-decoration:line-through;
-                                font-size:14px;
-                                margin-right:5px;
-                            "
-                        >
-                            ৳${PRODUCT_REGULAR_PRICE}
-                        </span>
-
-                        <span
-                            style="
-                                color:#9b6b13;
-                                font-size:16px;
-                                font-weight:bold;
-                            "
-                        >
-                            ৳${PRODUCT_PRICE}
-                        </span>
-
-                    </div>
-
-                    <div
-                        class="discount-label"
-                        data-bn="10% Discount"
-                        data-en="10% Discount">
-                        10% Discount
-                    </div>
-
-                </div>
-
-                <div class="cart-product-image-wrap">
-
-                    <img
-                        src="2C642370-3332-4F95-AE14-F2082F03A597.png"
-                        class="cart-product-image"
-                        alt="${
-                            currentLanguage === "bn"
-                            ? "খাঁটি আখের গুড়"
-                            : "Pure Sugarcane Jaggery"
-                        }">
-
-                </div>
-
-                <div class="quantity-control">
-
-                    <button
-                        onclick="changeQuantity(-1)"
-                        aria-label="Decrease quantity">
-                        −
-                    </button>
-
-                    <span class="quantity-number">
-                        ${cartQuantity}
-                    </span>
-
-                    <button
-                        onclick="changeQuantity(1)"
-                        aria-label="Increase quantity">
-                        +
-                    </button>
-
-                </div>
+            <div class="quantity-control">
 
                 <button
-                    class="remove-item-btn"
-                    onclick="removeFromCart()">
+                    type="button"
+                    onclick="changeQuantity(-1); return false;"
+                    aria-label="Decrease quantity">
+                    −
+                </button>
 
-                    ${
-                        currentLanguage === "bn"
-                        ? "পণ্য বাদ দিন"
-                        : "Remove"
-                    }
+                <span class="quantity-number">
+                    ${cartQuantity}
+                </span>
 
+                <button
+                    type="button"
+                    onclick="changeQuantity(1); return false;"
+                    aria-label="Increase quantity">
+                    +
                 </button>
 
             </div>
 
-        `;
+            <button
+                type="button"
+                class="remove-item-btn"
+                onclick="removeFromCart()">
 
-    }
+                ${
+                    currentLanguage === "bn"
+                    ? "পণ্য বাদ দিন"
+                    : "Remove"
+                }
+
+            </button>
+
+        </div>
+
+    `;
 
     const productTotal =
         PRODUCT_PRICE * cartQuantity;
 
     let delivery = 0;
 
-    if(selectedDelivery === "inside"){
+    if(cartQuantity > 0 && selectedDelivery === "inside"){
         delivery = INSIDE_DHAKA_DELIVERY;
     }
 
-    if(selectedDelivery === "outside"){
+    if(cartQuantity > 0 && selectedDelivery === "outside"){
         delivery = OUTSIDE_DHAKA_DELIVERY;
     }
 
@@ -2952,6 +3011,13 @@ function updateCart(){
     document
         .getElementById("grandTotal")
         .textContent = "৳" + grandTotal;
+
+    const cartSection =
+        document.getElementById("cartSection");
+
+    if(cartSection){
+        cartSection.style.display = "block";
+    }
 
     updateDeliverySelection();
     updatePaymentSelection();
@@ -3050,12 +3116,15 @@ function updateDeliverySelection(){
 
 function changeQuantity(amount){
 
-    cartQuantity = Math.max(
-        0,
-        Number(cartQuantity || 0) + Number(amount || 0)
-    );
+    const nextQuantity =
+        Number(cartQuantity || 0) + Number(amount || 0);
+
+    cartQuantity = Math.max(0, nextQuantity);
 
     updateCart();
+
+    /* Never allow the minus button to submit/reload the page. */
+    return false;
 
 }
 
