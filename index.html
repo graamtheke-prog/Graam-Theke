@@ -966,6 +966,71 @@ section{
     object-fit:contain;
 }
 
+/* ================= BKASH DETAILS ================= */
+
+.bkash-details{
+    display:none;
+    margin-top:18px;
+    padding:18px;
+    background:#f8f4e8;
+    border:1px solid #e2dbc9;
+    border-radius:12px;
+}
+
+.bkash-details.show{
+    display:block;
+}
+
+.bkash-number-row{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin:8px 0 15px;
+}
+
+.bkash-number{
+    flex:1;
+    background:white;
+    border:1px solid #dcd2ba;
+    border-radius:10px;
+    padding:10px 12px;
+    font-weight:bold;
+    color:#405a32;
+}
+
+.bkash-copy-btn{
+    border:none;
+    background:#55733e;
+    color:white;
+    padding:10px 14px;
+    border-radius:10px;
+    cursor:pointer;
+    font-family:inherit;
+    font-weight:bold;
+}
+
+.bkash-copy-btn:hover{
+    background:#425d31;
+}
+
+.bkash-qr{
+    display:block;
+    width:190px;
+    max-width:100%;
+    height:auto;
+    margin:12px auto 18px;
+    border-radius:10px;
+    border:1px solid #e2dbc9;
+    background:white;
+}
+
+.bkash-copy-status{
+    display:block;
+    margin-top:6px;
+    color:#55733e;
+    font-size:13px;
+}
+
 /* ================= CONFIRM ================= */
 
 .confirm-btn{
@@ -1970,6 +2035,83 @@ footer{
 
 </div>
 
+<!-- CART PAYMENT -->
+
+<div class="cart-delivery-title"
+    data-bn="পেমেন্ট পদ্ধতি"
+    data-en="Payment Method">
+    পেমেন্ট পদ্ধতি
+</div>
+
+<div class="payment-options">
+
+<label
+    class="payment-card"
+    id="cartCodCard">
+
+<input
+    type="radio"
+    name="cartPayment"
+    value="cod"
+    onclick="selectPayment('cod')">
+
+<div>
+
+<div
+    class="option-title"
+    data-bn="Cash on Delivery"
+    data-en="Cash on Delivery">
+    Cash on Delivery
+</div>
+
+<div
+    class="option-price"
+    data-bn="পণ্য হাতে পেয়ে পেমেন্ট"
+    data-en="Pay when you receive the product">
+    পণ্য হাতে পেয়ে পেমেন্ট
+</div>
+
+</div>
+
+</label>
+
+<label
+    class="payment-card"
+    id="cartBkashCard">
+
+<input
+    type="radio"
+    name="cartPayment"
+    value="bkash"
+    onclick="selectPayment('bkash')">
+
+<img
+    src="IMG_3245.png"
+    class="bkash-logo"
+    alt="bKash">
+
+<div>
+
+<div
+    class="option-title"
+    data-bn="bKash Payment"
+    data-en="bKash Payment">
+    bKash Payment
+</div>
+
+<div
+    class="option-price"
+    data-bn="bKash-এর মাধ্যমে পেমেন্ট"
+    data-en="Pay via bKash">
+    Pay via bKash
+</div>
+
+</div>
+
+</label>
+
+</div>
+
 <div class="cart-summary">
 
 <div class="summary-row">
@@ -2114,78 +2256,73 @@ footer{
 </div>
 
 <div
-    class="payment-title"
-    data-bn="পেমেন্ট পদ্ধতি"
-    data-en="Payment Method">
-    পেমেন্ট পদ্ধতি
-</div>
+    class="bkash-details"
+    id="bkashDetails">
 
-<div class="payment-options">
+    <div
+        class="payment-title"
+        style="margin-top:0;"
+        data-bn="bKash পেমেন্ট তথ্য"
+        data-en="bKash Payment Details">
+        bKash পেমেন্ট তথ্য
+    </div>
 
-<label
-    class="payment-card"
-    id="codCard">
+    <div
+        class="form-group"
+        style="margin-bottom:10px;">
 
-<input
-    type="radio"
-    name="payment"
-    value="cod"
-    onclick="selectPayment('cod')">
+        <label
+            data-bn="bKash নম্বর"
+            data-en="bKash Number">
+            bKash নম্বর
+        </label>
 
-<div>
+        <div class="bkash-number-row">
 
-<div
-    class="option-title"
-    data-bn="Cash on Delivery"
-    data-en="Cash on Delivery">
-    Cash on Delivery
-</div>
+            <div class="bkash-number">
+                01601601998
+            </div>
 
-<div
-    class="option-price"
-    data-bn="পণ্য হাতে পেয়ে পেমেন্ট"
-    data-en="Pay when you receive the product">
-    পণ্য হাতে পেয়ে পেমেন্ট
-</div>
+            <button
+                type="button"
+                class="bkash-copy-btn"
+                onclick="copyBkashNumber()"
+                data-bn="Copy"
+                data-en="Copy">
+                Copy
+            </button>
 
-</div>
+        </div>
 
-</label>
+        <span
+            id="bkashCopyStatus"
+            class="bkash-copy-status">
+        </span>
 
-<label
-    class="payment-card"
-    id="bkashCard">
+    </div>
 
-<input
-    type="radio"
-    name="payment"
-    value="bkash"
-    onclick="selectPayment('bkash')">
+    <img
+        src="bKashQR.JPEG"
+        class="bkash-qr"
+        alt="bKash QR Code">
 
-<img
-    src="IMG_3245.png"
-    class="bkash-logo"
-    alt="bKash">
+    <div class="form-group">
 
-<div>
+        <label
+            for="bkashTransactionId"
+            data-bn="Transaction ID"
+            data-en="Transaction ID">
+            Transaction ID
+        </label>
 
-<div
-    class="option-title"
-    data-bn="bKash Payment"
-    data-en="bKash Payment">
-    bKash Payment
-</div>
+        <input
+            type="text"
+            id="bkashTransactionId"
+            placeholder="Transaction ID লিখুন"
+            data-placeholder-bn="Transaction ID লিখুন"
+            data-placeholder-en="Enter Transaction ID">
 
-<div
-    class="option-price"
-    data-bn="bKash-এর মাধ্যমে পেমেন্ট"
-    data-en="Pay via bKash">
-    Pay via bKash
-</div>
-
-</div>
-
-</label>
+    </div>
 
 </div>
 
@@ -2797,6 +2934,49 @@ function updateCart(){
         .textContent = "৳" + grandTotal;
 
     updateDeliverySelection();
+    updatePaymentSelection();
+
+}
+
+/* ================= PAYMENT UI ================= */
+
+function updatePaymentSelection(){
+
+    const codCard =
+        document.getElementById("cartCodCard");
+
+    const bkashCard =
+        document.getElementById("cartBkashCard");
+
+    if(codCard){
+
+        codCard.classList.toggle(
+            "selected",
+            selectedPayment === "cod"
+        );
+
+        const radio = codCard.querySelector("input");
+
+        if(radio){
+            radio.checked = selectedPayment === "cod";
+        }
+
+    }
+
+    if(bkashCard){
+
+        bkashCard.classList.toggle(
+            "selected",
+            selectedPayment === "bkash"
+        );
+
+        const radio = bkashCard.querySelector("input");
+
+        if(radio){
+            radio.checked = selectedPayment === "bkash";
+        }
+
+    }
 
 }
 
@@ -2971,6 +3151,18 @@ function openOrder(){
 
     }
 
+    if(!selectedPayment){
+
+        alert(
+            currentLanguage === "bn"
+            ? "অনুগ্রহ করে পেমেন্ট পদ্ধতি নির্বাচন করুন।"
+            : "Please select a payment method."
+        );
+
+        return;
+
+    }
+
     document
         .getElementById("cartSection")
         .style.display = "none";
@@ -2978,6 +3170,16 @@ function openOrder(){
     document
         .getElementById("orderSection")
         .style.display = "block";
+
+    const bkashDetails =
+        document.getElementById("bkashDetails");
+
+    if(bkashDetails){
+        bkashDetails.classList.toggle(
+            "show",
+            selectedPayment === "bkash"
+        );
+    }
 
     setView("order");
 
@@ -3029,27 +3231,145 @@ function selectPayment(type){
 
     selectedPayment = type;
 
-    document
-        .getElementById("codCard")
-        .classList.remove("selected");
+    const codCard =
+        document.getElementById("cartCodCard");
 
-    document
-        .getElementById("bkashCard")
-        .classList.remove("selected");
+    const bkashCard =
+        document.getElementById("cartBkashCard");
 
-    if(type === "cod"){
+    if(codCard){
+        codCard.classList.toggle(
+            "selected",
+            type === "cod"
+        );
 
-        document
-            .getElementById("codCard")
-            .classList.add("selected");
+        const radio = codCard.querySelector("input");
+
+        if(radio){
+            radio.checked = type === "cod";
+        }
+    }
+
+    if(bkashCard){
+        bkashCard.classList.toggle(
+            "selected",
+            type === "bkash"
+        );
+
+        const radio = bkashCard.querySelector("input");
+
+        if(radio){
+            radio.checked = type === "bkash";
+        }
+    }
+
+    const bkashDetails =
+        document.getElementById("bkashDetails");
+
+    if(bkashDetails){
+
+        bkashDetails.classList.toggle(
+            "show",
+            type === "bkash"
+        );
 
     }
 
-    if(type === "bkash"){
+    if(type !== "bkash"){
 
-        document
-            .getElementById("bkashCard")
-            .classList.add("selected");
+        const transactionInput =
+            document.getElementById("bkashTransactionId");
+
+        if(transactionInput){
+            transactionInput.value = "";
+        }
+
+        const status =
+            document.getElementById("bkashCopyStatus");
+
+        if(status){
+            status.textContent = "";
+        }
+
+    }
+
+}
+
+function copyBkashNumber(){
+
+    const number = "01601601998";
+
+    const showCopied = () => {
+
+        const status =
+            document.getElementById("bkashCopyStatus");
+
+        if(status){
+
+            status.textContent =
+                currentLanguage === "bn"
+                ? "নম্বর কপি হয়েছে ✓"
+                : "Number copied ✓";
+
+            setTimeout(() => {
+                status.textContent = "";
+            },2000);
+
+        }
+
+    };
+
+    if(
+        navigator.clipboard &&
+        window.isSecureContext
+    ){
+
+        navigator.clipboard
+            .writeText(number)
+            .then(showCopied)
+            .catch(() => fallbackCopy(number));
+
+    }else{
+
+        fallbackCopy(number);
+
+    }
+
+}
+
+function fallbackCopy(text){
+
+    const input =
+        document.createElement("textarea");
+
+    input.value = text;
+    input.style.position = "fixed";
+    input.style.opacity = "0";
+
+    document.body.appendChild(input);
+
+    input.focus();
+    input.select();
+
+    try{
+        document.execCommand("copy");
+    }catch(e){}
+
+    document.body.removeChild(input);
+
+    const status =
+        document.getElementById("bkashCopyStatus");
+
+    if(status){
+
+        status.textContent =
+            currentLanguage === "bn"
+            ? "নম্বর কপি হয়েছে ✓"
+            : "Number copied ✓";
+
+        setTimeout(() => {
+            status.textContent = "";
+        },2000);
 
     }
 
@@ -3113,6 +3433,36 @@ function confirmOrder(){
 
     }
 
+    let transactionId = "";
+
+    if(selectedPayment === "bkash"){
+
+        const transactionInput =
+            document.getElementById("bkashTransactionId");
+
+        transactionId =
+            transactionInput
+            ? transactionInput.value.trim()
+            : "";
+
+        if(!transactionId){
+
+            alert(
+                currentLanguage === "bn"
+                ? "অনুগ্রহ করে bKash Transaction ID দিন।"
+                : "Please enter the bKash Transaction ID."
+            );
+
+            if(transactionInput){
+                transactionInput.focus();
+            }
+
+            return;
+
+        }
+
+    }
+
     let deliveryAmount =
         selectedDelivery === "inside"
         ? INSIDE_DHAKA_DELIVERY
@@ -3142,6 +3492,23 @@ function confirmOrder(){
     const grandTotal =
         productTotal + deliveryAmount;
 
+    const bkashInfo =
+        selectedPayment === "bkash"
+        ? (
+            currentLanguage === "bn"
+            ? `
+
+📲 bKash নম্বর: 01601601998
+
+🧾 Transaction ID: ${transactionId}`
+            : `
+
+📲 bKash Number: 01601601998
+
+🧾 Transaction ID: ${transactionId}`
+          )
+        : "";
+
     const message =
         currentLanguage === "bn"
         ?
@@ -3162,7 +3529,7 @@ function confirmOrder(){
 
 🚚 ডেলিভারি: ${deliveryText}
 
-💳 পেমেন্ট: ${paymentText}
+💳 পেমেন্ট: ${paymentText}${bkashInfo}
 
 📍 ঠিকানা:
 ${address}
@@ -3189,7 +3556,7 @@ ${address}
 
 🚚 Delivery: ${deliveryText}
 
-💳 Payment: ${paymentText}
+💳 Payment: ${paymentText}${bkashInfo}
 
 📍 Address:
 ${address}
@@ -3593,4 +3960,3 @@ document.addEventListener(
 </script>
 
 </body>
-</html>
