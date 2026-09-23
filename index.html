@@ -1004,7 +1004,7 @@ section{
     align-items:center;
     justify-content:center;
     width:100%;
-    margin:14px 0 22px;
+    margin:14px 0 30px;
 }
 
 .bkash-details .bkash-qr-label{
@@ -2396,8 +2396,8 @@ footer{
         <div
             class="bkash-qr-label"
             data-bn="বিকাশ/ বাংলা QR"
-            data-en="bKash or Bangla QR"
-            bKash QR
+            data-en="bKash or Bangla QR">
+            বিকাশ/ বাংলা QR
         </div>
 
     </div>
@@ -2423,10 +2423,13 @@ footer{
 </div>
 
 <button
+    type="button"
+    id="confirmOrderBtn"
     class="confirm-btn"
     onclick="confirmOrder()"
     data-bn="অর্ডার নিশ্চিত করুন"
-    data-en="Confirm Order">
+    data-en="Confirm Order"
+    style="display:block;">
     অর্ডার নিশ্চিত করুন
 </button>
 
@@ -3268,6 +3271,13 @@ function openOrder(){
         );
     }
 
+    const confirmOrderBtn =
+        document.getElementById("confirmOrderBtn");
+
+    if(confirmOrderBtn){
+        confirmOrderBtn.style.display = "block";
+    }
+
     setView("order");
 
     window.scrollTo({
@@ -3317,6 +3327,13 @@ function selectDelivery(type){
 function selectPayment(type){
 
     selectedPayment = type;
+
+    const confirmOrderBtn =
+        document.getElementById("confirmOrderBtn");
+
+    if(confirmOrderBtn){
+        confirmOrderBtn.style.display = "block";
+    }
 
     const codCard =
         document.getElementById("cartCodCard");
